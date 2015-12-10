@@ -1,0 +1,122 @@
+---
+title: "NECSC Lake Modeling"
+author: "Megan Hines, Jordan Read"
+date: "December 9, 2015"
+output: html_document
+---
+
+```{r echo=FALSE, warning=FALSE, message=FALSE, eval=TRUE}
+library(dataRetrieval)
+library(dplyr)
+library(zoo)
+library(xts)
+library(leaflet)
+library(magrittr)
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, eval=TRUE}
+
+#get the water data
+temperatureSample <- readWQPdata(statecode="US:27",characteristicName="Temperature, sample", siteType="Lake, Reservoir, Impoundment")
+write.csv(temperatureSample,"data/temperatureSample.csv",row.names=FALSE)
+temperatureWater <- readWQPdata(statecode="US:27",characteristicName="Temperature, water", siteType="Lake, Reservoir, Impoundment")
+write.csv(temperatureWater,"data/temperatureWater.csv",row.names=FALSE)
+
+#subset only the fields we want
+temperatureSample <- read.csv(file = "data/temperatureSample.csv", sep = ",")[ ,c('ActivityStartDate','ActivityStartTime.Time','ActivityStartTime.TimeZoneCode','ActivityBottomDepthHeightMeasure.MeasureValue','ActivityBottomDepthHeightMeasure.MeasureUnitCode','MonitoringLocationIdentifier','ResultMeasureValue','ResultMeasure.MeasureUnitCode')]
+
+temperatureWater <- read.csv(file = "data/temperatureWater.csv", sep = ",")[ ,c('ActivityStartDate','ActivityStartTime.Time','ActivityStartTime.TimeZoneCode','ActivityBottomDepthHeightMeasure.MeasureValue','ActivityBottomDepthHeightMeasure.MeasureUnitCode','MonitoringLocationIdentifier','ResultMeasureValue','ResultMeasure.MeasureUnitCode')]
+
+#merge the two files into a dataframe
+tempdf <- as.data.frame(temperatureSample)
+tempdf <- rbind(temperatureWater, tempdf)
+
+#get minnesota site data
+sites <- whatWQPsites(stateCd="MN")
+write.csv(sites,"data/mnSites.csv",row.names=FALSE)
+#subset minnesota site data
+sitesMn <- read.csv(file="data/mnSites.csv",sep=",")[ ,c('MonitoringLocationIdentifier','MonitoringLocationName','ProviderName','LatitudeMeasure','LongitudeMeasure')]
+
+#join site data to temperature data
+merged <- merge(tempdf, as.data.frame(sitesMn), by="MonitoringLocationIdentifier")
+
+#get site count -- how many records total do we have?
+tempMn <- group_by(merged, MonitoringLocationIdentifier)
+siteCount <- summarise(tempMn,
+                   count=n())
+#add to original table
+tempdf <- merge(merged, as.data.frame(siteCount), by="MonitoringLocationIdentifier")
+
+#change column name
+colnames(tempdf)[which(names(tempdf) == "count")] <- "totalObservations"
+
+#get unique temp dates per site 
+dateUn <- group_by(merged, MonitoringLocationIdentifier, ActivityStartDate)
+dateCount <- summarise(dateUn,
+                       count=n())
+
+#get number of unique dates for samples per site - how many unique sampling dates do we have?
+bydate <- group_by(dateCount, MonitoringLocationIdentifier)
+summary.bydate <- summarise(bydate,
+                            count.ActivityStartDate=n())
+
+#add to original table
+tempdf <- merge(tempdf, as.data.frame(summary.bydate), by="MonitoringLocationIdentifier")
+
+#change column name
+colnames(tempdf)[which(names(tempdf) == "count.ActivityStartDate")] <- "uniqueObservationDates"
+
+#save it
+write.csv(tempdf,"data/sitetempdata.csv",row.names=FALSE)
+
+data <- tempdf
+
+makeMap <- function(data) {
+  
+  # site name/id, # of temperature measurements, # unique daily measurements, earliest and latest dates
+    
+    popup.strings <- function(data){
+    
+      popups <- lapply(data, function(x) {
+      
+        site.string <- c(data$MonitoringLocationIdentifier,",",data$totalObservations,",",data$uniqueObservationDates,getDates(data, data$MonitoringLocationIdentifier))
+        
+      if(length(site.string) > 1){
+        site.string <- paste(site.string, collapse=", ")
+        popup.string <- paste0(x, ": ", site.string)
+      } else {
+        popup.string <- x
+      }
+  
+    })
+ 
+    return(unlist(popups))
+  }
+  
+  m = leaflet() %>% 
+    addProviderTiles("CartoDB.Positron",
+                     options = leaflet::providerTileOptions(noWrap = TRUE)) %>% 
+    addCircleMarkers(lng = data$LongitudeMeasure,
+                     lat = data$LatitudeMeasure, 
+                     popup = popup.strings(data), 
+                     color = '#ff0000')
+    return(map=m)
+}
+
+#takes a site and the data and locates the earliest observation date and last observation date
+getDates <- function(data, site) {
+  
+  sitedata <- filter(data, MonitoringLocationIdentifier==site)
+  earliest <- first(sitedata, n=1)
+  latest <- last(sitedata, n=1)
+
+  return(list(earliest=earliest,latest=latest))
+}
+  
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, eval=TRUE}
+mapper = make_map()
+mapper$map
+```

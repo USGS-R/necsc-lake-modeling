@@ -2,13 +2,22 @@
 
 library(dataRetrieval)
 library(dplyr)
+library(zoo)
+library(xts)
+
+
+makeMap <- function() {
+  
+  
+  
+}
+
+
+getData <- function(data) {
 
 #get the water data
-#78 obs 11/20/2015
 temperatureSample <- readWQPdata(statecode="US:27",characteristicName="Temperature, sample", siteType="Lake, Reservoir, Impoundment")
 write.csv(temperatureSample,"temperatureSample.csv",row.names=FALSE)
-
-#733999 obs 11/20/2015
 temperatureWater <- readWQPdata(statecode="US:27",characteristicName="Temperature, water", siteType="Lake, Reservoir, Impoundment")
 write.csv(temperatureWater,"temperatureWater.csv",row.names=FALSE)
 
@@ -28,7 +37,6 @@ write.csv(sites,"mnSites.csv",row.names=FALSE)
 sitesMn <- read.csv(file="mnSites.csv",sep=",")[ ,c('MonitoringLocationIdentifier','MonitoringLocationName','ProviderName','LatitudeMeasure','LongitudeMeasure')]
 
 #join site data to temperature data
-#merge(df1, df2, by = "CustomerId")
 merged <- merge(tempdf, as.data.frame(sitesMn), by="MonitoringLocationIdentifier")
 
 #get site count -- how many records total do we have?
@@ -54,12 +62,18 @@ tempdf <- merge(tempdf, as.data.frame(summary.bydate), by="MonitoringLocationIde
 #save it
 write.csv(tempdf,"sitetempdata.csv",row.names=FALSE)
 
+data <- tempdf
 
-# doesn't work but this is what I want to do
-getDates <- function(tempdf, site) {
+return(data)
+
+}
+
+#takes a site and the data and locates the earliest observation date and last observation date
+getDates <- function(data, site) {
   
-  earliest <- filter(tempdf, MonitoringLocationIdentifier==site)
-  latest <- filter(tempdf, MonitoringLocationIdentifier==site & max(ActivityStartDate.x))
+  sitedata <- filter(data, MonitoringLocationIdentifier==site)
+  earliest <- first(sitedata, n=1)
+  latest <- last(sitedata, n=1)
 
   return(list(earliest=earliest,latest=latest))
   
