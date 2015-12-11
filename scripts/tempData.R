@@ -9,7 +9,17 @@ library(xts)
 
 makeMap <- function() {
   
+  df <- rbind(MI.sites, MN.sites)
+  df$count <- log(df$count)
   
+  pal <- colorNumeric(palette = c("darkblue","dodgerblue","green4","orange","red"), 
+                      domain = df$count)
+  
+  m = leaflet(df) %>% 
+    addProviderTiles("CartoDB.Positron") %>% 
+    addCircleMarkers(popup = ~popup, color = ~pal(count), 
+                     radius=4, stroke=FALSE, fillOpacity=0.7)
+  m
   
 }
 
