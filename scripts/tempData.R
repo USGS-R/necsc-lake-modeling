@@ -1,3 +1,4 @@
+
 ##just a pile of experiments at this point
 
 library(dataRetrieval)
@@ -8,7 +9,17 @@ library(xts)
 
 makeMap <- function() {
   
+  df <- rbind(MI.sites, MN.sites)
+  df$count <- log(df$count)
   
+  pal <- colorNumeric(palette = c("darkblue","dodgerblue","green4","orange","red"), 
+                      domain = df$count)
+  
+  m = leaflet(df) %>% 
+    addProviderTiles("CartoDB.Positron") %>% 
+    addCircleMarkers(popup = ~popup, color = ~pal(count), 
+                     radius=4, stroke=FALSE, fillOpacity=0.7)
+  m
   
 }
 
@@ -77,4 +88,5 @@ getDates <- function(data, site) {
 
   return(list(earliest=earliest,latest=latest))
   
+>>>>>>> 04e96b8e44e93645f4c601efe9b7ed65a720c07d
 }
