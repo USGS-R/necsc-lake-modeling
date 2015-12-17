@@ -1,0 +1,15 @@
+serviceEndpoint: "ftp://rockyftp.cr.usgs.gov/vdelivery/Datasets/Staged/Hydro/FileGDB101/"
+filename_prefix: "NHD"
+filename_resolution: "M"
+#use .xml for testing
+filename_suffix: "ST.zip"
+states:
+  - 
+    name: "Michigan"
+    fips: "26"  
+  - 
+    name: "Minnesota"
+    fips: "27"
+  -  
+    name: "Wisconsin"
+    fips: "55"
