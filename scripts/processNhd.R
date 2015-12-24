@@ -59,6 +59,7 @@ writeOGR(nhd, driver = "ESRI Shapefile",layer="NHDWaterbody_unique",overwrite_la
 #get centroids for data as dataframe
 trueCentroids <- gCentroid(nhd,byid=TRUE)
 trueCentDf <- as.data.frame(trueCentroids)
+write.csv(trueCentDf, file = "nhd_centroids.csv")
 
 #get dataframe from nhd file
 ogDf <- as(nhd, "data.frame") 
@@ -68,8 +69,8 @@ newDf <- merge(ogDf, trueCentDf, sort=TRUE, by="row.names", all.x=TRUE)
 
 # join new df with centroids with the polygons
 # getting error with these trying to get centroids into the polygons
-nhdWithCents <- SpatialPolygonsDataFrame(as(nhd[order(nhd$Prmnn_I),] , "SpatialPolygons"), data=newDf) 
-nhdWithCents <- SpatialPolygonsDataFrame(nhd,data=data.frame(join(data.frame(Prmnn_I=names(nhd)),newDf),row.names=row.names(nhd))) 
+#nhdWithCents <- SpatialPolygonsDataFrame(as(nhd[order(nhd$Prmnn_I),] , "SpatialPolygons"), data=newDf) 
+#nhdWithCents <- SpatialPolygonsDataFrame(nhd,data=data.frame(join(data.frame(Prmnn_I=names(nhd)),newDf),row.names=row.names(nhd))) 
 
 
 
