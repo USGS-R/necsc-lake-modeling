@@ -6,18 +6,6 @@ library(rgeos)
 library(magrittr)
 library(plyr)
 
-#get list of gdb we have
-dirs <- as.data.frame(list.dirs(path = paste0(getwd(),"/data"), full.names = TRUE, recursive = TRUE), stringsAsFactors = FALSE)
-colnames(dirs) <- "paths"
-dirs <- as.data.frame(filter(dirs, grepl('gdb', paths)))
-
-#grab each of the NHDWaterbody layers from the gdb and make them shapefiles
-for (i in 1:nrow(dirs)) {
-  fgdb <- dirs[i,]
-  fc <- readOGR(dsn=fgdb,layer="NHDWaterbody")
-  writeOGR(fc,dsn = paste0(getwd(),"/data"), driver = "ESRI Shapefile",layer=paste0("NHDWaterbody_",i),overwrite_layer = TRUE)
-}
-
 #merge the shapefiles
 setwd(paste0(getwd(),"/data"))
 uid <-1 
@@ -59,19 +47,9 @@ writeOGR(nhd, driver = "ESRI Shapefile",layer="NHDWaterbody_unique",overwrite_la
 #get centroids for data as dataframe
 trueCentroids <- gCentroid(nhd,byid=TRUE)
 trueCentDf <- as.data.frame(trueCentroids)
-write.csv(trueCentDf, file = "nhd_centroids.csv")
-
-#get dataframe from nhd file
-ogDf <- as(nhd, "data.frame") 
-
-#make a new dataframe with the centroids and the nhd df
-newDf <- merge(ogDf, trueCentDf, sort=TRUE, by="row.names", all.x=TRUE) 
-
-# join new df with centroids with the polygons
-# getting error with these trying to get centroids into the polygons
-#nhdWithCents <- SpatialPolygonsDataFrame(as(nhd[order(nhd$Prmnn_I),] , "SpatialPolygons"), data=newDf) 
-#nhdWithCents <- SpatialPolygonsDataFrame(nhd,data=data.frame(join(data.frame(Prmnn_I=names(nhd)),newDf),row.names=row.names(nhd))) 
-
+trueCentDf <- cbind(Prmnn_I = rownames(trueCentDf), trueCentDf)
+joined <- merge(trueCentDf, as.data.frame(nhd), by.x = "Prmnn_I", by.y="Prmnn_I")
+write.csv(joined[,c("Prmnn_I","x","y","AreSqKm","state")], file = "nhd_centroids.csv", row.names = FALSE)
 
 
 
