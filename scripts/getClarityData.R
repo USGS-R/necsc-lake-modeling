@@ -15,12 +15,12 @@ library(yaml)
 
 
 getClarityData <- function() {
-
+  
   config = yaml.load_file("config.yml")
   states <- config$states
   
   for (i in 1:length(states)) {
-  
+    
     secchiDiskDepth <- readWQPdata(statecode=paste0("US:",states[[i]]$fips),characteristicName="Depth, Secchi disk depth", siteType="Lake, Reservoir, Impoundment")
     if (length(secchiDiskDepth)>0) {
       write.csv(secchiDiskDepth, file = paste0("secchiDiskDepth",states[[i]]$fips,".csv"),row.names=FALSE)
@@ -63,7 +63,7 @@ getClarityData <- function() {
     if (length(tubeDiskWaterTrans)>0) {
       write.csv(tubeDiskWaterTrans, file = paste0("tubeDiskWaterTrans",states[[i]]$fips,".csv"),row.names=FALSE)
     }
-  
+    
   } 
-
+  
 }
