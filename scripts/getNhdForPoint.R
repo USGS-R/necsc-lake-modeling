@@ -1,7 +1,7 @@
 library(sp)
 library(rgdal)
 
-#supply a lat and long and get an NHD Prmnn_I and state value in return
+#supply a lat and long and get an NHD Prmnn_I id referring to an NHDWaterbody
 #example prmnn_i = 10595408	for -93.63417334,	44.49781668
 
 getNHD <- function(x, y) {
