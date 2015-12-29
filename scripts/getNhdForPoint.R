@@ -12,4 +12,5 @@ getNHD <- function(x, y) {
   pts <- SpatialPoints(xy, proj4string=CRS(proj4string(nhd)))
   inside.nhd <- !is.na(over(pts, as(nhd, "SpatialPolygons"))) 
   pts$nhd <- over(pts, nhd)$Prmnn_I
+  return(pts$nhd)
 }
