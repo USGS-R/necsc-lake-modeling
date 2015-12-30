@@ -5,7 +5,7 @@ library(rgdal)
 #example prmnn_i = 10595408	for -93.63417334,	44.49781668
 
 getNHD <- function(x, y) {
-  nhd <- readOGR(dsn = getwd(), layer="NHDWaterbody_unique")
+  nhd <- readOGR(dsn = paste0(getwd(),"/data"), layer="NHDWaterbody_unique")
   lat <- as.numeric(y)
   lng <- as.numeric(x)
   xy <- cbind(lng,lat)

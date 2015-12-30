@@ -13,7 +13,6 @@
 library(dataRetrieval)
 library(yaml)
 
-
 getClarityData <- function() {
   
   config = yaml.load_file("config.yml")

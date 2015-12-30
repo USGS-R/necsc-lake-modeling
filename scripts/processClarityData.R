@@ -23,3 +23,14 @@ matchWithClarity <- function() {
     write.csv(claritySites, file=paste0("claritySites",states[[i]]$fips,".csv"),row.names=FALSE)
   }
 }
+
+#get the prmnn_i from nhd for lake/polygon for each row
+getPermId <- function() {
+  for (j in 1:length(states)) {
+    sites <- read.csv(file=paste0("claritySites",states[[j]]$fips,".csv"))
+    for (i in nrow(sites)) {
+      sites$Prmnn_I[i] <- getNHD(sites$LongitudeMeasure[i],sites$LatitudeMeasure[i])
+    }
+    write.csv(sites, file=paste0("claritySitesWithNHD",states[[j]]$fips,".csv"),row.names=FALSE) 
+  }
+}
