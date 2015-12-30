@@ -24,12 +24,23 @@ matchWithClarity <- function() {
   }
 }
 
+
+
 #get the prmnn_i from nhd for lake/polygon for each row
-getPermId <- function() {
+getPermId <- function() { 
+  nhd <- readOGR(dsn = paste0(getwd(),"/data"), layer="NHDWaterbody_unique")
   for (j in 1:length(states)) {
-    sites <- read.csv(file=paste0("claritySites",states[[j]]$fips,".csv"))
-    for (i in nrow(sites)) {
-      sites$Prmnn_I[i] <- getNHD(sites$LongitudeMeasure[i],sites$LatitudeMeasure[i])
+    sites <- read.csv(file=paste0("claritySites",states[[j]]$fips,".csv"),sep=",")[ ,c('MonitoringLocationIdentifier','LatitudeMeasure','LongitudeMeasure')]
+    sites <- sites[!duplicated(sites),]
+    for (i in 1:nrow(sites)) {
+      lat <- as.numeric(sites$LatitudeMeasure[i])
+      lng <- as.numeric(sites$LongitudeMeasure[i])
+      xy <- cbind(lng,lat)
+      pts <- SpatialPoints(xy, proj4string=CRS(proj4string(nhd)))
+      inside.nhd <- !is.na(over(pts, as(nhd, "SpatialPolygons"))) 
+      pts$nhd <- over(pts, nhd, fn = NULL, returnList = FALSE)$Prmnn_I
+      prmnn_i <- as.character(pts$nhd)
+      sites$Permnn_I[i] <- prmnn_i
     }
     write.csv(sites, file=paste0("claritySitesWithNHD",states[[j]]$fips,".csv"),row.names=FALSE) 
   }
