@@ -4,6 +4,7 @@
 
 library(dataRetrieval)
 library(yaml)
+library(rgdal)
 
 config = yaml.load_file("config.yml")
 states <- config$states
