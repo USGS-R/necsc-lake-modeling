@@ -23,7 +23,6 @@ cleanUp <- function(charName) {
   return(charName)
 }
 
-
 config = yaml.load_file("config.yml")
 states <- config$states
 
