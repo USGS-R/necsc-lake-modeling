@@ -32,11 +32,12 @@ charName <- c("Chlorophyll", "Chlorophyll A", "Chlorophyll a","Chlorophyll a (pr
 for (i in 1:length(states)) {
   
   for (j in 1:length(charName)) {
-    
-    retrievedData <- readWQPdata(statecode=paste0("US:",states[[i]]$fips),characteristicName=charName[j], siteType="Lake, Reservoir, Impoundment")
-    if (length(retrievedData)>0) { 
-      write.csv(retrievedData, file = paste0(cleanUp(charName[j]),states[[i]]$fips,".csv"),row.names=FALSE)
-    } 
+    tryCatch({
+      retrievedData <- readWQPdata(statecode=paste0("US:",states[[i]]$fips),characteristicName=charName[j], siteType="Lake, Reservoir, Impoundment")
+      if (length(retrievedData)>0) { 
+        write.csv(retrievedData, file = paste0(cleanUp(charName[j]),states[[i]]$fips,".csv"),row.names=FALSE)
+      } 
+    },error = function(e){})
     
   }
   
