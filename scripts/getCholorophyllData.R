@@ -19,7 +19,7 @@ library(dataRetrieval)
 library(yaml)
 
 cleanUp <- function(charName) {
-  charName <- gsub("[^A-Za-z0-9]", " ", charName)
+  charName <- gsub("[^A-Za-z0-9]", "", charName)
   return(charName)
 }
 
