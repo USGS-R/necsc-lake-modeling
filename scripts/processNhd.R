@@ -42,7 +42,7 @@ nhdSubset$area <- gArea(nhdSubset, byid=TRUE) / 1000^2
 
 #retain polygons >= 4HA which equals 0.04 Sq Km 
 smallestArea <- 0.04 
-smallestAreaMask <- which(nhdSubset$AreSqKm >= smallestArea) 
+smallestAreaMask <- which(nhdSubset$area >= smallestArea) 
 nhdFiltered <- nhdSubset[smallestAreaMask,] 
 writeOGR(nhdFiltered, driver = "ESRI Shapefile",layer="NHDWaterbody_filtered",overwrite_layer = TRUE, dsn=getwd()) 
 
@@ -64,7 +64,7 @@ trueCentroids <- gCentroid(nhd,byid=TRUE)
 trueCentDf <- as.data.frame(trueCentroids)
 trueCentDf <- cbind(Prmnn_I = rownames(trueCentDf), trueCentDf)
 joined <- merge(trueCentDf, as.data.frame(nhd), by.x = "Prmnn_I", by.y="Prmnn_I")
-write.csv(joined[,c("Prmnn_I","x","y","AreSqKm","state")], file = "nhd_centroids.csv", row.names = FALSE)
+write.csv(joined[,c("Prmnn_I","x","y","area","state")], file = "nhd_centroids.csv", row.names = FALSE)
 
 
 
