@@ -26,14 +26,29 @@ for (i in 2:length(files)) {
 #this file has duplicates and all polygons from original
 writeOGR(nhdwaterbody, driver = "ESRI Shapefile",layer="NHDWaterbody_merged",overwrite_layer = TRUE, dsn=getwd())
 
-#retain polygons >= 4HA which equals 0.04 Sq Km
-smallestArea <- 0.04
-smallestAreaMask <- which(nhdwaterbody$AreSqKm >= smallestArea)
-nhdFiltered <- nhdwaterbody[smallestAreaMask,]
-writeOGR(nhdFiltered, driver = "ESRI Shapefile",layer="NHDWaterbody_filtered",overwrite_layer = TRUE, dsn=getwd())
+nhdwaterbody <- readOGR(dsn = paste0(getwd(),"/data"), layer="NHDWaterbody_merged")
 
-#get only unique polygons
-nhdUnique <- unionSpatialPolygons(nhdFiltered, nhdFiltered$Prmnn_I)
+#subset merged nhdwaterbody by state
+states <- readOGR(dsn = paste0(getwd(),"/data"), layer="cb_2014_us_state_5m")
+wanted <- c("Minnesota","Michigan","Wisconsin")
+states <- subset(states, NAME %in% wanted)
+states <- spTransform(states, CRS(proj4string(nhdwaterbody)))
+nhdSubset <- nhdwaterbody[states, ]
+
+#project it so we can calculate area - lambert equal area
+newProj <- CRS("+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs")
+nhdSubset <- spTransform(nhdSubset,newProj) 
+nhdSubset$area <- gArea(nhdSubset, byid=TRUE) / 1000^2
+
+#retain polygons >= 4HA which equals 0.04 Sq Km 
+smallestArea <- 0.04 
+smallestAreaMask <- which(nhdSubset$AreSqKm >= smallestArea) 
+nhdFiltered <- nhdSubset[smallestAreaMask,] 
+writeOGR(nhdFiltered, driver = "ESRI Shapefile",layer="NHDWaterbody_filtered",overwrite_layer = TRUE, dsn=getwd()) 
+
+#get only unique polygons, buffer to get rid of Topology Exception error
+nhdBuff <- gBuffer(nhdFiltered, byid=TRUE, width=0)
+nhdUnique <- unionSpatialPolygons(nhdBuff, nhdBuff$Prmnn_I)
 
 #Make a data frame that just has unique data from the original dataset
 nhd_data <- nhdFiltered@data %>%
