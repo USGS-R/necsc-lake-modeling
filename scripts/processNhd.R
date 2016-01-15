@@ -62,19 +62,35 @@ nhd_data <- distinct(nhd_data, Prmnn_I)
 nhd <- SpatialPolygonsDataFrame(nhdUnique,data=data.frame(join(data.frame(Prmnn_I=names(nhdUnique)),nhd_data),row.names=row.names(nhdUnique)))
 writeOGR(nhd, driver = "ESRI Shapefile",layer="NHDWaterbody_unique",overwrite_layer = TRUE, dsn=getwd())
 
-#crop by state outlines
-cropped <- crop (nhd,states)
-
-#make sure it's in the same proj as the nhd layer was originally
-nhdwaterbody <- readOGR(dsn = paste0(getwd(),"/data"), layer="NHDWaterbody_merged")
-cropProj <- spTransform(cropped, CRS(proj4string(nhdwaterbody)))
-
-#write it out
-writeOGR(cropProj, driver = "ESRI Shapefile",layer="NHDWaterbody_cropProj",overwrite_layer = TRUE, dsn=getwd())
+#make sure it's in WGS84
+nhdProjected <- spTransform(nhd, CRS("+proj=longlat +ellps=WGS84 +datum=WGS84"))
+writeOGR(nhdProjected, driver = "ESRI Shapefile",layer="NHDWaterbody_projected",overwrite_layer = TRUE, dsn=getwd())
 
 #get centroids and write out
-getCent <- gCentroid(cropProj,byid=TRUE)
+getCent <- gCentroid(nhdProjected,byid=TRUE)
 getCentDf <- as.data.frame(getCent)
 getCentDf <- cbind(Prmnn_I = rownames(getCentDf), getCentDf)
-data <- merge(getCentDf, as.data.frame(cropProj), by.x = "Prmnn_I", by.y="Prmnn_I")
+data <- merge(getCentDf, as.data.frame(nhdProjected), by.x = "Prmnn_I", by.y="Prmnn_I")
 write.csv(data[,c("Prmnn_I","x","y","area","state")], file = "nhd_centroids.csv", row.names = FALSE)
+
+#is centroid in the state? if not, NA will appear in state_id field in this table.
+for (i in 1:nrow(data)) {
+  lat <- as.numeric(data$y[i])
+  lng <- as.numeric(data$x[i])
+  xy <- cbind(lng,lat)
+  pts <- SpatialPoints(xy, proj4string=CRS(proj4string(states)))
+  inside.nhd <- !is.na(over(pts, as(states, "SpatialPolygons"))) 
+  pts$nhd <- over(pts, states, fn = NULL, returnList = FALSE)$STATEFP
+  state_id <- as.character(pts$nhd)
+  data$state_id[i] <- state_id
+}
+
+#get only data for those where NA is not state_id
+keepers <- subset(data, !is.na(state_id))
+#join it with the shapefile
+nhdProjected@data <- left_join(nhdProjected@data, keepers)
+writeOGR(nhdProjected, driver = "ESRI Shapefile",layer="NHDWaterbody_near_final",overwrite_layer = TRUE, dsn=getwd())
+
+#drop na state_id
+nhdProjected<-subset(nhdProjected, !is.na(state_id))
+writeOGR(nhdProjected, driver = "ESRI Shapefile",layer="NHDWaterbody_final",overwrite_layer = TRUE, dsn=getwd())
