@@ -87,10 +87,20 @@ for (i in 1:nrow(data)) {
 
 #get only data for those where NA is not state_id
 keepers <- subset(data, !is.na(state_id))
+write.csv(keepers[,c("Prmnn_I","x","y","area","state")], file = "nhd_centroids.csv", row.names = FALSE)
 #join it with the shapefile
 nhdProjected@data <- left_join(nhdProjected@data, keepers)
 writeOGR(nhdProjected, driver = "ESRI Shapefile",layer="NHDWaterbody_near_final",overwrite_layer = TRUE, dsn=getwd())
 
 #drop na state_id
 nhdProjected<-subset(nhdProjected, !is.na(state_id))
-writeOGR(nhdProjected, driver = "ESRI Shapefile",layer="NHDWaterbody_final",overwrite_layer = TRUE, dsn=getwd())
+writeOGR(nhdProjected, driver = "ESRI Shapefile",layer="NHDWaterbody",overwrite_layer = TRUE, dsn=getwd())
+
+nhdwaterbody <- readOGR(dsn = paste0(getwd(),"/data"), layer="NHDWaterbody")
+
+#remove any polygons on the blacklist
+blacklist <- c("166766705","167671341","166766729","120053594","166766612","120053704","120052448","120054088","166766604","120052980","167671322","166766762","120053592","120053269","166766774","11938419","120053611","120053261","120053588","167671352","120053580","12222568","120053608","120052958","120054093","120054117","120053120","11937803","167671314","120054116","7115637","120054125","120054094","120054118","15633645","120054114","120054090","120054122","120054123","120054092","120053703","120054120","120054124","120054089","120054121","120054113","120054126","120054119","26917632","12213213","6800970","7748124","12219432","13203571","4792756","13054280","12027790","12953770","11946129","13063609","12953774","14441968","12213419","13203363","12213453","4792438","6790727","120052964","166766782")
+
+nhdFinal <- nhdProjected[!nhdwaterbody$Prmnn_I %in% blacklist,]
+#nhdFinal <- nhdwaterbody[!nhdwaterbody$Prmnn_I %in% blacklist,]
+writeOGR(nhdFinal, driver = "ESRI Shapefile",layer="NHDWaterbody",overwrite_layer = TRUE, dsn=paste0(getwd(),"/data"))
