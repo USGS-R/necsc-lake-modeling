@@ -38,6 +38,11 @@ This is the ncml file used to aggregate the NLDAS MIWIMN data
                 <scan location="." suffix="_vgrd10m.nc" />
 			</aggregation>
 		</netcdf>
+		<netcdf>
+			<aggregation type="joinExisting" dimName="time">
+                <scan location="." suffix="_dlwrfsfc" />
+			</aggregation>
+		</netcdf>
 	</aggregation>	
 </netcdf>
 ```
