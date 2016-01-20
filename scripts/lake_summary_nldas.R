@@ -1,18 +1,26 @@
 library(geoknife)
 library(yaml)
 
-config = yaml.load_file("configs/nldas_config.yml")
+load_nldas_config <- function(){
+  yaml.load_file("configs/nldas_config.yml")
+}
 
-knife = webprocess(url='http://cida-test.er.usgs.gov/gdp/process/WebProcessingService')
 
-lake_summary_nldas <- function(stencil, variable=config$variables, times=config$times){
-  fabric = webdata(url='dods://cida-eros-netcdfdev.er.usgs.gov:8080/thredds/dodsC/thredds/nldas_miwimn/nldas_miwimn.ncml', 
-                   variables=variable, times=times)
+lake_summary_nldas <- function(project_lake_locations, config){
   
-  job <- geoknife(stencil, fabric, knife, wait=TRUE)
+  knife = webprocess(url=config$wps_url)
+  
+  fabric = webdata(url=config$data_url, variable=config$variables, times=config$times)
+  
+  # here we should check what files already exist and pare down the requests to be shaped
+  
+  job <- geoknife(stencil=project_lake_locations, fabric, knife, wait=TRUE)
   if (successful(job)){
-    result(job, with.units=TRUE)
+    data = result(job, with.units=TRUE)
+    features = head(names(data)[-1],-3)
+    cat(paste(features,collapse='\t'), file='data/nldas_lakes.txt', append = FALSE)
   } else {
-    
+    message(check(job)$status)
   }
+
 }
