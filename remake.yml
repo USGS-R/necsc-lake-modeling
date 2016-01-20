@@ -1,0 +1,28 @@
+packages:
+  - yaml
+  - dplyr
+  - geoknife
+  
+## All R files that are used must be listed here:
+sources:
+  - scripts/lake_summary_locations.R
+  - scripts/lake_summary_nldas.R
+
+targets:
+  ## 'all' is a special target that will be used as the default
+  ## target by 'remake'.  It doesn't actually make anything but
+  ## "depends" on other targets.
+  all:
+    depends: 
+      - data/nldas_lakes.txt
+
+  data/nldas_lakes.txt:
+    command: lake_summary_nldas(project_lake_locations, nldas_config)
+    depends:
+      - configs/nldas_config.yml
+
+  project_lake_locations:
+    command: lake_summary_locations()
+
+  nldas_config:
+    command: load_nldas_config()
