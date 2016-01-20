@@ -40,7 +40,7 @@ This is the ncml file used to aggregate the NLDAS MIWIMN data
 		</netcdf>
 		<netcdf>
 			<aggregation type="joinExisting" dimName="time">
-                <scan location="." suffix="_dlwrfsfc" />
+                <scan location="." suffix="_dlwrfsfc.nc" />
 			</aggregation>
 		</netcdf>
 	</aggregation>	
