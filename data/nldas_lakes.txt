@@ -1,1 +1,1 @@
-point1	point2	variable
+point1	point2
