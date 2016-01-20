@@ -23,16 +23,19 @@ states <- config$states
 
 charName <- c("Depth, Secchi disk depth", "Depth, Secchi disk depth (choice list)","Secchi Reading Condition (choice list)","Secchi depth", "Transparency, Secchi tube with disk", "Transparency, tube with disk", "Water transparency, Secchi disc", "Water transparency, tube with disk")
 
-for (i in 1:length(states)) {
+secchi <- data.frame()
+
+for (i in 1:length(states)) { 
   
-  for (j in 1:length(charName)) {
-    tryCatch({
+  for (j in 1:length(charName)) { 
+    tryCatch({ 
       retrievedData <- readWQPdata(statecode=paste0("US:",states[[i]]$fips),characteristicName=charName[j], siteType="Lake, Reservoir, Impoundment")
       if (length(retrievedData)>0) { 
-        write.csv(retrievedData, file = paste0(cleanUp(charName[j]),states[[i]]$fips,".csv"),row.names=FALSE)
-      } 
-    },error = function(e){})
+        secchi <- rbind(secchi, as.data.frame(retrievedData))
+      }  
+    },error = function(e){}) 
     
   }
   
-} 
+}
+write.csv(secchi, file = "secchi.csv",row.names=FALSE)
