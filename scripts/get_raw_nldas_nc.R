@@ -1,10 +1,10 @@
 library(geoknife)
 
-get_nldas_grid <- function(){
+get_nldas_grid <- function(times = c("1979-01-01 UTC", "2016-01-19 UTC")){
   # mock up huge request in order to get the nccopy response as an exception from GDP:
   datasetURI <- 'dods://hydro1.sci.gsfc.nasa.gov/dods/NLDAS_FORA0125_H.002'
   vars <- c('dlwrfsfc','pressfc','apcpsfc','vgrd10m','ugrd10m','dswrfsfc','spfh2m','tmp2m')
-  times <- c("1979-01-01 UTC", "2016-01-19 UTC")
+  
   config <- load_nhd_config()
   states <- sapply(config$states, function(x) x$name)
   stencil <- webgeom(paste0('state::',paste(states,collapse=',')))
@@ -25,7 +25,7 @@ get_nldas_grid <- function(){
 nccopy_nldas <- function(grids){
   start.i <- seq(as.numeric(grids$time[1]),to = as.numeric(grids$time[2]), by = 8760)
   end.i <- c(tail(start.i-1,-1), as.numeric(grids$time[2]))
-  years <- seq(1979,length.out = length(start.i))
+  years <- seq(1979,length.out = length(start.i)) # start year is hardcoded!
   
   lat.i <- sprintf('[%s:1:%s]', grids$lat[1], grids$lat[2])
   lon.i <- sprintf('[%s:1:%s]', grids$lon[1], grids$lon[2])
