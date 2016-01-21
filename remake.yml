@@ -18,11 +18,11 @@ targets:
 
   data/nldas_lakes.txt:
     command: lake_summary_nldas(project_lake_locations, nldas_config)
-    depends:
-      - configs/nldas_config.yml
 
   project_lake_locations:
     command: lake_summary_locations()
 
   nldas_config:
     command: load_nldas_config()
+    depends:
+      - configs/nldas_config.yml
