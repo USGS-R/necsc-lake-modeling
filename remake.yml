@@ -7,6 +7,7 @@ packages:
 sources:
   - scripts/lake_summary_locations.R
   - scripts/lake_summary_nldas.R
+  - scripts/get_raw_nldas_nc.R
 
 targets:
   ## 'all' is a special target that will be used as the default
@@ -24,3 +25,9 @@ targets:
 
   nldas_config:
     command: load_config("configs/NLDAS_config.yml")
+
+  nldas_grid:
+    command: calc_nldas_grid(nldas_config, nhd_config)
+
+  nhd_config:
+    command: load_config("configs/NHD_config.yml")

@@ -1,12 +1,11 @@
 library(geoknife)
 
-get_nldas_grid <- function(times = c("1979-01-01 UTC", "2016-01-19 UTC")){
+calc_nldas_grid <- function(nldas_config, nhd_config){
   # mock up huge request in order to get the nccopy response as an exception from GDP:
   datasetURI <- 'dods://hydro1.sci.gsfc.nasa.gov/dods/NLDAS_FORA0125_H.002'
-  vars <- c('dlwrfsfc','pressfc','apcpsfc','vgrd10m','ugrd10m','dswrfsfc','spfh2m','tmp2m')
+  vars <- nldas_config$sub_variables
   
-  config <- load_nhd_config()
-  states <- sapply(config$states, function(x) x$name)
+  states <- sapply(nhd_config$states, function(x) x$name)
   stencil <- webgeom(paste0('state::',paste(states,collapse=',')))
   fabric <- webdata(url=datasetURI, variables=vars, times=times)
   knife <- webprocess(algorithm=list(`OPeNDAP Subset`="gov.usgs.cida.gdp.wps.algorithm.FeatureCoverageOPeNDAPIntersectionAlgorithm"), OUTPUT_TYPE="netcdf")

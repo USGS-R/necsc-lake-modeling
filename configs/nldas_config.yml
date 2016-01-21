@@ -1,4 +1,4 @@
-times: ["2001-01-01","2001-01-02"]
-variables: ["apcpsfc","dswrfsfc"]
+data_times: ["2001-01-01","2001-01-02"]
+data_variables: ["apcpsfc","dswrfsfc"]
 wps_url: "http://cida-test.er.usgs.gov/gdp/process/WebProcessingService"
 data_url: "dods://cida-eros-netcdfdev.er.usgs.gov:8080/thredds/dodsC/thredds/nldas_miwimn/nldas_miwimn.ncml"
