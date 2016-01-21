@@ -23,6 +23,4 @@ targets:
     command: lake_summary_locations()
 
   nldas_config:
-    command: load_nldas_config()
-    depends:
-      - configs/nldas_config.yml
+    command: load_config("configs/NLDAS_config.yml")

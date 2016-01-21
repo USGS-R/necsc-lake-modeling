@@ -1,10 +1,9 @@
 library(geoknife)
 library(yaml)
 
-load_nldas_config <- function(){
-  yaml.load_file("configs/nldas_config.yml")
+load_config <- function(data.source='NLDAS'){
+  yaml.load_file(data.source)
 }
-
 
 lake_summary_nldas <- function(project_lake_locations, config){
   
