@@ -41,12 +41,19 @@ calc_nldas_files <- function(nldas_config, nhd_config){
   time.files <- sprintf(paste0(sprintf("NLDAS_%i.%i",start.i,end.i),'_%s.%s_%s.%s_'), lat[1], lat[2], lon[1], lon[2])
   files <- as.vector(unlist(sapply(time.files,paste0, vars,'.nc')))
   
-  cat(files, file='data/NLDAS_sub/NLDAS_file_list.tsv', sep = '\t', append = FALSE)
+  cat(files,'\n', file='data/NLDAS_sub/NLDAS_file_list.tsv', sep = '\t', append = FALSE)
 }
 
 nccopy_nldas <- function(file='data/NLDAS_sub/NLDAS_file_list.tsv'){
-  nc.message <- 'copying files from NLDAS to...'
-  cat(nc.message, file='data/NLDAS_sub/NLDAS_sub_status.txt', append = FALSE)
+  
+  mssg.file <- 'data/NLDAS_sub/NLDAS_sub_status.txt'
+  files <- read.table(file, sep='\t', stringsAsFactors = FALSE, header=FALSE, col.names=FALSE)
+  cat('index of files contains', nrow(files), file=mssg.file, append = FALSE)
+  
+  cat('\nX files are new...', file=mssg.file, append = TRUE)
+  cat('\nY files are on the server but are no longer used and should be removed...', file=mssg.file, append = TRUE)
+  
+  
 #   years <- seq(1979,length.out = length(start.i)) # start year is hardcoded!
 #   
 #   lat.i <- sprintf('[%s:1:%s]', grids$lat[1], grids$lat[2])
