@@ -38,4 +38,5 @@ for (i in 1:length(states)) {
   }
   
 }
+setwd("../lakeattributes/data-raw/secchi")
 write.csv(secchi, file = "secchi.csv",row.names=FALSE)
