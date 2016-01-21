@@ -1,5 +1,18 @@
 library(geoknife)
 
+
+create_nldas_ncml <- function(nldas_config, file='data/NLDAS_sub/nldas_miwimn.ncml'){
+  
+  ncml <- newXMLNode('netcdf', namespace=c(xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"))
+  agg <- newXMLNode('aggregation', parent = ncml, attrs = c(type="union"))
+  vars <- nldas_config$sub_variables
+  for (var in vars){
+    nc <- newXMLNode('netcdf', parent = agg)
+    join <- newXMLNode('aggregation', parent = nc, attrs=c(type="joinExisting", dimName="time"))
+    newXMLNode('scan', parent = join, attrs=c(location=".", suffix=sprintf("_%s.nc",var)))
+  }
+  saveXML(ncml, file = file)
+}
 calc_nldas_grid <- function(nldas_config, nhd_config){
   # mock up huge request in order to get the nccopy response as an exception from GDP:
   datasetURI <- nldas_config$nldas_url

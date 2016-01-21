@@ -2,6 +2,7 @@ packages:
   - yaml
   - dplyr
   - geoknife
+  - XML
   
 ## All R files that are used must be listed here:
 sources:
@@ -16,9 +17,13 @@ targets:
   all:
     depends: 
       - data/nldas_lakes.txt
+      - data/NLDAS_sub/nldas_miwimn.ncml
 
   data/nldas_lakes.txt:
     command: lake_summary_nldas(project_lake_locations, nldas_config)
+
+  data/NLDAS_sub/nldas_miwimn.ncml:
+    command: create_nldas_ncml(nldas_config)
 
   project_lake_locations:
     command: lake_summary_locations()
@@ -31,3 +36,4 @@ targets:
 
   nhd_config:
     command: load_config("configs/NHD_config.yml")
+
