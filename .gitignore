@@ -10,3 +10,6 @@ vignettes/*.html
 vignettes/*.pdf
 .Rproj.user
 mydata.RData
+**.DS_Store
+*.remake/
+*.Rproj
