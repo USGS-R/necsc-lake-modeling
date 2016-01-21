@@ -1,5 +1,3 @@
-This is the ncml file used to aggregate the NLDAS MIWIMN data
-```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
     <aggregation type="union">    
@@ -45,4 +43,3 @@ This is the ncml file used to aggregate the NLDAS MIWIMN data
 		</netcdf>
 	</aggregation>	
 </netcdf>
-```
