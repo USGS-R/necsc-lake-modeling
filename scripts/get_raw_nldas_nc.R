@@ -14,7 +14,7 @@ create_nldas_ncml <- function(nldas_config, file='data/NLDAS_sub/nldas_miwimn.nc
   saveXML(ncml, file = file)
 }
 
-calc_nldas_grid <- function(nldas_config, nhd_config){
+calc_nldas_files <- function(nldas_config, nhd_config){
   # mock up huge request in order to get the nccopy response as an exception from GDP:
   datasetURI <- nldas_config$nldas_url
   vars <- nldas_config$sub_variables
@@ -29,7 +29,7 @@ calc_nldas_grid <- function(nldas_config, nhd_config){
   get_grid <- function(data){
     strsplit(strsplit(strsplit(data,'[[]')[[1]][2],'[]]')[[1]],'[:]')[[1]][-2]
   }
-  'NLDAS_0.1000_2.14_303.400_dlwrfsfc.nc'
+  
   lon <- get_grid(grid.data[1])
   time <- get_grid(grid.data[2])
   lat <- get_grid(grid.data[3])
@@ -37,7 +37,8 @@ calc_nldas_grid <- function(nldas_config, nhd_config){
   start.i <- seq(as.numeric(grids$time[1]),to = as.numeric(grids$time[2]), by = nldas_config$sub_split)
   end.i <- c(tail(start.i-1,-1), as.numeric(grids$time[2]))
   
-  time.files <- sprintf(paste0("NLDAS_",start.i,'.',end.i,'_%s.%s_%s.%s_'), lat[1], lat[2], lon[1], lon[2])
+  # creates file string: "NLDAS_291000.291999_132.196_221.344_"
+  time.files <- sprintf(paste0(sprintf("NLDAS_%i.%i",start.i,end.i),'_%s.%s_%s.%s_'), lat[1], lat[2], lon[1], lon[2])
   files <- as.vector(unlist(sapply(time.files,paste0, vars,'.nc')))
   
   cat(files, file='data/NLDAS_sub/NLDAS_file_list.tsv', sep = '\t', append = FALSE)
