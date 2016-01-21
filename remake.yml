@@ -28,11 +28,14 @@ targets:
   project_lake_locations:
     command: lake_summary_locations()
 
+  data/NLDAS_sub/NLDAS_file_list.tsv:
+    command: calc_nldas_grid(nldas_config, nhd_config)
+
+  data/NLDAS_sub/NLDAS_sub_status.txt:
+    command: nccopy_nldas("data/NLDAS_sub/NLDAS_file_list.tsv")
+
   nldas_config:
     command: load_config("configs/NLDAS_config.yml")
-
-  nldas_grid:
-    command: calc_nldas_grid(nldas_config, nhd_config)
 
   nhd_config:
     command: load_config("configs/NHD_config.yml")
