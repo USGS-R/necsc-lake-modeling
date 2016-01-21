@@ -2,7 +2,7 @@ library(geoknife)
 
 calc_nldas_grid <- function(nldas_config, nhd_config){
   # mock up huge request in order to get the nccopy response as an exception from GDP:
-  datasetURI <- 'dods://hydro1.sci.gsfc.nasa.gov/dods/NLDAS_FORA0125_H.002'
+  datasetURI <- nldas_config$nldas_url
   vars <- nldas_config$sub_variables
   
   states <- sapply(nhd_config$states, function(x) x$name)
@@ -36,7 +36,7 @@ nccopy_nldas <- function(grids){
     for (var in vars){
       time.i <- sprintf('[%s:1:%s]', start.i[i], end.i[i])
       
-      url <- sprintf('http://hydro1.sci.gsfc.nasa.gov/dods/NLDAS_FORA0125_H.002?lon%s,time%s,lat%s,%s%s%s%s', lon.i, lat.i, time.i, var, time.i, lat.i, lon.i)
+      url <- sprintf('%s?lon%s,time%s,lat%s,%s%s%s%s', nldas_config$nldas_url, lon.i, lat.i, time.i, var, time.i, lat.i, lon.i)
       # use 15m option for triple the buffer size  [-m n] memory buffer size (default 5 Mbytes)
       file.name <- sprintf('%s/NLDAS_%s_%s.nc',temp.dir, year, var)
       if(file.exists(sprintf('/Volumes/Seagate Backup Plus Drive/data/NLDAS/%s.gz',basename(file.name)))){
