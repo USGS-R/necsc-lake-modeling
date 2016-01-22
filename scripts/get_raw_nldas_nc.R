@@ -59,6 +59,9 @@ nldas_server_files <- function(){
 
 nccopy_nldas <- function(file='data/NLDAS_sub/NLDAS_file_list.tsv'){
   
+  loadConfig()
+  
+  opt <- options()$necsc
   mssg.file <- 'data/NLDAS_sub/NLDAS_sub_status.txt'
   files <- strsplit(readLines(file, n = -1),'\t')[[1]]
   server.files <- nldas_server_files()
@@ -71,21 +74,23 @@ nccopy_nldas <- function(file='data/NLDAS_sub/NLDAS_file_list.tsv'){
   # if files are on the server and won't be used, STOP!!
   if (length(rm.files) > 0){
     cat(sprintf('\n%s files are on the server but are no longer used and can be removed...',length(rm.files)), file=mssg.file, append = TRUE)
+    message(sprintf('remove: %s',paste(paste0(opt$thredds_dir,rm.files), collapse=' ')))
     stop(sprintf('\n%s files are on the server but are no longer used and can be removed...',length(rm.files)))
   }
-  
-  
-  ._d <- sapply(sprintf('remove: %s',rm.files), message)
-  rm(._d)
   
   write_grid <- function(x){
     v <- strsplit(x,'[.]')[[1]]
     sprintf("[%s:1:%s]",v[1],v[2])
   }
+    
+  nldas_config <- load_config("configs/NLDAS_config.yml")
+  #for (file in new.files){
+  new.files = new.files[1:14]  
   
-    
-  for (file in new.files){
-    
+  registerDoMC(cores=4)
+  
+  foreach(file=new.files) %dopar% {
+      
     local.nc.file <- file.path(tempdir(), file)
     
     
@@ -94,17 +99,26 @@ nccopy_nldas <- function(file='data/NLDAS_sub/NLDAS_file_list.tsv'){
     lon.i = write_grid(file.chunks[4])
     time.i = write_grid(file.chunks[2])
     var = strsplit(file.chunks[5],'[.]')[[1]][1]
-    cat(sprintf('\n** nccopy %s%s to %s...', var, time.i, local.nc.file), file=mssg.file, append = TRUE)
-    url <- sprintf('%s?lon%s,time%s,lat%s,%s%s%s%s', nldas_config$nldas_url, lon.i, time.i, lat.i, var, time.i, lat.i, lon.i)
+    
+    url <- sprintf('http%s?lon%s,time%s,lat%s,%s%s%s%s', substr(nldas_config$nldas_url, 5, stop = nchar(nldas_config$nldas_url)), lon.i, time.i, lat.i, var, time.i, lat.i, lon.i)
     
     # to tempfolder...
-    # // output <- system(sprintf("nccopy -m 15m %s %s", url, local.nc.file))
-    output = F
+    output <- system(sprintf("nccopy -m 15m %s %s", url, local.nc.file))
+    cat(sprintf('\n** nccopy %s%s to %s...', var, time.i, local.nc.file), file=mssg.file, append = TRUE)
     if (!output){
       cat('done! **', file=mssg.file, append = TRUE)
+      
+      output <- system(sprintf('rsync -rP --rsync-path="sudo -u tomcat rsync" %s %s@cida-eros-netcdfdev.er.usgs.gov:%s%s', local.nc.file, opt$necsc_user, opt$thredds_dir, file),
+                       ignore.stdout = TRUE, ignore.stderr = TRUE)
       cat('\n** transferring file to thredds server...', file=mssg.file, append = TRUE)
       #rsync, and verify that is good
-      cat('done! **', file=mssg.file, append = TRUE)
+      if (!output){
+        cat('done! **', file=mssg.file, append = TRUE)
+        message('rsync of ',file, ' complete! ', Sys.time())
+      } else {
+        cat(url, ' FAILED **', file=mssg.file, append = TRUE)
+      }
+      
     } else {
       cat(url, ' FAILED **', file=mssg.file, append = TRUE)
     }
