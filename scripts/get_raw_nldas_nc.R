@@ -79,26 +79,30 @@ nccopy_nldas <- function(file='data/NLDAS_sub/NLDAS_file_list.tsv'){
     
   for (file in new.files){
     
-    cat(sprintf('\n** transferring %s to thredds server...',file), file=mssg.file, append = TRUE)
+    local.nc.file <- file.path(tempdir(), file)
+    
     
     file.chunks <- strsplit(file,'[_]')[[1]]
     lat.i = write_grid(file.chunks[3])
     lon.i = write_grid(file.chunks[4])
     time.i = write_grid(file.chunks[2])
     var = strsplit(file.chunks[5],'[.]')[[1]][1]
+    cat(sprintf('\n** nccopy %s%s to %s...', var, time.i, local.nc.file), file=mssg.file, append = TRUE)
     url <- sprintf('%s?lon%s,time%s,lat%s,%s%s%s%s', nldas_config$nldas_url, lon.i, time.i, lat.i, var, time.i, lat.i, lon.i)
+    
     # to tempfolder...
     # // output <- system(sprintf("nccopy -m 15m %s %s", url, local.nc.file))
     output = F
     if (!output){
+      cat('done! **', file=mssg.file, append = TRUE)
+      cat('\n** transferring file to thredds server...', file=mssg.file, append = TRUE)
       #rsync, and verify that is good
-      
       cat('done! **', file=mssg.file, append = TRUE)
     } else {
       cat(url, ' FAILED **', file=mssg.file, append = TRUE)
     }
     
-    # //unlink(local.nc.file)
+    unlink(local.nc.file)
     
     
   }
