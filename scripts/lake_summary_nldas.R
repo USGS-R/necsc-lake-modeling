@@ -1,7 +1,7 @@
 library(geoknife)
 library(yaml)
 
-load_config <- function(data.source='NLDAS'){
+load_config <- function(data.source="configs/NLDAS_config.yml"){
   yaml.load_file(data.source)
 }
 

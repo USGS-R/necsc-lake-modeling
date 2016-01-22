@@ -44,14 +44,30 @@ calc_nldas_files <- function(nldas_config, nhd_config){
   cat(files,'\n', file='data/NLDAS_sub/NLDAS_file_list.tsv', sep = '\t', append = FALSE)
 }
 
+nldas_server_files <- function(){
+  config <- load_config("configs/NLDAS_config.yml")
+  server.data <- xmlParse(config$catalog_url, useInternalNodes = T)
+  
+  nsDefs <- xmlNamespaceDefinitions(server.data )
+  ns <- structure(sapply(nsDefs, function(x) x$uri), names = names(nsDefs))
+  names(ns)[1] <- "xmlns"
+  ncdf.datasets <- getNodeSet(server.data,'/xmlns:catalog/xmlns:dataset/xmlns:dataset[substring(@name, string-length(@name) - string-length(".nc") +1) = ".nc"]', ns)
+  ncdf.files <- unlist(xmlApply(ncdf.datasets, function(x) xmlAttrs(x)[['name']]))
+  return(ncdf.files)
+}
+
 nccopy_nldas <- function(file='data/NLDAS_sub/NLDAS_file_list.tsv'){
   
   mssg.file <- 'data/NLDAS_sub/NLDAS_sub_status.txt'
-  files <- read.table(file, sep='\t', stringsAsFactors = FALSE, header=FALSE, col.names=FALSE)
-  cat('index of files contains', nrow(files), file=mssg.file, append = FALSE)
+  files <- strsplit(readLines(file, n = -1),'\t')[[1]]
+  server.files <- nldas_server_files()
+  cat('index of files contains', length(files), file=mssg.file, append = FALSE)
   
-  cat('\nX files are new...', file=mssg.file, append = TRUE)
-  cat('\nY files are on the server but are no longer used and should be removed...', file=mssg.file, append = TRUE)
+  new.files <- setdiff(files, server.files)
+  rm.files <- setdiff(server.files, files)
+  
+  cat(sprintf('\n%s files are new...',length(new.files)), file=mssg.file, append = TRUE)
+  cat(sprintf('\n%s files are on the server but are no longer used and should be removed...',length(rm.files)), file=mssg.file, append = TRUE)
   
   
 #   years <- seq(1979,length.out = length(start.i)) # start year is hardcoded!
