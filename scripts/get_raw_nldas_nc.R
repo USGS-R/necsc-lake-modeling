@@ -84,8 +84,6 @@ nccopy_nldas <- function(file='data/NLDAS_sub/NLDAS_file_list.tsv'){
   }
     
   nldas_config <- load_config("configs/NLDAS_config.yml")
-  #for (file in new.files){
-  new.files = new.files[1:14]  
   
   registerDoMC(cores=4)
   
