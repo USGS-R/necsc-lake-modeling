@@ -67,40 +67,41 @@ nccopy_nldas <- function(file='data/NLDAS_sub/NLDAS_file_list.tsv'){
   rm.files <- setdiff(server.files, files)
   
   cat(sprintf('\n%s files are new...',length(new.files)), file=mssg.file, append = TRUE)
-  cat(sprintf('\n%s files are on the server but are no longer used and should be removed...',length(rm.files)), file=mssg.file, append = TRUE)
+  cat(sprintf('\n%s files are on the server but are no longer used and can be removed...',length(rm.files)), file=mssg.file, append = TRUE)
+  ._d <- sapply(sprintf('remove: %s',rm.files), message)
+  rm(._d)
   
+  write_grid <- function(x){
+    v <- strsplit(x,'[.]')[[1]]
+    sprintf("[%s:1:%s]",v[1],v[2])
+  }
   
-#   years <- seq(1979,length.out = length(start.i)) # start year is hardcoded!
-#   
-#   lat.i <- sprintf('[%s:1:%s]', grids$lat[1], grids$lat[2])
-#   lon.i <- sprintf('[%s:1:%s]', grids$lon[1], grids$lon[2])
-#   
-#   temp.dir <- tempdir()
-#   for (i in 1:length(years)){
-#     year <- years[i]
-#     message('working in ',temp.dir,' for ',year)
-#     for (var in vars){
-#       time.i <- sprintf('[%s:1:%s]', start.i[i], end.i[i])
-#       
-#       url <- sprintf('%s?lon%s,time%s,lat%s,%s%s%s%s', nldas_config$nldas_url, lon.i, lat.i, time.i, var, time.i, lat.i, lon.i)
-#       # use 15m option for triple the buffer size  [-m n] memory buffer size (default 5 Mbytes)
-#       file.name <- sprintf('%s/NLDAS_%s_%s.nc',temp.dir, year, var)
-#       if(file.exists(sprintf('/Volumes/Seagate Backup Plus Drive/data/NLDAS/%s.gz',basename(file.name)))){
-#         message('****\nSKIPPING ',var,'\nfor ',year,', file exists\n****')
-#       } else{
-#         output <- system(sprintf("nccopy -m 15m %s %s", url, file.name))
-#         if (!output){
-#           zipped.file <- R.utils::gzip(filename=file.name)
-#           file.copy(from = zipped.file[1],  to = sprintf('/Volumes/Seagate Backup Plus Drive/data/NLDAS/%s', basename(zipped.file[1])))
-#           unlink(zipped.file[1])
-#           message(Sys.time())
-#           message('****\ndone with ',var,'\nfor ',year,'\n****')
-#         } else {
-#           message(output)
-#           message('****\nFAILED ',var,'\nfor ',year,'\n****')
-#         }
-#       }
-#     }
-#   }
+    
+  for (file in new.files){
+    
+    cat(sprintf('\n** transferring %s to thredds server...',file), file=mssg.file, append = TRUE)
+    
+    file.chunks <- strsplit(file,'[_]')[[1]]
+    lat.i = write_grid(file.chunks[3])
+    lon.i = write_grid(file.chunks[4])
+    time.i = write_grid(file.chunks[2])
+    var = strsplit(file.chunks[5],'[.]')[[1]][1]
+    url <- sprintf('%s?lon%s,time%s,lat%s,%s%s%s%s', nldas_config$nldas_url, lon.i, time.i, lat.i, var, time.i, lat.i, lon.i)
+    # to tempfolder...
+    # // output <- system(sprintf("nccopy -m 15m %s %s", url, local.nc.file))
+    output = F
+    if (!output){
+      #rsync, and verify that is good
+      
+      cat('done! **', file=mssg.file, append = TRUE)
+    } else {
+      cat(url, ' FAILED **', file=mssg.file, append = TRUE)
+    }
+    
+    # //unlink(local.nc.file)
+    
+    
+  }
+
 }
 
