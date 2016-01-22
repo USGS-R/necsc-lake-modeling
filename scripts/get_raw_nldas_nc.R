@@ -44,6 +44,7 @@ calc_nldas_files <- function(nldas_config, nhd_config){
   cat(files,'\n', file='data/NLDAS_sub/NLDAS_file_list.tsv', sep = '\t', append = FALSE)
 }
 
+## use rsync dry run to get a list of what the dry run found for the file list, and what shouldn't be there.
 nldas_server_files <- function(){
   config <- load_config("configs/NLDAS_config.yml")
   server.data <- xmlParse(config$catalog_url, useInternalNodes = T)
@@ -67,7 +68,13 @@ nccopy_nldas <- function(file='data/NLDAS_sub/NLDAS_file_list.tsv'){
   rm.files <- setdiff(server.files, files)
   
   cat(sprintf('\n%s files are new...',length(new.files)), file=mssg.file, append = TRUE)
-  cat(sprintf('\n%s files are on the server but are no longer used and can be removed...',length(rm.files)), file=mssg.file, append = TRUE)
+  # if files are on the server and won't be used, STOP!!
+  if (length(rm.files) > 0){
+    cat(sprintf('\n%s files are on the server but are no longer used and can be removed...',length(rm.files)), file=mssg.file, append = TRUE)
+    stop(sprintf('\n%s files are on the server but are no longer used and can be removed...',length(rm.files)))
+  }
+  
+  
   ._d <- sapply(sprintf('remove: %s',rm.files), message)
   rm(._d)
   
