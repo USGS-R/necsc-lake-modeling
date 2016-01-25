@@ -4,15 +4,22 @@
 #' 
 lake_summary_locations <- function(){
   
-  # --- PLACEHOLDER!!!
-  warning('placeholder code')
-  return(data.frame(permID=c('perm.1','perm.23'), lat=c(42.3,45.6), lon=c(-89.1,-93.1)))
+  sites <- read.csv('data/NHD_summ/nhd_centroids.csv', stringsAsFactors = FALSE)
+  return(sites[c('permID','lon','lat')])
   #return(simplegeom(data.frame(point1=c(-89.1,43.2), point2=c(-93.1, 45.1))))
 }
 
 stencil_from_id <- function(permIDs){
   
-  # --- PLACEHOLDER!!!
-  warning('placeholder code')
-  simplegeom(data.frame('perm.1'=c(-89.1,43.2), 'perm.23'=c(-93.1, 45.1)))
+  sites <- read.csv('data/NHD_summ/nhd_centroids.csv', stringsAsFactors = FALSE)
+  for (i in 1:length(permIDs)){
+    site <- sites[sites$permID == permIDs[i],]
+    df <- data.frame(c(site$lon, site$lat))
+    names(df) <- permIDs[i]
+    if (i == 1)
+      geom <- df
+    else 
+      geom <- cbind(geom, df)
+  }
+  simplegeom(geom)
 }
