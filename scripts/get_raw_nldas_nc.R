@@ -1,5 +1,14 @@
-library(geoknife)
 
+loadConfig()
+
+opt <- options()$necsc
+
+sync_ncml <- function(file){
+  server.file <- tail(strsplit(file,'[/]')[[1]],1)
+  output <- system(sprintf('rsync -rP --rsync-path="sudo -u tomcat rsync" %s %s@cida-eros-netcdfdev.er.usgs.gov:%s%s', file, opt$necsc_user, opt$thredds_dir, file),
+                   ignore.stdout = TRUE, ignore.stderr = TRUE)
+  return(output)
+}
 
 create_nldas_ncml <- function(nldas_config, file='data/NLDAS_sub/nldas_miwimn.ncml'){
   
@@ -59,9 +68,6 @@ nldas_server_files <- function(){
 
 nccopy_nldas <- function(file='data/NLDAS_sub/NLDAS_file_list.tsv'){
   
-  loadConfig()
-  
-  opt <- options()$necsc
   mssg.file <- 'data/NLDAS_sub/NLDAS_sub_status.txt'
   files <- strsplit(readLines(file, n = -1),'\t')[[1]]
   server.files <- nldas_server_files()

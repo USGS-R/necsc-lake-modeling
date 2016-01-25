@@ -8,10 +8,11 @@ packages:
   
 ## All R files that are used must be listed here:
 sources:
+  - scripts/load_config.R
   - scripts/lake_summary_locations.R
   - scripts/lake_summary_nldas.R
   - scripts/get_raw_nldas_nc.R
-  - scripts/load_config.R
+
 
 targets:
   ## 'all' is a special target that will be used as the default
