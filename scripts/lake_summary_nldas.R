@@ -1,16 +1,15 @@
 library(geoknife)
 library(yaml)
 
-load_nldas_config <- function(){
-  yaml.load_file("configs/nldas_config.yml")
+load_config <- function(data.source="configs/NLDAS_config.yml"){
+  yaml.load_file(data.source)
 }
-
 
 lake_summary_nldas <- function(project_lake_locations, config){
   
   knife = webprocess(url=config$wps_url)
   
-  fabric = webdata(url=config$data_url, variable=config$variables, times=config$times)
+  fabric = webdata(url=config$data_url, variable=config$data_variables, times=config$data_times)
   
   # here we should check what files already exist and pare down the requests to be shaped
   
