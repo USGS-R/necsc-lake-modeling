@@ -15,6 +15,7 @@ The building of the files is tracked from their raw (canonical) data sources and
 | `NLDAS_summ`    | `NLDAS_data` is summarized into a .tsv hosted in this repository |
 | `clarity_data`  | Water clarity data from the [Water Quality Portal](http://waterqualitydata.us/) and mapped to permIDs in `NHD_summ` |
 | `clarity_summ`  | `clarity_data` is summarized into a .tsv hosted in this repository |
+| `depth_data`  | Lake depth data mapped to permIDs in `NHD_summ` |
 | `temperature_data`  | Water temperature data from the [Water Quality Portal](http://waterqualitydata.us/) and mapped to permIDs in `NHD_summ` |
 | `temperature_summ`  | `clarity_data` is summarized into a .tsv hosted in this repository |
 
