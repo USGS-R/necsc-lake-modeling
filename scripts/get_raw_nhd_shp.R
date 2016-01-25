@@ -4,17 +4,8 @@
 # adds a column for the state name
 # writes out a shapefile
 
-library(yaml)
-library(rgdal)
-library(plyr)
-library(dplyr)
 
-load_nhd_config <- function(){
-  yaml.load_file("config.yml")
-}
-
-write_nhd_shp <- function(){
-  config = load_nhd_config
+write_nhd_shp <- function(config){
   serviceEndpoint <- config$serviceEndpoint
   prefix <- config$filename_prefix
   res <- config$filename_resolution
@@ -22,14 +13,16 @@ write_nhd_shp <- function(){
   states <- config$states
   filename=""
   
+  temp.dir <- tempdir()
   for (i in 1:length(states)) {
     stateList <- states[[i]]
     filename[i] <- paste0(prefix,"_",res,"_",stateList[2],"_",stateList[1],"_",suffix)
-    download.file(url=paste0(serviceEndpoint,filename[i]), destfile = paste0(getwd(),"/data/",filename[i]), method="libcurl", quiet=FALSE)
-    unzip(zipfile = paste0(getwd(),"/data/",filename[i]), exdir="data")
+    download.file(url=paste0(serviceEndpoint,filename[i]), destfile = file.path(temp.dir,filename[i]), method="libcurl", quiet=FALSE)
+    shps <- unzip(zipfile = file.path(temp.dir, filename[i]), exdir="data")
     split <- unlist(strsplit(filename[i],"\\."))
-    fc <- readOGR(dsn=paste0(getwd(),"/data/",split[[1]],"/",split[[1]],".gdb"),layer="NHDWaterbody")
+    fc <- readOGR(dsn=shps,layer="NHDWaterbody")
     fc$state <- as.character(states[[i]][1])
     writeOGR(fc,dsn = paste0(getwd(),"/data"), driver = "ESRI Shapefile",layer=paste0("NHDWaterbody_",stateList[1]),overwrite_layer = TRUE)
   }
+  return(temp.dir)
 }
