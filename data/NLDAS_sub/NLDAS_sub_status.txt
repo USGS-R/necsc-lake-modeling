@@ -1,6 +1,18 @@
 index of files contains 2600
-2 files are new...
-** nccopy apcpsfc[293000:1:293999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_293000.293999_132.196_221.344_apcpsfc.nc...done! **
+8 files are new...
+** nccopy vgrd10m[324000:1:324815] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_324000.324815_132.196_221.344_vgrd10m.nc...done! **
+** nccopy apcpsfc[324000:1:324815] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_324000.324815_132.196_221.344_apcpsfc.nc...done! **
+** nccopy dlwrfsfc[324000:1:324815] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_324000.324815_132.196_221.344_dlwrfsfc.nc...done! **
 ** transferring file to thredds server...done! **
-** nccopy spfh2m[58000:1:58999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_58000.58999_132.196_221.344_spfh2m.nc...done! **
+** transferring file to thredds server...done! **
+** nccopy pressfc[324000:1:324815] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_324000.324815_132.196_221.344_pressfc.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** nccopy spfh2m[324000:1:324815] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_324000.324815_132.196_221.344_spfh2m.nc...done! **
+** nccopy ugrd10m[324000:1:324815] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_324000.324815_132.196_221.344_ugrd10m.nc...done! **
+** nccopy tmp2m[324000:1:324815] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_324000.324815_132.196_221.344_tmp2m.nc...done! **
+** nccopy dswrfsfc[324000:1:324815] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_324000.324815_132.196_221.344_dswrfsfc.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
 ** transferring file to thredds server...done! **

@@ -1,4 +1,4 @@
-sub_times: ["1979-01-01 UTC", "2016-01-19 UTC"]
+sub_times: ["1979-01-01 UTC", "2016-01-25 UTC"]
 sub_variables: ['dlwrfsfc','pressfc','apcpsfc','vgrd10m','ugrd10m','dswrfsfc','spfh2m','tmp2m']
 nldas_url: "dods://hydro1.sci.gsfc.nasa.gov/dods/NLDAS_FORA0125_H.002"
 data_times: ["2001-01-01","2001-01-02"]
