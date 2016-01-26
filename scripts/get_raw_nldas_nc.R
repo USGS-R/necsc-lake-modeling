@@ -12,7 +12,7 @@ sync_ncml <- function(file){
 
 create_nldas_ncml <- function(nldas_config, file='data/NLDAS_sub/nldas_miwimn.ncml'){
   
-  ncml <- newXMLNode('netcdf', namespace=(xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"))
+  ncml <- newXMLNode('netcdf', namespace=c(xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"))
   agg <- newXMLNode('aggregation', parent = ncml, attrs = c(type="union"))
   vars <- nldas_config$sub_variables
   for (var in vars){
