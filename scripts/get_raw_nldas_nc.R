@@ -5,14 +5,14 @@ opt <- options()$necsc
 
 sync_ncml <- function(file){
   server.file <- tail(strsplit(file,'[/]')[[1]],1)
-  output <- system(sprintf('rsync -rP --rsync-path="sudo -u tomcat rsync" %s %s@cida-eros-netcdfdev.er.usgs.gov:%s%s', file, opt$necsc_user, opt$thredds_dir, file),
+  output <- system(sprintf('rsync -rP --rsync-path="sudo -u tomcat rsync" %s %s@cida-eros-netcdfdev.er.usgs.gov:%s%s', file, opt$necsc_user, opt$thredds_dir, server.file),
                    ignore.stdout = TRUE, ignore.stderr = TRUE)
   return(output)
 }
 
 create_nldas_ncml <- function(nldas_config, file='data/NLDAS_sub/nldas_miwimn.ncml'){
   
-  ncml <- newXMLNode('netcdf', namespace=c(xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"))
+  ncml <- newXMLNode('netcdf', namespace=(xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"))
   agg <- newXMLNode('aggregation', parent = ncml, attrs = c(type="union"))
   vars <- nldas_config$sub_variables
   for (var in vars){
