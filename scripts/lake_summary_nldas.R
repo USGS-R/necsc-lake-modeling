@@ -5,10 +5,6 @@ load_config <- function(data.source="configs/NLDAS_config.yml"){
   yaml.load_file(data.source)
 }
 
-parse_driver_file_names <- function(files){
-  'NLDAS_10595408_19790101.19891231_dlwrfsfc'
-}
-
 lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv'){
   mssg.file <- 'data/NLDAS_data/NLDAS_driver_status.txt'
   files <- strsplit(readLines(file, n = -1),'\t')[[1]]
@@ -28,6 +24,8 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
   #new.files <- setdiff(files, server.files)
   #rm.files <- setdiff(server.files, files)
   new.files <- files
+  if (length(files) == 0)
+    return()
   
   config <- load_config("configs/NLDAS_config.yml")
   
