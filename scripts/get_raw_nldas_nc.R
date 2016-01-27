@@ -7,20 +7,27 @@ sync_ncml <- function(file){
   server.file <- tail(strsplit(file,'[/]')[[1]],1)
   output <- system(sprintf('rsync -rP --rsync-path="sudo -u tomcat rsync" %s %s@cida-eros-netcdfdev.er.usgs.gov:%s%s', file, opt$necsc_user, opt$thredds_dir, server.file),
                    ignore.stdout = TRUE, ignore.stderr = TRUE)
-  return(output)
+  if (!output)
+    invisible(output)
+  else 
+    stop(output)
 }
 
-create_nldas_ncml <- function(nldas_config, file='data/NLDAS_sub/nldas_miwimn.ncml'){
-  
-  ncml <- newXMLNode('netcdf', namespace=c(xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"))
+create_nldas_ncml <- function(file='data/NLDAS_sub/NLDAS_file_list.tsv'){
+  files <- strsplit(readLines(file, n = -1),'\t')[[1]]
+  times <- unique(unname(sapply(files,function(x) paste(strsplit(x, '[_]')[[1]][1:4], collapse='_'))))
+  vars <- unique(unname(sapply(files,function(x) paste(strsplit(tail(strsplit(x, '[_]')[[1]],1),'[.]')[[1]][1], collapse='_'))))
+
+  ncml <- newXMLNode('netcdf', namespace=c("http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2", xlink="http://www.w3.org/1999/xlink"))
   agg <- newXMLNode('aggregation', parent = ncml, attrs = c(type="union"))
-  vars <- nldas_config$sub_variables
   for (var in vars){
-    nc <- newXMLNode('netcdf', parent = agg)
-    join <- newXMLNode('aggregation', parent = nc, attrs=c(type="joinExisting", dimName="time"))
-    newXMLNode('scan', parent = join, attrs=c(location=".", suffix=sprintf("_%s.nc",var)))
+    join <- newXMLNode('aggregation', parent = agg, attrs=c(type="joinExisting", dimName="time"))
+    for (t in times){
+      newXMLNode('netcdf', parent = join, attrs=c(location=sprintf("%s_%s.nc", t, var)))
+    }
+    
   }
-  saveXML(ncml, file = file)
+  saveXML(ncml, file = 'data/NLDAS_sub/nldas_miwimn.ncml')
 }
 
 calc_nldas_files <- function(nldas_config, nhd_config){
