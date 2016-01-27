@@ -48,3 +48,7 @@ index of files contains 264
 ** transferring file to thredds server...done! **
 ** transferring file to thredds server...done! **
 ** transferring file to thredds server...done! **
+** nccopy ugrd10m[30000:1:39999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp2UzHiA/NLDAS_30000.39999_132.196_221.344_ugrd10m.nc...done! **
+** nccopy dswrfsfc[30000:1:39999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp2UzHiA/NLDAS_30000.39999_132.196_221.344_dswrfsfc.nc...done! **
+** nccopy spfh2m[30000:1:39999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp2UzHiA/NLDAS_30000.39999_132.196_221.344_spfh2m.nc...done! **
+** nccopy tmp2m[30000:1:39999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp2UzHiA/NLDAS_30000.39999_132.196_221.344_tmp2m.nc...done! **
