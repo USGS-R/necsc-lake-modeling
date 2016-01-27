@@ -45,3 +45,6 @@ index of files contains 264
 ** nccopy pressfc[30000:1:39999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp2UzHiA/NLDAS_30000.39999_132.196_221.344_pressfc.nc...done! **
 ** nccopy vgrd10m[30000:1:39999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp2UzHiA/NLDAS_30000.39999_132.196_221.344_vgrd10m.nc...done! **
 ** nccopy apcpsfc[30000:1:39999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp2UzHiA/NLDAS_30000.39999_132.196_221.344_apcpsfc.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
