@@ -5,8 +5,11 @@
 lake_summary_locations <- function(){
   
   sites <- read.csv('data/NHD_summ/nhd_centroids.csv', stringsAsFactors = FALSE)
-  return(sites[c('permID','lon','lat')])
-  #return(simplegeom(data.frame(point1=c(-89.1,43.2), point2=c(-93.1, 45.1))))
+  
+  message('truncating response. WIP')
+  return(sites[c('permID','lon','lat')][1:10,])
+  
+  
 }
 
 stencil_from_id <- function(permIDs){

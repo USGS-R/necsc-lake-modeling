@@ -21,7 +21,8 @@ create_nldas_ncml <- function(file='data/NLDAS_sub/NLDAS_file_list.tsv'){
   ncml <- newXMLNode('netcdf', namespace=c("http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2", xlink="http://www.w3.org/1999/xlink"))
   agg <- newXMLNode('aggregation', parent = ncml, attrs = c(type="union"))
   for (var in vars){
-    join <- newXMLNode('aggregation', parent = agg, attrs=c(type="joinExisting", dimName="time"))
+    nc <- newXMLNode('netcdf', parent = agg)
+    join <- newXMLNode('aggregation', parent = nc, attrs=c(type="joinExisting", dimName="time"))
     for (t in times){
       newXMLNode('netcdf', parent = join, attrs=c(location=sprintf("%s_%s.nc", t, var)))
     }
