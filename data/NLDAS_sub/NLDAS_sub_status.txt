@@ -79,3 +79,4 @@ index of files contains 264
 ** transferring file to thredds server...done! **
 ** nccopy dswrfsfc[50000:1:59999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp2UzHiA/NLDAS_50000.59999_132.196_221.344_dswrfsfc.nc...done! **
 ** transferring file to thredds server...done! **
+** nccopy pressfc[60000:1:69999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp2UzHiA/NLDAS_60000.69999_132.196_221.344_pressfc.nc...done! **

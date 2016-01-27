@@ -48,8 +48,8 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
         filter(variable == var) %>% 
         select_('DateTime',2)
       local.file <- file.path(temp.dir, file)
-      save(data.site, file=local.file)
-      output <- system(sprintf('rsync -rP --rsync-path="sudo -u tomcat rsync" %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, opt$driver_dir, file),
+      save(data.site, file=local.file, compress="xz")
+      output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, opt$driver_dir, file),
                        ignore.stdout = TRUE, ignore.stderr = TRUE)
       cat('\n** transferring file to driver server...', file=mssg.file, append = TRUE)
       unlink(local.file)
