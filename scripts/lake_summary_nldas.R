@@ -75,10 +75,12 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
   config <- load_config("configs/NLDAS_config.yml")
   
   cat(sprintf('\n%s files are new...',length(new.files)), file=mssg.file, append = TRUE)
-  stop(new.files)
+
   knife = webprocess(url=config$wps_url)
   temp.dir <- tempdir()
-  for (var in vars){
+  registerDoMC(cores=4)
+  
+  foreach(var=vars) %dopar% {
     fabric = webdata(url=config$data_url, variables=var, times=times)
     
     # here we should check what files already exist and pare down the requests to be shaped
