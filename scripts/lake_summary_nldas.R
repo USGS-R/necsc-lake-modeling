@@ -5,14 +5,52 @@ load_config <- function(data.source="configs/NLDAS_config.yml"){
   yaml.load_file(data.source)
 }
 
+sync_driver_index <- function(data.source='NLDAS'){
+  local.file = sprintf('data/%s_summ/%s_driver_index.tsv',data.source,data.source)
+  file = sprintf('%s_driver_index.tsv',data.source,data.source)
+  output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, opt$driver_dir, file),
+                   ignore.stdout = TRUE, ignore.stderr = TRUE)
+  return(output)
+}
+
+driver_server_files <- function(data.source='NLDAS'){
+  output <- system(sprintf('ssh %s@cidasdpdfsuser.cr.usgs.gov ls %s',opt$necsc_user, opt$driver_dir), intern = TRUE, ignore.stderr = TRUE)
+  
+  file.list <- output[grepl(paste0(data.source, '_'), output)]
+  time.start <- parse_driver_file_name(file.list, 'time.start', unique.vals=FALSE)
+  time.start <- unname(sapply(time.start, function(x) paste0(substr(x,1,4),'-',substr(x,5,6),'-',substr(x,7,8))))
+  
+  time.end <- parse_driver_file_name(file.list, 'time.end', unique.vals=FALSE)
+  time.end <- unname(sapply(time.end, function(x) paste0(substr(x,1,4),'-',substr(x,5,6),'-',substr(x,7,8))))
+  
+  file.index <- data.frame('permID' = parse_driver_file_name(file.list, 'perm.ids', unique.vals=FALSE), 
+                           'time.start' = time.start,
+                           'time.end' = time.end,
+                           'variable' = parse_driver_file_name(file.list, 'vars', unique.vals=FALSE),
+                           'file.name' = file.list)
+  
+  write.table(file.index, file = 'data/NLDAS_summ/NLDAS_driver_index.tsv', sep = '\t', row.names = FALSE)
+}
+
+parse_driver_file_name <- function(files, param, unique.vals=TRUE){
+  values = switch(param,
+         perm.ids = sapply(strsplit(files,'[_]'),function(x)x[2]),
+         vars = unname(sapply(sapply(strsplit(files,'[_]'),function(x)x[4]),function(x) strsplit(x,'[.]')[[1]][1])),
+         time.start = unname(sapply(sapply(strsplit(files,'[_]'),function(x)x[3]),function(x) strsplit(x,'[.]')[[1]][1])),
+         time.end = unname(sapply(sapply(strsplit(files,'[_]'),function(x)x[3]),function(x) strsplit(x,'[.]')[[1]][2])))
+  if (unique.vals)
+    values <- unique(values)
+  return(values)
+}
+
 lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv'){
   mssg.file <- 'data/NLDAS_data/NLDAS_driver_status.txt'
   files <- strsplit(readLines(file, n = -1),'\t')[[1]]
   #server.files <- nldas_server_files()
   cat('index of files contains', length(files), file=mssg.file, append = FALSE)
   
-  perm.ids <- unique(sapply(strsplit(files,'[_]'),function(x)x[2]))
-  vars <- unname(sapply(unique(sapply(strsplit(files,'[_]'),function(x)x[4])),function(x) strsplit(x,'[.]')[[1]][1]))
+  perm.ids <- parse_driver_file_name(files, 'perm.ids')
+  vars <- parse_driver_file_name(files, 'vars')
   times <- unname(lapply(unique(sapply(strsplit(files,'[_]'),function(x)x[3])),function(x) strsplit(x,'[.]')[[1]]))
   if (length(times) > 1)
     stop('non-unique time values', times)

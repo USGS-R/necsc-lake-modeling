@@ -25,6 +25,7 @@ targets:
       - data/NLDAS_sub/nldas_miwimn.ncml
       - data/NLDAS_sub/NLDAS_sub_status.txt
       - data/NLDAS_data/NLDAS_driver_status.txt
+      - nldas_index
       - data/NLDAS_data/NLDAS_driver_file_list.tsv
 
   #data/nldas_lakes.txt:
@@ -63,4 +64,12 @@ targets:
 
   data/NLDAS_data/NLDAS_driver_status.txt:
     command: lake_driver_nldas("data/NLDAS_data/NLDAS_driver_file_list.tsv")
+
+  data/NLDAS_summ/NLDAS_driver_index.tsv:
+    command: driver_server_files("NLDAS")
+
+  nldas_index:
+    command: sync_driver_index("NLDAS")
+    depends: 
+      - data/NLDAS_summ/NLDAS_driver_index.tsv
 
