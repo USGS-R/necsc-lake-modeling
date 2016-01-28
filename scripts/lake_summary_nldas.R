@@ -80,7 +80,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
   temp.dir <- tempdir()
   registerDoMC(cores=4)
   
-  foreach(var=vars) %dopar% {
+  for (var in vars){#foreach(var=vars) %dopar% {
     fabric = webdata(url=config$data_url, variables=var, times=times)
     
     # here we should check what files already exist and pare down the requests to be shaped
