@@ -31,9 +31,7 @@ targets:
   #  command: lake_summary_nldas(project_lake_locations, nldas_config)
 
   data/NLDAS_sub/nldas_miwimn.ncml:
-    command: create_nldas_ncml(nldas_config)
-    depends: 
-      - configs/NLDAS_config.yml
+    command: create_nldas_ncml("data/NLDAS_sub/NLDAS_file_list.tsv")
 
   project_lake_locations:
     command: lake_summary_locations()
@@ -65,4 +63,6 @@ targets:
 
   #data/NLDAS_data/NLDAS_driver_status.txt:
   #  command: lake_driver_nldas(data/NLDAS_sub/NLDAS_file_list.tsv)
+  #  depends: 
+  #    - ncml
 
