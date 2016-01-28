@@ -37,7 +37,7 @@ targets:
   project_lake_locations:
     command: lake_summary_locations()
     depends: 
-      - ncml
+      - ncml 
 
   data/NLDAS_sub/NLDAS_file_list.tsv:
     command: calc_nldas_files(nldas_config, nhd_config)
@@ -53,6 +53,9 @@ targets:
   nhd_config:
     command: load_config("configs/NHD_config.yml")
 
+  data/NLDAS_summ/NLDAS_driver_index.tsv:
+    command: driver_server_files()
+
   ncml:
     command: sync_ncml("data/NLDAS_sub/nldas_miwimn.ncml")
 
@@ -65,11 +68,6 @@ targets:
   data/NLDAS_data/NLDAS_driver_status.txt:
     command: lake_driver_nldas("data/NLDAS_data/NLDAS_driver_file_list.tsv")
 
-  data/NLDAS_summ/NLDAS_driver_index.tsv:
-    command: driver_server_files("NLDAS")
-
   nldas_index:
-    command: sync_driver_index("NLDAS")
-    depends: 
-      - data/NLDAS_summ/NLDAS_driver_index.tsv
+    command: sync_driver_index("data/NLDAS_summ/NLDAS_driver_index.tsv")
 
