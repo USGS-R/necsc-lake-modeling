@@ -7,7 +7,7 @@ load_config <- function(data.source="configs/NLDAS_config.yml"){
 
 sync_driver_index <- function(data.source='NLDAS'){
   local.file = sprintf('data/%s_summ/%s_driver_index.tsv',data.source,data.source)
-  file = sprintf('%s_driver_index.tsv',data.source,data.source)
+  file = 'driver_index.tsv'
   output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, opt$driver_dir, file),
                    ignore.stdout = TRUE, ignore.stderr = TRUE)
   return(output)
