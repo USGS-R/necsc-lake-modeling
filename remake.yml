@@ -61,8 +61,6 @@ targets:
   data/NLDAS_data/NLDAS_driver_file_list.tsv:
     command: calc_nldas_driver_files(nldas_config, project_lake_locations)
 
-  #data/NLDAS_data/NLDAS_driver_status.txt:
-  #  command: lake_driver_nldas(data/NLDAS_sub/NLDAS_file_list.tsv)
-  #  depends: 
-  #    - ncml
+  data/NLDAS_data/NLDAS_driver_status.txt:
+    command: lake_driver_nldas("data/NLDAS_data/NLDAS_driver_file_list.tsv")
 

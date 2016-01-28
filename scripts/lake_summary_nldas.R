@@ -47,6 +47,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
       data.site <- data[c('DateTime', perm.id,'variable')] %>% 
         filter(variable == var) %>% 
         select_('DateTime',2)
+      names(data.site) <- c('DateTime', var)
       local.file <- file.path(temp.dir, file)
       save(data.site, file=local.file, compress="xz")
       output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, opt$driver_dir, file),
