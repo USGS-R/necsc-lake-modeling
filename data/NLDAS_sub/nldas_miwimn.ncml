@@ -1,43 +1,88 @@
-<netcdf xmlns:xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" xmlns:xlink="http://www.w3.org/1999/xlink">
   <aggregation type="union">
     <netcdf>
       <aggregation type="joinExisting" dimName="time">
-        <scan location="." suffix="_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_0.9999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_10000.19999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_20000.29999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_30000.39999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_40000.49999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_50000.59999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_60000.69999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_70000.79999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_80000.89999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_90000.99999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_100000.109999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_110000.119999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_120000.129999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_130000.139999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_140000.149999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_150000.159999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_160000.169999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_170000.179999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_180000.189999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_190000.199999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_200000.209999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_210000.219999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_220000.229999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_230000.239999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_240000.249999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_250000.259999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_260000.269999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_270000.279999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_280000.289999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_290000.299999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_300000.309999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_310000.319999_132.196_221.344_dlwrfsfc.nc"/>
+        <netcdf location="NLDAS_320000.324323_132.196_221.344_dlwrfsfc.nc"/>
       </aggregation>
     </netcdf>
     <netcdf>
       <aggregation type="joinExisting" dimName="time">
-        <scan location="." suffix="_pressfc.nc"/>
+        <netcdf location="NLDAS_0.9999_132.196_221.344_pressfc.nc"/>
+        <netcdf location="NLDAS_10000.19999_132.196_221.344_pressfc.nc"/>
+        <netcdf location="NLDAS_20000.29999_132.196_221.344_pressfc.nc"/>
       </aggregation>
     </netcdf>
     <netcdf>
       <aggregation type="joinExisting" dimName="time">
-        <scan location="." suffix="_apcpsfc.nc"/>
+        <netcdf location="NLDAS_0.9999_132.196_221.344_apcpsfc.nc"/>
+        <netcdf location="NLDAS_10000.19999_132.196_221.344_apcpsfc.nc"/>
+        <netcdf location="NLDAS_20000.29999_132.196_221.344_apcpsfc.nc"/>
       </aggregation>
     </netcdf>
     <netcdf>
       <aggregation type="joinExisting" dimName="time">
-        <scan location="." suffix="_vgrd10m.nc"/>
+        <netcdf location="NLDAS_0.9999_132.196_221.344_vgrd10m.nc"/>
+        <netcdf location="NLDAS_10000.19999_132.196_221.344_vgrd10m.nc"/>
+        <netcdf location="NLDAS_20000.29999_132.196_221.344_vgrd10m.nc"/>
       </aggregation>
     </netcdf>
     <netcdf>
       <aggregation type="joinExisting" dimName="time">
-        <scan location="." suffix="_ugrd10m.nc"/>
+        <netcdf location="NLDAS_0.9999_132.196_221.344_ugrd10m.nc"/>
+        <netcdf location="NLDAS_10000.19999_132.196_221.344_ugrd10m.nc"/>
+        <netcdf location="NLDAS_20000.29999_132.196_221.344_ugrd10m.nc"/>
       </aggregation>
     </netcdf>
     <netcdf>
       <aggregation type="joinExisting" dimName="time">
-        <scan location="." suffix="_dswrfsfc.nc"/>
+        <netcdf location="NLDAS_0.9999_132.196_221.344_dswrfsfc.nc"/>
+        <netcdf location="NLDAS_10000.19999_132.196_221.344_dswrfsfc.nc"/>
+        <netcdf location="NLDAS_20000.29999_132.196_221.344_dswrfsfc.nc"/>
       </aggregation>
     </netcdf>
     <netcdf>
       <aggregation type="joinExisting" dimName="time">
-        <scan location="." suffix="_spfh2m.nc"/>
+        <netcdf location="NLDAS_0.9999_132.196_221.344_spfh2m.nc"/>
+        <netcdf location="NLDAS_10000.19999_132.196_221.344_spfh2m.nc"/>
+        <netcdf location="NLDAS_20000.29999_132.196_221.344_spfh2m.nc"/>
       </aggregation>
     </netcdf>
     <netcdf>
       <aggregation type="joinExisting" dimName="time">
-        <scan location="." suffix="_tmp2m.nc"/>
+        <netcdf location="NLDAS_0.9999_132.196_221.344_tmp2m.nc"/>
+        <netcdf location="NLDAS_10000.19999_132.196_221.344_tmp2m.nc"/>
       </aggregation>
     </netcdf>
   </aggregation>

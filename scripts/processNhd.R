@@ -31,7 +31,7 @@ nhdwaterbody <- readOGR(dsn = paste0(getwd(),"/data"), layer="NHDWaterbody_merge
 
 #subset merged nhdwaterbody by state
 states <- readOGR(dsn = paste0(getwd(),"/statedata"), layer="cb_2014_us_state_5m")
-wanted <- c("Minnesota","Michigan","Wisconsin")
+wanted <- c("Minnesota","Michigan","Wisconsin") # should be from config
 states <- subset(states, NAME %in% wanted)
 states <- spTransform(states, CRS(proj4string(nhdwaterbody)))
 nhdSubset <- nhdwaterbody[states, ]

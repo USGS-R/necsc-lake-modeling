@@ -1,9 +1,9 @@
-sub_times: ["1979-01-01 UTC", "2016-01-25 UTC"]
+sub_times: ["1979-01-01 UTC", "2016-01-01 UTC"]
 sub_variables: ['dlwrfsfc','pressfc','apcpsfc','vgrd10m','ugrd10m','dswrfsfc','spfh2m','tmp2m']
 nldas_url: "dods://hydro1.sci.gsfc.nasa.gov/dods/NLDAS_FORA0125_H.002"
-data_times: ["2001-01-01","2001-01-02"]
-data_variables: ["apcpsfc","dswrfsfc"]
+data_times: ["1979-01-01","1989-12-31"]
+data_variables: 'dlwrfsfc'
 wps_url: "http://cida-test.er.usgs.gov/gdp/process/WebProcessingService"
 data_url: "dods://cida-eros-netcdfdev.er.usgs.gov:8080/thredds/dodsC/thredds/nldas_miwimn/nldas_miwimn.ncml"
 catalog_url: "http://cida-eros-netcdfdev.er.usgs.gov:8080/thredds/catalog/thredds/nldas_miwimn/catalog.xml"
-sub_split: 1000
+sub_split: 10000

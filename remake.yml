@@ -2,6 +2,7 @@ packages:
   - yaml
   - dplyr
   - geoknife
+  - rgdal
   - XML
   - doMC
   - foreach
@@ -23,12 +24,16 @@ targets:
       - data/nldas_lakes.txt
       - data/NLDAS_sub/nldas_miwimn.ncml
       - data/NLDAS_sub/NLDAS_sub_status.txt
+      - data/NLDAS_data/NLDAS_driver_status.txt
+      - data/NLDAS_data/NLDAS_driver_file_list.tsv
 
   #data/nldas_lakes.txt:
   #  command: lake_summary_nldas(project_lake_locations, nldas_config)
 
   data/NLDAS_sub/nldas_miwimn.ncml:
     command: create_nldas_ncml(nldas_config)
+    depends: 
+      - configs/NLDAS_config.yml
 
   project_lake_locations:
     command: lake_summary_locations()
@@ -51,4 +56,13 @@ targets:
 
   ncml:
     command: sync_ncml("data/NLDAS_sub/nldas_miwimn.ncml")
+
+  nhd_states:
+    command: write_nhd_shp(nhd_config)
+
+  data/NLDAS_data/NLDAS_driver_file_list.tsv:
+    command: calc_nldas_driver_files(nldas_config, project_lake_locations)
+
+  #data/NLDAS_data/NLDAS_driver_status.txt:
+  #  command: lake_driver_nldas(data/NLDAS_sub/NLDAS_file_list.tsv)
 
