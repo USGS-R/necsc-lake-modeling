@@ -49,7 +49,7 @@ parse_driver_file_name <- function(files, param, unique.vals=TRUE){
 lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv'){
   mssg.file <- 'data/NLDAS_data/NLDAS_driver_status.txt'
   files <- strsplit(readLines(file, n = -1),'\t')[[1]]
-  server.files <- driver_server_files(data.source='NLDAS', write.file=TRUE)
+  server.files <- driver_server_files(data.source='NLDAS', write.file=FALSE)
   cat('index of files contains', length(files), file=mssg.file, append = FALSE)
   
   
@@ -58,8 +58,11 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
   
   new.files <- setdiff(files, server.files)
   rm.files <- setdiff(server.files, files)
-  if (length(new.files) == 0)
+  if (length(new.files) == 0){
+    message('no new files to sync. doing nothing')
     return()
+  }
+    
   
   perm.ids <- parse_driver_file_name(new.files, 'perm.ids')
   vars <- parse_driver_file_name(new.files, 'vars')
@@ -72,7 +75,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
   config <- load_config("configs/NLDAS_config.yml")
   
   cat(sprintf('\n%s files are new...',length(new.files)), file=mssg.file, append = TRUE)
-  
+  stop(new.files)
   knife = webprocess(url=config$wps_url)
   temp.dir <- tempdir()
   for (var in vars){
