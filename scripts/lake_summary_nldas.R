@@ -5,68 +5,124 @@ load_config <- function(data.source="configs/NLDAS_config.yml"){
   yaml.load_file(data.source)
 }
 
+sync_driver_index <- function(local.file){
+  file = 'driver_index.tsv'
+  output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, opt$driver_dir, file),
+                   ignore.stdout = TRUE, ignore.stderr = TRUE)
+  return(output)
+}
+
+driver_server_files <- function(data.source='NLDAS', write.file=TRUE){
+  output <- system(sprintf('ssh %s@cidasdpdfsuser.cr.usgs.gov ls %s',opt$necsc_user, opt$driver_dir), intern = TRUE, ignore.stderr = TRUE)
+  
+  file.list <- output[grepl(paste0(data.source, '_'), output)]
+  if (write.file){
+    time.start <- parse_driver_file_name(file.list, 'time.start', unique.vals=FALSE)
+    time.start <- unname(sapply(time.start, function(x) paste0(substr(x,1,4),'-',substr(x,5,6),'-',substr(x,7,8))))
+    
+    time.end <- parse_driver_file_name(file.list, 'time.end', unique.vals=FALSE)
+    time.end <- unname(sapply(time.end, function(x) paste0(substr(x,1,4),'-',substr(x,5,6),'-',substr(x,7,8))))
+    
+    file.index <- data.frame('permID' = parse_driver_file_name(file.list, 'perm.ids', unique.vals=FALSE), 
+                             'time.start' = time.start,
+                             'time.end' = time.end,
+                             'variable' = parse_driver_file_name(file.list, 'vars', unique.vals=FALSE),
+                             'file.name' = file.list)
+    
+    write.table(file.index, file = 'data/NLDAS_summ/NLDAS_driver_index.tsv', sep = '\t', row.names = FALSE)
+  } else {
+    return(file.list)
+  }
+}
+
+parse_driver_file_name <- function(files, param, unique.vals=TRUE){
+  values = switch(param,
+         perm.ids = sapply(strsplit(files,'[_]'),function(x)x[2]),
+         vars = unname(sapply(sapply(strsplit(files,'[_]'),function(x)x[4]),function(x) strsplit(x,'[.]')[[1]][1])),
+         time.start = unname(sapply(sapply(strsplit(files,'[_]'),function(x)x[3]),function(x) strsplit(x,'[.]')[[1]][1])),
+         time.end = unname(sapply(sapply(strsplit(files,'[_]'),function(x)x[3]),function(x) strsplit(x,'[.]')[[1]][2])))
+  if (unique.vals)
+    values <- unique(values)
+  return(values)
+}
+
+lake_files_with_var <- function(files, var){
+  files[grepl(var, files)]
+}
+
 lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv'){
   mssg.file <- 'data/NLDAS_data/NLDAS_driver_status.txt'
   files <- strsplit(readLines(file, n = -1),'\t')[[1]]
-  #server.files <- nldas_server_files()
+  server.files <- driver_server_files(data.source='NLDAS', write.file=FALSE)
   cat('index of files contains', length(files), file=mssg.file, append = FALSE)
   
-  perm.ids <- unique(sapply(strsplit(files,'[_]'),function(x)x[2]))
-  vars <- unname(sapply(unique(sapply(strsplit(files,'[_]'),function(x)x[4])),function(x) strsplit(x,'[.]')[[1]][1]))
-  times <- unname(lapply(unique(sapply(strsplit(files,'[_]'),function(x)x[3])),function(x) strsplit(x,'[.]')[[1]]))
-  if (length(times) > 1)
-    stop('non-unique time values', times)
-  times <- times[[1]]
-  times <- unname(sapply(times, function(x) paste0(substr(x,1,4),'-',substr(x,5,6),'-',substr(x,7,8), ' UTC')))
+  
   
   # APPEND files? no, initially this will build files clean. Later we can add append. 
   
-  #new.files <- setdiff(files, server.files)
-  #rm.files <- setdiff(server.files, files)
-  new.files <- files
-  if (length(files) == 0)
+  new.files <- setdiff(files, server.files)
+  rm.files <- setdiff(server.files, files)
+  if (length(new.files) == 0){
+    message('no new files to sync. doing nothing')
     return()
-  
-  config <- load_config("configs/NLDAS_config.yml")
-  
-  cat(sprintf('\n%s files are new...',length(new.files)), file=mssg.file, append = TRUE)
-  
-  knife = webprocess(url=config$wps_url)
-  
-  fabric = webdata(url=config$data_url, variables=vars, times=times)
-  
-  # here we should check what files already exist and pare down the requests to be shaped
-  temp.dir <- tempdir()
-  job <- geoknife(stencil=stencil_from_id(perm.ids), fabric, knife, wait=TRUE)
-  if (successful(job)){
-    data = result(job, with.units=TRUE)
-    for (file in files){
-      chunks <- strsplit(file, '[_]')[[1]]
-      perm.id <- chunks[2]
-      var <- strsplit(chunks[4],'[.]')[[1]][1]
-      data.site <- data[c('DateTime', perm.id,'variable')] %>% 
-        filter(variable == var) %>% 
-        select_('DateTime',2)
-      local.file <- file.path(temp.dir, file)
-      save(data.site, file=local.file, compress="xz")
-      output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, opt$driver_dir, file),
-                       ignore.stdout = TRUE, ignore.stderr = TRUE)
-      cat('\n** transferring file to driver server...', file=mssg.file, append = TRUE)
-      unlink(local.file)
-      if (!output){
-        cat('done! **', file=mssg.file, append = TRUE)
-        message('rsync of ',file, ' complete! ', Sys.time())
-      } else {
-        cat(url, ' FAILED **', file=mssg.file, append = TRUE)
-      }
-      cat('\n', file,'**posted', file=mssg.file, append = TRUE)
-    }
-  } else {
-    message(check(job)$status)
-    cat('\n', fabric,'**failed', file=mssg.file, append = TRUE)
-    cat('\n', check(job)$status, file=mssg.file, append = TRUE)
   }
-
+    
+  config <- load_config("configs/NLDAS_config.yml")
+  knife = webprocess(url=config$wps_url)
+  temp.dir <- tempdir()
+  
+  vars <- parse_driver_file_name(new.files, 'vars')
+  
+  for (var in vars){
+    post.files <- lake_files_with_var(new.files, var)
+    times <- c()
+    times[1] <- parse_driver_file_name(post.files, 'time.start') # will error if length > 1
+    times[2] <- parse_driver_file_name(post.files, 'time.end')
+    times <- unname(sapply(times, function(x) paste0(substr(x,1,4),'-',substr(x,5,6),'-',substr(x,7,8), ' UTC')))
+    perm.ids <- parse_driver_file_name(post.files, 'perm.ids')
+    cat(sprintf('\n%s files are new for variable %s...',length(post.files), var), file=mssg.file, append = TRUE)
+    groups.s <- seq(1,length(perm.ids), config$driver_split)
+    groups.e <- c(tail(groups.s-1,-1L),length(perm.ids))
+    
+    fabric = webdata(url=config$data_url, variables=var, times=times)
+    
+    for (i in 1:length(groups.s)){
+    
+      job <- geoknife(stencil=stencil_from_id(perm.ids[groups.s[i]:groups.e[i]]), fabric, knife, wait=TRUE)
+      if (successful(job)){
+        data = result(job, with.units=TRUE)
+        for (file in post.files[groups.s[i]:groups.e[i]]){
+          chunks <- strsplit(file, '[_]')[[1]]
+          perm.id <- chunks[2]
+          var <- strsplit(chunks[4],'[.]')[[1]][1]
+          data.site <- data[c('DateTime', perm.id,'variable')] %>% 
+            filter(variable == var) %>% 
+            select_('DateTime',2)
+          names(data.site) <- c('DateTime', var)
+          local.file <- file.path(temp.dir, file)
+          save(data.site, file=local.file, compress="xz")
+          output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, opt$driver_dir, file),
+                           ignore.stdout = TRUE, ignore.stderr = TRUE)
+          cat('\n** transferring file to driver server...', file=mssg.file, append = TRUE)
+          unlink(local.file)
+          if (!output){
+            cat('done! **', file=mssg.file, append = TRUE)
+            message('rsync of ',file, ' complete! ', Sys.time())
+          } else {
+            cat(url, ' FAILED **', file=mssg.file, append = TRUE)
+          }
+          cat('\n', file,'**posted', file=mssg.file, append = TRUE)
+        }
+      } else {
+        message('processing failed')
+      }
+    }
+    stop()
+  }
+  
+  
+  
+  
 }
 
 calc_nldas_driver_files <- function(config, lake.locations){
