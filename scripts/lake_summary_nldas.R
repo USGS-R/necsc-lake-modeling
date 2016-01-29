@@ -78,7 +78,6 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
 
   knife = webprocess(url=config$wps_url)
   temp.dir <- tempdir()
-  #registerDoMC(cores=4)
   
   groups.s <- seq(1,length(perm.ids), config$driver_split)
   groups.e <- c(tail(groups.s-1,-1L),length(perm.ids))
@@ -118,11 +117,6 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
       cat('\n', check(job)$status, file=mssg.file, append = TRUE)
     }
   }
-  #for (var in vars){#foreach(var=vars) %dopar% {
-    #message('starting processing job for ', var)
-    
-    
-  #}
   
   
 }
