@@ -78,14 +78,16 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
 
   knife = webprocess(url=config$wps_url)
   temp.dir <- tempdir()
-  registerDoMC(cores=4)
+  #registerDoMC(cores=4)
   
-  for (var in vars){#foreach(var=vars) %dopar% {
-    fabric = webdata(url=config$data_url, variables=var, times=times)
+  groups.s <- seq(1,length(perm.ids), config$driver_split)
+  groups.e <- c(tail(groups.s-1,-1L),length(perm.ids))
+  for (i in length(groups.s)){
+    fabric = webdata(url=config$data_url, variables=vars, times=times)
     
     # here we should check what files already exist and pare down the requests to be shaped
     
-    job <- geoknife(stencil=stencil_from_id(perm.ids), fabric, knife, wait=TRUE)
+    job <- geoknife(stencil=stencil_from_id(perm.ids[groups.s[i]:groups.e[i]]), fabric, knife, wait=TRUE, email='jread@usgs.gov')
     if (successful(job)){
       data = result(job, with.units=TRUE)
       for (file in new.files){
@@ -115,8 +117,12 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
       cat('\n', fabric,'**failed', file=mssg.file, append = TRUE)
       cat('\n', check(job)$status, file=mssg.file, append = TRUE)
     }
-    
   }
+  #for (var in vars){#foreach(var=vars) %dopar% {
+    #message('starting processing job for ', var)
+    
+    
+  #}
   
   
 }
