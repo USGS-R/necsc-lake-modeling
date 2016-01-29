@@ -1,12 +1,2 @@
 index of files contains 15615
 3043 files are new for variable dlwrfsfc...
-** transferring file to driver server...done! **
- NLDAS_271501_19790101.20161231_dlwrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_271611_19790101.20161231_dlwrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_271697_19790101.20161231_dlwrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1096982_19790101.20161231_dlwrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1097288_19790101.20161231_dlwrfsfc.RData **posted
