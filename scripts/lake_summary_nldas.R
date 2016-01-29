@@ -91,7 +91,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
       job <- geoknife(stencil=stencil_from_id(perm.ids[groups.s[i]:groups.e[i]]), fabric, knife, wait=TRUE)
       if (successful(job)){
         data = result(job, with.units=TRUE)
-        for (file in post.files){
+        for (file in post.files[groups.s[i]:groups.e[i]]){
           chunks <- strsplit(file, '[_]')[[1]]
           perm.id <- chunks[2]
           var <- strsplit(chunks[4],'[.]')[[1]][1]
@@ -114,9 +114,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
           cat('\n', file,'**posted', file=mssg.file, append = TRUE)
         }
       } else {
-        message(check(job)$status)
-        cat('\n', fabric,'**failed', file=mssg.file, append = TRUE)
-        cat('\n', check(job)$status, file=mssg.file, append = TRUE)
+        message('processing failed')
       }
     }
     stop()
