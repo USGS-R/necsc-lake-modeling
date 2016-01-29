@@ -117,7 +117,6 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
         message('processing failed')
       }
     }
-    stop()
   }
   
   
