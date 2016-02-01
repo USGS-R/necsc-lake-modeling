@@ -4,10 +4,9 @@
 #' 
 lake_summary_locations <- function(){
   
-  sites <- read.csv('data/NHD_summ/nhd_centroids.csv', stringsAsFactors = FALSE)
+  sites <- read.csv('data/depth_data/depth_lagos_summary.csv', stringsAsFactors = FALSE)
   
-  message('truncating response. WIP')
-  return(sites[c('permID','lon','lat')][1:10,])
+  return(sites[c('permID')])
   
   
 }
