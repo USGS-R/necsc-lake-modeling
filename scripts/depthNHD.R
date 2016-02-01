@@ -32,4 +32,6 @@ write.csv(input2[,c("id","maxdepth")], file="lagosNHD.csv",row.names=FALSE)
 keepers <- as.data.frame(input)
 cols <- c("id")
 keepers <- keepers[,cols,drop=FALSE]
+
+#TODO change to tsv and put in data/depth_data/depth_data_summary.tsv
 write.csv(keepers, file="lagosPermID.csv",row.names=FALSE)

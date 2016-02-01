@@ -8,4 +8,27 @@ states <- config$states
 for (i in 1:length(states)) { 
   sites <- whatWQPsites(statecode = paste0("US:",states[[i]]$fips))
   write.csv(sites, file=paste0("sites",states[[i]]$fips,".csv"),row.names=FALSE)
-} 
+}
+
+#read in nhd data
+nhd <- readOGR(dsn = paste0(getwd(),"/data"), layer="NHDWaterbody")
+
+#match with NHD permid
+for (j in 1:length(states)) {
+  sites <- read.csv(file=paste0("sites",states[[j]]$fips,".csv"),sep=",")[ ,c('MonitoringLocationIdentifier','LatitudeMeasure','LongitudeMeasure')]
+  sites <- sites[!duplicated(sites),]
+  for (i in 1:nrow(sites)) {
+    lat <- as.numeric(sites$LatitudeMeasure[i])
+    lng <- as.numeric(sites$LongitudeMeasure[i])
+    xy <- cbind(lng,lat)
+    pts <- SpatialPoints(xy, proj4string=CRS(proj4string(nhd)))
+    inside.nhd <- !is.na(over(pts, as(nhd, "SpatialPolygons"))) 
+    pts$nhd <- over(pts, nhd, fn = NULL, returnList = FALSE)$Prmnn_I
+    prmnn_i <- as.character(pts$nhd)
+    sites$id[i] <- prmnn_i
+    print(i)
+  }
+  write.csv(sites, file=paste0("sitesPermId",states[[j]]$fips,".csv"),row.names=FALSE) 
+}
+
+

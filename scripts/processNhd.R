@@ -110,4 +110,4 @@ names(nhdwaterbody)[names(nhdwaterbody)=="Prmnn_I"] <- "id"
 names(nhdwaterbody)[names(nhdwaterbody)=="lat"] <- "y"
 names(nhdwaterbody)[names(nhdwaterbody)=="lon"] <- "x"
 nhdwaterbody <- transform(nhdwaterbody,id=paste0('nhd_',id))
-write.csv(nhdwaterbody[,c("id","x","y","area","state")], file = "nhd_centroids.csv", row.names = FALSE)
+write.csv(nhdwaterbody[,c("id","x","y","area","state")], file = paste0(getwd(),"/data/NHD_Summ/nhd_centroids.csv"), row.names = FALSE)

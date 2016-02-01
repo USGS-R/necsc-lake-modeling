@@ -13,20 +13,14 @@
 library(dataRetrieval)
 library(yaml)
 
-cleanUp <- function(charName) {
-  charName <- gsub("[^A-Za-z0-9]", "", charName)
-  return(charName)
-}
-
+setwd("D:/MKHData/necsc/necsc-lake-modeling")
 config = yaml.load_file("config.yml")
 states <- config$states
 
-charName <- c("Depth, Secchi disk depth", "Depth, Secchi disk depth (choice list)","Secchi Reading Condition (choice list)","Secchi depth", "Transparency, Secchi tube with disk", "Transparency, tube with disk", "Water transparency, Secchi disc", "Water transparency, tube with disk")
+charName <- c("Depth, Secchi disk depth", "Depth, Secchi disk depth (choice list)","Secchi Reading Condition (choice list)","Secchi depth","Water transparency, Secchi disc")
 
-secchi <- data.frame()
-
-for (i in 1:length(states)) { 
-  
+for (i in 1:length(states)) {  
+  secchi <- data.frame()
   for (j in 1:length(charName)) { 
     tryCatch({ 
       retrievedData <- readWQPdata(statecode=paste0("US:",states[[i]]$fips),characteristicName=charName[j], siteType="Lake, Reservoir, Impoundment")
@@ -35,8 +29,7 @@ for (i in 1:length(states)) {
       }  
     },error = function(e){}) 
     
-  }
-  
+  } 
+  setwd("D:/MKHData/necsc/lakeattributes/data-raw/secchi")
+  write.csv(secchi, file = paste0("secchi",states[[i]]$fips,".csv"),row.names=FALSE)
 }
-setwd("../lakeattributes/data-raw/secchi")
-write.csv(secchi, file = "secchi.csv",row.names=FALSE)
