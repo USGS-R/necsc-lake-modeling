@@ -6,7 +6,7 @@ lake_summary_locations <- function(){
   
   sites <- read.csv('data/depth_data/depth_lagos_summary.csv', stringsAsFactors = FALSE)
   
-  sites <- head(sites, 450)
+  sites <- head(sites, 245)
   message('warning, truncating number of lakes')
   return(sites[c('permID')])
   
