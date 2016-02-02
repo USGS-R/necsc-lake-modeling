@@ -6,11 +6,6 @@
 library(dataRetrieval)
 library(yaml)
 
-cleanUp <- function(charName) {
-  charName <- gsub("[^A-Za-z0-9]", " ", charName)
-  return(charName)
-}
-
 config = yaml.load_file("config.yml")
 states <- config$states
 
@@ -22,11 +17,12 @@ for (i in 1:length(states)) {
     tryCatch({
       retrievedData <- readWQPdata(statecode=paste0("US:",states[[i]]$fips),characteristicName=charName[j], siteType="Lake, Reservoir, Impoundment")
       if (length(retrievedData)>0) { 
-        write.csv(retrievedData, file = paste0(cleanUp(charName[j]),states[[i]]$fips,".csv"),row.names=FALSE)
+        turbidity <- rbind(turbidity, as.data.frame(retrievedData))
       } 
     },error = function(e){})
     
   }
-  
+  setwd("D:/MKHData/necsc/lakeattributes/data-raw/turbidity")
+  write.csv(retrievedData, file = paste0("turbidity",states[[i]]$fips,".csv"),row.names=FALSE)
 } 
 
