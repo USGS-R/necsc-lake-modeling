@@ -6,7 +6,7 @@ lake_summary_locations <- function(){
   
   sites <- read.csv('data/depth_data/depth_lagos_summary.csv', stringsAsFactors = FALSE)
   
-  sites <- head(sites, 555)
+  sites <- head(sites, 556)
   message('warning, truncating number of lakes')
   return(sites[c('id')])
   
@@ -17,7 +17,7 @@ stencil_from_id <- function(ids){
   
   sites <- read.csv('data/NHD_summ/nhd_centroids.csv', stringsAsFactors = FALSE)
   for (i in 1:length(ids)){
-    site <- sites[sites$id == id[i],]
+    site <- sites[sites$id == ids[i],]
     df <- data.frame(c(site$lon, site$lat))
     names(df) <- ids[i]
     if (i == 1)
