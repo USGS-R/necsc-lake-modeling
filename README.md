@@ -24,6 +24,23 @@ Processing the NLDAS dataset for this project has several steps:
 
 And after all of this is done, a similar process is followed to process these files into raw driver data for each lake in the study (i.e., a list of files to be created is generated, and this list is used to set up jobs with the help of the config). Since we are using `remake`, the processing doesn't start if the dependency (in this case, the file list) isn't changed. 
 
+## end-product files from this project  
+A lot of the outputs described here are intermediate. The actual end-product datasets that are used by the modeling workflow include driver data files for each lake split up by lake id and variable, large tables, or geospatial files: 
+ * `NLDAS_nhd_{permID}_19790101.20160116_apcpsfc.RData` for `apcpsfc` data covering the 1979-01-01 to 2016-01-16 period from NLDAS. These data are hosted on cida-test.er.usgs.gov in a directory for use by the models. There is a `driver_index.tsv` in this directory that indexes these files. 
+ * `depth_data.tsv` is created and hosted on sciencebase because it contains some data we can't share yet (so SB controls permissions)
+ * `temperature_data.tsv` is hosted on sciencebase too
+ * `clarity_data.tsv` is hosted on sciencebase
+ * `nhd_necsc.shp` shapefiles are posted on sciencebase and exposed as a WFS/WMS
+ 
+## intermediate files that summarize the end-product files  
+These files *are* part of this repo (or will be when they exist)
+ * `depth_data_summary.tsv` is a list of all `ids` with any depth data. No actual depth data is here because of data sharing reasons. 
+ * `temperature_data_summary.tsv` is a file of `id`, `start.date`, `end.date`, and `num.samples` in the temperature timeseries file: `temperature_data.tsv` for each lake
+ * `clarity_data_summary.tsv` is a file of `id`, `start.date`, `end.date`, and `num.samples` in the clarity timeseries file: `clarity_data.tsv` for each lake
+ * `nhd_centroids.tsv` is a file that contains `id`, `lon`, `lat`, `area`, and `state` for each feature in the `nhd_necsc.shp` it is the canonical source of centroid info for each lake, and this info should not be duplicated elsewhere. 
+ * `NLDAS_driver_file_list.tsv` is a list of all of the files that *should* exist on the cida-test web server, but not all of these files may be completely processed at any given time. Instead see `NLDAS_driver_index.tsv` for that
+ * `NLDAS_driver_index.tsv` is a list of `id`, `time.start`, `time.end`, `variable`, and `file.name` for each file that *does* exist on the cida-test webserver. It is also available via http://cida-test.er.usgs.gov/mda.lakes/drivers_GLM_NLDAS/driver_index.tsv and now that I say that, it maybe shouldn't also exist in this repo (should maybe be temporary..and posted when it changes?)
+
 ## data types for this project
 
 | file     | description                                                        |
