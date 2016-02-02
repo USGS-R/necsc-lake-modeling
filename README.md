@@ -13,6 +13,17 @@ We are attempting to capture all steps in the processing for the project in a re
 ## web processing or web access challenges  
 We are accessing and slicing up large data using web resources, so things fail. In order to be robust to this and to also reduce kicking off very large jobs when small things change, the files used to make up the `sub` and `data` datasets are typically broken up into a collection of files that are named explicitly to enable processing only the relevant pieces. For example, the `NLDAS_sub` datasets are small(ish) .nc files that are split up across variables and time, where the number of time chunks is determined in the config (as is the variables used). So, when we extend the time range of the period (in the config) we only need to get rid of the last file in each variable, instead of one very large file. Likewise, the processing of this NLDAS data into lake-specific values is error prone, and we use a list of files that *should* be created and and index of files that already exist to specify the processing job. So, the first step of each processing job is to calculate this list of files, and then check which files are new and need to be created via processing jobs. This also makes it a bit easier to add new lakes or new variables to the processing. 
 
+## example processing pattern: NLDAS
+Processing the NLDAS dataset for this project has several steps:
+1) figure out the spatial range of the `NHD_sub` used. This will tell us what the spatial region is for processing. 
+2) calculate the list of files to be created for `NLDAS_sub` using `calc_nldas_files()`. This writes "data/NLDAS_sub/NLDAS_file_list.tsv" which contains all file names for copying the NLDAS dataset to a more robust host
+3) figure out which files already exist on the server with `nldas_server_files()`
+4) copy and post files from the `calc_nlas_files()` to the host using `nccopy_nldas()`, which runs on the difference between the "NLDAS_file_list.tsv" and the server file list.
+5) write and post a `.ncml` file that describes all of these datasets to the THREDDS server
+6) write a log file of this process  
+
+And after all of this is done, a similar process is followed to process these files into raw driver data for each lake in the study (i.e., a list of files to be created is generated, and this list is used to set up jobs with the help of the config). Since we are using `remake`, the processing doesn't start if the dependency (in this case, the file list) isn't changed. 
+
 ## data types for this project
 
 | file     | description                                                        |
