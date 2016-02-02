@@ -26,6 +26,8 @@ for (i in 1:length(states)) {
       retrievedData <- readWQPdata(statecode=paste0("US:",states[[i]]$fips),characteristicName=charName[j], siteType="Lake, Reservoir, Impoundment")
       if (length(retrievedData)>0) { 
         secchi <- rbind(secchi, as.data.frame(retrievedData))
+        success <- paste("\n Request success on", as.character(Sys.time()), "\t", "State:", config$states[i],"Value:",charName[j])
+        cat(success, file="log.txt", append=TRUE)
       }  
     },
     error = function(e){
