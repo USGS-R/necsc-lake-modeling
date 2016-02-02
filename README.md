@@ -10,6 +10,9 @@ This repo does not store any large files, it stores summary files from processin
 
 We are attempting to capture all steps in the processing for the project in a repeatable set of scripts. The `remake` package facilitates this by allowing us to `make` the project and only process the steps that have dependencies that have changed or been updated. As such, the processing steps and dependencies are captured in the [remake.yml](remake.yml). The major datasets also have `configs` (see below) to specify the details of their processing. These `configs` are also dependencies of the processing steps, so if the configs change, several of the processing steps are likely to be re-run. 
 
+## web processing or web access challenges  
+We are accessing and slicing up large data using web resources, so things fail. In order to be robust to this and to also reduce kicking off very large jobs when small things change, the files used to make up the `sub` and `data` datasets are typically broken up into a collection of files that are named explicitly to enable processing only the relevant pieces. For example, the `NLDAS_sub` datasets are small(ish) .nc files that are split up across variables and time, where the number of time chunks is determined in the config (as is the variables used). So, when we extend the time range of the period (in the config) we only need to get rid of the last file in each variable, instead of one very large file. Likewise, the processing of this NLDAS data into lake-specific values is error prone, and we use a list of files that *should* be created and and index of files that already exist to specify the processing job. So, the first step of each processing job is to calculate this list of files, and then check which files are new and need to be created via processing jobs. This also makes it a bit easier to add new lakes or new variables to the processing. 
+
 ## data types for this project
 
 | file     | description                                                        |
@@ -23,7 +26,7 @@ We are attempting to capture all steps in the processing for the project in a re
 | `clarity_summ`  | `clarity_data` is summarized into a .tsv hosted in this repository |
 | `depth_data`  | Lake depth data mapped to permIDs in `NHD_summ` |
 | `temperature_data`  | Water temperature data from the [Water Quality Portal](http://waterqualitydata.us/) and mapped to permIDs in `NHD_summ` |
-| `temperature_summ`  | `clarity_data` is summarized into a .tsv hosted in this repository |
+| `temperature_summ`  | `temperature_data` is summarized into a .tsv hosted in this repository |
 
 ## development guidelines  
 
