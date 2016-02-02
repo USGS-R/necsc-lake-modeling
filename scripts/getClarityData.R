@@ -27,15 +27,15 @@ for (i in 1:length(states)) {
       if (length(retrievedData)>0) { 
         secchi <- rbind(secchi, as.data.frame(retrievedData))
       }  
-    },error = function(e){
-      error <- paste("Request failed:","State:",config$states[i],"Value:",charName[j], e)
+    },
+    error = function(e){
+      error <- paste("\n Request failed:", "on", as.character(Sys.time()), "\t", "State:",config$states[i],"Value:",charName[j], e)
       cat(error, file="log.txt", append=TRUE)
     },
-    warning=function(warn){
+    warning = function(warn){
       warnLog <- paste("\n WARNING", "on", as.character(Sys.time()), "\t", warn)
       cat(warnLog, file="log.txt", append=TRUE)
-    }
-    ) 
+    }) 
   } 
   setwd("D:/MKHData/necsc/lakeattributes/data-raw/secchi")
   write.csv(secchi, file = paste0("secchi",states[[i]]$fips,".csv"),row.names=FALSE)
