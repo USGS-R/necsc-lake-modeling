@@ -33,7 +33,7 @@ for (i in 1:length(states)) {
       cat(error, file="log.txt", append=TRUE)
     },
     warning = function(warn){
-      warnLog <- paste("\n WARNING", "on", as.character(Sys.time()), "\t", warn)
+      warnLog <- paste("\n WARNING", "on", as.character(Sys.time()), "\t", "State:",config$states[i],"Value:",charName[j], warn)
       cat(warnLog, file="log.txt", append=TRUE)
     }) 
   } 
