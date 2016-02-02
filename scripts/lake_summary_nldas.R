@@ -93,8 +93,8 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
     
       job <- geoknife(stencil=stencil_from_id(ids[groups.s[i]:groups.e[i]]), fabric, knife, wait=TRUE)
       if (successful(job)){
+        message(job@id,' completed')
         tryCatch({
-          file <- download(job, destination=file.path(tempdir(),'geoknife.csv'), overwrite=TRUE)
           data = result(job, with.units=TRUE)
           for (file in post.files[groups.s[i]:groups.e[i]]){
             chunks <- strsplit(file, '[_]')[[1]]
@@ -116,10 +116,12 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
             }
           }
         }, error = function(e) {
+          message(job@id,' failed to download')
           cat('\n** job FAILED **\n',job@id, file=mssg.file, append = TRUE)
         })
       } else {
-        cat('\n** job FAILED **\n', job@id, check(job)$status, file=mssg.file, append = TRUE)
+        message(job@id,' failed ' )
+        cat('\n** job FAILED in processing **\n', job@id, file=mssg.file, append = TRUE)
       }
     }
   }
