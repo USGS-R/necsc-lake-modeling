@@ -90,31 +90,33 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
     
       job <- geoknife(stencil=stencil_from_id(ids[groups.s[i]:groups.e[i]]), fabric, knife, wait=TRUE)
       if (successful(job)){
-        data = result(job, with.units=TRUE)
-        for (file in post.files[groups.s[i]:groups.e[i]]){
-          chunks <- strsplit(file, '[_]')[[1]]
-          perm.id <- chunks[2]
-          var <- strsplit(chunks[4],'[.]')[[1]][1]
-          data.site <- data[c('DateTime', perm.id,'variable')] %>% 
-            filter(variable == var) %>% 
-            select_('DateTime',2)
-          names(data.site) <- c('DateTime', var)
-          local.file <- file.path(temp.dir, file)
-          save(data.site, file=local.file, compress="xz")
-          output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, opt$driver_dir, file),
-                           ignore.stdout = TRUE, ignore.stderr = TRUE)
-          cat('\n** transferring file to driver server...', file=mssg.file, append = TRUE)
-          unlink(local.file)
-          if (!output){
-            cat('done! **', file=mssg.file, append = TRUE)
-            message('rsync of ',file, ' complete! ', Sys.time())
-          } else {
-            cat(url, ' FAILED **', file=mssg.file, append = TRUE)
+        tryCatch({
+          data = result(job, with.units=TRUE)
+          for (file in post.files[groups.s[i]:groups.e[i]]){
+            chunks <- strsplit(file, '[_]')[[1]]
+            perm.id <- chunks[2]
+            var <- strsplit(chunks[4],'[.]')[[1]][1]
+            data.site <- data[c('DateTime', perm.id,'variable')] %>% 
+              filter(variable == var) %>% 
+              select_('DateTime',2)
+            names(data.site) <- c('DateTime', var)
+            local.file <- file.path(temp.dir, file)
+            save(data.site, file=local.file, compress="xz")
+            output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, opt$driver_dir, file),
+                             ignore.stdout = TRUE, ignore.stderr = TRUE)
+            unlink(local.file)
+            if (!output){
+              message('rsync of ',file, ' complete! ', Sys.time())
+            } else {
+              cat('rsync of ', file, ' FAILED **', file=mssg.file, append = TRUE)
+            }
           }
-          cat('\n', file,'**posted', file=mssg.file, append = TRUE)
+        }, error = function(e) {
+          cat('\n** job FAILED **\n',id(job), file=mssg.file, append = TRUE)
+        })
         }
       } else {
-        message('processing failed')
+        cat('\n** job FAILED **\n', id(job), check(job)$status, file=mssg.file, append = TRUE)
       }
     }
   }
