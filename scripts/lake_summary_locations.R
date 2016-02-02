@@ -3,5 +3,25 @@
 #' 
 #' 
 lake_summary_locations <- function(){
-  return(simplegeom(data.frame(point1=c(-89.1,43.2), point2=c(-93.1, 45.1))))
+  
+  sites <- read.csv('data/depth_data/depth_lagos_summary.csv', stringsAsFactors = FALSE)
+  
+  return(sites[c('id')])
+  
+  
+}
+
+stencil_from_id <- function(ids){
+  
+  sites <- read.csv('data/NHD_summ/nhd_centroids.csv', stringsAsFactors = FALSE)
+  for (i in 1:length(ids)){
+    site <- sites[sites$id == ids[i],]
+    df <- data.frame(c(site$lon, site$lat))
+    names(df) <- ids[i]
+    if (i == 1)
+      geom <- df
+    else 
+      geom <- cbind(geom, df)
+  }
+  simplegeom(geom)
 }

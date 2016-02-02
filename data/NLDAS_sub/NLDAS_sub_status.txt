@@ -1,30 +1,140 @@
-index of files contains 2600
-2600 files are new...
-** nccopy apcpsfc[0:1:999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_0.999_132.196_221.344_apcpsfc.nc...done! **
-** nccopy pressfc[0:1:999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_0.999_132.196_221.344_pressfc.nc...done! **
-** nccopy dlwrfsfc[0:1:999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_0.999_132.196_221.344_dlwrfsfc.nc...done! **
+index of files contains 264
+69 files are new...
+** nccopy dswrfsfc[230000:1:239999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_230000.239999_132.196_221.344_dswrfsfc.nc...done! **
+** nccopy dswrfsfc[90000:1:99999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_90000.99999_132.196_221.344_dswrfsfc.nc...done! **
+** nccopy apcpsfc[90000:1:99999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_90000.99999_132.196_221.344_apcpsfc.nc...done! **
 ** transferring file to thredds server...done! **
 ** transferring file to thredds server...done! **
 ** transferring file to thredds server...done! **
-** nccopy vgrd10m[0:1:999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_0.999_132.196_221.344_vgrd10m.nc...done! **
+** nccopy vgrd10m[40000:1:49999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_40000.49999_132.196_221.344_vgrd10m.nc...done! **
 ** transferring file to thredds server...done! **
-** nccopy dswrfsfc[0:1:999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_0.999_132.196_221.344_dswrfsfc.nc...done! **
-** transferring file to thredds server...done! **
-** nccopy ugrd10m[0:1:999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_0.999_132.196_221.344_ugrd10m.nc...done! **
-** transferring file to thredds server...done! **
-** nccopy spfh2m[0:1:999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_0.999_132.196_221.344_spfh2m.nc...done! **
-** transferring file to thredds server...done! **
-** nccopy tmp2m[0:1:999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_0.999_132.196_221.344_tmp2m.nc...done! **
-** nccopy pressfc[1000:1:1999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_1000.1999_132.196_221.344_pressfc.nc...done! **
+** nccopy spfh2m[230000:1:239999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_230000.239999_132.196_221.344_spfh2m.nc...done! **
+** nccopy tmp2m[230000:1:239999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_230000.239999_132.196_221.344_tmp2m.nc...done! **
 ** transferring file to thredds server...done! **
 ** transferring file to thredds server...done! **
-** nccopy apcpsfc[1000:1:1999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_1000.1999_132.196_221.344_apcpsfc.nc...done! **
+** nccopy apcpsfc[240000:1:249999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_240000.249999_132.196_221.344_apcpsfc.nc...done! **
+** nccopy pressfc[240000:1:249999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_240000.249999_132.196_221.344_pressfc.nc...done! **
 ** transferring file to thredds server...done! **
-** nccopy dlwrfsfc[1000:1:1999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_1000.1999_132.196_221.344_dlwrfsfc.nc...done! **
 ** transferring file to thredds server...done! **
-** nccopy dswrfsfc[1000:1:1999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_1000.1999_132.196_221.344_dswrfsfc.nc...done! **
+** nccopy vgrd10m[240000:1:249999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_240000.249999_132.196_221.344_vgrd10m.nc...done! **
+** nccopy ugrd10m[240000:1:249999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_240000.249999_132.196_221.344_ugrd10m.nc...done! **
+** nccopy dswrfsfc[240000:1:249999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_240000.249999_132.196_221.344_dswrfsfc.nc...done! **
 ** transferring file to thredds server...done! **
-** nccopy vgrd10m[1000:1:1999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_1000.1999_132.196_221.344_vgrd10m.nc...done! **
 ** transferring file to thredds server...done! **
-** nccopy ugrd10m[1000:1:1999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmp3WELDn/NLDAS_1000.1999_132.196_221.344_ugrd10m.nc...done! **
+** transferring file to thredds server...done! **
+** nccopy spfh2m[240000:1:249999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_240000.249999_132.196_221.344_spfh2m.nc...done! **
+** transferring file to thredds server...done! **
+** nccopy vgrd10m[250000:1:259999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_250000.259999_132.196_221.344_vgrd10m.nc...done! **
+** nccopy apcpsfc[250000:1:259999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_250000.259999_132.196_221.344_apcpsfc.nc...done! **
+** nccopy pressfc[250000:1:259999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_250000.259999_132.196_221.344_pressfc.nc...done! **
+** nccopy tmp2m[240000:1:249999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_240000.249999_132.196_221.344_tmp2m.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** nccopy ugrd10m[250000:1:259999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_250000.259999_132.196_221.344_ugrd10m.nc...done! **
+** nccopy dswrfsfc[250000:1:259999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_250000.259999_132.196_221.344_dswrfsfc.nc...done! **
+** nccopy spfh2m[250000:1:259999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_250000.259999_132.196_221.344_spfh2m.nc...done! **
+** nccopy tmp2m[250000:1:259999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_250000.259999_132.196_221.344_tmp2m.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** nccopy pressfc[260000:1:269999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_260000.269999_132.196_221.344_pressfc.nc...done! **
+** nccopy apcpsfc[260000:1:269999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_260000.269999_132.196_221.344_apcpsfc.nc...done! **
+** nccopy vgrd10m[260000:1:269999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_260000.269999_132.196_221.344_vgrd10m.nc...done! **
+** nccopy ugrd10m[260000:1:269999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_260000.269999_132.196_221.344_ugrd10m.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** nccopy spfh2m[260000:1:269999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_260000.269999_132.196_221.344_spfh2m.nc...done! **
+** nccopy dswrfsfc[260000:1:269999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_260000.269999_132.196_221.344_dswrfsfc.nc...done! **
+** nccopy tmp2m[260000:1:269999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_260000.269999_132.196_221.344_tmp2m.nc...done! **
+** nccopy pressfc[270000:1:279999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_270000.279999_132.196_221.344_pressfc.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** nccopy ugrd10m[270000:1:279999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_270000.279999_132.196_221.344_ugrd10m.nc...done! **
+** nccopy vgrd10m[270000:1:279999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_270000.279999_132.196_221.344_vgrd10m.nc...done! **
+** nccopy dswrfsfc[270000:1:279999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_270000.279999_132.196_221.344_dswrfsfc.nc...done! **
+** nccopy apcpsfc[270000:1:279999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_270000.279999_132.196_221.344_apcpsfc.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** nccopy spfh2m[270000:1:279999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_270000.279999_132.196_221.344_spfh2m.nc...done! **
+** nccopy tmp2m[270000:1:279999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_270000.279999_132.196_221.344_tmp2m.nc...done! **
+** nccopy apcpsfc[280000:1:289999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_280000.289999_132.196_221.344_apcpsfc.nc...done! **
+** nccopy pressfc[280000:1:289999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_280000.289999_132.196_221.344_pressfc.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** nccopy ugrd10m[280000:1:289999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_280000.289999_132.196_221.344_ugrd10m.nc...done! **
+** nccopy dswrfsfc[280000:1:289999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_280000.289999_132.196_221.344_dswrfsfc.nc...done! **
+** nccopy vgrd10m[280000:1:289999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_280000.289999_132.196_221.344_vgrd10m.nc...done! **
+** nccopy spfh2m[280000:1:289999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_280000.289999_132.196_221.344_spfh2m.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** nccopy tmp2m[280000:1:289999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_280000.289999_132.196_221.344_tmp2m.nc...done! **
+** nccopy apcpsfc[290000:1:299999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_290000.299999_132.196_221.344_apcpsfc.nc...done! **
+** nccopy vgrd10m[290000:1:299999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_290000.299999_132.196_221.344_vgrd10m.nc...done! **
+** transferring file to thredds server...done! **
+** nccopy pressfc[290000:1:299999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_290000.299999_132.196_221.344_pressfc.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** nccopy tmp2m[290000:1:299999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_290000.299999_132.196_221.344_tmp2m.nc...done! **
+** nccopy spfh2m[290000:1:299999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_290000.299999_132.196_221.344_spfh2m.nc...done! **
+** nccopy dswrfsfc[290000:1:299999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_290000.299999_132.196_221.344_dswrfsfc.nc...done! **
+** nccopy ugrd10m[290000:1:299999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_290000.299999_132.196_221.344_ugrd10m.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** nccopy ugrd10m[300000:1:309999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_300000.309999_132.196_221.344_ugrd10m.nc...done! **
+** nccopy apcpsfc[300000:1:309999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_300000.309999_132.196_221.344_apcpsfc.nc...done! **
+** nccopy vgrd10m[300000:1:309999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_300000.309999_132.196_221.344_vgrd10m.nc...done! **
+** nccopy pressfc[300000:1:309999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_300000.309999_132.196_221.344_pressfc.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** nccopy dswrfsfc[300000:1:309999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_300000.309999_132.196_221.344_dswrfsfc.nc...done! **
+** nccopy spfh2m[300000:1:309999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_300000.309999_132.196_221.344_spfh2m.nc...done! **
+** nccopy tmp2m[300000:1:309999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_300000.309999_132.196_221.344_tmp2m.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** nccopy pressfc[310000:1:319999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_310000.319999_132.196_221.344_pressfc.nc...done! **
+** transferring file to thredds server...done! **
+** nccopy ugrd10m[310000:1:319999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_310000.319999_132.196_221.344_ugrd10m.nc...done! **
+** nccopy vgrd10m[310000:1:319999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_310000.319999_132.196_221.344_vgrd10m.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** nccopy dswrfsfc[310000:1:319999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_310000.319999_132.196_221.344_dswrfsfc.nc...done! **
+** nccopy apcpsfc[310000:1:319999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_310000.319999_132.196_221.344_apcpsfc.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** nccopy pressfc[320000:1:324323] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_320000.324323_132.196_221.344_pressfc.nc...done! **
+** transferring file to thredds server...done! **
+** nccopy apcpsfc[320000:1:324323] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_320000.324323_132.196_221.344_apcpsfc.nc...done! **
+** transferring file to thredds server...done! **
+** nccopy dswrfsfc[320000:1:324323] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_320000.324323_132.196_221.344_dswrfsfc.nc...done! **
+** transferring file to thredds server...done! **
+** nccopy spfh2m[310000:1:319999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_310000.319999_132.196_221.344_spfh2m.nc...done! **
+** nccopy tmp2m[310000:1:319999] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_310000.319999_132.196_221.344_tmp2m.nc...done! **
+** transferring file to thredds server...done! **
+** transferring file to thredds server...done! **
+** nccopy spfh2m[320000:1:324323] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_320000.324323_132.196_221.344_spfh2m.nc...done! **
+** transferring file to thredds server...done! **
+** nccopy ugrd10m[320000:1:324323] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_320000.324323_132.196_221.344_ugrd10m.nc...done! **
+** transferring file to thredds server...done! **
+** nccopy vgrd10m[320000:1:324323] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_320000.324323_132.196_221.344_vgrd10m.nc...done! **
+** transferring file to thredds server...done! **
+** nccopy tmp2m[320000:1:324323] to /var/folders/y_/1qp06xmj2ws0t8kv54q8wxgh0000gp/T//Rtmpi0sF7I/NLDAS_320000.324323_132.196_221.344_tmp2m.nc...done! **
 ** transferring file to thredds server...done! **

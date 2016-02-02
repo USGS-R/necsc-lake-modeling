@@ -18,27 +18,23 @@
 library(dataRetrieval)
 library(yaml)
 
-cleanUp <- function(charName) {
-  charName <- gsub("[^A-Za-z0-9]", "", charName)
-  return(charName)
-}
-
 config = yaml.load_file("config.yml")
 states <- config$states
 
 charName <- c("Chlorophyll", "Chlorophyll A", "Chlorophyll a","Chlorophyll a (probe relative fluorescence)","Chlorophyll a (probe)","Chlorophyll a - Periphyton (attached)", "Chlorophyll a - Phytoplankton (suspended)", "Chlorophyll a, corrected for pheophytin", "Chlorophyll a, free of pheophytin", "Chlorophyll a, uncorrected for pheophytin", "Chlorophyll b", "Chlorophyll c", "Chlorophyll/Pheophytin ratio")
 
 for (i in 1:length(states)) {
-  
+  chlorophyll <- data.frame()
   for (j in 1:length(charName)) {
     tryCatch({
       retrievedData <- readWQPdata(statecode=paste0("US:",states[[i]]$fips),characteristicName=charName[j], siteType="Lake, Reservoir, Impoundment")
       if (length(retrievedData)>0) { 
-        write.csv(retrievedData, file = paste0(cleanUp(charName[j]),states[[i]]$fips,".csv"),row.names=FALSE)
+        chlorophyll <- rbind(chlorophyll, as.data.frame(retrievedData))  
       } 
     },error = function(e){})
     
   }
-  
+  setwd("D:/MKHData/necsc/lakeattributes/data-raw/chlorophyll")
+  write.csv(retrievedData, file = paste0("chlorophyll",states[[i]]$fips,".csv"),row.names=FALSE)
 } 
   
