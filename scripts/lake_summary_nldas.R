@@ -57,7 +57,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
   server.files <- driver_server_files(data.source='NLDAS', write.file=FALSE)
   cat('index of files contains', length(files), file=mssg.file, append = FALSE)
   
-  
+  stop('STOPPPPING')
   
   # APPEND files? no, initially this will build files clean. Later we can add append. 
   
