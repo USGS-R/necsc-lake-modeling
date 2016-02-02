@@ -1,891 +1,299 @@
-index of files contains 3600
-444 files are new for variable dswrfsfc...
+index of files contains 4440
+102 files are new for variable spfh2m...
 ** transferring file to driver server...done! **
- NLDAS_271501_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2385546_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_271611_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2385572_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_271697_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2385648_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1096982_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2385678_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1097288_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2385692_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1097324_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2385724_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1098396_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2385742_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1098568_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2387640_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1098608_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2387652_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1098628_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2387716_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1098766_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2388578_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1098804_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2388612_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1098898_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2389586_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1098900_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2424487_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1098904_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2424511_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1098942_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2424569_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1098954_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2425367_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1098968_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2425387_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1098974_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2442978_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1098990_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2625902_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099018_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2625952_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099030_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2625962_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099038_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628374_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099052_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628378_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099068_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628386_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099082_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628420_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099102_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628482_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099108_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628514_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099120_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628516_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099126_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628524_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099136_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628570_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099140_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628582_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099156_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628666_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099170_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628676_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099172_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628694_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099180_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628722_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099206_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628802_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099224_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628810_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099232_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628816_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099234_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2628880_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099240_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2630770_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099242_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2630796_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099260_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2630822_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099278_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2630828_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099282_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2630868_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099316_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2630904_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099320_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2630910_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099322_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2630930_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099324_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2630944_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099338_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2630964_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099348_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2631546_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099350_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2637312_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099352_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2637344_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099370_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2639384_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099374_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2639404_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099380_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2639424_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099382_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2639444_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099384_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2639486_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099390_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2645826_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099392_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2645876_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099420_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2645898_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099424_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2645928_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099430_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646558_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099432_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646606_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099444_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646634_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099448_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646678_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099450_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646688_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099454_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646738_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099456_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646746_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099458_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646752_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099476_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646820_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099478_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646848_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099486_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646854_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099510_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646988_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099522_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647036_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099524_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647076_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099526_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647106_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099530_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647112_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099542_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647176_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099552_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647234_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099560_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647236_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099588_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647278_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1099600_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647314_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1100962_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647442_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1100974_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647554_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101008_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647560_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101490_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647564_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101492_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647572_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101500_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647582_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101504_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647628_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101506_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647644_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101508_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647656_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101514_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647676_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101526_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647712_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101544_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647728_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101548_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647746_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101572_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647774_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101584_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647868_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101588_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647936_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101590_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647948_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101616_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2648034_19790101.20151231_spfh2m.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101626_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2648038_19790101.20151231_spfh2m.RData **posted
+46 files are new for variable dlwrfsfc...
 ** transferring file to driver server...done! **
- NLDAS_1101636_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2639444_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101662_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2639486_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101684_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2645826_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101690_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2645876_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101704_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2645898_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101712_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2645928_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101722_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646558_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101754_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646606_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101756_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646634_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101778_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646678_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101790_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646688_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101812_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646738_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101846_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646746_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101864_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646752_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101868_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646820_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101882_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646848_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101890_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646854_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101920_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2646988_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101926_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647036_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101928_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647076_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1101942_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647106_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102008_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647112_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102046_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647176_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102048_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647234_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102056_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647236_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102058_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647278_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102080_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647314_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102086_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647442_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102088_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647554_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102094_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647560_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102194_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647564_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102202_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647572_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102228_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647582_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102236_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647628_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102244_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647644_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102284_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647656_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102358_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647676_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102366_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647712_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102410_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647728_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1102576_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647746_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1103970_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647774_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1754400_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647868_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1754416_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647936_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1754426_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2647948_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1754494_19790101.20151231_dswrfsfc.RData **posted
+ NLDAS_2648034_19790101.20151231_dlwrfsfc.RData **posted
 ** transferring file to driver server...done! **
- NLDAS_1754498_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1754606_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1754656_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1754698_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1754826_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1763758_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1765878_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1766122_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1766156_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1766186_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1766204_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1766220_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1767538_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768240_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768244_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768274_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768276_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768294_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768300_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768322_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768378_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768386_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768408_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768444_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768466_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768476_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768510_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768532_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768538_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768558_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768576_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768596_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768610_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768696_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768710_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768784_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768792_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768816_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768822_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768876_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768996_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1768998_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1769008_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1769026_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1769036_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1769084_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1769132_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1769208_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1769334_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1770876_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1770992_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1771024_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1773774_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1773810_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1773864_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1773974_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1774016_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1774082_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1774172_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1774200_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1774470_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1775796_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1775926_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1775936_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1775944_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1775956_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1775986_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1775994_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1776022_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1776052_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1776060_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1776062_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1776064_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1776084_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1776094_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1776124_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1776146_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1778228_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1790301_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1790401_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1790419_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1790421_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1790461_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1790475_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1790479_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1790497_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1790503_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1790607_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1790621_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1790651_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1790675_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1791827_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1791829_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1791839_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1791861_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1791863_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1791881_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1792707_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1792711_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1792715_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1792743_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1792757_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1792765_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1792779_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1792781_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1792875_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1792897_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1792929_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1793523_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1799681_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1799707_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1799759_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1799769_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1799779_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1799785_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1803719_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1873435_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1873493_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1875847_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1876469_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1876481_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1876497_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_1876541_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2030379_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2031671_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2031703_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2031719_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2031725_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2031739_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2031773_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2031777_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2031809_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2031815_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2031885_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2031893_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2031937_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2031943_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2031945_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2031955_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2031979_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2032039_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2032051_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2032055_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2032081_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2032117_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2032129_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2032145_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2032351_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2032357_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2032381_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2034063_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2116312_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2116316_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2262489_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2262573_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2262583_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2262585_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2262611_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2262615_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2262633_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2262649_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2262661_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2262669_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2262729_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2349180_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2349188_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2349190_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2349198_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2349204_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2349208_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2349226_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2350664_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2350676_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2350690_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2350742_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2350748_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2350922_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2350944_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2352348_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2352372_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2352378_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2352392_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2352404_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2352842_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2353946_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354124_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354176_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354216_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354234_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354244_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354252_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354274_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354286_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354306_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354314_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354324_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354326_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354400_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354414_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354420_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354424_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354426_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2354500_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2360642_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2360646_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2360650_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2360656_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2360664_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2360694_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2360710_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2360720_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2360742_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2360814_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2360828_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2360856_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2360908_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2361074_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2361124_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2362106_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2362138_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2362192_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2362216_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2362218_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2362364_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2362366_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2362414_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2362448_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2362460_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2365392_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2365408_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2365412_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2365562_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2365792_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2365854_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2365922_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2365942_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2365946_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2366094_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2366250_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384520_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384526_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384552_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384576_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384578_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384584_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384594_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384596_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384598_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384612_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384614_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384626_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384628_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384656_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384674_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384686_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384688_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384694_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384706_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384710_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384718_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384726_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384748_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384756_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384758_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384760_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384766_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384776_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384778_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384804_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384830_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384832_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384838_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384858_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384866_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2384996_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385032_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385060_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385068_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385080_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385088_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385092_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385102_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385112_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385132_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385158_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385168_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385326_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385340_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385346_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385366_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385408_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385422_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385444_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385476_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385496_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385502_19790101.20151231_dswrfsfc.RData **posted
-** transferring file to driver server...done! **
- NLDAS_2385544_19790101.20151231_dswrfsfc.RData **posted
-444 files are new for variable spfh2m...
+ NLDAS_2648038_19790101.20151231_dlwrfsfc.RData **posted

@@ -6,20 +6,20 @@ lake_summary_locations <- function(){
   
   sites <- read.csv('data/depth_data/depth_lagos_summary.csv', stringsAsFactors = FALSE)
   
-  sites <- head(sites, 245)
+  sites <- head(sites, 555)
   message('warning, truncating number of lakes')
-  return(sites[c('permID')])
+  return(sites[c('id')])
   
   
 }
 
-stencil_from_id <- function(permIDs){
+stencil_from_id <- function(ids){
   
   sites <- read.csv('data/NHD_summ/nhd_centroids.csv', stringsAsFactors = FALSE)
-  for (i in 1:length(permIDs)){
-    site <- sites[sites$permID == permIDs[i],]
+  for (i in 1:length(ids)){
+    site <- sites[sites$id == id[i],]
     df <- data.frame(c(site$lon, site$lat))
-    names(df) <- permIDs[i]
+    names(df) <- ids[i]
     if (i == 1)
       geom <- df
     else 
