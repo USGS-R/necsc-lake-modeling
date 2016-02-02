@@ -35,8 +35,8 @@ A lot of the outputs described here are intermediate. The actual end-product dat
 ## intermediate files that summarize the end-product files  
 These files *are* part of this repo (or will be when they exist)
  * `depth_data_summary.tsv` is a list of all `ids` with any depth data. No actual depth data is here because of data sharing reasons. 
- * `temperature_data_summary.tsv` is a file of `id`, `start.date`, `end.date`, and `num.samples` in the temperature timeseries file: `temperature_data.tsv` for each lake
- * `clarity_data_summary.tsv` is a file of `id`, `start.date`, `end.date`, and `num.samples` in the clarity timeseries file: `clarity_data.tsv` for each lake
+ * `temperature_data_summary.tsv` is a file of `id`, `time.start`, `time.end`, and `num.samples` in the temperature timeseries file: `temperature_data.tsv` for each lake
+ * `clarity_data_summary.tsv` is a file of `id`, `time.start`, `time.end`, and `num.samples` in the clarity timeseries file: `clarity_data.tsv` for each lake
  * `nhd_centroids.tsv` is a file that contains `id`, `lon`, `lat`, `area`, and `state` for each feature in the `nhd_necsc.shp` it is the canonical source of centroid info for each lake, and this info should not be duplicated elsewhere. 
  * `NLDAS_driver_file_list.tsv` is a list of all of the files that *should* exist on the cida-test web server, but not all of these files may be completely processed at any given time. Instead see `NLDAS_driver_index.tsv` for that
  * `NLDAS_driver_index.tsv` is a list of `id`, `time.start`, `time.end`, `variable`, and `file.name` for each file that *does* exist on the cida-test webserver. It is also available via http://cida-test.er.usgs.gov/mda.lakes/drivers_GLM_NLDAS/driver_index.tsv and now that I say that, it maybe shouldn't also exist in this repo (should maybe be temporary..and posted when it changes?)
