@@ -1,8 +1,14 @@
 #NE-CSC lake modeling effort for MI, MN, WI state lakes
 
-This project contains all raw to intermediate data processing that goes into the modeling project [mda.lakes](https://github.com/USGS-R/mda.lakes) and the lake attributes package [lakeattributes](https://github.com/USGS-R/lakeattributes).
+This project contains all raw to intermediate data processing that goes into the modeling project [mda.lakes](https://github.com/USGS-R/mda.lakes) and the [lake attributes package](https://github.com/USGS-R/lakeattributes).
 
 The building of the files is tracked from their raw (canonical) data sources and their intermediate storage after processing. Processing includes subsetting, filtering, aggregating, and averaging. 
+
+
+## scope of this repo  
+This repo does not store any large files, it stores summary files from processing jobs and instructions for processing and posting larger datasets. Each major dataset that is included in this study has three components: `sub` subsetting in time and/or space, `data` which includes the translation and manipulation of the raw file(s) coming from `sub`, and `summ` which is a summary of the processing and often involves a site-specific count or logical for the processing.   
+
+We are attempting to capture all steps in the processing for the project in a repeatable set of scripts. The `remake` package facilitates this by allowing us to `make` the project and only process the steps that have dependencies that have changed or been updated. As such, the processing steps and dependencies are captured in the [remake.yml](remake.yml). The major datasets also have `configs` (see below) to specify the details of their processing. These `configs` are also dependencies of the processing steps, so if the configs change, several of the processing steps are likely to be re-run. 
 
 ## data types for this project
 
