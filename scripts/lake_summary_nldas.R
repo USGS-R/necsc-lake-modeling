@@ -96,8 +96,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
         message(job@id,' completed')
         cat('success! ...downloading... ', file=mssg.file, append = TRUE)
         data = tryCatch({
-          file <- download(job, destination = file.path(tempdir(),'geoknife_out.csv'), overwrite=TRUE)
-          parseTimeseries(file, delim = ',', with.units=TRUE)
+          result(job, with.units=TRUE)
         }, error = function(e) {
           message(job@id,' failed to download')
           cat('** job FAILED to download **\n',job@id, file=mssg.file, append = TRUE)
@@ -113,8 +112,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
             message('re-trying download')
             bad.file = TRUE
             data = tryCatch({
-              file <- download(job, destination = file.path(tempdir(),'geoknife_out.csv'), overwrite=TRUE)
-              parseTimeseries(file, delim = ',', with.units=TRUE)
+              result(job, with.units=TRUE)
             }, error = function(e) {
               message(job@id,' failed to download')
               cat('** job FAILED to download **\n',job@id, file=mssg.file, append = TRUE)
