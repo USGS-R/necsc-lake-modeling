@@ -5,7 +5,7 @@
 lake_summary_locations <- function(){
   
   sites <- read.csv('data/depth_data/depth_lagos_summary.csv', stringsAsFactors = FALSE)
-  
+
   return(sites[c('id')])
   
   

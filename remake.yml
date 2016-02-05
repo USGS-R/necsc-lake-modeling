@@ -22,11 +22,9 @@ targets:
   all:
     depends: 
       - data/nldas_lakes.txt
-      - data/NLDAS_sub/nldas_miwimn.ncml
       - data/NLDAS_sub/NLDAS_sub_status.txt
       - data/NLDAS_data/NLDAS_driver_status.txt
       - nldas_index
-      - data/NLDAS_data/NLDAS_driver_file_list.tsv
 
   #data/nldas_lakes.txt:
   #  command: lake_summary_nldas(project_lake_locations, nldas_config)

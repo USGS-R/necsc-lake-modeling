@@ -80,8 +80,6 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
     times[2] <- parse_driver_file_name(post.files, 'time.end')
     times <- unname(sapply(times, function(x) paste0(substr(x,1,4),'-',substr(x,5,6),'-',substr(x,7,8), ' UTC')))
     ids <- parse_driver_file_name(post.files, 'ids')
-    lats <- lat_from_id(ids) # sort these, so we can get smaller chunks to process
-    ids = lats$id[sort.int(lats$lat, index.return=TRUE)$ix]
     cat(sprintf('\n%s files are new for variable %s...',length(post.files), var), file=mssg.file, append = TRUE)
     
     groups.s <- seq(1,length(ids), config$driver_split)
@@ -91,34 +89,78 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
     
     for (i in 1:length(groups.s)){
     
-      job <- geoknife(stencil=stencil_from_id(ids[groups.s[i]:groups.e[i]]), fabric, knife, wait=TRUE)
+      lake.ids <- ids[groups.s[i]:groups.e[i]]
+      cat('\nbegin job for ',length(lake.ids),' features, and variable:',var, '...', file=mssg.file, append = TRUE)
+      job <- geoknife(stencil=stencil_from_id(lake.ids), fabric, knife, wait=TRUE, sleep.time=60) # sleep.time supported in geoknife >= 1.1.5??
       if (successful(job)){
         message(job@id,' completed')
-        tryCatch({
-          data = result(job, with.units=TRUE)
-          for (file in post.files[groups.s[i]:groups.e[i]]){
-            chunks <- strsplit(file, '[_]')[[1]]
-            perm.id <- chunks[2]
-            var <- strsplit(chunks[4],'[.]')[[1]][1]
-            data.site <- data[c('DateTime', perm.id,'variable')] %>% 
-              filter(variable == var) %>% 
-              select_('DateTime',2)
-            names(data.site) <- c('DateTime', var)
-            local.file <- file.path(temp.dir, file)
-            save(data.site, file=local.file, compress="xz")
-            output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, opt$driver_dir, file),
-                             ignore.stdout = TRUE, ignore.stderr = TRUE)
-            unlink(local.file)
-            if (!output){
-              message('rsync of ',file, ' complete! ', Sys.time())
-            } else {
-              cat('rsync of ', file, ' FAILED **', file=mssg.file, append = TRUE)
-            }
-          }
+        cat('success! ...downloading... ', file=mssg.file, append = TRUE)
+        data = tryCatch({
+          file <- download(job, destination = file.path(tempdir(),'geoknife_out.csv'), overwrite=TRUE)
+          parseTimeseries(file, delim = ',', with.units=TRUE)
         }, error = function(e) {
           message(job@id,' failed to download')
-          cat('\n** job FAILED **\n',job@id, file=mssg.file, append = TRUE)
+          cat('** job FAILED to download **\n',job@id, file=mssg.file, append = TRUE)
+          return(NULL)
         })
+        
+        if (!is.null(data)){
+          bad.file = FALSE
+          dr <- format(c(head(data$DateTime,1), tail(data$DateTime,1)), '%Y-%m-%d UTC', tz = 'UTC')
+          if (dr[1] != times[1] | dr[2] != times[2]){
+            message('file date range does not match! failure!', length(data$DateTime),'timesteps found')
+            cat(' is incomplete **', file=mssg.file, append = TRUE)
+            message('re-trying download')
+            bad.file = TRUE
+            data = tryCatch({
+              file <- download(job, destination = file.path(tempdir(),'geoknife_out.csv'), overwrite=TRUE)
+              parseTimeseries(file, delim = ',', with.units=TRUE)
+            }, error = function(e) {
+              message(job@id,' failed to download')
+              cat('** job FAILED to download **\n',job@id, file=mssg.file, append = TRUE)
+              return(NULL)
+            })
+            if (!is.null(data)){
+              dr <- format(c(head(data$DateTime,1), tail(data$DateTime,1)), '%Y-%m-%d UTC', tz = 'UTC')
+              if (dr[1] != times[1] | dr[2] != times[2]){
+                message('file date range does not match! failure!', length(data$DateTime),'timesteps found')
+                cat(' is incomplete **', file=mssg.file, append = TRUE)
+              } else {
+                bad.file = FALSE
+              }
+              # else {is still a bad.file}
+            } 
+          } 
+          if (!bad.file){
+            cat('success!', file=mssg.file, append = TRUE)
+            for (file in post.files[groups.s[i]:groups.e[i]]){
+              
+              tryCatch({
+                chunks <- strsplit(file, '[_]')[[1]]
+                perm.id <- paste(chunks[2:3],collapse='_')
+                var <- strsplit(chunks[5],'[.]')[[1]][1]
+                data.site <- data[c('DateTime', perm.id,'variable')] %>% 
+                  filter(variable == var) %>% 
+                  select_('DateTime',2)
+                names(data.site) <- c('DateTime', var)
+                local.file <- file.path(temp.dir, file)
+                
+                save(data.site, file=local.file, compress="xz")
+                output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, opt$driver_dir, file),
+                                 ignore.stdout = TRUE, ignore.stderr = TRUE)
+                unlink(local.file)
+                if (!output){
+                  message('rsync of ',file, ' complete! ', Sys.time())
+                } else {
+                  cat('rsync of ', file, ' FAILED **', file=mssg.file, append = TRUE)
+                }
+                
+              }, error = function(e){
+                cat('rsync of ', file, ' FAILED **', file=mssg.file, append = TRUE)
+              })
+            } 
+          }
+        }
       } else {
         message(job@id,' failed ' )
         cat('\n** job FAILED in processing **\n', job@id, file=mssg.file, append = TRUE)

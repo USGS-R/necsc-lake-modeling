@@ -1,4 +1,3 @@
 index of files contains 24984
-2497 files are new for variable dlwrfsfc...
-** job FAILED **
- http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=79b4bc83-1c05-4808-8cd9-3767a667c3e4
+3043 files are new for variable tmp2m...
+begin job for  500  features, and variable: tmp2m ...success! ...downloading...  is incomplete **
