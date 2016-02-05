@@ -25,4 +25,9 @@ for (i in 1:nrow(input2)) {
 input2 <- as.data.frame(input2)
 input3 <- subset(input2,!is.na(id))
 input3 <- transform(input3,id=paste0('nhd_',id))
+#write out the mapping between lagoslakeid and nhd permid
 write.csv(input3[,c("lagoslakeid","id")], file = "lagosnhd_final.csv", row.names = FALSE)
+
+#merge with big secchi file
+output <- merge(input, as.data.frame(input3), by.x = "lagoslakeid", by.y="lagoslakeid")
+write.csv(output, file="secchi_subsetWithPermID.csv", row.names = FALSE)
