@@ -33,5 +33,21 @@ keepers <- as.data.frame(input)
 cols <- c("id")
 keepers <- keepers[,cols,drop=FALSE]
 
-#TODO change to tsv and put in data/depth_data/depth_data_summary.tsv
 write.csv(keepers, file="lagosPermID.csv",row.names=FALSE)
+
+#TODO change to tsv and put in data/depth_data/depth_data_summary.csv
+#write out some summary depth details
+names(input2)[names(input2)=="maxdepth"] <- "zmax"
+names(input2)[names(input2)=="id"] <- "nhd_id"
+input2$source <- "lagos"
+input2$type <- "maxdepth"
+input2$id <- gsub("nhd_", "", input2$nhd_id)
+
+#if the file isn't there, use the column names
+if (!file.exists("data/depth_data/depth_data_summary.csv")){
+  write.table(input2[,c("id","zmax","source","type")], file="data/depth_data/depth_data_summary.csv", row.names = FALSE, append=TRUE,sep=",")
+} else {
+  write.table(input2[,c("id","zmax","source","type")], file="data/depth_data/depth_data_summary.csv", row.names = FALSE, append = TRUE, sep=",", col.names = FALSE)
+}
+
+
