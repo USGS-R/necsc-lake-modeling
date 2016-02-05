@@ -35,7 +35,6 @@ keepers <- keepers[,cols,drop=FALSE]
 
 write.csv(keepers, file="lagosPermID.csv",row.names=FALSE)
 
-#TODO change to tsv and put in data/depth_data/depth_data_summary.csv
 #write out some summary depth details
 names(input2)[names(input2)=="maxdepth"] <- "zmax"
 names(input2)[names(input2)=="id"] <- "nhd_id"
@@ -47,6 +46,14 @@ input2$id <- gsub("nhd_", "", input2$nhd_id)
 if (!file.exists("data/depth_data/depth_data_summary.csv")){
   write.table(input2[,c("id","zmax","source","type")], file="data/depth_data/depth_data_summary.csv", row.names = FALSE, append=TRUE,sep=",")
 } else {
+  #read in existing file, check for our current source and drop the rows if it's already there
+  depth <- read.csv(file="data/depth_data/depth_data_summary.csv")
+  depth <- subset(depth, source!="lagos")
+  #drop the original file now
+  file.remove("data/depth_data/depth_data_summary.csv")
+  #write the old rows back
+  write.table(depth, file="data/depth_data/depth_data_summary.csv", row.names = FALSE, append = TRUE, sep=",")
+  #put the redone rows back for this source
   write.table(input2[,c("id","zmax","source","type")], file="data/depth_data/depth_data_summary.csv", row.names = FALSE, append = TRUE, sep=",", col.names = FALSE)
 }
 
