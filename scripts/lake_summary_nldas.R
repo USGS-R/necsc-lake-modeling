@@ -80,7 +80,10 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
     times[2] <- parse_driver_file_name(post.files, 'time.end')
     times <- unname(sapply(times, function(x) paste0(substr(x,1,4),'-',substr(x,5,6),'-',substr(x,7,8), ' UTC')))
     ids <- parse_driver_file_name(post.files, 'ids')
+    lats <- lat_from_id(ids) # sort these, so we can get smaller chunks to process
+    ids = lats$id[sort.int(lats$lat, index.return=TRUE)$ix]
     cat(sprintf('\n%s files are new for variable %s...',length(post.files), var), file=mssg.file, append = TRUE)
+    
     groups.s <- seq(1,length(ids), config$driver_split)
     groups.e <- c(tail(groups.s-1,-1L),length(ids))
     
@@ -90,6 +93,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
     
       job <- geoknife(stencil=stencil_from_id(ids[groups.s[i]:groups.e[i]]), fabric, knife, wait=TRUE)
       if (successful(job)){
+        message(job@id,' completed')
         tryCatch({
           data = result(job, with.units=TRUE)
           for (file in post.files[groups.s[i]:groups.e[i]]){
@@ -112,11 +116,12 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
             }
           }
         }, error = function(e) {
-          cat('\n** job FAILED **\n',id(job), file=mssg.file, append = TRUE)
+          message(job@id,' failed to download')
+          cat('\n** job FAILED **\n',job@id, file=mssg.file, append = TRUE)
         })
-        }
       } else {
-        cat('\n** job FAILED **\n', id(job), check(job)$status, file=mssg.file, append = TRUE)
+        message(job@id,' failed ' )
+        cat('\n** job FAILED in processing **\n', job@id, file=mssg.file, append = TRUE)
       }
     }
   }

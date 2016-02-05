@@ -52,3 +52,27 @@ input <- transform(input,id=paste0('nhd_',id))
 
 write.csv(input[,c("bathybaseid","depth_max","lon","lat","id")], file = "bathynhd_final.csv", row.names = FALSE)
 
+
+#write out some summary depth details
+names(input)[names(input)=="depth_max"] <- "zmax"
+names(input)[names(input)=="id"] <- "nhd_id"
+names(input)[names(input)=="bathybaseid"] <- "id"
+input$source <- "bathybase"
+input$type <- "bathymetry"
+
+#if the file isn't there, use the column names
+if (!file.exists("data/depth_data/depth_data_summary.csv")){
+  write.table(input[,c("id","zmax","source","type")], file="data/depth_data/depth_data_summary.csv", row.names = FALSE, append=TRUE,sep=",")
+} else {
+  #read in existing file, check for our current source and drop the rows if it's already there
+  depth <- read.csv(file="data/depth_data/depth_data_summary.csv")
+  depth <- subset(depth, source!="bathybase")
+  #drop the original file now
+  file.remove("data/depth_data/depth_data_summary.csv")
+  #write the old rows back
+  write.table(depth, file="data/depth_data/depth_data_summary.csv", row.names = FALSE, append = TRUE, sep=",")
+  #put the redone rows back for this source
+  write.table(input[,c("id","zmax","source","type")], file="data/depth_data/depth_data_summary.csv", row.names = FALSE, append = TRUE, sep=",", col.names = FALSE)
+}
+
+
