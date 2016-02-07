@@ -1,3 +1,71 @@
 index of files contains 24984
-2944 files are new for variable spfh2m...
-begin job for  500  features, and variable: spfh2m ...success! ...downloading... 
+2444 files are new for variable spfh2m...
+begin job for  200  features, and variable: spfh2m ...success! ...downloading... success!
+begin job for  200  features, and variable: spfh2m ...success! ...downloading...  is incomplete **success!
+begin job for  200  features, and variable: spfh2m ...success! ...downloading...  is incomplete ** is incomplete **
+begin job for  200  features, and variable: spfh2m ...success! ...downloading... success!
+begin job for  200  features, and variable: spfh2m ...success! ...downloading...  is incomplete **success!
+begin job for  200  features, and variable: spfh2m ...success! ...downloading...  is incomplete **success!
+begin job for  200  features, and variable: spfh2m ...success! ...downloading... success!
+begin job for  200  features, and variable: spfh2m ...success! ...downloading... success!
+begin job for  200  features, and variable: spfh2m ...success! ...downloading... success!
+begin job for  200  features, and variable: spfh2m ...success! ...downloading... success!
+begin job for  200  features, and variable: spfh2m ...success! ...downloading...  is incomplete ** is incomplete **
+begin job for  200  features, and variable: spfh2m ...success! ...downloading...  is incomplete **success!
+begin job for  44  features, and variable: spfh2m ...success! ...downloading... success!
+500 files are new for variable pressfc...
+begin job for  200  features, and variable: pressfc ...success! ...downloading... success!
+begin job for  200  features, and variable: pressfc ...success! ...downloading... success!
+begin job for  100  features, and variable: pressfc ...success! ...downloading... success!
+1000 files are new for variable vgrd10m...
+begin job for  200  features, and variable: vgrd10m ...success! ...downloading...  is incomplete ** is incomplete **
+begin job for  200  features, and variable: vgrd10m ...success! ...downloading... success!
+begin job for  200  features, and variable: vgrd10m ...success! ...downloading... success!
+begin job for  200  features, and variable: vgrd10m ...success! ...downloading... success!
+begin job for  200  features, and variable: vgrd10m ...success! ...downloading... success!
+2444 files are new for variable tmp2m...
+begin job for  200  features, and variable: tmp2m ...success! ...downloading... success!
+begin job for  200  features, and variable: tmp2m ...success! ...downloading... success!
+begin job for  200  features, and variable: tmp2m ...success! ...downloading... success!
+begin job for  200  features, and variable: tmp2m ...success! ...downloading... success!
+begin job for  200  features, and variable: tmp2m ...success! ...downloading...  is incomplete **success!
+begin job for  200  features, and variable: tmp2m ...success! ...downloading... success!
+begin job for  200  features, and variable: tmp2m ...success! ...downloading... success!
+begin job for  200  features, and variable: tmp2m ...success! ...downloading... success!
+begin job for  200  features, and variable: tmp2m ...success! ...downloading... success!
+begin job for  200  features, and variable: tmp2m ...success! ...downloading... success!
+begin job for  200  features, and variable: tmp2m ...success! ...downloading... success!
+begin job for  200  features, and variable: tmp2m ...success! ...downloading... success!
+begin job for  44  features, and variable: tmp2m ...success! ...downloading... success!
+1444 files are new for variable dlwrfsfc...
+begin job for  200  features, and variable: dlwrfsfc ...success! ...downloading... success!
+begin job for  200  features, and variable: dlwrfsfc ...success! ...downloading... success!
+begin job for  200  features, and variable: dlwrfsfc ...success! ...downloading... success!
+begin job for  200  features, and variable: dlwrfsfc ...success! ...downloading...  is incomplete **success!
+begin job for  200  features, and variable: dlwrfsfc ...success! ...downloading... success!
+begin job for  200  features, and variable: dlwrfsfc ...success! ...downloading... success!
+begin job for  200  features, and variable: dlwrfsfc ...success! ...downloading... success!
+begin job for  44  features, and variable: dlwrfsfc ...success! ...downloading...  is incomplete **success!
+944 files are new for variable apcpsfc...
+begin job for  200  features, and variable: apcpsfc ...success! ...downloading... success!
+begin job for  200  features, and variable: apcpsfc ...success! ...downloading... success!
+begin job for  200  features, and variable: apcpsfc ...success! ...downloading...  is incomplete **success!
+begin job for  200  features, and variable: apcpsfc ...success! ...downloading...  is incomplete ** is incomplete **
+begin job for  144  features, and variable: apcpsfc ...success! ...downloading... success!
+1444 files are new for variable dswrfsfc...
+begin job for  200  features, and variable: dswrfsfc ...success! ...downloading... success!
+begin job for  200  features, and variable: dswrfsfc ...success! ...downloading... success!
+begin job for  200  features, and variable: dswrfsfc ...success! ...downloading...  is incomplete **success!
+begin job for  200  features, and variable: dswrfsfc ...success! ...downloading... success!
+begin job for  200  features, and variable: dswrfsfc ...success! ...downloading...  is incomplete **success!
+begin job for  200  features, and variable: dswrfsfc ...success! ...downloading... success!
+begin job for  200  features, and variable: dswrfsfc ...
+** job FAILED in processing **
+ http://cida-eros-gdpdev.er.usgs.gov:8080/gdp-process-wps/RetrieveResultServlet?id=ad2d6d98-8378-456b-a8ea-a03bcf3d2242
+begin job for  44  features, and variable: dswrfsfc ...success! ...downloading... success!
+500 files are new for variable ugrd10m...
+begin job for  200  features, and variable: ugrd10m ...success! ...downloading... ** job FAILED to download **
+ http://cida-eros-gdpdev.er.usgs.gov:8080/gdp-process-wps/RetrieveResultServlet?id=b9ed67e6-8163-47fd-b234-1d5428fb1ca4
+begin job for  200  features, and variable: ugrd10m ...success! ...downloading... ** job FAILED to download **
+ http://cida-eros-gdpdev.er.usgs.gov:8080/gdp-process-wps/RetrieveResultServlet?id=15511fac-faa3-4964-8baf-2e4e097eb588
+begin job for  100  features, and variable: ugrd10m ...success! ...downloading... success!rsync of  NLDAS_nhd_13176437_19790104.20160101_ugrd10m.RData  FAILED **rsync of  NLDAS_nhd_13176443_19790104.20160101_ugrd10m.RData  FAILED **rsync of  NLDAS_nhd_13176471_19790104.20160101_ugrd10m.RData  FAILED **rsync of  NLDAS_nhd_13183256_19790104.20160101_ugrd10m.RData  FAILED **rsync of  NLDAS_nhd_13183494_19790104.20160101_ugrd10m.RData  FAILED **rsync of  NLDAS_nhd_13183498_19790104.20160101_ugrd10m.RData  FAILED **rsync of  NLDAS_nhd_13183508_19790104.20160101_ugrd10m.RData  FAILED **rsync of  NLDAS_nhd_13183546_19790104.20160101_ugrd10m.RData  FAILED **rsync of  NLDAS_nhd_13183600_19790104.20160101_ugrd10m.RData  FAILED **rsync of  NLDAS_nhd_13183682_19790104.20160101_ugrd10m.RData  FAILED **rsync of  NLDAS_nhd_13183738_19790104.20160101_ugrd10m.RData  FAILED **rsync of  NLDAS_nhd_13183762_19790104.20160101_ugrd10m.RData  FAILED **
