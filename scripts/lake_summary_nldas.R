@@ -164,16 +164,10 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
         message(job@id,' failed ' )
         cat('\n** job FAILED in processing **\n', job@id, file=mssg.file, append = TRUE)
       }
-    } else {
-      cat('\n** job FAILED **\n', id(job), check(job)$status, file=mssg.file, append = TRUE)
     }
   }
 }
 
-
-driver_server_files(data.source='NLDAS')
-
-}
 
 # lake.locations should now come in as 'id', with 'nhd_2637312' for example
 calc_nldas_driver_files <- function(config, lake.locations){
