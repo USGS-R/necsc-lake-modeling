@@ -54,7 +54,7 @@ write.csv(input[,c("bathybaseid","depth_max","lon","lat","id")], file = "bathynh
 
 #write out some summary depth details
 input$source <- "bathybase"
-input$type <- ""
+input$type <- "bathymetry"
 
 #if the file isn't there, use the column names
 if (!file.exists("data/depth_data/depth_data_summary.csv")){
