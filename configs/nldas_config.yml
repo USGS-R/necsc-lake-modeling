@@ -2,8 +2,8 @@ sub_times: ["1979-01-01 UTC", "2016-01-01 UTC"]
 sub_variables: ['dlwrfsfc','pressfc','apcpsfc','vgrd10m','ugrd10m','dswrfsfc','spfh2m','tmp2m']
 nldas_url: "dods://hydro1.sci.gsfc.nasa.gov/dods/NLDAS_FORA0125_H.002"
 data_times: ["1979-01-04","2016-01-01"]
-data_variables: ['spfh2m','tmp2m','dlwrfsfc','pressfc','apcpsfc','vgrd10m','ugrd10m','dswrfsfc']
-wps_url: "http://cida-eros-gdpdev.er.usgs.gov:8080/gdp-process-wps/WebProcessingService"
+data_variables: ['spfh2m','tmp2m','pressfc','apcpsfc','dlwrfsfc','ugrd10m','dswrfsfc','vgrd10m']
+wps_url: "http://cida.usgs.gov/gdp/process/WebProcessingService"
 data_url: "dods://cida-eros-netcdfdev.er.usgs.gov:8080/thredds/dodsC/thredds/nldas_miwimn/nldas_miwimn.ncml"
 catalog_url: "http://cida-eros-netcdfdev.er.usgs.gov:8080/thredds/catalog/thredds/nldas_miwimn/catalog.xml"
 sub_split: 10000

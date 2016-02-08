@@ -60,18 +60,20 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
   
   # APPEND files? no, initially this will build files clean. Later we can add append. 
   
+  
   new.files <- setdiff(files, server.files)
   rm.files <- setdiff(server.files, files)
   if (length(new.files) == 0){
     message('no new files to sync. doing nothing')
     return()
   }
-    
   config <- load_config("configs/NLDAS_config.yml")
   knife = webprocess(url=config$wps_url)
   temp.dir <- tempdir()
   
   vars <- parse_driver_file_name(new.files, 'vars')
+  
+  cat('\n', length(new.files),' are new for ', length(vars), ' variables...', file=mssg.file, append = TRUE)  
   
   for (var in vars){
     post.files <- lake_files_with_var(new.files, var)
