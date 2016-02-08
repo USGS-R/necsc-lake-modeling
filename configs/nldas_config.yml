@@ -3,8 +3,8 @@ sub_variables: ['dlwrfsfc','pressfc','apcpsfc','vgrd10m','ugrd10m','dswrfsfc','s
 nldas_url: "dods://hydro1.sci.gsfc.nasa.gov/dods/NLDAS_FORA0125_H.002"
 data_times: ["1979-01-01","2015-12-31"]
 data_variables: ['dlwrfsfc','pressfc','apcpsfc','vgrd10m','ugrd10m','dswrfsfc','spfh2m','tmp2m']
-wps_url: "http://cida.usgs.gov/gdp/process/WebProcessingService"
+wps_url: "http://cida-test.er.usgs.gov/gdp/process/WebProcessingService"
 data_url: "dods://cida-eros-netcdfdev.er.usgs.gov:8080/thredds/dodsC/thredds/nldas_miwimn/nldas_miwimn.ncml"
 catalog_url: "http://cida-eros-netcdfdev.er.usgs.gov:8080/thredds/catalog/thredds/nldas_miwimn/catalog.xml"
 sub_split: 10000
-driver_split: 300
+driver_split: 500
