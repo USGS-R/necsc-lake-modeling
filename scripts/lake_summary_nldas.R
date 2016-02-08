@@ -60,18 +60,21 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
   
   # APPEND files? no, initially this will build files clean. Later we can add append. 
   
+  
   new.files <- setdiff(files, server.files)
   rm.files <- setdiff(server.files, files)
   if (length(new.files) == 0){
     message('no new files to sync. doing nothing')
     return()
   }
-  
+
   config <- load_config("configs/NLDAS_config.yml")
   knife = webprocess(url=config$wps_url)
   temp.dir <- tempdir()
   
   vars <- parse_driver_file_name(new.files, 'vars')
+  
+  cat('\n', length(new.files),' are new for ', length(vars), ' variables...', file=mssg.file, append = TRUE)  
   
   for (var in vars){
     post.files <- lake_files_with_var(new.files, var)
@@ -87,44 +90,84 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
     fabric = webdata(url=config$data_url, variables=var, times=times)
     
     for (i in 1:length(groups.s)){
-      
-      job <- geoknife(stencil=stencil_from_id(ids[groups.s[i]:groups.e[i]]), fabric, knife, wait=TRUE)
+      lake.ids <- ids[groups.s[i]:groups.e[i]]
+      cat('\nbegin job for ',length(lake.ids),' features, and variable:',var, '...', file=mssg.file, append = TRUE)
+      job <- geoknife(stencil=stencil_from_id(lake.ids), fabric, knife, wait=TRUE, sleep.time=60) # sleep.time supported in geoknife >= 1.1.5??
       if (successful(job)){
-        tryCatch({
-          data = result(job, with.units=TRUE)
-          for (file in post.files[groups.s[i]:groups.e[i]]){
-            chunks <- strsplit(file, '[_]')[[1]]
-            perm.id <- chunks[2]
-            var <- strsplit(chunks[4],'[.]')[[1]][1]
-            data.site <- data[c('DateTime', perm.id,'variable')] %>% 
-              filter(variable == var) %>% 
-              select_('DateTime',2)
-            names(data.site) <- c('DateTime', var)
-            local.file <- file.path(temp.dir, file)
-            save(data.site, file=local.file, compress="xz")
-            output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, opt$driver_dir, file),
-                             ignore.stdout = TRUE, ignore.stderr = TRUE)
-            unlink(local.file)
-            if (!output){
-              message('rsync of ',file, ' complete! ', Sys.time())
-            } else {
-              cat('rsync of ', file, ' FAILED **', file=mssg.file, append = TRUE)
-            }
-          }
+        message(job@id,' completed')
+        cat('success! ...downloading... ', file=mssg.file, append = TRUE)
+        data = tryCatch({
+          result(job, with.units=TRUE)
         }, error = function(e) {
-          cat('\n** job FAILED **\n',id(job), file=mssg.file, append = TRUE)
+          message(job@id,' failed to download')
+          cat('** job FAILED to download **\n',job@id, file=mssg.file, append = TRUE)
+          return(NULL)
         })
+        
+        if (!is.null(data)){
+          bad.file = FALSE
+          dr <- format(c(head(data$DateTime,1), tail(data$DateTime,1)), '%Y-%m-%d UTC', tz = 'UTC')
+          if (dr[1] != times[1] | dr[2] != times[2]){
+            message('file date range does not match! failure!', length(data$DateTime),'timesteps found')
+            cat(' is incomplete **', file=mssg.file, append = TRUE)
+            message('re-trying download')
+            bad.file = TRUE
+            data = tryCatch({
+              result(job, with.units=TRUE)
+            }, error = function(e) {
+              message(job@id,' failed to download')
+              cat('** job FAILED to download **\n',job@id, file=mssg.file, append = TRUE)
+              return(NULL)
+            })
+            if (!is.null(data)){
+              dr <- format(c(head(data$DateTime,1), tail(data$DateTime,1)), '%Y-%m-%d UTC', tz = 'UTC')
+              if (dr[1] != times[1] | dr[2] != times[2]){
+                message('file date range does not match! failure!', length(data$DateTime),'timesteps found')
+                cat(' is incomplete **', file=mssg.file, append = TRUE)
+              } else {
+                bad.file = FALSE
+              }
+              # else {is still a bad.file}
+            } 
+          } 
+          if (!bad.file){
+            cat('success!', file=mssg.file, append = TRUE)
+            for (file in post.files[groups.s[i]:groups.e[i]]){
+              
+              tryCatch({
+                chunks <- strsplit(file, '[_]')[[1]]
+                perm.id <- paste(chunks[2:3],collapse='_')
+                var <- strsplit(chunks[5],'[.]')[[1]][1]
+                data.site <- data[c('DateTime', perm.id,'variable')] %>% 
+                  filter(variable == var) %>% 
+                  select_('DateTime',2)
+                names(data.site) <- c('DateTime', var)
+                local.file <- file.path(temp.dir, file)
+                
+                save(data.site, file=local.file, compress="xz")
+                output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, opt$driver_dir, file),
+                                 ignore.stdout = TRUE, ignore.stderr = TRUE)
+                unlink(local.file)
+                if (!output){
+                  message('rsync of ',file, ' complete! ', Sys.time())
+                } else {
+                  cat('rsync of ', file, ' FAILED **', file=mssg.file, append = TRUE)
+                }
+                
+              }, error = function(e){
+                cat('rsync of ', file, ' FAILED **', file=mssg.file, append = TRUE)
+              })
+            } 
+          }
+        }
+      } else {
+        message(job@id,' failed ' )
+        cat('\n** job FAILED in processing **\n', job@id, file=mssg.file, append = TRUE)
       }
-    } else {
-      cat('\n** job FAILED **\n', id(job), check(job)$status, file=mssg.file, append = TRUE)
     }
   }
 }
 
-
-driver_server_files(data.source='NLDAS')
-
-}
 
 # lake.locations should now come in as 'id', with 'nhd_2637312' for example
 calc_nldas_driver_files <- function(config, lake.locations){
