@@ -67,7 +67,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
     message('no new files to sync. doing nothing')
     return()
   }
-  
+
   config <- load_config("configs/NLDAS_config.yml")
   knife = webprocess(url=config$wps_url)
   temp.dir <- tempdir()
