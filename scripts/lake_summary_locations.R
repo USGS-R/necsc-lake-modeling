@@ -11,11 +11,6 @@ lake_summary_locations <- function(){
   
 }
 
-lat_from_id <- function(ids){
-  sites <- read.csv('data/NHD_summ/nhd_centroids.csv', stringsAsFactors = FALSE)
-  sites[sites$id %in% ids, c('id','lat')]
-}
-
 stencil_from_id <- function(ids){
   
   sites <- read.csv('data/NHD_summ/nhd_centroids.csv', stringsAsFactors = FALSE)

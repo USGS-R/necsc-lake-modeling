@@ -38,10 +38,10 @@ driver_server_files <- function(data.source='NLDAS', write.file=TRUE){
 
 parse_driver_file_name <- function(files, param, unique.vals=TRUE){
   values = switch(param,
-         ids = paste(sapply(strsplit(files,'[_]'),function(x)x[2]),sapply(strsplit(files,'[_]'),function(x)x[3]), sep='_'),
-         vars = unname(sapply(sapply(strsplit(files,'[_]'),function(x)x[5]),function(x) strsplit(x,'[.]')[[1]][1])),
-         time.start = unname(sapply(sapply(strsplit(files,'[_]'),function(x)x[4]),function(x) strsplit(x,'[.]')[[1]][1])),
-         time.end = unname(sapply(sapply(strsplit(files,'[_]'),function(x)x[4]),function(x) strsplit(x,'[.]')[[1]][2])))
+                  ids = paste(sapply(strsplit(files,'[_]'),function(x)x[2]),sapply(strsplit(files,'[_]'),function(x)x[3]), sep='_'),
+                  vars = unname(sapply(sapply(strsplit(files,'[_]'),function(x)x[5]),function(x) strsplit(x,'[.]')[[1]][1])),
+                  time.start = unname(sapply(sapply(strsplit(files,'[_]'),function(x)x[4]),function(x) strsplit(x,'[.]')[[1]][1])),
+                  time.end = unname(sapply(sapply(strsplit(files,'[_]'),function(x)x[4]),function(x) strsplit(x,'[.]')[[1]][2])))
   if (unique.vals)
     values <- unique(values)
   return(values)
@@ -67,6 +67,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
     message('no new files to sync. doing nothing')
     return()
   }
+  
   config <- load_config("configs/NLDAS_config.yml")
   knife = webprocess(url=config$wps_url)
   temp.dir <- tempdir()
@@ -83,14 +84,12 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
     times <- unname(sapply(times, function(x) paste0(substr(x,1,4),'-',substr(x,5,6),'-',substr(x,7,8), ' UTC')))
     ids <- parse_driver_file_name(post.files, 'ids')
     cat(sprintf('\n%s files are new for variable %s...',length(post.files), var), file=mssg.file, append = TRUE)
-    
     groups.s <- seq(1,length(ids), config$driver_split)
     groups.e <- c(tail(groups.s-1,-1L),length(ids))
     
     fabric = webdata(url=config$data_url, variables=var, times=times)
     
     for (i in 1:length(groups.s)){
-    
       lake.ids <- ids[groups.s[i]:groups.e[i]]
       cat('\nbegin job for ',length(lake.ids),' features, and variable:',var, '...', file=mssg.file, append = TRUE)
       job <- geoknife(stencil=stencil_from_id(lake.ids), fabric, knife, wait=TRUE, sleep.time=60) # sleep.time supported in geoknife >= 1.1.5??
@@ -165,12 +164,15 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
         message(job@id,' failed ' )
         cat('\n** job FAILED in processing **\n', job@id, file=mssg.file, append = TRUE)
       }
+    } else {
+      cat('\n** job FAILED **\n', id(job), check(job)$status, file=mssg.file, append = TRUE)
     }
   }
-  
-  
-  driver_server_files(data.source='NLDAS')
-  
+}
+
+
+driver_server_files(data.source='NLDAS')
+
 }
 
 # lake.locations should now come in as 'id', with 'nhd_2637312' for example
