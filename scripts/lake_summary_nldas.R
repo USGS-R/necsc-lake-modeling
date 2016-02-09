@@ -1,19 +1,20 @@
 library(geoknife)
 library(yaml)
 
-load_config <- function(data.source="configs/NLDAS_config.yml"){
+load_config <- function(data.source){
   yaml.load_file(data.source)
 }
 
 sync_driver_index <- function(local.file){
   file = 'driver_index.tsv'
-  output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, opt$driver_dir, file),
+  data.source <- strsplit(local.file,'[/_]')[[1]][2]
+  output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, paste0(opt$driver_dir,sprintf('drivers_GLM_%s/',data.source)), file),
                    ignore.stdout = TRUE, ignore.stderr = TRUE)
   return(output)
 }
 
 driver_server_files <- function(data.source='NLDAS', write.file=TRUE){
-  output <- system(sprintf('ssh %s@cidasdpdfsuser.cr.usgs.gov ls %s',opt$necsc_user, opt$driver_dir), intern = TRUE, ignore.stderr = TRUE)
+  output <- system(sprintf('ssh %s@cidasdpdfsuser.cr.usgs.gov ls %s',opt$necsc_user, paste0(opt$driver_dir,sprintf('drivers_GLM_%s/', data.source))), intern = TRUE, ignore.stderr = TRUE)
   
   file.list <- output[grepl(paste0(data.source, '_'), output)]
   if (write.file){
@@ -30,7 +31,7 @@ driver_server_files <- function(data.source='NLDAS', write.file=TRUE){
                              'file.name' = file.list, stringsAsFactors = FALSE)
     
     file.index <- file.index[sort.int(file.index$id, index.return=TRUE)$ix, ]
-    write.table(file.index, file = 'data/NLDAS_summ/NLDAS_driver_index.tsv', sep = '\t', row.names = FALSE)
+    write.table(file.index, file = sprintf('data/%s_summ/%s_driver_index.tsv', data.source, data.source), sep = '\t', row.names = FALSE)
   } else {
     return(file.list)
   }
@@ -52,9 +53,12 @@ lake_files_with_var <- function(files, var){
 }
 
 lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv'){
-  mssg.file <- 'data/NLDAS_data/NLDAS_driver_status.txt'
+  data.source <- strsplit(file,'[/_]')[[1]][2]
+  config <- load_config(sprintf("configs/%s_config.yml",data.source))
+  
+  mssg.file <- sprintf('data/%s_data/%s_driver_status.txt',data.source,data.source)
   files <- strsplit(readLines(file, n = -1),'\t')[[1]]
-  server.files <- driver_server_files(data.source='NLDAS', write.file=FALSE)
+  server.files <- driver_server_files(data.source, write.file=FALSE)
   cat('index of files contains', length(files), file=mssg.file, append = FALSE)
   
   
@@ -68,11 +72,11 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
     return()
   }
 
-  config <- load_config("configs/NLDAS_config.yml")
+  
   knife = webprocess(url=config$wps_url)
   temp.dir <- tempdir()
   
-  vars <- parse_driver_file_name(new.files, 'vars')
+  vars <- sort(parse_driver_file_name(new.files, 'vars'))
   
   cat('\n', length(new.files),' are new for ', length(vars), ' variables...', file=mssg.file, append = TRUE)  
   
@@ -87,7 +91,8 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
     groups.s <- seq(1,length(ids), config$driver_split)
     groups.e <- c(tail(groups.s-1,-1L),length(ids))
     
-    fabric = webdata(url=config$data_url, variables=var, times=times)
+    data_variable <- config$data_variables[config$variable_names == var]
+    fabric = webdata(url=config$data_url, variables=data_variable, times=times)
     
     for (i in 1:length(groups.s)){
       lake.ids <- ids[groups.s[i]:groups.e[i]]
@@ -139,13 +144,14 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
                 perm.id <- paste(chunks[2:3],collapse='_')
                 var <- strsplit(chunks[5],'[.]')[[1]][1]
                 data.site <- data[c('DateTime', perm.id,'variable')] %>% 
-                  filter(variable == var) %>% 
+                  filter(variable == data_variable) %>% 
                   select_('DateTime',2)
+                # can end up with an empty file here...
                 names(data.site) <- c('DateTime', var)
                 local.file <- file.path(temp.dir, file)
                 
                 save(data.site, file=local.file, compress="xz")
-                output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, opt$driver_dir, file),
+                output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, paste0(opt$driver_dir,sprintf('drivers_GLM_%s/', data.source)), file),
                                  ignore.stdout = TRUE, ignore.stderr = TRUE)
                 unlink(local.file)
                 if (!output){
@@ -172,14 +178,18 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
 # lake.locations should now come in as 'id', with 'nhd_2637312' for example
 calc_nldas_driver_files <- function(config, lake.locations){
   
+  data.name <- config$data_name
+  data.dir <- sprintf('data/%s_data/', data.name)
+  if (!dir.exists(data.dir))
+    dir.create(data.dir)
   times <- config$data_times
-  vars <- config$data_variables
+  vars <- config$variable_names
   
   time.chunk <- paste(sapply(times, function(x) paste(strsplit(x, '[-]')[[1]],collapse='')), collapse='.')
   
-  perm.files <- sprintf("NLDAS_%s_%s_", lake.locations$id, time.chunk)
+  perm.files <- sprintf("%s_%s_%s_", data.name, lake.locations$id, time.chunk)
   files <- as.vector(unlist(sapply(perm.files,paste0, vars,'.RData')))
   #"NLDAS_permID_19790101.20160116_apcpsfc.RData"
   
-  cat(files,'\n', file='data/NLDAS_data/NLDAS_driver_file_list.tsv', sep = '\t', append = FALSE)
+  cat(files,'\n', file=sprintf('%s%s_driver_file_list.tsv', data.dir, data.name), sep = '\t', append = FALSE)
 }
