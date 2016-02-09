@@ -24,6 +24,7 @@ targets:
       - data/nldas_lakes.txt
       - data/NLDAS_sub/NLDAS_sub_status.txt
       - data/NLDAS_data/NLDAS_driver_status.txt
+      - data/ECHAM5_data/ECHAM5_driver_status.txt
       - nldas_index
 
   #data/nldas_lakes.txt:
@@ -38,7 +39,7 @@ targets:
       - ncml 
 
   data/NLDAS_sub/NLDAS_file_list.tsv:
-    command: calc_nldas_files(nldas_config, nhd_config)
+    command: calc_nldas_files(nldas_config, nhd_config) 
 
   data/NLDAS_sub/NLDAS_sub_status.txt:
     command: nccopy_nldas()
@@ -49,6 +50,9 @@ targets:
     command: load_config("configs/NLDAS_config.yml")
 
   nhd_config:
+    command: load_config("configs/NHD_config.yml")
+
+  echam5_config:
     command: load_config("configs/NHD_config.yml")
 
   data/NLDAS_summ/NLDAS_driver_index.tsv:
@@ -62,6 +66,12 @@ targets:
 
   data/NLDAS_data/NLDAS_driver_file_list.tsv:
     command: calc_nldas_driver_files(nldas_config, project_lake_locations)
+
+  data/NLDAS_data/ECHAM5_driver_file_list.tsv:
+    command: calc_nldas_driver_files(echam5_config, project_lake_locations)
+
+  data/ECHAM5_data/ECHAM5_driver_status.txt:
+    command: lake_driver_nldas("data/ECHAM5_data/ECHAM5_driver_file_list.tsv")
 
   data/NLDAS_data/NLDAS_driver_status.txt:
     command: lake_driver_nldas("data/NLDAS_data/NLDAS_driver_file_list.tsv")
