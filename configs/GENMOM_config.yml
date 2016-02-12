@@ -1,0 +1,7 @@
+data_name: "ECHAM5"
+data_times: ["1980-01-01", "2089-12-31"]
+data_variables: ['RT', 'PSRF', 'VA', 'UA', 'LWD', 'SWI', 'RHA', 'TA']
+variable_names: ['apcpsfc','pressfc','vgrd10m','ugrd10m','dlwrfsfc','dswrfsfc','relhum','tmp2m']
+wps_url: "http://cida.usgs.gov/gdp/process/WebProcessingService"
+data_url: "dods://regclim.coas.oregonstate.edu:8080/thredds/dodsC/regcmdata/GENMOM/ena/Daily/RegCM3_Daily_ena_GENMOM.ncml"
+driver_split: 4000
