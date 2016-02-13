@@ -25,7 +25,10 @@ targets:
       - data/NLDAS_sub/NLDAS_sub_status.txt
       - data/NLDAS_data/NLDAS_driver_status.txt
       - data/ECHAM5_data/ECHAM5_driver_status.txt
+      - data/GENMOM_data/GENMOM_driver_status.txt
       - nldas_index
+      - cm2.0_index
+      - echam5_index
 
   #data/nldas_lakes.txt:
   #  command: lake_summary_nldas(project_lake_locations, nldas_config)
@@ -53,10 +56,19 @@ targets:
     command: load_config("configs/NHD_config.yml")
 
   echam5_config:
-    command: load_config("configs/NHD_config.yml")
+    command: load_config("configs/ECHAM5_config.yml")
+
+  cm2.0_config:
+    command: load_config("configs/CM2.0_config.yml")
+
+  genmom_config:
+    command: load_config("configs/GENMOM_config.yml")
 
   data/NLDAS_summ/NLDAS_driver_index.tsv:
     command: driver_server_files()
+
+  #data/ECHAM5_summ/ECHAM5_driver_index.tsv:
+  #  command: driver_server_files('ECHAM5')
 
   ncml:
     command: sync_ncml("data/NLDAS_sub/nldas_miwimn.ncml")
@@ -67,15 +79,30 @@ targets:
   data/NLDAS_data/NLDAS_driver_file_list.tsv:
     command: calc_nldas_driver_files(nldas_config, project_lake_locations)
 
-  data/NLDAS_data/ECHAM5_driver_file_list.tsv:
+  data/ECHAM5_data/ECHAM5_driver_file_list.tsv:
     command: calc_nldas_driver_files(echam5_config, project_lake_locations)
+
+  data/GENMOM_data/GENMOM_driver_file_list.tsv:
+    command: calc_nldas_driver_files(genmom_config, project_lake_locations)
+
+  data/CM2.0_data/CM2.0_driver_file_list.tsv:
+    command: calc_nldas_driver_files(cm2.0_config, project_lake_locations)
+
+  data/GENMOM_data/GENMOM_driver_status.txt:
+    command: lake_driver_nldas("data/GENMOM_data/GENMOM_driver_file_list.tsv")
 
   data/ECHAM5_data/ECHAM5_driver_status.txt:
     command: lake_driver_nldas("data/ECHAM5_data/ECHAM5_driver_file_list.tsv")
+
+  data/CM2.0_data/CM2.0_driver_status.txt:
+    command: lake_driver_nldas("data/CM2.0_data/CM2.0_driver_file_list.tsv")
 
   data/NLDAS_data/NLDAS_driver_status.txt:
     command: lake_driver_nldas("data/NLDAS_data/NLDAS_driver_file_list.tsv")
 
   nldas_index:
     command: sync_driver_index("data/NLDAS_summ/NLDAS_driver_index.tsv")
+
+  echam5_index:
+    command: sync_driver_index("data/ECHAM5_summ/ECHAM5_driver_index.tsv")
 

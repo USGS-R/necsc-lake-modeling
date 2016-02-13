@@ -1,7 +1,7 @@
-data_name: "ECHAM5"
-data_times: ["1960-01-01", "2099-12-31"]
+data_name: "CM2.0"
+data_times: ["1970-01-01", "2069-12-31"]
 data_variables: ['RT', 'PSRF', 'VA', 'UA', 'LWD', 'SWI', 'RHA', 'TA']
 variable_names: ['apcpsfc','pressfc','vgrd10m','ugrd10m','dlwrfsfc','dswrfsfc','relhum','tmp2m']
 wps_url: "http://cida.usgs.gov/gdp/process/WebProcessingService"
-data_url: "dods://regclim.coas.oregonstate.edu:8080/thredds/dodsC/regcmdata/EH5/ena/Daily/RegCM3_Daily_ena_EH5.ncml"
+data_url: "dods://regclim.coas.oregonstate.edu:8080/thredds/dodsC/regcmdata/GFDL/ena/Daily/RegCM3_Daily_ena_GFDL.ncml"
 driver_split: 4000
