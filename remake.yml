@@ -60,7 +60,6 @@ targets:
 
   cm2.0_config:
     command: load_config("configs/CM2.0_config.yml")
-	
 
   genmom_config:
     command: load_config("configs/GENMOM_config.yml")
