@@ -2,7 +2,7 @@ library(dataRetrieval)
 library(yaml)
 library(rgdal)
 
-config = yaml.load_file("config.yml")
+config = yaml.load_file("configs/NHD_config.yml")
 states <- config$states
 
 for (i in 1:length(states)) { 
@@ -11,7 +11,7 @@ for (i in 1:length(states)) {
 }
 
 #read in nhd data
-nhd <- readOGR(dsn = getwd(), layer="NHDWaterbody")
+nhd <- readOGR(dsn = paste0(getwd(),"/data"), layer="NHDWaterbody")
 
 #match with NHD permid, if there is no match, the id field is NA
 for (j in 1:length(states)) {
@@ -28,7 +28,7 @@ for (j in 1:length(states)) {
     sites$id[i] <- prmnn_i
     print(i)
   }
-  write.csv(sites, file=paste0("sitesPermId",states[[j]]$fips,".csv"),row.names=FALSE) 
+  write.csv(sites, file=paste0("/data/wqp_nhd/sitesPermId",states[[j]]$fips,".csv"),row.names=FALSE) 
 }
 
 
