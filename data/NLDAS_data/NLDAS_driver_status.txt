@@ -1,4 +1,1 @@
-index of files contains 24984
-2497 files are new for variable dlwrfsfc...
-** job FAILED **
- http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=79b4bc83-1c05-4808-8cd9-3767a667c3e4
+index of files contains 26248
