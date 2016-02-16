@@ -11,9 +11,9 @@ for (i in 1:length(states)) {
 }
 
 #read in nhd data
-nhd <- readOGR(dsn = paste0(getwd(),"/data"), layer="NHDWaterbody")
+nhd <- readOGR(dsn = getwd(), layer="NHDWaterbody")
 
-#match with NHD permid
+#match with NHD permid, if there is no match, the id field is NA
 for (j in 1:length(states)) {
   sites <- read.csv(file=paste0("sites",states[[j]]$fips,".csv"),sep=",")[ ,c('MonitoringLocationIdentifier','LatitudeMeasure','LongitudeMeasure')]
   sites <- sites[!duplicated(sites),]
