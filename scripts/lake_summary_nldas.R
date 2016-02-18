@@ -13,7 +13,9 @@ sync_driver_index <- function(local.file){
   return(output)
 }
 
-driver_server_files <- function(data.source='NLDAS', write.file=TRUE){
+driver_server_files <- function(status.file, write.file=TRUE){
+  
+  data.source <- strsplit(strsplit(status.file,'[/]')[[1]][2],'[_]')[[1]][1]
   output <- system(sprintf('ssh %s@cidasdpdfsuser.cr.usgs.gov ls %s',opt$necsc_user, paste0(opt$driver_dir,sprintf('drivers_GLM_%s/', data.source))), intern = TRUE, ignore.stderr = TRUE)
   
   file.list <- output[grepl(paste0(data.source, '_'), output)]
