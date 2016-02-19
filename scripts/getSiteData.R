@@ -2,7 +2,7 @@ library(dataRetrieval)
 library(yaml)
 library(rgdal)
 
-config = yaml.load_file("config.yml")
+config = yaml.load_file("configs/NHD_config.yml")
 states <- config$states
 
 for (i in 1:length(states)) { 
@@ -13,7 +13,7 @@ for (i in 1:length(states)) {
 #read in nhd data
 nhd <- readOGR(dsn = paste0(getwd(),"/data"), layer="NHDWaterbody")
 
-#match with NHD permid
+#match with NHD permid, if there is no match, the id field is NA
 for (j in 1:length(states)) {
   sites <- read.csv(file=paste0("sites",states[[j]]$fips,".csv"),sep=",")[ ,c('MonitoringLocationIdentifier','LatitudeMeasure','LongitudeMeasure')]
   sites <- sites[!duplicated(sites),]
@@ -28,7 +28,24 @@ for (j in 1:length(states)) {
     sites$id[i] <- prmnn_i
     print(i)
   }
-  write.csv(sites, file=paste0("sitesPermId",states[[j]]$fips,".csv"),row.names=FALSE) 
+  write.csv(sites, file=paste0(getwd(),"/data/wqp_nhd/sitesPermId",states[[j]]$fips,".csv"),row.names=FALSE) 
 }
 
+#join all the site files for use as a lookup table
+lookup <- data.frame()
+for (j in 1:length(states)) { 
+  tryCatch({ 
+    sites <- read.csv(file=paste0(getwd(),"/data/wqp_nhd/sitesPermId",states[[j]]$fips,".csv"))
+    if (length(sites)>0) {
+      lookup <- rbind(lookup, as.data.frame(sites))
+    } 
+    error = function(e){
+      error <- paste("\n Request failed:", "on", as.character(Sys.time()), "\t", "State:",config$states[i],"Value:", e)
+      cat(error, file="log.txt", append=TRUE)
+    }
+  })
+} 
+#remove NA values
+matches <- subset(lookup,!is.na(id))
+write.csv(matches, file=paste0(getwd(),"/data/wqp_nhd",".csv"),row.names=FALSE)
 
