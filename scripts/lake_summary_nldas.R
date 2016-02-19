@@ -60,7 +60,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
   
   mssg.file <- sprintf('data/%s_data/%s_driver_status.txt',data.source,data.source)
   files <- strsplit(readLines(file, n = -1),'\t')[[1]]
-  server.files <- driver_server_files(data.source, write.file=FALSE)
+  server.files <- driver_server_files(mssg.file, write.file=FALSE)
   cat('index of files contains', length(files), file=mssg.file, append = FALSE)
   
   

@@ -74,7 +74,7 @@ targets:
 
   data/CM2.0_summ/CM2.0_driver_index.tsv:
     command: driver_server_files('data/CM2.0_data/CM2.0_driver_status.txt')
-	
+
   data/ECHAM5_summ/ECHAM5_driver_index.tsv:
     command: driver_server_files('data/ECHAM5_data/ECHAM5_driver_status.txt')
 
