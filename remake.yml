@@ -26,8 +26,10 @@ targets:
       - data/NLDAS_data/NLDAS_driver_status.txt
       - data/ECHAM5_data/ECHAM5_driver_status.txt
       - data/GENMOM_data/GENMOM_driver_status.txt
+      - data/CM2.0_data/CM2.0_driver_status.txt
       - nldas_index
       - cm2.0_index
+      - genmom_index
       - echam5_index
 
   #data/nldas_lakes.txt:
@@ -65,10 +67,16 @@ targets:
     command: load_config("configs/GENMOM_config.yml")
 
   data/NLDAS_summ/NLDAS_driver_index.tsv:
-    command: driver_server_files()
+    command: driver_server_files('data/NLDAS_data/NLDAS_driver_status.txt')
 
-  #data/ECHAM5_summ/ECHAM5_driver_index.tsv:
-  #  command: driver_server_files('ECHAM5')
+  data/GENMOM_summ/GENMOM_driver_index.tsv:
+    command: driver_server_files('data/GENMOM_data/GENMOM_driver_status.txt')
+
+  data/CM2.0_summ/CM2.0_driver_index.tsv:
+    command: driver_server_files('data/CM2.0_data/CM2.0_driver_status.txt')
+
+  data/ECHAM5_summ/ECHAM5_driver_index.tsv:
+    command: driver_server_files('data/ECHAM5_data/ECHAM5_driver_status.txt')
 
   ncml:
     command: sync_ncml("data/NLDAS_sub/nldas_miwimn.ncml")
@@ -105,4 +113,10 @@ targets:
 
   echam5_index:
     command: sync_driver_index("data/ECHAM5_summ/ECHAM5_driver_index.tsv")
+
+  genmom_index:
+    command: sync_driver_index("data/GENMOM_summ/GENMOM_driver_index.tsv")
+
+  cm2.0_index:
+    command: sync_driver_index("data/CM2.0_summ/CM2.0_driver_index.tsv")
 
