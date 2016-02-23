@@ -26,9 +26,9 @@ shinyApp(
           maxBounds = list(list(17, -180), list(59, 180))))),
     fluidRow(verbatimTextOutput("nml")),
     
-    uiOutput("run.box"),
-    #uiOutput("download"),
+    
     fluidRow(verbatimTextOutput("Click_text")),
+    uiOutput("run.box"),
     fluidRow(
          column(width = 7,
                 plotOutput("plot", height=300))),
@@ -54,17 +54,6 @@ shinyApp(
       output$Click_text<-renderText({
         text2
       })
-      # -- <render-ui-selections> -- 
-      output$Box1 = renderUI(
-        if (is.null(click)){
-          return()
-        } else {
-          
-          selectizeInput("dataset1","Variables to visualize",
-                         c(click$id, click$id),
-                         multiple = FALSE)
-        }
-      )
       output$run.box = renderUI(
         if (is.null(click)){
           return()
@@ -84,8 +73,6 @@ shinyApp(
           if (!is.null(pkg.env$id) && pkg.env$id != cl.out){
             incProgress(1, detail = paste("Done"))
             pkg.env$id <- NULL
-            
-            return(NULL)
           } else {
             pkg.env$id <- cl.out
             incProgress(0.1, detail = paste("Building model"))
@@ -104,24 +91,12 @@ shinyApp(
             output$download = renderUI({
               actionButton("download.results", "Download!", icon = icon("line-chart", lib = "font-awesome"))
             })
-            return(paste('running', cl.out)) # or NULL
           }
-          
+          return(NULL) # or NULL
         })
       })
       
-      
-      
-      run_model <- function(){
-        nml = populate_base_lake_nml(click$id, kd=0.3, driver = 'CM2.0')
-        # output$nml <- renderJsonedit({
-        #   jsonedit(nml)
-        # })
-        #   
-        glmtools::write_nml(nml, file=file.path(tempdir(),'glm2.nml'))
-        GLMr::run_glm(tempdir())
-        output$plot <- renderPlot(glmtools::plot_temp(file=file.path(tempdir(), 'output.nc')))
-      }
+
       
     })
       
