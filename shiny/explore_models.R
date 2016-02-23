@@ -26,7 +26,6 @@ shinyApp(
           maxBounds = list(list(17, -180), list(59, 180))))),
     fluidRow(verbatimTextOutput("nml")),
     
-    
     fluidRow(verbatimTextOutput("Click_text")),
     uiOutput("run.box"),
     fluidRow(
@@ -43,6 +42,17 @@ shinyApp(
                           layerId=ids)
     })        
     
+    observe({
+      click <- input$map_click
+      if(is.null(click)){
+        return()
+      }
+      output$download <- renderUI(NULL)
+      output$plot <- renderUI(NULL)
+      output$run.model <- renderUI(NULL)
+      output$run.box <- renderUI(NULL)
+      output$Click_text<-renderText(NULL)
+    })
     observe({
       click <- input$map_marker_click
       if(is.null(click))
@@ -96,9 +106,16 @@ shinyApp(
         })
       })
       
-
+          
       
     })
-      
+    # output$download = renderUI({
+    #   actionButton("download.results", "Download!", icon = icon("line-chart", lib = "font-awesome"))
+    # })
+    
+    observeEvent(input$download.results, {
+      session$sendCustomMessage(type = 'testmessage',
+                                message = 'Thank you for clicking')
+    })   
   }
 )
