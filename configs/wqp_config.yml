@@ -1,13 +1,27 @@
 variables:
-  - 
-  secchi: ['Depth, Secchi disk depth','Depth, Secchi disk depth (choice list)','Secchi Reading Condition (choice list)','Secchi depth','Water transparency, Secchi disc']
-  - 
-  temperature: ['Temperature, Sample','Temperature, water']  
+ - 
+  secchi: 
+   - 
+    name: "Depth, Secchi disk depth"
+   -
+    name: "Depth, Secchi disk depth (choice list)"
+   -  
+    name: "Secchi Reading Condition (choice list)"
+   - 
+    name: "Secchi depth"
+   -
+    name: "Water transparency, Secchi disc"
+ -
+  temperature: 
+   -
+    name: "Temperature, Sample"
+   -
+    name: "Temperature, water"
 
-columnsToKeep: ['ActivityStartDate','ActivityStartTime.Time','ActivityStartTime.TimeZoneCode','ActivityBottomDepthHeightMeasure.MeasureValue','ActivityBottomDepthHeightMeasure.MeasureUnitCode','MonitoringLocationIdentifier','ResultMeasureValue','ResultMeasure.MeasureUnitCode']      
+columnsToKeep: ["ActivityStartDate","ActivityStartTime.Time","ActivityStartTime.TimeZoneCode","ActivityBottomDepthHeightMeasure.MeasureValue","ActivityBottomDepthHeightMeasure.MeasureUnitCode","MonitoringLocationIdentifier","ResultMeasureValue","ResultMeasure.MeasureUnitCode"]      
 
 # WQP startDateLo and startDateHi    
-startDate: '1979-01-01'
-endDate: '2015-12-31'
+startDate: "1979-01-01"
+endDate: "2015-12-31"
 
-siteType: 'Lake, Reservoir, Impoundment'
+siteType: "Lake, Reservoir, Impoundment"
