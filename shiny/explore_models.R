@@ -82,7 +82,13 @@ shinyApp(
             incProgress(0.03, detail = paste("Building model"))
             Sys.sleep(1)
             incProgress(0.1, detail = paste("Downloading drivers"))
-            driver.path = get_driver_path(click$id, driver_name="CM2.0")
+            if (file.exists(file.path(tempdir(),"CM2.0", paste0(click$id,'.csv')))){
+              driver.path = file.path(tempdir(),"CM2.0", paste0(click$id,'.csv'))
+              Sys.sleep(8)
+            } else {
+              driver.path = get_driver_path(click$id, driver_name="CM2.0")
+            }
+            
             incProgress(0.5, detail = paste("Populate metadata"))
             nml = populate_base_lake_nml(click$id, kd=0.3, driver = driver.path)
             incProgress(0.6, detail = paste("Write model files"))
