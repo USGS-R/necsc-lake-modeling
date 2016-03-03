@@ -1,7 +1,5 @@
 library(dataRetrieval)
 library(yaml)
-library(stringr)
-library(whisker)
 
 #read in configs
 nhd_config = yaml.load_file("configs/NHD_config.yml")
@@ -25,12 +23,10 @@ siteType <- wqp_config$siteType
 
 #build file list we expect based on configs
 fileList <- list()
-
-for (i in 0:length(numYears)) {
-  for (j in 1:length(varList)) {
+for (j in 1:length(varList)) {
+  for (i in 0:length(numYears)) {
     for (k in 1:length(states)) {
       print(paste0(varList[j],"_",states[[k]]$fips,"_",firstYear+i))
-      #fileList <- append(fileList, paste0(year=firstYear[k],char=charNames[j],state=states[i]))
     }
   }
 }
