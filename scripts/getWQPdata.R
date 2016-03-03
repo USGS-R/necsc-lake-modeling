@@ -26,8 +26,8 @@ fileList <- list()
 for (j in 1:length(varList)) {
   for (i in 0:length(numYears)) {
     for (k in 1:length(states)) {
-      print(paste0(varList[j],"_",states[[k]]$fips,"_",firstYear+i))
+      fileList <- append(fileList, paste0(varList[j],"_",states[[k]]$fips,"_",firstYear+i,"\n"))
     }
   }
 }
-cat(fileList, file="fileNames.txt", append=FALSE)
+cat(paste0(fileList), file="fileNames.txt", append=FALSE)
