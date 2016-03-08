@@ -3,8 +3,8 @@ library(rgdal)
 #get nhd layer
 nhd <- readOGR(dsn = paste0(getwd(),"/data"), layer="NHDWaterbody")
 
-#read in lagos data
-input <- read.delim("secchi_subset.tsv")
+#read in lagos data previously downloaded from sciencebase
+input <- read.delim("secchi_LAGOS_subset.tsv")
 
 input2 <- input[,c("lagoslakeid","nhd_lat","nhd_long")]
 input2 <- unique(input2)
@@ -26,8 +26,8 @@ input2 <- as.data.frame(input2)
 input3 <- subset(input2,!is.na(id))
 input3 <- transform(input3,id=paste0('nhd_',id))
 #write out the mapping between lagoslakeid and nhd permid
-write.csv(input3[,c("lagoslakeid","id")], file = "lagosnhd_final.csv", row.names = FALSE)
+write.csv(input3[,c("id")], file = "secchi_LAGOS_summary.csv", row.names = FALSE)
 
 #merge with big secchi file
 output <- merge(input, as.data.frame(input3), by.x = "lagoslakeid", by.y="lagoslakeid")
-write.csv(output, file="secchi_subsetWithPermID.csv", row.names = FALSE)
+write.csv(output, file="secchi_LAGOS_subset_linked.csv", row.names = FALSE)

@@ -1,13 +1,3 @@
-# Trying all these values from WQP http://www.waterqualitydata.us/Codes/Characteristicname?mimeType=xml
-# <Code value="Depth, Secchi disk depth" providers="STORET"/>
-# <Code value="Depth, Secchi disk depth (choice list)" providers="STORET"/>
-# <Code value="Secchi Reading Condition (choice list)" providers="STORET"/>
-# <Code value="Secchi depth" providers="STEWARDS"/>
-# <Code value="Transparency, Secchi tube with disk" providers="STORET"/>
-# <Code value="Transparency, tube with disk" providers="STORET"/>
-# <Code value="Water transparency, Secchi disc" providers="NWIS"/>
-# <Code value="Water transparency, tube with disk" providers="NWIS"/>
-
 # uses the config.yml file to generate a list of states and grab the data using dataRetrieval calls
 
 library(dataRetrieval)
@@ -16,15 +6,15 @@ library(yaml)
 config = yaml.load_file("config.yml")
 states <- config$states
 
-charName <- c("Depth, Secchi disk depth", "Depth, Secchi disk depth (choice list)","Secchi Reading Condition (choice list)","Secchi depth","Water transparency, Secchi disc")
+charName <- c("Temperature, sample","Temperature, water")
 
 for (i in 1:length(states)) {  
-  secchi <- data.frame()
+  temperature <- data.frame()
   for (j in 1:length(charName)) { 
     tryCatch({ 
       retrievedData <- readWQPdata(statecode=paste0("US:",states[[i]]$fips),characteristicName=charName[j], siteType="Lake, Reservoir, Impoundment")
       if (length(retrievedData)>0) { 
-        secchi <- rbind(secchi, as.data.frame(retrievedData))
+        temperature <- rbind(temperature, as.data.frame(retrievedData))
         success <- paste("\n Request success on", as.character(Sys.time()), "\t", "State:", config$states[i],"Value:",charName[j])
         cat(success, file="log.txt", append=TRUE)
       }  
@@ -38,6 +28,5 @@ for (i in 1:length(states)) {
       cat(warnLog, file="log.txt", append=TRUE)
     }) 
   } 
-  setwd("D:/MKHData/necsc/lakeattributes/data-raw/secchi")
-  write.csv(secchi, file = paste0("secchi",states[[i]]$fips,".csv"),row.names=FALSE)
+  write.csv(temperature, file = paste0("temperature",states[[i]]$fips,".csv"),row.names=FALSE)
 }
