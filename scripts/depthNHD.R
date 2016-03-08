@@ -4,7 +4,7 @@ library(rgdal)
 nhd <- readOGR(dsn = paste0(getwd(),"/data"), layer="NHDWaterbody")
 
 #read in lagos data
-input <- read.delim("lake_info_subset.tsv")
+input <- read.delim("lake_depth_LAGOS.tsv")
 
 #get the matches between the lat lng pairs and nhd layer
 for (i in 1:nrow(input)) {
@@ -16,7 +16,11 @@ for (i in 1:nrow(input)) {
   pts$nhd <- over(pts, nhd, fn = NULL, returnList = FALSE)$Prmnn_I
   prmnn_i <- as.character(pts$nhd)
   input$id[i] <- prmnn_i
+  print(i)
 }
+
+#back up the file
+write.csv(input, file="tempLake_info_subset_linked.csv",row.names=FALSE)
 
 input<-as.data.frame(input)
 
@@ -25,15 +29,19 @@ input<-subset(input,!is.na(id))
 #prefix id with source
 input2 <- transform(input,id=paste0('nhd_',id))
 
-#write out file for LW with permid and maxdepth
+#write out file for JR with just permids where we have depth data
 write.csv(input2[,c("id","maxdepth")], file="lagosNHD.csv",row.names=FALSE) 
 
-#write out file for JR with just permids where we have depth data
+#write out entire file with nhd permid
+write.csv(input2, file="lake_depth_LAGOS_linked.csv",row.names=FALSE)
+
+#get just the ids we have depth data for from LAGOS
 keepers <- as.data.frame(input)
 cols <- c("id")
 keepers <- keepers[,cols,drop=FALSE]
+keepers <- transform(keepers,id=paste0('nhd_',id))
 
-write.csv(keepers, file="lagosPermID.csv",row.names=FALSE)
+write.csv(keepers, file="depth_summary_LAGOS.csv",row.names=FALSE)
 
 #write out some summary depth details
 input2$source <- "lagos"
