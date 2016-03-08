@@ -82,6 +82,8 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
   
   cat('\n', length(new.files),' are new for ', length(vars), ' variables...', file=mssg.file, append = TRUE)  
   
+  job <- geojob() # empty job
+  
   for (var in vars){
     post.files <- lake_files_with_var(new.files, var)
     times <- c()
@@ -99,7 +101,10 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
     for (i in 1:length(groups.s)){
       lake.ids <- ids[groups.s[i]:groups.e[i]]
       cat('\nbegin job for ',length(lake.ids),' features, and variable:',var, '...', file=mssg.file, append = TRUE)
-      job <- geoknife(stencil=stencil_from_id(lake.ids), fabric, knife, wait=TRUE, sleep.time=60) # sleep.time supported in geoknife >= 1.1.5??
+      # start a new job, don't wait for it. 
+      new.job <- geoknife(stencil=stencil_from_id(lake.ids), fabric, knife, wait=FALSE, sleep.time=60)
+      
+      # do all the clean up work while the other job runs
       if (successful(job)){
         message(job@id,' completed')
         cat('success! ...downloading... ', file=mssg.file, append = TRUE)
@@ -139,7 +144,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
           } 
           if (!bad.file){
             cat('success!', file=mssg.file, append = TRUE)
-            for (file in post.files[groups.s[i]:groups.e[i]]){
+            for (file in parse.files){
               
               tryCatch({
                 chunks <- strsplit(file, '[_]')[[1]]
@@ -172,6 +177,8 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
         message(job@id,' failed ' )
         cat('\n** job FAILED in processing **\n', job@id, file=mssg.file, append = TRUE)
       }
+      job <- wait(new.job) # now wait on the new job
+      parse.files <- post.files[groups.s[i]:groups.e[i]] #what about when i == length(groups.s)????
     }
   }
 }
