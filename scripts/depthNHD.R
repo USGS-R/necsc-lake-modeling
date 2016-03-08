@@ -41,7 +41,7 @@ cols <- c("id")
 keepers <- keepers[,cols,drop=FALSE]
 keepers <- transform(keepers,id=paste0('nhd_',id))
 
-write.csv(keepers, file="depth_lagos_summary.csv",row.names=FALSE)
+write.csv(keepers, file="data/depth_data/depth_lagos_summary.csv",row.names=FALSE)
 
 #write out some summary depth details
 input2$source <- "lagos"
