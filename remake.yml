@@ -42,6 +42,7 @@ targets:
     command: lake_summary_locations()
     depends: 
       - ncml 
+      - data/depth_data/depth_data_summary.csv
 
   data/NLDAS_sub/NLDAS_file_list.tsv:
     command: calc_nldas_files(nldas_config, nhd_config) 
@@ -96,6 +97,9 @@ targets:
   data/CM2.0_data/CM2.0_driver_file_list.tsv:
     command: calc_nldas_driver_files(cm2.0_config, project_lake_locations)
 
+  data/NLDAS_data/NLDAS_driver_status.txt:
+    command: lake_driver_nldas("data/NLDAS_data/NLDAS_driver_file_list.tsv")
+
   data/GENMOM_data/GENMOM_driver_status.txt:
     command: lake_driver_nldas("data/GENMOM_data/GENMOM_driver_file_list.tsv")
 
@@ -104,9 +108,6 @@ targets:
 
   data/CM2.0_data/CM2.0_driver_status.txt:
     command: lake_driver_nldas("data/CM2.0_data/CM2.0_driver_file_list.tsv")
-
-  data/NLDAS_data/NLDAS_driver_status.txt:
-    command: lake_driver_nldas("data/NLDAS_data/NLDAS_driver_file_list.tsv")
 
   nldas_index:
     command: sync_driver_index("data/NLDAS_summ/NLDAS_driver_index.tsv")
