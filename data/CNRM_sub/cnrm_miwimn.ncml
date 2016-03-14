@@ -1,0 +1,60 @@
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <aggregation type="union">
+    <netcdf>
+      <aggregation type="joinExisting" dimName="time">
+        <netcdf location="debias_prcp_cnrm_late20_longerdaymet_ghcn_365d.nc"/>
+        <netcdf location="debias_prcp_cnrm_late21_longerdaymet_ghcn_365d.nc"/>
+        <netcdf location="debias_prcp_cnrm_mid21_longerdaymet_ghcn_365d.nc"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="joinExisting" dimName="time">
+        <netcdf location="debias_rh_cnrm_late20_longerdaymet_ghcn_365d.nc"/>
+        <netcdf location="debias_rh_cnrm_late21_longerdaymet_ghcn_365d.nc"/>
+        <netcdf location="debias_rh_cnrm_mid21_longerdaymet_ghcn_365d.nc"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="joinExisting" dimName="time">
+        <netcdf location="debias_rsdl_cnrm_late20_longerdaymet_ghcn_365d.nc"/>
+        <netcdf location="debias_rsdl_cnrm_late21_longerdaymet_ghcn_365d.nc"/>
+        <netcdf location="debias_rsdl_cnrm_mid21_longerdaymet_ghcn_365d.nc"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="joinExisting" dimName="time">
+        <netcdf location="debias_rsds_cnrm_late20_longerdaymet_ghcn_365d.nc"/>
+        <netcdf location="debias_rsds_cnrm_late21_longerdaymet_ghcn_365d.nc"/>
+        <netcdf location="debias_rsds_cnrm_mid21_longerdaymet_ghcn_365d.nc"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="joinExisting" dimName="time">
+        <netcdf location="debias_snv_tas_cnrm_late20_longerdaymet_ghcn_365d.nc"/>
+        <netcdf location="debias_snv_tas_cnrm_late21_longerdaymet_ghcn_365d.nc"/>
+        <netcdf location="debias_snv_tas_cnrm_mid21_longerdaymet_ghcn_365d.nc"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="joinExisting" dimName="time">
+        <netcdf location="debias_tmax_cnrm_late20_longerdaymet_ghcn_365d.nc"/>
+        <netcdf location="debias_tmax_cnrm_late21_longerdaymet_ghcn_365d.nc"/>
+        <netcdf location="debias_tmax_cnrm_mid21_longerdaymet_ghcn_365d.nc"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="joinExisting" dimName="time">
+        <netcdf location="debias_tmin_cnrm_late20_longerdaymet_ghcn_365d.nc"/>
+        <netcdf location="debias_tmin_cnrm_late21_longerdaymet_ghcn_365d.nc"/>
+        <netcdf location="debias_tmin_cnrm_mid21_longerdaymet_ghcn_365d.nc"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="joinExisting" dimName="time">
+        <netcdf location="debias_windspeed_cnrm_late20_longerdaymet_ghcn_365d.nc"/>
+        <netcdf location="debias_windspeed_cnrm_late21_longerdaymet_ghcn_365d.nc"/>
+        <netcdf location="debias_windspeed_cnrm_mid21_longerdaymet_ghcn_365d.nc"/>
+      </aggregation>
+    </netcdf>
+  </aggregation>
+</netcdf>
