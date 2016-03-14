@@ -13,6 +13,7 @@ sources:
   - scripts/lake_summary_locations.R
   - scripts/lake_summary_nldas.R
   - scripts/get_raw_nldas_nc.R
+  - scripts/post_notaro_thredds.R
 
 
 targets:
@@ -27,10 +28,12 @@ targets:
       - data/ECHAM5_data/ECHAM5_driver_status.txt
       - data/GENMOM_data/GENMOM_driver_status.txt
       - data/CM2.0_data/CM2.0_driver_status.txt
+      - data/ACCESS_data/ACCESS_driver_status.txt
       - nldas_index
       - cm2.0_index
       - genmom_index
       - echam5_index
+      - access_index
 
   #data/nldas_lakes.txt:
   #  command: lake_summary_nldas(project_lake_locations, nldas_config)
@@ -42,6 +45,7 @@ targets:
     command: lake_summary_locations()
     depends: 
       - ncml 
+      - access_ncml
       - data/depth_data/depth_data_summary.csv
 
   data/NLDAS_sub/NLDAS_file_list.tsv:
@@ -67,6 +71,9 @@ targets:
   genmom_config:
     command: load_config("configs/GENMOM_config.yml")
 
+  access_config:
+    command: load_config("configs/ACCESS_config.yml")
+
   data/NLDAS_summ/NLDAS_driver_index.tsv:
     command: driver_server_files('data/NLDAS_data/NLDAS_driver_status.txt')
 
@@ -82,8 +89,29 @@ targets:
   ncml:
     command: sync_ncml("data/NLDAS_sub/nldas_miwimn.ncml")
 
+  access_ncml:
+    command: sync_notaro_ncml("data/ACCESS_sub/access_miwimn.ncml")
+
+  cnrm_ncml:
+    command: sync_notaro_ncml("data/CNRM_sub/cnrm_miwimn.ncml")
+
+  gfdl_ncml:
+    command: sync_notaro_ncml("data/GFDL_sub/gfdl_miwimn.ncml")
+
+  ipsl_ncml:
+    command: sync_notaro_ncml("data/IPSL_sub/ipsl_miwimn.ncml")
+
+  miroc5_ncml:
+    command: sync_notaro_ncml("data/MIROC5_sub/miroc5_miwimn.ncml")
+
+  mri_ncml:
+    command: sync_notaro_ncml("data/MRI_sub/mri_miwimn.ncml")
+
   nhd_states:
     command: write_nhd_shp(nhd_config)
+
+  data/ACCESS_data/ACCESS_driver_file_list.tsv:
+    command: calc_nldas_driver_files(access_config, project_lake_locations)
 
   data/NLDAS_data/NLDAS_driver_file_list.tsv:
     command: calc_nldas_driver_files(nldas_config, project_lake_locations)
@@ -109,6 +137,9 @@ targets:
   data/CM2.0_data/CM2.0_driver_status.txt:
     command: lake_driver_nldas("data/CM2.0_data/CM2.0_driver_file_list.tsv")
 
+  data/ACCESS_data/ACCESS_driver_status.txt:
+    command: lake_driver_nldas("data/ACCESS_data/ACCESS_driver_file_list.tsv")
+
   nldas_index:
     command: sync_driver_index("data/NLDAS_summ/NLDAS_driver_index.tsv")
 
@@ -120,4 +151,7 @@ targets:
 
   cm2.0_index:
     command: sync_driver_index("data/CM2.0_summ/CM2.0_driver_index.tsv")
+
+  access_index:
+    command: sync_driver_index("data/ACCESS_summ/ACCESS_driver_index.tsv")
 
