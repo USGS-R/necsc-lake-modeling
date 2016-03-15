@@ -7,17 +7,21 @@
             <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
           </variable>
         </netcdf>
-        <netcdf location="debias_prcp_ipsl_late21_longerdaymet_ghcn_365d.nc">
-          <variable name="year">
-            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
-          </variable>
-        </netcdf>
         <netcdf location="debias_prcp_ipsl_mid21_longerdaymet_ghcn_365d.nc">
           <variable name="year">
             <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
           </variable>
         </netcdf>
+        <netcdf location="debias_prcp_ipsl_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
       </aggregation>
+      <variable name="time">
+        <attribute name="units" value="day of year"/>
+        <attribute name="positive" value="up"/>
+      </variable>
     </netcdf>
     <netcdf>
       <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
@@ -26,17 +30,21 @@
             <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
           </variable>
         </netcdf>
-        <netcdf location="debias_rh_ipsl_late21_longerdaymet_ghcn_365d.nc">
-          <variable name="year">
-            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
-          </variable>
-        </netcdf>
         <netcdf location="debias_rh_ipsl_mid21_longerdaymet_ghcn_365d.nc">
           <variable name="year">
             <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
           </variable>
         </netcdf>
+        <netcdf location="debias_rh_ipsl_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
       </aggregation>
+      <variable name="time">
+        <attribute name="units" value="day of year"/>
+        <attribute name="positive" value="up"/>
+      </variable>
     </netcdf>
     <netcdf>
       <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
@@ -45,17 +53,21 @@
             <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
           </variable>
         </netcdf>
-        <netcdf location="debias_rsdl_ipsl_late21_longerdaymet_ghcn_365d.nc">
-          <variable name="year">
-            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
-          </variable>
-        </netcdf>
         <netcdf location="debias_rsdl_ipsl_mid21_longerdaymet_ghcn_365d.nc">
           <variable name="year">
             <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
           </variable>
         </netcdf>
+        <netcdf location="debias_rsdl_ipsl_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
       </aggregation>
+      <variable name="time">
+        <attribute name="units" value="day of year"/>
+        <attribute name="positive" value="up"/>
+      </variable>
     </netcdf>
     <netcdf>
       <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
@@ -64,17 +76,21 @@
             <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
           </variable>
         </netcdf>
-        <netcdf location="debias_rsds_ipsl_late21_longerdaymet_ghcn_365d.nc">
-          <variable name="year">
-            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
-          </variable>
-        </netcdf>
         <netcdf location="debias_rsds_ipsl_mid21_longerdaymet_ghcn_365d.nc">
           <variable name="year">
             <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
           </variable>
         </netcdf>
+        <netcdf location="debias_rsds_ipsl_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
       </aggregation>
+      <variable name="time">
+        <attribute name="units" value="day of year"/>
+        <attribute name="positive" value="up"/>
+      </variable>
     </netcdf>
     <netcdf>
       <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
@@ -83,17 +99,21 @@
             <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
           </variable>
         </netcdf>
-        <netcdf location="debias_snv_tas_ipsl_late21_longerdaymet_ghcn_365d.nc">
-          <variable name="year">
-            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
-          </variable>
-        </netcdf>
         <netcdf location="debias_snv_tas_ipsl_mid21_longerdaymet_ghcn_365d.nc">
           <variable name="year">
             <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
           </variable>
         </netcdf>
+        <netcdf location="debias_snv_tas_ipsl_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
       </aggregation>
+      <variable name="time">
+        <attribute name="units" value="day of year"/>
+        <attribute name="positive" value="up"/>
+      </variable>
     </netcdf>
     <netcdf>
       <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
@@ -102,17 +122,21 @@
             <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
           </variable>
         </netcdf>
-        <netcdf location="debias_tmax_ipsl_late21_longerdaymet_ghcn_365d.nc">
-          <variable name="year">
-            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
-          </variable>
-        </netcdf>
         <netcdf location="debias_tmax_ipsl_mid21_longerdaymet_ghcn_365d.nc">
           <variable name="year">
             <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
           </variable>
         </netcdf>
+        <netcdf location="debias_tmax_ipsl_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
       </aggregation>
+      <variable name="time">
+        <attribute name="units" value="day of year"/>
+        <attribute name="positive" value="up"/>
+      </variable>
     </netcdf>
     <netcdf>
       <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
@@ -121,17 +145,21 @@
             <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
           </variable>
         </netcdf>
-        <netcdf location="debias_tmin_ipsl_late21_longerdaymet_ghcn_365d.nc">
-          <variable name="year">
-            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
-          </variable>
-        </netcdf>
         <netcdf location="debias_tmin_ipsl_mid21_longerdaymet_ghcn_365d.nc">
           <variable name="year">
             <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
           </variable>
         </netcdf>
+        <netcdf location="debias_tmin_ipsl_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
       </aggregation>
+      <variable name="time">
+        <attribute name="units" value="day of year"/>
+        <attribute name="positive" value="up"/>
+      </variable>
     </netcdf>
     <netcdf>
       <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
@@ -140,17 +168,21 @@
             <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
           </variable>
         </netcdf>
-        <netcdf location="debias_windspeed_ipsl_late21_longerdaymet_ghcn_365d.nc">
-          <variable name="year">
-            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
-          </variable>
-        </netcdf>
         <netcdf location="debias_windspeed_ipsl_mid21_longerdaymet_ghcn_365d.nc">
           <variable name="year">
             <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
           </variable>
         </netcdf>
+        <netcdf location="debias_windspeed_ipsl_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
       </aggregation>
+      <variable name="time">
+        <attribute name="units" value="day of year"/>
+        <attribute name="positive" value="up"/>
+      </variable>
     </netcdf>
   </aggregation>
 </netcdf>

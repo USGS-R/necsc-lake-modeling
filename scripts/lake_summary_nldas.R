@@ -122,6 +122,9 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
         
         if (!is.null(data)){
           bad.file = FALSE
+          if ('time(day of year)' %in% names(data)){
+            data <- reform_notaro(data) #hack for non-CF data from Notaro
+          }
           dr <- format(c(head(data$DateTime,1), tail(data$DateTime,1)), '%Y-%m-%d UTC', tz = 'UTC')
           if (dr[1] != times[1] | dr[2] != times[2]){
             message('file date range does not match! failure!', length(data$DateTime),'timesteps found')
@@ -188,6 +191,16 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
   }
 }
 
+reform_notaro <- function(data.in){
+  # get year
+  data.in$times = data.in[['time(day of year)']]
+  data.in[['time(day of year)']] <- NULL
+  fix_date <- function(DateTime,time){
+    lubridate::round_date(DateTime, unit = 'year')+time*86400
+  }
+  data.out <- mutate(data.in, DateTime=fix_date(DateTime, times)) %>% 
+    select(-times)
+}
 
 # lake.locations should now come in as 'id', with 'nhd_2637312' for example
 calc_nldas_driver_files <- function(config, lake.locations){

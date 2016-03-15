@@ -2,6 +2,7 @@ packages:
   - yaml
   - dplyr
   - geoknife
+  - lubridate
   - rgdal
   - XML
   - doMC
@@ -85,6 +86,9 @@ targets:
 
   data/ECHAM5_summ/ECHAM5_driver_index.tsv:
     command: driver_server_files('data/ECHAM5_data/ECHAM5_driver_status.txt')
+
+  data/ACCESS_summ/ACCESS_driver_index.tsv:
+    command: driver_server_files('data/ACCESS_data/ACCESS_driver_status.txt')
 
   ncml:
     command: sync_ncml("data/NLDAS_sub/nldas_miwimn.ncml")
