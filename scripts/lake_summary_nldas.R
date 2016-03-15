@@ -198,7 +198,7 @@ reform_notaro <- function(data.in){
   fix_date <- function(DateTime,time){
     lubridate::round_date(DateTime, unit = 'year')+time*86400
   }
-  data.out <- mutate(data.in, DateTime=fix_date(DateTime, times)) %>% 
+  mutate(data.in, DateTime=fix_date(DateTime, times)) %>% 
     select(-times)
 }
 

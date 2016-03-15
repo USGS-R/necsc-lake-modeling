@@ -1,7 +1,23 @@
 index of files contains 42455
- 42455  are new for  7  variables...
-6065 files are new for variable airtemp...
-begin job for  400  features, and variable: airtemp ...
+ 42055  are new for  7  variables...
+5665 files are new for variable airtemp...
+begin job for  300  features, and variable: airtemp ...
 ** job FAILED in processing **
  <no active job>
-begin job for  400  features, and variable: airtemp ...success! ...downloading...  is incomplete **
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
