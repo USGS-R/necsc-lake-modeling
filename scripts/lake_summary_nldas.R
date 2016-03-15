@@ -82,6 +82,8 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
   
   cat('\n', length(new.files),' are new for ', length(vars), ' variables...', file=mssg.file, append = TRUE)  
   
+  job <- geojob() # empty job
+  
   for (var in vars){
     post.files <- lake_files_with_var(new.files, var)
     times <- c()
@@ -96,10 +98,17 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
     data_variable <- config$data_variables[config$variable_names == var]
     fabric = webdata(url=config$data_url, variables=data_variable, times=times)
     
-    for (i in 1:length(groups.s)){
-      lake.ids <- ids[groups.s[i]:groups.e[i]]
-      cat('\nbegin job for ',length(lake.ids),' features, and variable:',var, '...', file=mssg.file, append = TRUE)
-      job <- geoknife(stencil=stencil_from_id(lake.ids), fabric, knife, wait=TRUE, sleep.time=60) # sleep.time supported in geoknife >= 1.1.5??
+    for (i in 1:(length(groups.s)+1)){
+      
+      # start a new job, don't wait for it. 
+      if (i != (length(groups.s)+1)){
+        lake.ids <- ids[groups.s[i]:groups.e[i]]
+        cat('\nbegin job for ',length(lake.ids),' features, and variable:',var, '...', file=mssg.file, append = TRUE)
+        new.job <- geoknife(stencil=stencil_from_id(lake.ids), fabric, knife, wait=FALSE, sleep.time=60)
+      }
+        
+      
+      # do all the clean up work while the other job runs
       if (successful(job)){
         message(job@id,' completed')
         cat('success! ...downloading... ', file=mssg.file, append = TRUE)
@@ -113,6 +122,9 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
         
         if (!is.null(data)){
           bad.file = FALSE
+          if ('time(day of year)' %in% names(data)){
+            data <- reform_notaro(data) #hack for non-CF data from Notaro
+          }
           dr <- format(c(head(data$DateTime,1), tail(data$DateTime,1)), '%Y-%m-%d UTC', tz = 'UTC')
           if (dr[1] != times[1] | dr[2] != times[2]){
             message('file date range does not match! failure!', length(data$DateTime),'timesteps found')
@@ -139,7 +151,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
           } 
           if (!bad.file){
             cat('success!', file=mssg.file, append = TRUE)
-            for (file in post.files[groups.s[i]:groups.e[i]]){
+            for (file in parse.files){
               
               tryCatch({
                 chunks <- strsplit(file, '[_]')[[1]]
@@ -172,10 +184,23 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
         message(job@id,' failed ' )
         cat('\n** job FAILED in processing **\n', job@id, file=mssg.file, append = TRUE)
       }
+      job <- wait(new.job) # now wait on the new job
+      if (i != (length(groups.s)+1))
+        parse.files <- post.files[groups.s[i]:groups.e[i]] #what about when i == length(groups.s)????
     }
   }
 }
 
+reform_notaro <- function(data.in){
+  # get year
+  data.in$times = data.in[['time(day of year)']]
+  data.in[['time(day of year)']] <- NULL
+  fix_date <- function(DateTime,time){
+    lubridate::round_date(DateTime, unit = 'year')+time*86400
+  }
+  data.out <- mutate(data.in, DateTime=fix_date(DateTime, times)) %>% 
+    select(-times)
+}
 
 # lake.locations should now come in as 'id', with 'nhd_2637312' for example
 calc_nldas_driver_files <- function(config, lake.locations){

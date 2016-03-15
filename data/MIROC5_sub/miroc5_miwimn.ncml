@@ -1,0 +1,188 @@
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:enhance="true">
+  <aggregation type="union">
+    <netcdf>
+      <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
+        <netcdf location="debias_prcp_miroc5_late20_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_prcp_miroc5_mid21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_prcp_miroc5_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+      </aggregation>
+      <variable name="time">
+        <attribute name="units" value="day of year"/>
+        <attribute name="positive" value="up"/>
+      </variable>
+    </netcdf>
+    <netcdf>
+      <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
+        <netcdf location="debias_rh_miroc5_late20_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_rh_miroc5_mid21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_rh_miroc5_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+      </aggregation>
+      <variable name="time">
+        <attribute name="units" value="day of year"/>
+        <attribute name="positive" value="up"/>
+      </variable>
+    </netcdf>
+    <netcdf>
+      <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
+        <netcdf location="debias_rsdl_miroc5_late20_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_rsdl_miroc5_mid21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_rsdl_miroc5_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+      </aggregation>
+      <variable name="time">
+        <attribute name="units" value="day of year"/>
+        <attribute name="positive" value="up"/>
+      </variable>
+    </netcdf>
+    <netcdf>
+      <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
+        <netcdf location="debias_rsds_miroc5_late20_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_rsds_miroc5_mid21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_rsds_miroc5_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+      </aggregation>
+      <variable name="time">
+        <attribute name="units" value="day of year"/>
+        <attribute name="positive" value="up"/>
+      </variable>
+    </netcdf>
+    <netcdf>
+      <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
+        <netcdf location="debias_snv_tas_miroc5_late20_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_snv_tas_miroc5_mid21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_snv_tas_miroc5_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+      </aggregation>
+      <variable name="time">
+        <attribute name="units" value="day of year"/>
+        <attribute name="positive" value="up"/>
+      </variable>
+    </netcdf>
+    <netcdf>
+      <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
+        <netcdf location="debias_tmax_miroc5_late20_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_tmax_miroc5_mid21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_tmax_miroc5_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+      </aggregation>
+      <variable name="time">
+        <attribute name="units" value="day of year"/>
+        <attribute name="positive" value="up"/>
+      </variable>
+    </netcdf>
+    <netcdf>
+      <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
+        <netcdf location="debias_tmin_miroc5_late20_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_tmin_miroc5_mid21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_tmin_miroc5_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+      </aggregation>
+      <variable name="time">
+        <attribute name="units" value="day of year"/>
+        <attribute name="positive" value="up"/>
+      </variable>
+    </netcdf>
+    <netcdf>
+      <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
+        <netcdf location="debias_windspeed_miroc5_late20_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_windspeed_miroc5_mid21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_windspeed_miroc5_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+      </aggregation>
+      <variable name="time">
+        <attribute name="units" value="day of year"/>
+        <attribute name="positive" value="up"/>
+      </variable>
+    </netcdf>
+  </aggregation>
+</netcdf>
