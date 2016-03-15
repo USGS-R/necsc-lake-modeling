@@ -1,59 +1,155 @@
-<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" xmlns:xlink="http://www.w3.org/1999/xlink">
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:enhance="true">
   <aggregation type="union">
     <netcdf>
-      <aggregation type="joinExisting" dimName="time">
-        <netcdf location="debias_prcp_mri_late20_longerdaymet_ghcn_365d.nc"/>
-        <netcdf location="debias_prcp_mri_late21_longerdaymet_ghcn_365d.nc"/>
-        <netcdf location="debias_prcp_mri_mid21_longerdaymet_ghcn_365d.nc"/>
+      <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
+        <netcdf location="debias_prcp_mri_late20_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_prcp_mri_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_prcp_mri_mid21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
       </aggregation>
     </netcdf>
     <netcdf>
-      <aggregation type="joinExisting" dimName="time">
-        <netcdf location="debias_rh_mri_late20_longerdaymet_ghcn_365d.nc"/>
-        <netcdf location="debias_rh_mri_late21_longerdaymet_ghcn_365d.nc"/>
-        <netcdf location="debias_rh_mri_mid21_longerdaymet_ghcn_365d.nc"/>
+      <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
+        <netcdf location="debias_rh_mri_late20_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_rh_mri_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_rh_mri_mid21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
       </aggregation>
     </netcdf>
     <netcdf>
-      <aggregation type="joinExisting" dimName="time">
-        <netcdf location="debias_rsdl_mri_late20_longerdaymet_ghcn_365d.nc"/>
-        <netcdf location="debias_rsdl_mri_late21_longerdaymet_ghcn_365d.nc"/>
-        <netcdf location="debias_rsdl_mri_mid21_longerdaymet_ghcn_365d.nc"/>
+      <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
+        <netcdf location="debias_rsdl_mri_late20_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_rsdl_mri_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_rsdl_mri_mid21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
       </aggregation>
     </netcdf>
     <netcdf>
-      <aggregation type="joinExisting" dimName="time">
-        <netcdf location="debias_rsds_mri_late20_longerdaymet_ghcn_365d.nc"/>
-        <netcdf location="debias_rsds_mri_late21_longerdaymet_ghcn_365d.nc"/>
-        <netcdf location="debias_rsds_mri_mid21_longerdaymet_ghcn_365d.nc"/>
+      <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
+        <netcdf location="debias_rsds_mri_late20_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_rsds_mri_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_rsds_mri_mid21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
       </aggregation>
     </netcdf>
     <netcdf>
-      <aggregation type="joinExisting" dimName="time">
-        <netcdf location="debias_snv_tas_mri_late20_longerdaymet_ghcn_365d.nc"/>
-        <netcdf location="debias_snv_tas_mri_late21_longerdaymet_ghcn_365d.nc"/>
-        <netcdf location="debias_snv_tas_mri_mid21_longerdaymet_ghcn_365d.nc"/>
+      <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
+        <netcdf location="debias_snv_tas_mri_late20_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_snv_tas_mri_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_snv_tas_mri_mid21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
       </aggregation>
     </netcdf>
     <netcdf>
-      <aggregation type="joinExisting" dimName="time">
-        <netcdf location="debias_tmax_mri_late20_longerdaymet_ghcn_365d.nc"/>
-        <netcdf location="debias_tmax_mri_late21_longerdaymet_ghcn_365d.nc"/>
-        <netcdf location="debias_tmax_mri_mid21_longerdaymet_ghcn_365d.nc"/>
+      <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
+        <netcdf location="debias_tmax_mri_late20_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_tmax_mri_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_tmax_mri_mid21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
       </aggregation>
     </netcdf>
     <netcdf>
-      <aggregation type="joinExisting" dimName="time">
-        <netcdf location="debias_tmin_mri_late20_longerdaymet_ghcn_365d.nc"/>
-        <netcdf location="debias_tmin_mri_late21_longerdaymet_ghcn_365d.nc"/>
-        <netcdf location="debias_tmin_mri_mid21_longerdaymet_ghcn_365d.nc"/>
+      <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
+        <netcdf location="debias_tmin_mri_late20_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_tmin_mri_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_tmin_mri_mid21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
       </aggregation>
     </netcdf>
     <netcdf>
-      <aggregation type="joinExisting" dimName="time">
-        <netcdf location="debias_windspeed_mri_late20_longerdaymet_ghcn_365d.nc"/>
-        <netcdf location="debias_windspeed_mri_late21_longerdaymet_ghcn_365d.nc"/>
-        <netcdf location="debias_windspeed_mri_mid21_longerdaymet_ghcn_365d.nc"/>
+      <aggregation type="joinExisting" dimName="year" timeUnitsChange="true">
+        <netcdf location="debias_windspeed_mri_late20_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 1980-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_windspeed_mri_late21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2070-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
+        <netcdf location="debias_windspeed_mri_mid21_longerdaymet_ghcn_365d.nc">
+          <variable name="year">
+            <attribute name="units" value="years since 2020-01-01 00:00:00Z"/>
+          </variable>
+        </netcdf>
       </aggregation>
     </netcdf>
   </aggregation>
