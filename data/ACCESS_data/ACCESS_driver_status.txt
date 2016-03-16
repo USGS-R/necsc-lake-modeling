@@ -1,23 +1,16 @@
 index of files contains 42455
- 42055  are new for  7  variables...
-5665 files are new for variable airtemp...
-begin job for  300  features, and variable: airtemp ...
+ 15195  are new for  3  variables...
+3065 files are new for variable relhumperc...
+begin job for  300  features, and variable: relhumperc ...
 ** job FAILED in processing **
  <no active job>
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
+begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
+begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
+begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
+begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
+begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
+begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
+begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
+begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
+begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
+begin job for  65  features, and variable: relhumperc ...success! ...downloading... success!success! ...downloading... 
