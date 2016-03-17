@@ -26,7 +26,7 @@ create_notaro_ncml <- function(){
   get_time_string <- function(time){
     time.vals <- c('late20' = '1980-01-01 00:00:00Z',
                    'mid21' = '2020-01-01 00:00:00Z',
-                   'late21' = '2070-01-01 00:00:00Z')
+                   'late21' = '2080-01-01 00:00:00Z')
     return(paste0('years since ', time.vals[[time]]))
   }
   vars <- unique(unlist(lapply(chunks, get_i, i=2)))
@@ -45,7 +45,7 @@ create_notaro_ncml <- function(){
       for (t in times){
         loc <- newXMLNode('netcdf', parent = join, attrs=c(location=get_filename(gcm, var, t, filenames=files)))
         v <- newXMLNode('variable', parent = loc, attrs=c(name="year"))
-        newXMLNode('attribute', parent = v, attrs=c(name="units", value=get_time_sring(t)))
+        newXMLNode('attribute', parent = v, attrs=c(name="units", value=get_time_string(t)))
       }
       v <- newXMLNode('variable', parent = nc, attrs=c(name="time"))
       newXMLNode('attribute', parent = v, attrs=c(name="units", value="day of year"))
