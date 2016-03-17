@@ -46,12 +46,14 @@ calc_wqp_files <- function(wqp_config, nhd_config, variable) {
     files <- paste("wqp", variable, timeStamp, fip, sep="_")
     fileList <- c(fileList, paste0(files,".rds"))
   }
+  if (length(fileList) > 100)
+    message('SB seems to have a limit for 100 files per item. Prepare for POST error')
   return(fileList)
 }
 
 get_var_map <- function(config){
   var.map = lapply(config$variables, function(x) list(x)[[1]])
-  append(var.map, wqp_config['siteType'])
+  append(var.map, config['siteType'])
 }
 
 get_char_names <- function(variable, var.map) {
@@ -62,13 +64,18 @@ get_char_names <- function(variable, var.map) {
   return(char.names)
 }
 
-wqp_server_files <- function(config){
-  id <- config$sb_wqp_id
+sb_id <- function(config, variable){
+  config$sb_ids[[variable]]
+}
+
+wqp_server_files <- function(config, variable){
+  id <- sb_id(config, variable)
   return(item_list_files(sb_id = id)$fname)
 }
 
 calc_post_files <- function(wqp_config, nhd_config, variable){
-  setdiff(calc_wqp_files(wqp_config, nhd_config, variable), wqp_server_files(wqp_config))
+  list(setdiff(calc_wqp_files(wqp_config, nhd_config, variable), wqp_server_files(wqp_config, variable))) %>% 
+    setNames(sb_id(wqp_config, variable))
 }
 
 make_wqp_dirs <- function(var){
@@ -77,8 +84,9 @@ make_wqp_dirs <- function(var){
     dir.create(var.dir)
 }
 
-getWQPdata <- function(fileList, var.map) {
- 
+getWQPdata <- function(fileList, var.map, sb.destination) {
+  sb.destination <- names(fileList)
+  fileList <- fileList[[1]]
   wqp_args <- lapply(fileList, parseWQPfileName)
   var <- unique(sapply(wqp_args, function(x) x$varName))
   if (length(var) > 1)
@@ -103,7 +111,7 @@ getWQPdata <- function(fileList, var.map) {
     local.file = file.path(tempdir(), fileList[i])
     saveRDS(wqp.data, file=local.file)
     message('posting to sciencebase for ', fileList[i])
-    item = item_append_files(sb_id='56ea20d4e4b0f59b85d81fda', files=local.file)
+    item = item_append_files(sb_id=sb.destination, files=local.file)
     cat('...', fileList[i], ' posted to sciencebase\n', file=mssg.file, append = TRUE)
     message('\n')
     

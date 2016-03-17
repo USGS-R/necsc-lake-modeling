@@ -14,19 +14,18 @@ targets:
       - data/temperature_data/wqp_temperature_data_status.txt
       - data/secchi_data/wqp_secchi_data_status.txt
       
-  nhd_config:
+  nhd:
     command: load_config("configs/NHD_config.yml")
-  wqp_config:
+  wqp.config:
     command: load_config("configs/wqp_config.yml")
   var.map:
-    command: get_var_map(wqp_config)
-    
+    command: get_var_map(wqp.config)
   
   secchi:
-    command: calc_post_files(wqp_config, nhd_config, target_name)
+    command: calc_post_files(wqp.config, nhd, target_name)
   
   temperature:
-    command: calc_post_files(wqp_config, nhd_config, target_name)
+    command: calc_post_files(wqp.config, nhd, target_name)
 
   data/temperature_data/wqp_temperature_data_status.txt:
     command: getWQPdata(temperature, var.map)
