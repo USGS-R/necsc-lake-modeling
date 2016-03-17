@@ -2,8 +2,7 @@ library(dataRetrieval)
 library(yaml)
 
 
-calc_wqp_files <- function(wqp_config, nhd_config) {
-  varNames <- names(wqp_config$variables)
+calc_wqp_files <- function(wqp_config, nhd_config, variable) {
   
   startDate <- as.Date(wqp_config$startDate)
   endDate <- as.Date(wqp_config$endDate)
@@ -19,11 +18,10 @@ calc_wqp_files <- function(wqp_config, nhd_config) {
   
   fileList <- c()
   timeStamp <- paste(beg.seq, end.seq, sep=".")
-  for (var in varNames) {
-    for (fip in fips) {
-      files <- paste("wqp", var, timeStamp, fip, sep="_")
-      fileList <- c(fileList, paste0(files,".rds"))
-    }
+  
+  for (fip in fips) {
+    files <- paste("wqp", variable, timeStamp, fip, sep="_")
+    fileList <- c(fileList, paste0(files,".rds"))
   }
   return(fileList)
 }
@@ -46,25 +44,39 @@ wqp_server_files <- function(config){
   return(item_list_files(sb_id = id)$fname)
 }
 
-calc_post_files <- function(wqp_config, nhd_config){
-  setdiff(calc_wqp_files(wqp_config, nhd_config), wqp_server_files(wqp_config))
+calc_post_files <- function(wqp_config, nhd_config, variable){
+  setdiff(calc_wqp_files(wqp_config, nhd_config, variable), wqp_server_files(wqp_config))
+}
+
+make_wqp_dirs <- function(vars){
+  var.dir <- sprintf('data/%s_data', var)
+  if (!dir.exists(var.dir))
+    dir.create(var.dir)
 }
 
 getWQPdata <- function(fileList, var.map) {
-  
+
   wqp_args <- lapply(fileList, parseWQPfileName)
+  vars <- unique(sapply(wqp_args, function(x) x$varName))
+  make_wqp_dirs(vars)
   for (i in seq_along(fileList)) {
+    var <- args[['varName']]
+    mssg.file <- sprintf('data/%s_data/wqp_%s_data_status.txt',var,var)
+    
     args <- append(wqp_args[[i]], var.map['siteType'])
-    char.names <- get_char_names(args[['varName']], var.map)
+    char.names <- get_char_names(var, var.map)
     args[['varName']] <- NULL
     wqp.args <- append(args, char.names)
     message('getting data for ', fileList[i])
+    cat('getting data for ', fileList[i], file=mssg.file, append = TRUE)
     wqp.data <- do.call(readWQPdata, wqp.args)
     local.file = file.path(tempdir(), fileList[i])
     saveRDS(wqp.data, file=local.file)
     message('posting to sciencebase for ', fileList[i])
     item = item_append_files(sb_id='56ea20d4e4b0f59b85d81fda', files=local.file)
+    cat('...', fileList[i], ' posted to sciencebase\n', file=mssg.file, append = TRUE)
     message('\n')
+    
     # write to file, do something with the file
   }
   
