@@ -11,8 +11,8 @@ packages:
   - raster
 
 sources:
-  - scripts/get_raw_nhd_shp.R
-  - scripts/lake_summary_nldas.R
+  - scripts/write_nhd_shp.R
+  - scripts/load_config.R
   - scripts/processNhd.R
 
 targets:

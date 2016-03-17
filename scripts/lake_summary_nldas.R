@@ -1,9 +1,6 @@
 library(geoknife)
 library(yaml)
 
-load_config <- function(data.source){
-  yaml.load_file(data.source)
-}
 
 sync_driver_index <- function(local.file){
   file = 'driver_index.tsv'
