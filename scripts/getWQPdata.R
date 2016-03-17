@@ -9,18 +9,16 @@ calc_wqp_files <- function(wqp_config, nhd_config) {
   endDate <- as.Date(wqp_config$endDate)
   firstYear <- as.numeric(format(startDate, format = "%Y"))
   lastYear <- as.numeric(format(endDate, format= "%Y"))
-  beg_seq <- seq(startDate, endDate, length.out=wqp_config$numberOfFiles)
-  end_seq <- beg_seq-1
-  end_seq <- end_seq[-1]
-  end_seq <- c(head(end_seq, -1), tail(beg_seq, 1))
-  beg_seq <- head(beg_seq, -1)
-  beg_seq <- format(beg_seq, "%Y%m%d") 
-  end_seq <- format(end_seq, "%Y%m%d")
+  year.seq <- seq(startDate, endDate, by='year')
+  beg.seq <- year.seq[seq(1,length(year.seq), by=wqp_config$yearSplit)] %>% 
+    format("%Y%m%d") 
+  end.seq <- c((beg_seq-1)[-1], endDate) %>% 
+    format("%Y%m%d") 
   
   fips <- unlist(lapply(nhd_config$states, function(x) x$fips))
   
   fileList <- c()
-  timeStamp <- paste(beg_seq, end_seq, sep=".")
+  timeStamp <- paste(beg.seq, end.seq, sep=".")
   for (var in varNames) {
     for (fip in fips) {
       files <- paste("wqp", var, timeStamp, fip, sep="_")
