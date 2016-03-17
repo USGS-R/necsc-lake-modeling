@@ -18,7 +18,7 @@ sources:
 targets:
   all: 
     depends: 
-      - data/NHD_shape_large/NHDWaterbody_merged.shp
+      - data/NHD_shape_large/NHDWaterbody.shp
   
   nhd_states:
     command: write_nhd_shp(nhd_config)

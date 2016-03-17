@@ -7,23 +7,24 @@
 # library(plyr)
 # library(raster)
 
-process_NHD = function(){
+process_NHD = function(config){
 	
-	outdir = file.path(getwd(), 'data', 'NHD_shape_large')
+	outdir = config$data.dir
+	
+	files = paste0(outdir, '/', config$layers, '.shp')
 	
 	#merge the shapefiles
 	uid <-1 
-	files <- Sys.glob(file.path(outdir, "*.shp"))
 	
-	nhdwaterbody <- readOGR(files[1], gsub("^.*/(.*).shp$", "\\1", files[1]))  
+	nhdwaterbody <- readOGR(files[1], gsub("^.*/(.*).shp$", "\\1", files[1]))
 	n <- length(slot(nhdwaterbody, "polygons"))  
 	nhdwaterbody <- spChFIDs(nhdwaterbody, as.character(uid:(uid+n-1)))
 	uid <- uid + n
 	
 	for (i in 2:length(files)) {
 	  temp.data <- readOGR(files[i], gsub("^.*/(.*).shp$", "\\1",files[i]))
-	  n <- length(slot(temp.data, "polygons")) 
-	  temp.data <- spChFIDs(temp.data, as.character(uid:(uid+n-1))) 
+	  n <- length(slot(temp.data, "polygons"))
+	  temp.data <- spChFIDs(temp.data, as.character(uid:(uid+n-1)))
 	  uid <- uid + n 
 	  nhdwaterbody <- spRbind(nhdwaterbody,temp.data) 
 	}
@@ -51,7 +52,7 @@ process_NHD = function(){
 	smallestArea <- 0.04 
 	smallestAreaMask <- which(nhdSubset$area >= smallestArea) 
 	nhdFiltered <- nhdSubset[smallestAreaMask,] 
-	writeOGR(nhdFiltered, driver = "ESRI Shapefile",layer="NHDWaterbody_filtered_size",overwrite_layer = TRUE, dsn=outdir) 
+	#writeOGR(nhdFiltered, driver = "ESRI Shapefile",layer="NHDWaterbody_filtered_size",overwrite_layer = TRUE, dsn=outdir) 
 	
 	#get only unique polygons, buffer to get rid of Topology Exception error
 	nhdBuff <- gBuffer(nhdFiltered, byid=TRUE, width=0)
