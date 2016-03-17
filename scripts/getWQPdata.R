@@ -1,9 +1,6 @@
 library(dataRetrieval)
 library(yaml)
 
-#read in configs
-nhd_config = load_config("configs/NHD_config.yml")
-wqp_config = load_config("configs/wqp_config.yml")
 
 calc_wqp_files <- function(wqp_config, nhd_config) {
   varNames <- names(wqp_config$variables)
@@ -33,20 +30,28 @@ calc_wqp_files <- function(wqp_config, nhd_config) {
   return(fileList)
 }
 
-getCharNames <- function(variable, wqp_config) {
-  
-  charNames <- lapply(wqp_config$variables[[variable]], list)
-  #this needs to return a list that is as long as the characteristcNames where each characteristic name is named characteristicName
-  names(charNames) <- rep("characteristicName", length(charNames))
+get_var_map <- function(config){
+  lapply(config$variables, function(x) list(x)[[1]])
 }
 
-getWQPdata <- function(fileList) {
+get_char_names <- function(variable, var.map) {
+  
+  #this needs to return a list that is as long as the characteristcNames where each characteristic name is named characteristicName
+  char.names = sapply(var.map[[variable]], list)
+  names(char.names) <- rep('characteristicName', length(char.names))
+  return(char.names)
+}
+
+getWQPdata <- function(fileList, var.map) {
   
   wqp_args <- lapply(fileList, parseWQPfileName)
   for (i in seq_along(fileList)) {
     args <- wqp_args[[i]]
-    argnames <- getCharNames()
-    retrievedData <- readWQPdata(statecode=args[["statecode"]],argnames, siteType="Lake, Reservoir, Impoundment",startDateLo=args[["startDateLo"]], startDateHi=args[["startDateHi"]])
+    char.names <- get_char_names(args[['varName']], var.map)
+    args[['varName']] <- NULL
+    wqp.args <- append(args, char.names)
+    wqp.data <- do.call(readWQPdata, wqp.args)
+    # write to file, do something with the file
   }
   
 }
@@ -60,6 +65,6 @@ parseWQPfileName <- function(fileName) {
   startDateHi <- as.character(as.Date(format(strsplit(timeStamp,"[.]")[[1]][2]),"%Y%m%d"))
   startDateLo <- as.character(as.Date(format(strsplit(timeStamp,"[.]")[[1]][1]),"%Y%m%d"))
   
-  return(c('startDateLo' = startDateLo, 'startDateHi' = startDateHi, 'statecode' = paste0("US:",fip), 'varName'= varName))
+  return(list('startDateLo' = startDateLo, 'startDateHi' = startDateHi, 'statecode' = paste0("US:",fip), 'varName'= varName))
   
 }

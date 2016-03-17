@@ -16,6 +16,8 @@ sources:
   - scripts/get_raw_nldas_nc.R
   - scripts/post_notaro_thredds.R
 
+include:
+  - remake_wqp.yml
 
 targets:
   ## 'all' is a special target that will be used as the default

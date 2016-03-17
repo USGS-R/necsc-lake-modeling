@@ -1,0 +1,22 @@
+packages:
+  - yaml
+  - dataRetrieval
+  - dplyr
+
+sources:
+  - scripts/lake_summary_nldas.R
+  - scripts/getWQPdata.R
+  
+targets:
+  all: 
+    depends: 
+      - wqp_files
+      - var.map
+  nhd_config:
+    command: load_config("configs/NHD_config.yml")
+  wqp_config:
+    command: load_config("configs/wqp_config.yml")
+  wqp_files:
+    command: calc_wqp_files(wqp_config, nhd_config)
+  var.map:
+    command: get_var_map(wqp_config)
