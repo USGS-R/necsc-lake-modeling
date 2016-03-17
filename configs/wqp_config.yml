@@ -1,12 +1,14 @@
 variables:
   secchi: ["Depth, Secchi disk depth", "Depth, Secchi disk depth (choice list)", "Secchi Reading Condition (choice list)", "Secchi depth", "Water transparency, Secchi disc"]
-  temperature: ["Temperature, Sample", "Temperature, water"]
+  temperature: ["Temperature, Sample", "Temperature, water","Temperature"]
 
 columnsToKeep: ["ActivityStartDate","ActivityStartTime.Time","ActivityStartTime.TimeZoneCode","ActivityBottomDepthHeightMeasure.MeasureValue","ActivityBottomDepthHeightMeasure.MeasureUnitCode","MonitoringLocationIdentifier","ResultMeasureValue","ResultMeasure.MeasureUnitCode"]      
 
 # WQP startDateLo and startDateHi    
 startDate: "1979-01-01"
 endDate: "2015-12-31"
+
+sb_wqp_id: '56ea20d4e4b0f59b85d81fda'
 
 siteType: "Lake, Reservoir, Impoundment"
 
