@@ -7,6 +7,7 @@ packages:
 sources:
   - scripts/lake_summary_nldas.R
   - scripts/getWQPdata.R
+  - scripts/download_munge_wqp.R
   
 targets:
   all: 
@@ -28,8 +29,12 @@ targets:
     command: calc_post_files(wqp.config, nhd, target_name)
 
   data/temperature_data/wqp_temperature_data_status.txt:
-    command: getWQPdata(temperature, var.map)
+    command: getWQPdata(temperature, var.map, target_name)
 
   data/secchi_data/wqp_secchi_data_status.txt:
-    command: getWQPdata(secchi, var.map)
+    command: getWQPdata(secchi, var.map, target_name)
 
+
+  ##temperature.merged:
+  ##  command: download_merge_wqp('data/temperature_data/wqp_temperature_data_status.txt')
+    

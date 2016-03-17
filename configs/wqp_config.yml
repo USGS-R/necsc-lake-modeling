@@ -3,7 +3,7 @@ variables:
   temperature: ["Temperature, sample", "Temperature, water","Temperature"]
 
 sb_ids:
-  secchi: "??"
+  secchi: "56eaf1d8e4b0f59b85d91a11"
   temperature: "56eaefdae4b0f59b85d919dd"
 
 columnsToKeep: ["ActivityStartDate","ActivityStartTime.Time","ActivityStartTime.TimeZoneCode","ActivityBottomDepthHeightMeasure.MeasureValue","ActivityBottomDepthHeightMeasure.MeasureUnitCode","MonitoringLocationIdentifier","ResultMeasureValue","ResultMeasure.MeasureUnitCode"]      

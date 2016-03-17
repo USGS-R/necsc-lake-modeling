@@ -84,20 +84,22 @@ make_wqp_dirs <- function(var){
     dir.create(var.dir)
 }
 
-getWQPdata <- function(fileList, var.map, sb.destination) {
+getWQPdata <- function(fileList, var.map, mssg.file) {
   sb.destination <- names(fileList)
   fileList <- fileList[[1]]
+  if (length(fileList) == 0){
+    cat(sprintf('%s\nCOMPLETE',sb.destination), file=mssg.file, append = FALSE)
+    return()
+  }
+   
   wqp_args <- lapply(fileList, parseWQPfileName)
   var <- unique(sapply(wqp_args, function(x) x$varName))
-  if (length(var) > 1)
+  if (length(var) != 1)
     stop(paste(var, collapse=','), ' must be of length one')
-  make_wqp_dirs(var)
-  mssg.file <- sprintf('data/%s_data/wqp_%s_data_status.txt',var,var)
   
-  if (length(fileList) == 0)
-    cat('no new files for variable: ', var, '\n', file=mssg.file, append = FALSE)
-  else 
-    cat('getting data for ', length(fileList), ' files, for variable: ', var, '\n', file=mssg.file, append = FALSE)
+  make_wqp_dirs(var)
+  
+  cat('getting data for ', length(fileList), ' files, for variable: ', var, '\n', file=mssg.file, append = FALSE)
   
   for (i in seq_along(fileList)) {
     
