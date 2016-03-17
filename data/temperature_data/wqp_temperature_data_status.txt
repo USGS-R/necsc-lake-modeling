@@ -1,1 +1,2 @@
-getting data for  21  files, for variable:  temperature
+getting data for  14  files, for variable:  temperature 
+getting data for  wqp_temperature_19890101.19901231_55.rds

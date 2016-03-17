@@ -2,6 +2,29 @@ library(dataRetrieval)
 library(yaml)
 
 
+retryWQP <- function(..., retries=3){
+  
+  safeWQP = function(...){
+    result = tryCatch({
+      readWQPdata(...)
+    }, error = function(e) {
+      return(NULL)
+    })
+    return(result)
+  }
+  retry = 1
+  while (retry < retries){
+    result = safeWQP(...)
+    if (!is.null(result)){
+      retry = retries
+    } else {
+      message('query failed, retrying')
+      retry = retry+1
+    }
+  }
+  return(result)
+}
+
 calc_wqp_files <- function(wqp_config, nhd_config, variable) {
   
   startDate <- as.Date(wqp_config$startDate)
@@ -9,10 +32,10 @@ calc_wqp_files <- function(wqp_config, nhd_config, variable) {
   firstYear <- as.numeric(format(startDate, format = "%Y"))
   lastYear <- as.numeric(format(endDate, format= "%Y"))
   year.seq <- seq(startDate, endDate, by='year')
-  beg.seq <- year.seq[seq(1,length(year.seq), by=wqp_config$yearSplit)] %>% 
+  beg.seq <- year.seq[seq(1,length(year.seq), by=wqp_config$yearSplit)]
+  end.seq <- c((beg.seq-1)[-1], endDate) %>% 
     format("%Y%m%d") 
-  end.seq <- c((beg_seq-1)[-1], endDate) %>% 
-    format("%Y%m%d") 
+  beg.seq <- format(beg.seq, "%Y%m%d") 
   
   fips <- unlist(lapply(nhd_config$states, function(x) x$fips))
   
@@ -62,6 +85,7 @@ getWQPdata <- function(fileList, var.map) {
     stop(paste(var, collapse=','), ' must be of length one')
   make_wqp_dirs(var)
   mssg.file <- sprintf('data/%s_data/wqp_%s_data_status.txt',var,var)
+  
   if (length(fileList) == 0)
     cat('no new files for variable: ', var, '\n', file=mssg.file, append = FALSE)
   else 
@@ -75,7 +99,7 @@ getWQPdata <- function(fileList, var.map) {
     wqp.args <- append(args, char.names)
     message('getting data for ', fileList[i])
     cat('getting data for ', fileList[i], file=mssg.file, append = TRUE)
-    wqp.data <- do.call(readWQPdata, wqp.args)
+    wqp.data <- do.call(retryWQP, wqp.args)
     local.file = file.path(tempdir(), fileList[i])
     saveRDS(wqp.data, file=local.file)
     message('posting to sciencebase for ', fileList[i])
