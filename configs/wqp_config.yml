@@ -8,6 +8,8 @@ columnsToKeep: ["ActivityStartDate","ActivityStartTime.Time","ActivityStartTime.
 startDate: "1979-01-01"
 endDate: "2015-12-31"
 
+sb_wqp_id: '56ea20d4e4b0f59b85d81fda'
+
 siteType: "Lake, Reservoir, Impoundment"
 
 numberOfFiles: 20

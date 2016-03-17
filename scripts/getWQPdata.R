@@ -24,7 +24,7 @@ calc_wqp_files <- function(wqp_config, nhd_config) {
   for (var in varNames) {
     for (fip in fips) {
       files <- paste("wqp", var, timeStamp, fip, sep="_")
-      fileList <- c(fileList, paste0(files,".tsv"))
+      fileList <- c(fileList, paste0(files,".rds"))
     }
   }
   return(fileList)
@@ -42,6 +42,15 @@ get_char_names <- function(variable, var.map) {
   return(char.names)
 }
 
+wqp_server_files <- function(config){
+  id <- config$sb_wqp_id
+  return(item_list_files(sb_id = id)$fname)
+}
+
+calc_post_files <- function(wqp_config, nhd_config){
+  setdiff(calc_wqp_files(wqp_config, nhd_config), wqp_server_files(wqp_config))
+}
+
 getWQPdata <- function(fileList, var.map) {
   
   wqp_args <- lapply(fileList, parseWQPfileName)
@@ -50,7 +59,13 @@ getWQPdata <- function(fileList, var.map) {
     char.names <- get_char_names(args[['varName']], var.map)
     args[['varName']] <- NULL
     wqp.args <- append(args, char.names)
+    message('getting data for', fileList[i])
     wqp.data <- do.call(readWQPdata, wqp.args)
+    local.file = file.path(tempdir(), fileList[i])
+    saveRDS(wqp.data, file=local.file)
+    message('posting to sciencebase for', fileList[i])
+    item = item_append_files(sb_id='56ea20d4e4b0f59b85d81fda', files=local.file)
+    message('\n')
     # write to file, do something with the file
   }
   
