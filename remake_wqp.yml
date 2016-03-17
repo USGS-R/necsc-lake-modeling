@@ -6,6 +6,7 @@ packages:
 
 sources:
   - scripts/lake_summary_nldas.R
+  - scripts/load_config.R
   - scripts/getWQPdata.R
   
 targets:

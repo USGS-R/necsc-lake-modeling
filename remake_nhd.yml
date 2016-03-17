@@ -1,0 +1,30 @@
+packages:
+  - yaml
+  - dplyr
+  - sbtools
+  - rgdal
+  - sp
+  - maptools
+  - rgeos
+  - magrittr
+  - plyr
+  - raster
+
+sources:
+  - scripts/write_nhd_shp.R
+  - scripts/load_config.R
+  - scripts/processNhd.R
+
+targets:
+  all: 
+    depends: 
+      - data/NHD_shape_large/NHDWaterbody.shp
+  
+  nhd_states:
+    command: write_nhd_shp(nhd_config)
+  
+  nhd_config:
+    command: load_config("configs/NHD_config.yml")
+
+  data/NHD_shape_large/NHDWaterbody.shp:
+    command: process_NHD(nhd_states)

@@ -13,3 +13,4 @@ mydata.RData
 **.DS_Store
 *.remake/
 *.Rproj
+data/NHD_shape_large
