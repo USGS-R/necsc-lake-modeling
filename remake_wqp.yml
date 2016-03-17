@@ -12,8 +12,8 @@ sources:
 targets:
   all: 
     depends: 
-      - data/temperature_data/wqp_temperature_data_status.txt
-      - data/secchi_data/wqp_secchi_data_status.txt
+      - temperature.merged
+      - secchi.merged
       
   nhd:
     command: load_config("configs/NHD_config.yml")
@@ -24,9 +24,13 @@ targets:
   
   secchi:
     command: calc_post_files(wqp.config, nhd, target_name)
+    depends:
+      - scripts/getWQPdata.R
   
   temperature:
     command: calc_post_files(wqp.config, nhd, target_name)
+    depends:
+      - scripts/getWQPdata.R
 
   data/temperature_data/wqp_temperature_data_status.txt:
     command: getWQPdata(temperature, var.map, target_name)
@@ -35,6 +39,8 @@ targets:
     command: getWQPdata(secchi, var.map, target_name)
 
 
-  ##temperature.merged:
-  ##  command: download_merge_wqp('data/temperature_data/wqp_temperature_data_status.txt')
+  temperature.merged:
+    command: download_merge_wqp('data/temperature_data/wqp_temperature_data_status.txt')
     
+  secchi.merged:
+    command: download_merge_wqp('data/secchi_data/wqp_secchi_data_status.txt')
