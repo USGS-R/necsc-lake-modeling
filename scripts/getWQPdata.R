@@ -59,11 +59,11 @@ getWQPdata <- function(fileList, var.map) {
     char.names <- get_char_names(args[['varName']], var.map)
     args[['varName']] <- NULL
     wqp.args <- append(args, char.names)
-    message('getting data for', fileList[i])
+    message('getting data for ', fileList[i])
     wqp.data <- do.call(readWQPdata, wqp.args)
     local.file = file.path(tempdir(), fileList[i])
     saveRDS(wqp.data, file=local.file)
-    message('posting to sciencebase for', fileList[i])
+    message('posting to sciencebase for ', fileList[i])
     item = item_append_files(sb_id='56ea20d4e4b0f59b85d81fda', files=local.file)
     message('\n')
     # write to file, do something with the file

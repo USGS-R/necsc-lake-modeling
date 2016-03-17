@@ -1,6 +1,6 @@
 variables:
   secchi: ["Depth, Secchi disk depth", "Depth, Secchi disk depth (choice list)", "Secchi Reading Condition (choice list)", "Secchi depth", "Water transparency, Secchi disc"]
-  temperature: ["Temperature, Sample", "Temperature, water"]
+  temperature: ["Temperature, Sample", "Temperature, water","Temperature"]
 
 columnsToKeep: ["ActivityStartDate","ActivityStartTime.Time","ActivityStartTime.TimeZoneCode","ActivityBottomDepthHeightMeasure.MeasureValue","ActivityBottomDepthHeightMeasure.MeasureUnitCode","MonitoringLocationIdentifier","ResultMeasureValue","ResultMeasure.MeasureUnitCode"]      
 
