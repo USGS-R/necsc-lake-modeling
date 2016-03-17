@@ -11,9 +11,7 @@ sources:
 targets:
   all: 
     depends: 
-      - var.map
-      - temperature
-      ##- data/temperature_data/wqp_temperature_data_status.txt
+      - data/temperature_data/wqp_temperature_data_status.txt
       
   nhd_config:
     command: load_config("configs/NHD_config.yml")
@@ -25,4 +23,6 @@ targets:
   temperature:
     command: calc_post_files(wqp_config, nhd_config, target_name)
 
+  data/temperature_data/wqp_temperature_data_status.txt:
+    command: getWQPdata(temperature, var.map)
 

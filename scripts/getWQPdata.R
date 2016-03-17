@@ -48,20 +48,26 @@ calc_post_files <- function(wqp_config, nhd_config, variable){
   setdiff(calc_wqp_files(wqp_config, nhd_config, variable), wqp_server_files(wqp_config))
 }
 
-make_wqp_dirs <- function(vars){
+make_wqp_dirs <- function(var){
   var.dir <- sprintf('data/%s_data', var)
   if (!dir.exists(var.dir))
     dir.create(var.dir)
 }
 
 getWQPdata <- function(fileList, var.map) {
-
+ 
   wqp_args <- lapply(fileList, parseWQPfileName)
-  vars <- unique(sapply(wqp_args, function(x) x$varName))
-  make_wqp_dirs(vars)
+  var <- unique(sapply(wqp_args, function(x) x$varName))
+  if (length(var) > 1)
+    stop(paste(var, collapse=','), ' must be of length one')
+  make_wqp_dirs(var)
+  mssg.file <- sprintf('data/%s_data/wqp_%s_data_status.txt',var,var)
+  if (length(fileList) == 0)
+    cat('no new files for variable: ', var, '\n', file=mssg.file, append = FALSE)
+  else 
+    cat('getting data for ', length(fileList), ' files, for variable: ', var, '\n', file=mssg.file, append = FALSE)
+  
   for (i in seq_along(fileList)) {
-    var <- args[['varName']]
-    mssg.file <- sprintf('data/%s_data/wqp_%s_data_status.txt',var,var)
     
     args <- append(wqp_args[[i]], var.map['siteType'])
     char.names <- get_char_names(var, var.map)
