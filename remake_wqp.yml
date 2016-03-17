@@ -8,17 +8,40 @@ sources:
   - scripts/lake_summary_nldas.R
   - scripts/load_config.R
   - scripts/getWQPdata.R
+  - scripts/download_munge_wqp.R
   
 targets:
   all: 
     depends: 
-      - wqp_files
-      - var.map
-  nhd_config:
+      - temperature.merged
+      - secchi.merged
+      
+  nhd:
     command: load_config("configs/NHD_config.yml")
-  wqp_config:
+  wqp.config:
     command: load_config("configs/wqp_config.yml")
-  wqp_files:
-    command: calc_wqp_files(wqp_config, nhd_config)
   var.map:
-    command: get_var_map(wqp_config)
+    command: get_var_map(wqp.config)
+  
+  secchi:
+    command: calc_post_files(wqp.config, nhd, target_name)
+    depends:
+      - scripts/getWQPdata.R
+  
+  temperature:
+    command: calc_post_files(wqp.config, nhd, target_name)
+    depends:
+      - scripts/getWQPdata.R
+
+  data/temperature_data/wqp_temperature_data_status.txt:
+    command: getWQPdata(temperature, var.map, target_name)
+
+  data/secchi_data/wqp_secchi_data_status.txt:
+    command: getWQPdata(secchi, var.map, target_name)
+
+
+  temperature.merged:
+    command: download_merge_wqp('data/temperature_data/wqp_temperature_data_status.txt')
+    
+  secchi.merged:
+    command: download_merge_wqp('data/secchi_data/wqp_secchi_data_status.txt')
