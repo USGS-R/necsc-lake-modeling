@@ -1,16 +1,40 @@
 index of files contains 42455
- 15195  are new for  3  variables...
-3065 files are new for variable relhumperc...
-begin job for  300  features, and variable: relhumperc ...
+ 9730  are new for  2  variables...
+3665 files are new for variable snow...
+begin job for  300  features, and variable: snow ...
 ** job FAILED in processing **
  <no active job>
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  65  features, and variable: relhumperc ...success! ...downloading... success!success! ...downloading... 
+begin job for  300  features, and variable: snow ...success! ...downloading... success!
+begin job for  300  features, and variable: snow ...success! ...downloading... success!
+begin job for  300  features, and variable: snow ...success! ...downloading... success!
+begin job for  300  features, and variable: snow ...success! ...downloading... success!
+begin job for  300  features, and variable: snow ...success! ...downloading... success!
+begin job for  300  features, and variable: snow ...success! ...downloading... success!
+begin job for  300  features, and variable: snow ...success! ...downloading... success!
+begin job for  300  features, and variable: snow ...success! ...downloading... success!
+begin job for  300  features, and variable: snow ...success! ...downloading... success!
+begin job for  300  features, and variable: snow ...success! ...downloading... success!
+begin job for  300  features, and variable: snow ...success! ...downloading... success!
+begin job for  65  features, and variable: snow ...success! ...downloading... success!success! ...downloading... success!
+6065 files are new for variable windspeed...
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: snow ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
+begin job for  65  features, and variable: windspeed ...success! ...downloading... success!success! ...downloading... success!

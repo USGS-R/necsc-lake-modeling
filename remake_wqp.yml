@@ -2,6 +2,7 @@ packages:
   - yaml
   - dataRetrieval
   - dplyr
+  - sbtools
 
 sources:
   - scripts/lake_summary_nldas.R

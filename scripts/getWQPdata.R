@@ -31,7 +31,8 @@ calc_wqp_files <- function(wqp_config, nhd_config) {
 }
 
 get_var_map <- function(config){
-  lapply(config$variables, function(x) list(x)[[1]])
+  var.map = lapply(config$variables, function(x) list(x)[[1]])
+  append(var.map, wqp_config['siteType'])
 }
 
 get_char_names <- function(variable, var.map) {
@@ -55,7 +56,7 @@ getWQPdata <- function(fileList, var.map) {
   
   wqp_args <- lapply(fileList, parseWQPfileName)
   for (i in seq_along(fileList)) {
-    args <- wqp_args[[i]]
+    args <- append(wqp_args[[i]], var.map['siteType'])
     char.names <- get_char_names(args[['varName']], var.map)
     args[['varName']] <- NULL
     wqp.args <- append(args, char.names)
