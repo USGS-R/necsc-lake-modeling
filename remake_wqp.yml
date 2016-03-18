@@ -14,7 +14,7 @@ targets:
   all: 
     depends: 
       - temperature.merged
-      - secchi.merged
+      - secchi.clean
       
   nhd:
     command: load_config("configs/NHD_config.yml")
@@ -45,3 +45,6 @@ targets:
     
   secchi.merged:
     command: download_merge_wqp('data/secchi_data/wqp_secchi_data_status.txt')
+    
+  secchi.clean:
+    command: munge_wqp(secchi.merged)
