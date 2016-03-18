@@ -45,7 +45,6 @@ for (j in 1:length(states)) {
     }
   })
 } 
-#remove NA values
-matches <- subset(lookup,!is.na(id))
-write.csv(matches, file=paste0(getwd(),"/data/wqp_nhd",".csv"),row.names=FALSE)
+
+write.csv(lookup, file=paste0(getwd(),"/data/wqp_nhd/wqp_nhdLookup.csv"),row.names=FALSE)
 
