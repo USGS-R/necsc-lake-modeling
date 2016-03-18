@@ -6,7 +6,7 @@ download_merge_wqp <- function(wqp_status){
   #file.names <- 
   
   files = item_file_download(sb_id, dest_dir=tempdir(), overwrite_file = TRUE)
-  message('downloaded',length(files),'files')
+  message('downloaded ',length(files),' files')
   #message(length(),'were local')
   file.out <- file.path('data',variable,'local.rds')
   saveRDS(merge_files(files), file = file.out)
