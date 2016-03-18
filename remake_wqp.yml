@@ -14,8 +14,10 @@ targets:
   all: 
     depends: 
       - temperature.merged
-      - secchi.clean
-      
+      - ../lakeattributes/data-raw/secchi/wqp_secchi.tsv
+  
+  wqp.nhd.lookup:
+    command: readRDS('data/wqp_nhd/wqp_nhdLookup.rds')
   nhd:
     command: load_config("configs/NHD_config.yml")
   wqp.config:
@@ -48,3 +50,10 @@ targets:
     
   secchi.clean:
     command: munge_wqp(secchi.merged)
+    depends: 
+      - scripts/download_munge_wqp.R
+    
+  ../lakeattributes/data-raw/secchi/wqp_secchi.tsv:
+    command: map_wqp(secchi.clean, wqp.nhd.lookup, target_name)
+    depends:
+      - scripts/download_munge_wqp.R

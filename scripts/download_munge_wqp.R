@@ -43,3 +43,11 @@ munge_wqp <- function(data.file){
   variable <- strsplit(strsplit(data.file,'[/]')[[1]][2],'[_]')[[1]][1]
   return(do.call(paste0('munge_',variable), list(data.in = readRDS(data.file))))
 }
+
+
+map_wqp <- function(munged.wqp, wqp.nhd.lookup, mapped.file){
+  mapped.wqp <- left_join(munged.wqp, rename(wqp.nhd.lookup, wqx.id=MonitoringLocationIdentifier), by = 'wqx.id') %>% 
+    select(Date, id, secchi) %>% 
+    filter(!is.na(id))
+  write.table(mapped.wqp, file=mapped.file, quote = FALSE, row.names = FALSE, sep = '\t')
+}
