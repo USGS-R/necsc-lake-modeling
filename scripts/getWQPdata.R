@@ -2,35 +2,58 @@ library(dataRetrieval)
 library(yaml)
 
 
-calc_wqp_files <- function(wqp_config, nhd_config) {
-  varNames <- names(wqp_config$variables)
+retryWQP <- function(..., retries=3){
+  
+  safeWQP = function(...){
+    result = tryCatch({
+      readWQPdata(...)
+    }, error = function(e) {
+      return(NULL)
+    })
+    return(result)
+  }
+  retry = 1
+  while (retry < retries){
+    result = safeWQP(...)
+    if (!is.null(result)){
+      retry = retries
+    } else {
+      message('query failed, retrying')
+      retry = retry+1
+    }
+  }
+  return(result)
+}
+
+calc_wqp_files <- function(wqp_config, nhd_config, variable) {
   
   startDate <- as.Date(wqp_config$startDate)
   endDate <- as.Date(wqp_config$endDate)
   firstYear <- as.numeric(format(startDate, format = "%Y"))
   lastYear <- as.numeric(format(endDate, format= "%Y"))
   year.seq <- seq(startDate, endDate, by='year')
-  beg.seq <- year.seq[seq(1,length(year.seq), by=wqp_config$yearSplit)] %>% 
+  beg.seq <- year.seq[seq(1,length(year.seq), by=wqp_config$yearSplit)]
+  end.seq <- c((beg.seq-1)[-1], endDate) %>% 
     format("%Y%m%d") 
-  end.seq <- c((beg_seq-1)[-1], endDate) %>% 
-    format("%Y%m%d") 
+  beg.seq <- format(beg.seq, "%Y%m%d") 
   
   fips <- unlist(lapply(nhd_config$states, function(x) x$fips))
   
   fileList <- c()
   timeStamp <- paste(beg.seq, end.seq, sep=".")
-  for (var in varNames) {
-    for (fip in fips) {
-      files <- paste("wqp", var, timeStamp, fip, sep="_")
-      fileList <- c(fileList, paste0(files,".rds"))
-    }
+  
+  for (fip in fips) {
+    files <- paste("wqp", variable, timeStamp, fip, sep="_")
+    fileList <- c(fileList, paste0(files,".rds"))
   }
+  if (length(fileList) > 100)
+    message('SB seems to have a limit for 100 files per item. Prepare for POST error')
   return(fileList)
 }
 
 get_var_map <- function(config){
   var.map = lapply(config$variables, function(x) list(x)[[1]])
-  append(var.map, wqp_config['siteType'])
+  append(var.map, config['siteType'])
 }
 
 get_char_names <- function(variable, var.map) {
@@ -41,30 +64,59 @@ get_char_names <- function(variable, var.map) {
   return(char.names)
 }
 
-wqp_server_files <- function(config){
-  id <- config$sb_wqp_id
+sb_id <- function(config, variable){
+  config$sb_ids[[variable]]
+}
+
+wqp_server_files <- function(config, variable){
+  id <- sb_id(config, variable)
   return(item_list_files(sb_id = id)$fname)
 }
 
-calc_post_files <- function(wqp_config, nhd_config){
-  setdiff(calc_wqp_files(wqp_config, nhd_config), wqp_server_files(wqp_config))
+calc_post_files <- function(wqp_config, nhd_config, variable){
+  list(setdiff(calc_wqp_files(wqp_config, nhd_config, variable), wqp_server_files(wqp_config, variable))) %>% 
+    setNames(sb_id(wqp_config, variable))
 }
 
-getWQPdata <- function(fileList, var.map) {
-  
+make_wqp_dirs <- function(var){
+  var.dir <- sprintf('data/%s_data', var)
+  if (!dir.exists(var.dir))
+    dir.create(var.dir)
+}
+
+getWQPdata <- function(fileList, var.map, mssg.file) {
+  sb.destination <- names(fileList)
+  fileList <- fileList[[1]]
+  if (length(fileList) == 0){
+    cat(sprintf('%s\nCOMPLETE',sb.destination), file=mssg.file, append = FALSE)
+    return()
+  }
+   
   wqp_args <- lapply(fileList, parseWQPfileName)
+  var <- unique(sapply(wqp_args, function(x) x$varName))
+  if (length(var) != 1)
+    stop(paste(var, collapse=','), ' must be of length one')
+  
+  make_wqp_dirs(var)
+  
+  cat('getting data for ', length(fileList), ' files, for variable: ', var, '\n', file=mssg.file, append = FALSE)
+  
   for (i in seq_along(fileList)) {
+    
     args <- append(wqp_args[[i]], var.map['siteType'])
-    char.names <- get_char_names(args[['varName']], var.map)
+    char.names <- get_char_names(var, var.map)
     args[['varName']] <- NULL
     wqp.args <- append(args, char.names)
     message('getting data for ', fileList[i])
-    wqp.data <- do.call(readWQPdata, wqp.args)
+    cat('getting data for ', fileList[i], file=mssg.file, append = TRUE)
+    wqp.data <- do.call(retryWQP, wqp.args)
     local.file = file.path(tempdir(), fileList[i])
     saveRDS(wqp.data, file=local.file)
     message('posting to sciencebase for ', fileList[i])
-    item = item_append_files(sb_id='56ea20d4e4b0f59b85d81fda', files=local.file)
+    item = item_append_files(sb_id=sb.destination, files=local.file)
+    cat('...', fileList[i], ' posted to sciencebase\n', file=mssg.file, append = TRUE)
     message('\n')
+    
     # write to file, do something with the file
   }
   
