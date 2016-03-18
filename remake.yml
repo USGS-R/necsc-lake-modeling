@@ -10,15 +10,15 @@ packages:
   
 ## All R files that are used must be listed here:
 sources:
-  - scripts/loadConfig.R
+  - scripts/load_internals.R
   - scripts/load_config.R
   - scripts/lake_summary_locations.R
   - scripts/lake_summary_nldas.R
   - scripts/get_raw_nldas_nc.R
   - scripts/post_notaro_thredds.R
 
-include:
-  - remake_wqp.yml
+##include:
+##  - remake_wqp.yml
 
 targets:
   ## 'all' is a special target that will be used as the default
@@ -33,6 +33,8 @@ targets:
       - data/GENMOM_data/GENMOM_driver_status.txt
       - data/CM2.0_data/CM2.0_driver_status.txt
       - data/ACCESS_data/ACCESS_driver_status.txt
+      - data/CNRM_data/CNRM_driver_status.txt
+      - data/GFDL_data/GFDL_driver_status.txt
       - nldas_index
       - cm2.0_index
       - genmom_index
@@ -78,6 +80,12 @@ targets:
   access_config:
     command: load_config("configs/ACCESS_config.yml")
 
+  cnrm_config:
+    command: load_config("configs/CNRM_config.yml")
+
+  gfdl_config:
+    command: load_config("configs/GFDL_config.yml")
+
   data/NLDAS_summ/NLDAS_driver_index.tsv:
     command: driver_server_files('data/NLDAS_data/NLDAS_driver_status.txt')
 
@@ -92,6 +100,12 @@ targets:
 
   data/ACCESS_summ/ACCESS_driver_index.tsv:
     command: driver_server_files('data/ACCESS_data/ACCESS_driver_status.txt')
+
+  data/CNRM_summ/CNRM_driver_index.tsv:
+    command: driver_server_files('data/CNRM_data/CNRM_driver_status.txt')
+
+  data/GFDL_summ/GFDL_driver_index.tsv:
+    command: driver_server_files('data/GFDL_data/GFDL_driver_status.txt')
 
   ncml:
     command: sync_ncml("data/NLDAS_sub/nldas_miwimn.ncml")
@@ -120,6 +134,12 @@ targets:
   data/ACCESS_data/ACCESS_driver_file_list.tsv:
     command: calc_nldas_driver_files(access_config, project_lake_locations)
 
+  data/CNRM_data/CNRM_driver_file_list.tsv:
+    command: calc_nldas_driver_files(cnrm_config, project_lake_locations)
+
+  data/GFDL_data/GFDL_driver_file_list.tsv:
+    command: calc_nldas_driver_files(gfdl_config, project_lake_locations)
+
   data/NLDAS_data/NLDAS_driver_file_list.tsv:
     command: calc_nldas_driver_files(nldas_config, project_lake_locations)
 
@@ -147,6 +167,12 @@ targets:
   data/ACCESS_data/ACCESS_driver_status.txt:
     command: lake_driver_nldas("data/ACCESS_data/ACCESS_driver_file_list.tsv")
 
+  data/CNRM_data/CNRM_driver_status.txt:
+    command: lake_driver_nldas("data/CNRM_data/CNRM_driver_file_list.tsv")
+
+  data/GFDL_data/GFDL_driver_status.txt:
+    command: lake_driver_nldas("data/GFDL_data/GFDL_driver_file_list.tsv")
+
   nldas_index:
     command: sync_driver_index("data/NLDAS_summ/NLDAS_driver_index.tsv")
 
@@ -162,3 +188,9 @@ targets:
   access_index:
     command: sync_driver_index("data/ACCESS_summ/ACCESS_driver_index.tsv")
 
+  cnrm_index:
+    command: sync_driver_index("data/CNRM_summ/CNRM_driver_index.tsv")
+
+  gfdl_index:
+    command: sync_driver_index("data/GFDL_summ/GFDL_driver_index.tsv")
+    
