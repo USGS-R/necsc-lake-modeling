@@ -10,7 +10,7 @@ packages:
   
 ## All R files that are used must be listed here:
 sources:
-  - scripts/loadConfig.R
+  - scripts/load_internals.R
   - scripts/load_config.R
   - scripts/lake_summary_locations.R
   - scripts/lake_summary_nldas.R

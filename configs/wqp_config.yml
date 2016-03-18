@@ -1,6 +1,8 @@
 variables:
   secchi: ["Depth, Secchi disk depth", "Depth, Secchi disk depth (choice list)", "Secchi Reading Condition (choice list)", "Secchi depth", "Water transparency, Secchi disc"]
   temperature: ["Temperature, sample", "Temperature, water","Temperature"]
+  turbidity: ["Turbidity, hellige", "Turbidity severity (choice list)", "Turbidity severity", "Turbidity"]
+  chlorophyll: ["Chlorophyll", "Chlorophyll A", "Chlorophyll a","Chlorophyll a (probe relative fluorescence)","Chlorophyll a (probe)","Chlorophyll a - Periphyton (attached)", "Chlorophyll a - Phytoplankton (suspended)", "Chlorophyll a, corrected for pheophytin", "Chlorophyll a, free of pheophytin", "Chlorophyll a, uncorrected for pheophytin", "Chlorophyll b", "Chlorophyll c", "Chlorophyll/Pheophytin ratio"]
 
 sb_ids:
   secchi: "56eaf1d8e4b0f59b85d91a11"
