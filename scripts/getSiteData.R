@@ -46,5 +46,7 @@ for (j in 1:length(states)) {
   })
 } 
 
-saveRDS(lookup, file=paste0(getwd(),"/data/wqp_nhd/wqp_nhdLookup.rds"))
+
+saveRDS(lookup, file="/data/wqp_nhd/wqp_nhdLookup.rds")
+
 
