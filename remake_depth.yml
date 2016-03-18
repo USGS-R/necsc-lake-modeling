@@ -1,0 +1,47 @@
+packages:
+  - yaml
+  - dplyr
+  - sbtools
+  - rgdal
+  - sp
+  - maptools
+  - rgeos
+  - magrittr
+  - plyr
+  - raster
+  - digest
+  - jsonlite
+
+sources:
+  - scripts/load_config.R
+  - scripts/link_to_nhd.R
+  - scripts/encryption_helpers.R
+  - scripts/depth_link_jacobson.R
+  - scripts/depth_summarize.R
+  - scripts/depth_link_lagos.R
+
+
+targets:
+  all: 
+    depends: 
+      - data/depth_data_linked/all_depths.edt
+      
+  nhd_config:
+    command: load_config("configs/NHD_config.yml")
+  
+  necsc_config:
+    command: load_config("~/.R/necsc.yaml")
+    
+  data/depth_data_linked/depth_herb_jacobson.tsv:
+    command: depth_link_jacobson("data/depth_data_raw/depth_Herb_Jacobson.csv")
+    
+  data/depth_data_linked/depth_lagos.edt:
+    command: depth_link_lagos(necsc_config)
+    
+    
+  data/depth_data_linked/all_depths.edt:
+    command: depth_summarize(necsc_config)
+    depends:
+      - data/depth_data_linked/depth_herb_jacobson.tsv
+      - data/depth_data_linked/depth_lagos.edt
+      
