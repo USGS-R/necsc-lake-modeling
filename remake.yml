@@ -17,8 +17,8 @@ sources:
   - scripts/get_raw_nldas_nc.R
   - scripts/post_notaro_thredds.R
 
-include:
-  - remake_wqp.yml
+##include:
+##  - remake_wqp.yml
 
 targets:
   ## 'all' is a special target that will be used as the default
@@ -33,6 +33,8 @@ targets:
       - data/GENMOM_data/GENMOM_driver_status.txt
       - data/CM2.0_data/CM2.0_driver_status.txt
       - data/ACCESS_data/ACCESS_driver_status.txt
+      - data/CNRM_data/CNRM_driver_status.txt
+      - data/GFDL_data/GFDL_driver_status.txt
       - nldas_index
       - cm2.0_index
       - genmom_index
@@ -93,6 +95,12 @@ targets:
   data/ACCESS_summ/ACCESS_driver_index.tsv:
     command: driver_server_files('data/ACCESS_data/ACCESS_driver_status.txt')
 
+  data/CNRM_summ/CNRM_driver_index.tsv:
+    command: driver_server_files('data/CNRM_data/CNRM_driver_status.txt')
+
+  data/GFDL_summ/GFDL_driver_index.tsv:
+    command: driver_server_files('data/GFDL_data/GFDL_driver_status.txt')
+
   ncml:
     command: sync_ncml("data/NLDAS_sub/nldas_miwimn.ncml")
 
@@ -147,6 +155,12 @@ targets:
   data/ACCESS_data/ACCESS_driver_status.txt:
     command: lake_driver_nldas("data/ACCESS_data/ACCESS_driver_file_list.tsv")
 
+  data/CNRM_data/CNRM_driver_status.txt:
+    command: lake_driver_nldas("data/CNRM_data/CNRM_driver_file_list.tsv")
+
+  data/GFDL_data/GFDL_driver_status.txt:
+    command: lake_driver_nldas("data/GFDL_data/GFDL_driver_file_list.tsv")
+
   nldas_index:
     command: sync_driver_index("data/NLDAS_summ/NLDAS_driver_index.tsv")
 
@@ -162,3 +176,9 @@ targets:
   access_index:
     command: sync_driver_index("data/ACCESS_summ/ACCESS_driver_index.tsv")
 
+  cnrm_index:
+    command: sync_driver_index("data/CNRM_summ/CNRM_driver_index.tsv")
+
+  gfdl_index:
+    command: sync_driver_index("data/GFDL_summ/GFDL_driver_index.tsv")
+    
