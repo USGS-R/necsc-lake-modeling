@@ -35,9 +35,9 @@ for (j in 1:length(states)) {
 lookup <- data.frame()
 for (j in 1:length(states)) { 
   tryCatch({ 
-    sites <- read.csv(file=paste0(getwd(),"/data/wqp_nhd/sitesPermId",states[[j]]$fips,".csv"))
-    if (length(sites)>0) {
-      lookup <- rbind(lookup, as.data.frame(sites))
+    nhd_wqp <- read.csv(file=paste0(getwd(),"/data/wqp_nhd/sitesPermId",states[[j]]$fips,".csv"))
+    if (length(nhd_wqp)>0) {
+      lookup <- rbind(lookup, as.data.frame(nhd_wqp))
     } 
     error = function(e){
       error <- paste("\n Request failed:", "on", as.character(Sys.time()), "\t", "State:",config$states[i],"Value:", e)
@@ -45,7 +45,8 @@ for (j in 1:length(states)) {
     }
   })
 } 
-#remove NA values
-matches <- subset(lookup,!is.na(id))
-write.csv(matches, file=paste0(getwd(),"/data/wqp_nhd",".csv"),row.names=FALSE)
+
+saveRDS(lookup, file="data/wqp_nhd/wqp_nhdLookup.rds")
+
+
 
