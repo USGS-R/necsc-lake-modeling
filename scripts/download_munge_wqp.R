@@ -26,10 +26,16 @@ id_from_status <- function(status.file){
 }
 
 munge_secchi <- function(data.in){
+  
+  unit.map <- data.frame(units=c('m','in','ft','cm', NA), 
+                         convert = c(1,0.0254,0.3048,0.01, NA), 
+                         stringsAsFactors = FALSE)
+
   rename(data.in, Date=ActivityStartDate, value=ResultMeasureValue, units=ResultMeasure.MeasureUnitCode, wqx.id=MonitoringLocationIdentifier) %>% 
     select(Date, value, units, wqx.id) %>% 
-    mutate(secchi = ifelse(units=='in', value*0.0254, ifelse(units=='ft', value*0.3048, ifelse(units=='cm', value*0.01, value)))) %>% 
-    filter(!is.na(secchi)) %>% 
+    left_join(unit.map, by='units') %>% 
+    mutate(secchi=value*convert) %>% 
+    filter(!is.na(secchi), !units %in% names(unit.map)) %>% 
     select(Date, wqx.id, secchi)
 }
 
