@@ -13,7 +13,7 @@ sources:
 targets:
   all: 
     depends: 
-      - temperature.merged
+      - ../lakeattributes/data-raw/wtemp/wqp_temperature.tsv
       - ../lakeattributes/data-raw/secchi/wqp_secchi.tsv
   
   wqp.nhd.lookup:
@@ -47,6 +47,12 @@ targets:
   secchi.clean:
     command: munge_wqp(secchi.merged)
     
+  temperature.clean:
+    command: munge_wqp(temperature.merged)
+    
   ../lakeattributes/data-raw/secchi/wqp_secchi.tsv:
     command: map_wqp(secchi.clean, wqp.nhd.lookup, target_name)
+    
+  ../lakeattributes/data-raw/wtemp/wqp_temperature.tsv:
+    command: map_wqp(temperature.clean, wqp.nhd.lookup, target_name)
 
