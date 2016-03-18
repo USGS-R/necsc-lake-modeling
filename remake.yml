@@ -80,6 +80,12 @@ targets:
   access_config:
     command: load_config("configs/ACCESS_config.yml")
 
+  cnrm_config:
+    command: load_config("configs/CNRM_config.yml")
+
+  gfdl_config:
+    command: load_config("configs/GFDL_config.yml")
+
   data/NLDAS_summ/NLDAS_driver_index.tsv:
     command: driver_server_files('data/NLDAS_data/NLDAS_driver_status.txt')
 
@@ -127,6 +133,12 @@ targets:
 
   data/ACCESS_data/ACCESS_driver_file_list.tsv:
     command: calc_nldas_driver_files(access_config, project_lake_locations)
+
+  data/CNRM_data/CNRM_driver_file_list.tsv:
+    command: calc_nldas_driver_files(cnrm_config, project_lake_locations)
+
+  data/GFDL_data/GFDL_driver_file_list.tsv:
+    command: calc_nldas_driver_files(gfdl_config, project_lake_locations)
 
   data/NLDAS_data/NLDAS_driver_file_list.tsv:
     command: calc_nldas_driver_files(nldas_config, project_lake_locations)
