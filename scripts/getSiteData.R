@@ -1,41 +1,42 @@
 library(dataRetrieval)
-library(yaml)
 library(rgdal)
 
-config = yaml.load_file("configs/NHD_config.yml")
-states <- config$states
+nhd_config = load_config("configs/NHD_config.yml")
+wqp_config = load_config("configs/wqp_config.yml")
 
-for (i in 1:length(states)) { 
-  sites <- whatWQPsites(statecode = paste0("US:",states[[i]]$fips))
-  write.csv(sites, file=paste0("sites",states[[i]]$fips,".csv"),row.names=FALSE)
-}
+states <- nhd_config$states
+
+for (i in 1:length(states)) {  
+  sites <- whatWQPsites(siteType = wqp_config$siteType, statecode = paste0("US:",states[[i]]$fips)) 
+  write.csv(sites, file=paste0("data/wqp_sites/sites",states[[i]]$fips,".csv"),row.names=FALSE)
+} 
 
 #read in nhd data
-nhd <- readOGR(dsn = paste0(getwd(),"/data"), layer="NHDWaterbody")
+nhd <- readOGR(dsn = "data", layer="NHDWaterbody")
 
 #match with NHD permid, if there is no match, the id field is NA
 for (j in 1:length(states)) {
-  sites <- read.csv(file=paste0("sites",states[[j]]$fips,".csv"),sep=",")[ ,c('MonitoringLocationIdentifier','LatitudeMeasure','LongitudeMeasure')]
-  sites <- sites[!duplicated(sites),]
-  for (i in 1:nrow(sites)) {
-    lat <- as.numeric(sites$LatitudeMeasure[i])
-    lng <- as.numeric(sites$LongitudeMeasure[i])
+  wqp_sites <- read.csv(file=paste0("data/wqp_sites/sites",states[[j]]$fips,".csv"),sep=",")[ ,c('MonitoringLocationIdentifier','LatitudeMeasure','LongitudeMeasure')]
+  wqp_sites <- wqp_sites[!duplicated(wqp_sites),]
+  for (i in 1:nrow(wqp_sites)) {
+    lat <- as.numeric(wqp_sites$LatitudeMeasure[i])
+    lng <- as.numeric(wqp_sites$LongitudeMeasure[i])
     xy <- cbind(lng,lat)
     pts <- SpatialPoints(xy, proj4string=CRS(proj4string(nhd)))
     inside.nhd <- !is.na(over(pts, as(nhd, "SpatialPolygons"))) 
     pts$nhd <- over(pts, nhd, fn = NULL, returnList = FALSE)$Prmnn_I
     prmnn_i <- as.character(pts$nhd)
-    sites$id[i] <- prmnn_i
+    wqp_sites$id[i] <- prmnn_i
     print(i)
   }
-  write.csv(sites, file=paste0(getwd(),"/data/wqp_nhd/sitesPermId",states[[j]]$fips,".csv"),row.names=FALSE) 
+  write.csv(wqp_sites, file=paste0("data/wqp_nhd/sitesPermId",states[[j]]$fips,".csv"),row.names=FALSE) 
 }
 
 #join all the site files for use as a lookup table
 lookup <- data.frame()
 for (j in 1:length(states)) { 
   tryCatch({ 
-    nhd_wqp <- read.csv(file=paste0(getwd(),"/data/wqp_nhd/sitesPermId",states[[j]]$fips,".csv"))
+    nhd_wqp <- read.csv(file=paste0("data/wqp_nhd/sitesPermId",states[[j]]$fips,".csv"))
     if (length(nhd_wqp)>0) {
       lookup <- rbind(lookup, as.data.frame(nhd_wqp))
     } 
