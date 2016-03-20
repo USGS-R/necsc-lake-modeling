@@ -29,16 +29,23 @@ for (j in 1:length(states)) {
     wqp_sites$id[i] <- prmnn_i
     print(i)
   }
+  for (k in 1:nrow(wqp_sites)) {
+    if (!is.na(wqp_sites$id[k])) {
+      wqp_sites$id[k] <- paste0("nhd_",wqp_sites$id[k])
+    }
+  }
+  
   write.csv(wqp_sites, file=paste0("data/wqp_nhd/sitesPermId",states[[j]]$fips,".csv"),row.names=FALSE) 
 }
 
 #join all the site files for use as a lookup table
+#lookup <- data.frame(stringsAsFactors = FALSE)
 lookup <- data.frame()
 for (j in 1:length(states)) { 
   tryCatch({ 
     nhd_wqp <- read.csv(file=paste0("data/wqp_nhd/sitesPermId",states[[j]]$fips,".csv"))
     if (length(nhd_wqp)>0) {
-      lookup <- rbind(lookup, as.data.frame(nhd_wqp))
+      lookup <- rbind(lookup, as.data.frame(nhd_wqp), stringsAsFactors=FALSE)
     } 
     error = function(e){
       error <- paste("\n Request failed:", "on", as.character(Sys.time()), "\t", "State:",config$states[i],"Value:", e)
