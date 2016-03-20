@@ -7,7 +7,7 @@ download_merge_wqp <- function(wqp_status){
   
   files = item_file_download(sb_id, dest_dir=tempdir(), overwrite_file = TRUE)
   message('downloaded ',length(files),' files')
-  #message(length(),'were local')
+
   file.out <- file.path('data',variable,'local.rds')
   saveRDS(merge_files(files), file = file.out)
   return(file.out)
@@ -41,6 +41,8 @@ munge_secchi <- function(data.in){
 
 munge_temperature <- function(data.in){
   
+  max.temp <- 40 # threshold!
+  
   depth.unit.map <- data.frame(depth.units=c('m','in','ft','cm', 'mm', NA), 
                          depth.convert = c(1,0.0254,0.3048,0.01, 0.001, NA), 
                          stringsAsFactors = FALSE)
@@ -57,6 +59,7 @@ munge_temperature <- function(data.in){
     left_join(depth.unit.map, by='depth.units') %>% 
     mutate(wtemp=convert*(raw.value+offset), depth=raw.depth*depth.convert) %>% 
     filter(!is.na(wtemp), !is.na(depth)) %>% 
+    filter(wtemp <= max.temp) %>% 
     select(Date, wqx.id, depth, wtemp)
 }
 
@@ -69,7 +72,8 @@ munge_wqp <- function(data.file){
 
 map_wqp <- function(munged.wqp, wqp.nhd.lookup, mapped.file){
   mapped.wqp <- left_join(munged.wqp, rename(wqp.nhd.lookup, wqx.id=MonitoringLocationIdentifier), by = 'wqx.id') %>% 
-    select(-wqx.id) %>% 
+    select(-wqx.id, -LatitudeMeasure,-LongitudeMeasure) %>% 
     filter(!is.na(id))
   write.table(mapped.wqp, file=mapped.file, quote = FALSE, row.names = FALSE, sep = '\t')
+  
 }
