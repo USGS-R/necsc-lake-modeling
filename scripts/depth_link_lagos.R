@@ -3,7 +3,7 @@ depth_link_lagos = function(config){
 	
 	#lagos SB id for depth is 56d87371e4b015c306f6cfb0
 	
-	sbtools::session_renew(config$sb_user)
+	sbtools::authenticate_sb(config$sb_user)
 	
 	tmpdir = tempdir()
 	files = item_file_download('56d87371e4b015c306f6cfb0', dest_dir=tmpdir, overwrite_file=TRUE)
