@@ -42,17 +42,11 @@ for (j in 1:length(states)) {
 #lookup <- data.frame(stringsAsFactors = FALSE)
 lookup <- data.frame()
 for (j in 1:length(states)) { 
-  tryCatch({ 
-    nhd_wqp <- read.csv(file=paste0("data/wqp_nhd/sitesPermId",states[[j]]$fips,".csv"))
-    if (length(nhd_wqp)>0) {
-      lookup <- rbind(lookup, as.data.frame(nhd_wqp), stringsAsFactors=FALSE)
-    } 
-    error = function(e){
-      error <- paste("\n Request failed:", "on", as.character(Sys.time()), "\t", "State:",config$states[i],"Value:", e)
-      cat(error, file="log.txt", append=TRUE)
-    }
-  })
-} 
+  nhd_wqp <- read.csv(file=paste0("data/wqp_nhd/sitesPermId",states[[j]]$fips,".csv"))
+  if (length(nhd_wqp)>0) {
+    lookup <- rbind(lookup, as.data.frame(nhd_wqp), stringsAsFactors=FALSE)
+  }
+}  
 
 saveRDS(lookup, file="data/wqp_nhd/wqp_nhdLookup.rds")
 
