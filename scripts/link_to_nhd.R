@@ -12,7 +12,12 @@ link_to_nhd = function(lat, lon){
 	pts = SpatialPoints(xy[not_na,], proj4string=CRS(proj4string(nhd)))
 	prmids = as.character(over(pts, nhd, fn = NULL, returnList = FALSE)$Prmnn_I)
 	
-	ids[not_na] = paste0(id_prefix, prmids)
+	prefix_prmids = paste0(id_prefix, prmids)
+	prefix_prmids[is.na(prmids)] = NA
+	
+	ids[not_na] = prefix_prmids
+	
+	
 	
 # 	
 # 	#get the matches between the lat lng pairs and nhd layer
