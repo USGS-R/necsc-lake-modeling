@@ -4,7 +4,7 @@
 #' 
 lake_summary_locations <- function(){
   
-  sites <- read.csv('data/depth_data/depth_data_summary.csv', stringsAsFactors = FALSE)
+  sites <- read.csv('data/depth_data_linked/depth_data_summary.csv', stringsAsFactors = FALSE)
 
   return(unique(sites[c('id')]))
   

@@ -35,7 +35,7 @@ munge_secchi <- function(data.in){
     select(Date, value, units, wqx.id) %>% 
     left_join(unit.map, by='units') %>% 
     mutate(secchi=value*convert) %>% 
-    filter(!is.na(secchi), !units %in% unit.map$units) %>% 
+    filter(!is.na(secchi)) %>% 
     select(Date, wqx.id, secchi)
 }
 
@@ -74,6 +74,6 @@ map_wqp <- function(munged.wqp, wqp.nhd.lookup, mapped.file){
   mapped.wqp <- left_join(munged.wqp, rename(wqp.nhd.lookup, wqx.id=MonitoringLocationIdentifier), by = 'wqx.id') %>% 
     select(-wqx.id, -LatitudeMeasure,-LongitudeMeasure) %>% 
     filter(!is.na(id))
-  write.table(mapped.wqp, file=mapped.file, quote = FALSE, row.names = FALSE, sep = '\t')
+  write.table(mapped.wqp, file=gzfile(mapped.file), quote = FALSE, row.names = FALSE, sep = '\t')
   
 }
