@@ -11,11 +11,13 @@ sources:
   - scripts/download_munge_wqp.R
   
 targets:
-  all: 
-    depends: 
+  temperature.mapped:
+    depends:
       - ../lakeattributes/data-raw/wtemp/wqp_temperature.tsv
+  secchi.mapped:
+    depends:
       - ../lakeattributes/data-raw/secchi/wqp_secchi.tsv
-  
+
   wqp.nhd.lookup:
     command: readRDS('data/wqp_nhd/wqp_nhdLookup.rds')
   nhd:
