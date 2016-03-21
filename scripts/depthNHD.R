@@ -1,7 +1,8 @@
-library(rgdal)
+#library(rgdal)
+
 
 #get nhd layer
-nhd <- readOGR(dsn = paste0(getwd(),"/data"), layer="NHDWaterbody")
+nhd <- readOGR(dsn = file.path(getwd(),"data", "NHD_shape_large"), layer="NHDWaterbody")
 
 #read in lagos data
 input <- read.delim("lake_depth_LAGOS.tsv")
