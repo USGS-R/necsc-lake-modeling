@@ -1,0 +1,7 @@
+data_name: "GFDL"
+data_times: ["1980-01-01", "2099-12-31"]
+data_variables: ['prcp_debias', 'windspeed_debias', 'rh_debias', 'rsdl_debias', 'rsds_debias','snow_debias', 'tas_debias']
+variable_names: ['precip', 'windspeed', 'relhumperc', 'dlwrfsfc','dswrfsfc','snow','airtemp']
+wps_url: "http://cida-test.er.usgs.gov/gdp/process/WebProcessingService"
+data_url: "dods://cida-eros-netcdfdev.er.usgs.gov:8080/thredds/dodsC/thredds/notaro_miwimn/gfdl_miwimn.ncml"
+driver_split: 300 
