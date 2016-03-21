@@ -17,8 +17,8 @@ sources:
   - scripts/get_raw_nldas_nc.R
   - scripts/post_notaro_thredds.R
 
-include:
-  - remake_wqp.yml
+##include:
+##  - remake_wqp.yml
 
 targets:
   ## 'all' is a special target that will be used as the default
@@ -36,8 +36,8 @@ targets:
       - ipsl_index
       - miroc5_index
       - mri_index
-      - temperature.mapped
-      - secchi.mapped
+      ##- temperature.mapped
+      ##- secchi.mapped
 
   data/NLDAS_sub/nldas_miwimn.ncml:
     command: create_nldas_ncml("data/NLDAS_sub/NLDAS_file_list.tsv")
@@ -45,7 +45,7 @@ targets:
   project_lake_locations:
     command: lake_summary_locations()
     depends: 
-      - data/depth_data/depth_data_summary.csv
+      - data/depth_data_linked/depth_data_summary.csv
 
   data/NLDAS_sub/NLDAS_file_list.tsv:
     command: calc_nldas_files(nldas_config, nhd_config) 

@@ -11,12 +11,10 @@ sources:
   - scripts/download_munge_wqp.R
   
 targets:
-  temperature.mapped:
+  all:
     depends:
-      - ../lakeattributes/data-raw/wtemp/wqp_temperature.tsv
-  secchi.mapped:
-    depends:
-      - ../lakeattributes/data-raw/secchi/wqp_secchi.tsv
+      - ../lakeattributes/data-raw/wtemp/wqp_temperature.tsv.gz
+      - ../lakeattributes/data-raw/secchi/wqp_secchi.tsv.gz
 
   wqp.nhd.lookup:
     command: readRDS('data/wqp_nhd/wqp_nhdLookup.rds')
@@ -42,9 +40,13 @@ targets:
 
   temperature.merged:
     command: download_merge_wqp('data/temperature_data/wqp_temperature_data_status.txt')
-    
+    depends:
+      - scripts/getWQPdata.R
+      
   secchi.merged:
     command: download_merge_wqp('data/secchi_data/wqp_secchi_data_status.txt')
+    depends:
+      - scripts/getWQPdata.R
     
   secchi.clean:
     command: munge_wqp(secchi.merged)
@@ -56,10 +58,10 @@ targets:
     depends:
       - scripts/download_munge_wqp.R
       
-  ../lakeattributes/data-raw/secchi/wqp_secchi.tsv:
+  ../lakeattributes/data-raw/secchi/wqp_secchi.tsv.gz:
     command: map_wqp(secchi.clean, wqp.nhd.lookup, target_name)
     
-  ../lakeattributes/data-raw/wtemp/wqp_temperature.tsv:
+  ../lakeattributes/data-raw/wtemp/wqp_temperature.tsv.gz:
     command: map_wqp(temperature.clean, wqp.nhd.lookup, target_name)
     
 
