@@ -41,6 +41,9 @@ process_NHD = function(config){
 	states <- spTransform(states, CRS(proj4string(nhdwaterbody)))
 	nhdSubset <- nhdwaterbody[states, ]
 	
+	#select only lakes/ponds/reservoirs. This drops things like swamp/marsh
+	nhdSubset <- nhdSubset[nhdSubset$FType %in% c(390, 436, 361), ]
+	
 	#writeOGR(nhdSubset, driver = "ESRI Shapefile",layer="NHDWaterbody_subset_states",overwrite_layer = TRUE, dsn=outdir)
 	
 	#project it so we can calculate area - lambert equal area

@@ -37,18 +37,28 @@ targets:
     
   data/depth_data_linked/depth_herb_jacobson.tsv:
     command: depth_link_jacobson("data/depth_data_raw/depth_Herb_Jacobson.csv")
+    depends:
+      - data/NHD_shape_large/NHDWaterbody.dbf
     
   data/depth_data_linked/depth_lagos.edt:
     command: depth_link_lagos(necsc_config)
+    depends:
+      - data/NHD_shape_large/NHDWaterbody.dbf
     
   data/depth_data_linked/depth_swimms_wisconsin.csv:
     command: depth_link_swimms("data/depth_data_raw/wisconsin_swims_lakes_depth.tsv")
+    depends:
+      - data/NHD_shape_large/NHDWaterbody.dbf
   
   data/depth_data_linked/depth_kevin_michigan.csv:
     command: depth_link_kevin("data/depth_data_raw/kevinMichiganMaxDepth.csv")
+    depends:
+      - data/NHD_shape_large/NHDWaterbody.dbf
     
   data/depth_data_linked/depth_bathybase.csv:
     command: depth_link_bathybase("data/depth_data_raw/bathybase_summary.tsv")
+    depends:
+      - data/NHD_shape_large/NHDWaterbody.dbf
     
   data/depth_data_linked/all_depths.edt:
     command: depth_summarize(necsc_config)
