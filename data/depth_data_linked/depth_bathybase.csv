@@ -613,7 +613,7 @@ NA,"bathybase","maxdepth",40
 "nhd_120052892","bathybase","maxdepth",35
 "nhd_22190886","bathybase","maxdepth",28
 "nhd_22326997","bathybase","maxdepth",56.9
-"nhd_22323015","bathybase","maxdepth",63
+NA,"bathybase","maxdepth",63
 "nhd_22321591","bathybase","maxdepth",28.9
 NA,"bathybase","maxdepth",23.9
 "nhd_167122125","bathybase","maxdepth",76
@@ -1068,7 +1068,7 @@ NA,"bathybase","maxdepth",70
 "nhd_22325215","bathybase","maxdepth",30
 "nhd_22326037","bathybase","maxdepth",55.9
 "nhd_22324833","bathybase","maxdepth",62.3
-"nhd_22326017","bathybase","maxdepth",76
+NA,"bathybase","maxdepth",76
 NA,"bathybase","maxdepth",39
 "nhd_22238524","bathybase","maxdepth",88.4
 "nhd_22238514","bathybase","maxdepth",43
@@ -1096,7 +1096,7 @@ NA,"bathybase","maxdepth",131.2
 "nhd_2639404","bathybase","maxdepth",11
 "nhd_167114208","bathybase","maxdepth",14.2
 NA,"bathybase","maxdepth",47.7
-"nhd_4971103","bathybase","maxdepth",17
+NA,"bathybase","maxdepth",17
 "nhd_2350690","bathybase","maxdepth",11
 "nhd_4251740","bathybase","maxdepth",27
 "nhd_4251580","bathybase","maxdepth",12.6
@@ -1235,7 +1235,7 @@ NA,"bathybase","maxdepth",42
 "nhd_4971593","bathybase","maxdepth",87.4
 NA,"bathybase","maxdepth",10.4
 "nhd_6579638","bathybase","maxdepth",9.6
-"nhd_10596268","bathybase","maxdepth",3.5
+NA,"bathybase","maxdepth",3.5
 "nhd_14618590","bathybase","maxdepth",16.5
 "nhd_4959624","bathybase","maxdepth",53
 "nhd_4959648","bathybase","maxdepth",43
