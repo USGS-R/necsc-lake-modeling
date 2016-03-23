@@ -1,0 +1,59 @@
+packages:
+  - yaml
+  - dplyr
+  - sbtools
+  - rgdal
+  - sp
+  - maptools
+  - rgeos
+  - magrittr
+  - plyr
+  - raster
+  - digest
+  - jsonlite
+  - lubridate
+
+sources:
+  - scripts/load_config.R
+  - scripts/link_to_nhd.R
+  - scripts/encryption_helpers.R
+  - scripts/secchi_link_lagos.R
+  - scripts/secchi_link_wilma.R
+  - scripts/secchi_summarize.R
+
+
+targets:
+  all: 
+    depends: 
+      - data/secchi_data_linked/all_secchi.edt
+      
+  nhd_config:
+    command: load_config("configs/NHD_config.yml")
+  
+  necsc_config:
+    command: load_config("~/.R/necsc.yaml")
+    
+  
+  data/secchi_data_linked/secchi_lagos.edt:
+    command: secchi_link_lagos(necsc_config)
+    depends:
+      - data/NHD_shape_large/NHDWaterbody.dbf
+      
+  data/secchi_data_linked/secchi_wilma.tsv:
+    command: secchi_link_wilma()
+    depends:
+      - data/secchi_data_raw/secchi_data_swims_in_situ_fixed.csv.gz
+      - data/secchi_data_raw/historical_sawyer_secchi.tsv
+      - data/secchi_data_raw/annual_mean_secchi.txt
+      - data/secchi_data_raw/lter_data.tsv
+      - data/secchi_data_raw/WI_Lakes_WbicLatLon.tsv
+      - data/NHD_shape_large/NHDWaterbody.dbf
+      
+  data/secchi_data_linked/all_secchi.edt:
+    command: secchi_summarize(necsc_config)
+    depends:
+      - data/secchi_data_linked/secchi_lagos.edt
+      - data/secchi_data_linked/secchi_wilma.tsv
+      
+      
+   
