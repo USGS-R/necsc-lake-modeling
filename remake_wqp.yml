@@ -13,8 +13,8 @@ sources:
 targets:
   all:
     depends:
-      - ../lakeattributes/data-raw/wtemp/wqp_temperature.tsv.gz
-      - ../lakeattributes/data-raw/secchi/wqp_secchi.tsv.gz
+      - data/secchi_data_linked/secchi_wqp.tsv.gz
+      - data/temperature_data_linked/temperature_wqp.tsv.gz
 
   wqp.nhd.lookup:
     command: readRDS('data/wqp_nhd/wqp_nhdLookup.rds')
@@ -57,11 +57,11 @@ targets:
     command: munge_wqp(temperature.merged)
     depends:
       - scripts/download_munge_wqp.R
-      
-  ../lakeattributes/data-raw/secchi/wqp_secchi.tsv.gz:
+  
+  data/secchi_data_linked/secchi_wqp.tsv.gz:
     command: map_wqp(secchi.clean, wqp.nhd.lookup, target_name)
     
-  ../lakeattributes/data-raw/wtemp/wqp_temperature.tsv.gz:
+  data/temperature_data_linked/temperature_wqp.tsv.gz:
     command: map_wqp(temperature.clean, wqp.nhd.lookup, target_name)
     
 
