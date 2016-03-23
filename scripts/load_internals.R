@@ -1,4 +1,5 @@
-loadConfig = function(filename) {
+
+load_internals = function(filename) {
   if (missing(filename)) {
     filename <- file.path(Sys.getenv("HOME"), ".R", "necsc.yaml")
   }

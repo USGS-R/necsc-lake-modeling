@@ -80,7 +80,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
   cat('\n', length(new.files),' are new for ', length(vars), ' variables...', file=mssg.file, append = TRUE)  
   
   job <- geojob() # empty job
-  
+  gconfig(retries=2)
   for (var in vars){
     post.files <- lake_files_with_var(new.files, var)
     times <- c()

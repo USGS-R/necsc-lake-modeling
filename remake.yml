@@ -26,23 +26,18 @@ targets:
   ## "depends" on other targets.
   all:
     depends: 
-      - data/nldas_lakes.txt
-      - data/NLDAS_sub/NLDAS_sub_status.txt
-      - data/NLDAS_data/NLDAS_driver_status.txt
-      - data/ECHAM5_data/ECHAM5_driver_status.txt
-      - data/GENMOM_data/GENMOM_driver_status.txt
-      - data/CM2.0_data/CM2.0_driver_status.txt
-      - data/ACCESS_data/ACCESS_driver_status.txt
-      - data/CNRM_data/CNRM_driver_status.txt
-      - data/GFDL_data/GFDL_driver_status.txt
       - nldas_index
       - cm2.0_index
       - genmom_index
       - echam5_index
       - access_index
-
-  #data/nldas_lakes.txt:
-  #  command: lake_summary_nldas(project_lake_locations, nldas_config)
+      - cnrm_index
+      - gfdl_index
+      - ipsl_index
+      - miroc5_index
+      - mri_index
+      ##- temperature.mapped
+      ##- secchi.mapped
 
   data/NLDAS_sub/nldas_miwimn.ncml:
     command: create_nldas_ncml("data/NLDAS_sub/NLDAS_file_list.tsv")
@@ -50,9 +45,7 @@ targets:
   project_lake_locations:
     command: lake_summary_locations()
     depends: 
-      - ncml 
-      - access_ncml
-      - data/depth_data/depth_data_summary.csv
+      - data/depth_data_linked/depth_data_summary.csv
 
   data/NLDAS_sub/NLDAS_file_list.tsv:
     command: calc_nldas_files(nldas_config, nhd_config) 
@@ -85,6 +78,15 @@ targets:
 
   gfdl_config:
     command: load_config("configs/GFDL_config.yml")
+    
+  ipsl_config:
+    command: load_config("configs/IPSL_config.yml")
+    
+  miroc5_config:
+    command: load_config("configs/MIROC5_config.yml")
+    
+  mri_config:
+    command: load_config("configs/MRI_config.yml")
 
   data/NLDAS_summ/NLDAS_driver_index.tsv:
     command: driver_server_files('data/NLDAS_data/NLDAS_driver_status.txt')
@@ -106,6 +108,15 @@ targets:
 
   data/GFDL_summ/GFDL_driver_index.tsv:
     command: driver_server_files('data/GFDL_data/GFDL_driver_status.txt')
+
+  data/IPSL_summ/IPSL_driver_index.tsv:
+    command: driver_server_files('data/IPSL_data/IPSL_driver_status.txt')
+
+  data/MIROC5_summ/MIROC5_driver_index.tsv:
+    command: driver_server_files('data/MIROC5_data/MIROC5_driver_status.txt')
+
+  data/MRI_summ/MRI_driver_index.tsv:
+    command: driver_server_files('data/MRI_data/MRI_driver_status.txt')
 
   ncml:
     command: sync_ncml("data/NLDAS_sub/nldas_miwimn.ncml")
@@ -140,6 +151,15 @@ targets:
   data/GFDL_data/GFDL_driver_file_list.tsv:
     command: calc_nldas_driver_files(gfdl_config, project_lake_locations)
 
+  data/IPSL_data/IPSL_driver_file_list.tsv:
+    command: calc_nldas_driver_files(ipsl_config, project_lake_locations)
+
+  data/MIROC5_data/MIROC5_driver_file_list.tsv:
+    command: calc_nldas_driver_files(miroc5_config, project_lake_locations)
+
+  data/MRI_data/MRI_driver_file_list.tsv:
+    command: calc_nldas_driver_files(mri_config, project_lake_locations)
+
   data/NLDAS_data/NLDAS_driver_file_list.tsv:
     command: calc_nldas_driver_files(nldas_config, project_lake_locations)
 
@@ -154,6 +174,8 @@ targets:
 
   data/NLDAS_data/NLDAS_driver_status.txt:
     command: lake_driver_nldas("data/NLDAS_data/NLDAS_driver_file_list.tsv")
+    depends:
+      - ncml
 
   data/GENMOM_data/GENMOM_driver_status.txt:
     command: lake_driver_nldas("data/GENMOM_data/GENMOM_driver_file_list.tsv")
@@ -166,13 +188,34 @@ targets:
 
   data/ACCESS_data/ACCESS_driver_status.txt:
     command: lake_driver_nldas("data/ACCESS_data/ACCESS_driver_file_list.tsv")
+    depends:
+      - access_ncml
 
   data/CNRM_data/CNRM_driver_status.txt:
     command: lake_driver_nldas("data/CNRM_data/CNRM_driver_file_list.tsv")
+    depends:
+      - cnrm_ncml
 
   data/GFDL_data/GFDL_driver_status.txt:
     command: lake_driver_nldas("data/GFDL_data/GFDL_driver_file_list.tsv")
+    depends:
+      - gfdl_ncml
 
+  data/IPSL_data/IPSL_driver_status.txt:
+    command: lake_driver_nldas("data/IPSL_data/IPSL_driver_file_list.tsv")
+    depends:
+      - ipsl_ncml
+
+  data/MIROC5_data/MIROC5_driver_status.txt:
+    command: lake_driver_nldas("data/MIROC5_data/MIROC5_driver_file_list.tsv")
+    depends:
+      - miroc5_ncml
+
+  data/MRI_data/MRI_driver_status.txt:
+    command: lake_driver_nldas("data/MRI_data/MRI_driver_file_list.tsv")
+    depends:
+      - mri_ncml
+    
   nldas_index:
     command: sync_driver_index("data/NLDAS_summ/NLDAS_driver_index.tsv")
 
@@ -193,4 +236,13 @@ targets:
 
   gfdl_index:
     command: sync_driver_index("data/GFDL_summ/GFDL_driver_index.tsv")
+
+  ipsl_index:
+    command: sync_driver_index("data/IPSL_summ/IPSL_driver_index.tsv")
+
+  miroc5_index:
+    command: sync_driver_index("data/MIROC5_summ/MIROC5_driver_index.tsv")
+
+  mri_index:
+    command: sync_driver_index("data/MRI_summ/MRI_driver_index.tsv")
     

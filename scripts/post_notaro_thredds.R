@@ -1,5 +1,5 @@
 
-loadConfig()
+load_internals()
 
 opt <- options()$necsc
 library(XML)
