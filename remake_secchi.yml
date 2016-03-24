@@ -54,6 +54,7 @@ targets:
     depends:
       - data/secchi_data_linked/secchi_lagos.edt
       - data/secchi_data_linked/secchi_wilma.tsv
+      - data/secchi_data_linked/secchi_wqp.tsv.gz
       
       
    
