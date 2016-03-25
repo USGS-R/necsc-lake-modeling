@@ -27,9 +27,9 @@ targets:
   all:
     depends: 
       - nldas_index
-      - cm2.0_index
-      - genmom_index
-      - echam5_index
+      ##- cm2.0_index
+      ##- genmom_index
+      ##- echam5_index
       - access_index
       - cnrm_index
       - gfdl_index
@@ -177,14 +177,14 @@ targets:
     depends:
       - ncml
 
-  data/GENMOM_data/GENMOM_driver_status.txt:
-    command: lake_driver_nldas("data/GENMOM_data/GENMOM_driver_file_list.tsv")
+  ##data/GENMOM_data/GENMOM_driver_status.txt:
+  ##  command: lake_driver_nldas("data/GENMOM_data/GENMOM_driver_file_list.tsv")
 
-  data/ECHAM5_data/ECHAM5_driver_status.txt:
-    command: lake_driver_nldas("data/ECHAM5_data/ECHAM5_driver_file_list.tsv")
+  ##data/ECHAM5_data/ECHAM5_driver_status.txt:
+  ##  command: lake_driver_nldas("data/ECHAM5_data/ECHAM5_driver_file_list.tsv")
 
-  data/CM2.0_data/CM2.0_driver_status.txt:
-    command: lake_driver_nldas("data/CM2.0_data/CM2.0_driver_file_list.tsv")
+  ##data/CM2.0_data/CM2.0_driver_status.txt:
+  ##  command: lake_driver_nldas("data/CM2.0_data/CM2.0_driver_file_list.tsv")
 
   data/ACCESS_data/ACCESS_driver_status.txt:
     command: lake_driver_nldas("data/ACCESS_data/ACCESS_driver_file_list.tsv")

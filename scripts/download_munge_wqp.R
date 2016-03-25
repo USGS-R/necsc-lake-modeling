@@ -43,8 +43,8 @@ munge_temperature <- function(data.in){
   
   max.temp <- 40 # threshold!
   
-  depth.unit.map <- data.frame(depth.units=c('m','in','ft','cm', 'mm', NA), 
-                         depth.convert = c(1,0.0254,0.3048,0.01, 0.001, NA), 
+  depth.unit.map <- data.frame(depth.units=c('meters','m','in','ft','feet','cm', 'mm', NA), 
+                         depth.convert = c(1,1,0.0254,0.3048,0.3048,0.01, 0.001, NA), 
                          stringsAsFactors = FALSE)
   
   unit.map <- data.frame(units=c("deg C","deg F", NA), 
@@ -55,6 +55,7 @@ munge_temperature <- function(data.in){
   rename(data.in, Date=ActivityStartDate, raw.value=ResultMeasureValue, units=ResultMeasure.MeasureUnitCode, wqx.id=MonitoringLocationIdentifier,
          raw.depth=ActivityDepthHeightMeasure.MeasureValue, depth.units=ActivityDepthHeightMeasure.MeasureUnitCode) %>% 
     select(Date, raw.value, units, raw.depth, depth.units, wqx.id) %>% 
+    filter(!is.na(raw.depth), !is.na(depth.units)) %>% 
     left_join(unit.map, by='units') %>% 
     left_join(depth.unit.map, by='depth.units') %>% 
     mutate(wtemp=convert*(raw.value+offset), depth=raw.depth*depth.convert) %>% 
