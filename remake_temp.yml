@@ -1,0 +1,46 @@
+packages:
+  - yaml
+  - dplyr
+  - sbtools
+  - rgdal
+  - sp
+  - maptools
+  - rgeos
+  - magrittr
+  - plyr
+  - raster
+  - digest
+  - jsonlite
+  - lubridate
+
+sources:
+  - scripts/load_config.R
+  - scripts/link_to_nhd.R
+  - scripts/encryption_helpers.R
+  - scripts/temp_link_wilma.R
+  - scripts/temp_summarize.R
+
+
+targets:
+  all: 
+    depends: 
+      - data/temperature_data_linked/all_temp.tsv
+      
+  nhd_config:
+    command: load_config("configs/NHD_config.yml")
+  
+  necsc_config:
+    command: load_config("~/.R/necsc.yaml")
+  
+      
+  data/temperature_data_linked/temp_wilma.tsv:
+    command: temp_link_wilma('data/temperature_data/swimms.wtemp.obs.tsv', 'data/temperature_data/surface_temp_data_2012_2013_Isermann.csv')
+    depends:
+      - data/NHD_shape_large/NHDWaterbody.dbf
+      
+  
+  data/temperature_data_linked/all_temp.tsv:
+    command: temp_summarize()
+      
+      
+   

@@ -13,7 +13,7 @@ packages:
 sources:
   - scripts/write_nhd_shp.R
   - scripts/load_config.R
-  - scripts/processNhd.R
+  - scripts/process_NHD.R
 
 targets:
   all: 
