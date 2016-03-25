@@ -42,6 +42,8 @@ munge_secchi <- function(data.in){
 munge_temperature <- function(data.in){
   
   max.temp <- 40 # threshold!
+  min.temp <- 0
+  max.depth <- 260
   
   depth.unit.map <- data.frame(depth.units=c('meters','m','in','ft','feet','cm', 'mm', NA), 
                          depth.convert = c(1,1,0.0254,0.3048,0.3048,0.01, 0.001, NA), 
@@ -52,15 +54,20 @@ munge_temperature <- function(data.in){
                          offset = c(0,-32,NA),
                          stringsAsFactors = FALSE)
   
-  rename(data.in, Date=ActivityStartDate, raw.value=ResultMeasureValue, units=ResultMeasure.MeasureUnitCode, wqx.id=MonitoringLocationIdentifier,
-         raw.depth=ActivityDepthHeightMeasure.MeasureValue, depth.units=ActivityDepthHeightMeasure.MeasureUnitCode) %>% 
+  activity.sites <- group_by(data.in, OrganizationIdentifier) %>% 
+    summarize(act.n = sum(!is.na(ActivityDepthHeightMeasure.MeasureValue)), res.n=sum(!is.na((ResultDepthHeightMeasure.MeasureValue)))) %>% 
+    mutate(use.depth.code = ifelse(act.n>res.n, 'act','res')) %>% 
+    select(OrganizationIdentifier, use.depth.code)
+  
+  left_join(data.in, activity.sites, by='OrganizationIdentifier') %>% 
+    mutate(raw.depth = as.numeric(ifelse(use.depth.code == 'act', ActivityDepthHeightMeasure.MeasureValue, ResultDepthHeightMeasure.MeasureValue)),
+           depth.units = ifelse(use.depth.code == 'act', ActivityDepthHeightMeasure.MeasureUnitCode, ResultDepthHeightMeasure.MeasureUnitCode)) %>% 
+    rename(Date=ActivityStartDate, raw.value=ResultMeasureValue, units=ResultMeasure.MeasureUnitCode, wqx.id=MonitoringLocationIdentifier) %>% 
     select(Date, raw.value, units, raw.depth, depth.units, wqx.id) %>% 
-    filter(!is.na(raw.depth), !is.na(depth.units)) %>% 
     left_join(unit.map, by='units') %>% 
     left_join(depth.unit.map, by='depth.units') %>% 
     mutate(wtemp=convert*(raw.value+offset), depth=raw.depth*depth.convert) %>% 
-    filter(!is.na(wtemp), !is.na(depth)) %>% 
-    filter(wtemp <= max.temp) %>% 
+    filter(!is.na(wtemp), !is.na(depth), wtemp <= max.temp, wtemp >= min.temp, depth <= max.depth) %>% 
     select(Date, wqx.id, depth, wtemp)
 }
 
