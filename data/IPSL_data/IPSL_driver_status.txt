@@ -1,1 +1,20 @@
-index of files contains 42455
+index of files contains 62321
+ 19325  are new for  5  variables...
+3145 files are new for variable dswrfsfc...
+begin job for  300  features, and variable: dswrfsfc ...
+** job FAILED in processing **
+ <no active job>
+begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
+begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
+begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
+begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
+begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
+begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
+begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
+begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
+begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
+begin job for  145  features, and variable: dswrfsfc ...success! ...downloading... success!success! ...downloading... success!
+4045 files are new for variable precip...
+begin job for  300  features, and variable: precip ...success! ...downloading... success!
+begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
+begin job for  300  features, and variable: precip ...success! ...downloading... success!
