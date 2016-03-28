@@ -9,4 +9,4 @@ wps_url: "http://130.11.170.185:8080/gdp-process-wps/WebProcessingService"
 data_url: "dods://130.11.170.185:8080/thredds/dodsC/Scratch/jread_workspace/nldas_miwimn/nldas_miwimn.ncml"
 catalog_url: "http://cida-eros-netcdfdev.er.usgs.gov:8080/thredds/catalog/thredds/nldas_miwimn/catalog.xml"
 sub_split: 10000
-driver_split: 550
+driver_split: 600
