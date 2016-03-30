@@ -5,7 +5,7 @@ secchi_summarize = function(config){
 	data_l = read_aes('data/secchi_data_linked/secchi_lagos.edt', config$LAGOS_KEY)
 	
 	data_q = read.table(gzfile('data/secchi_data_linked/secchi_wqp.tsv.gz'), sep='\t', header=TRUE, as.is=TRUE)
-	data_q = transmute(data_q, source='wqp', type='secchi', date=Date, id=id, secchi=secchi)
+	data_q = transmute(data_q, source='wqp', type='in-situ', date=Date, id=id, secchi=secchi)
 	
 	to_write = rbind(data_w, data_l, data_q)
 	

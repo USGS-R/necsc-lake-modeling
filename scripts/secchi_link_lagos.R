@@ -20,7 +20,7 @@ secchi_link_lagos = function(config){
 	lagos_linked = merge(lagos_sites[,c('id', 'lagoslakeid')], lagos, by='lagoslakeid')
 	
 	lagos_linked$`source` = 'lagos'
-	lagos_linked$type     = 'secchi'
+	lagos_linked$type     = 'in-situ'
 	lagos_linked$date = lagos_linked$sampledate
 	
 	to_write              = lagos_linked[,c('id','date', 'source', 'type', 'secchi')]
