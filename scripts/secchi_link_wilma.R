@@ -5,13 +5,13 @@ secchi_link_wilma = function(){
 										 header=TRUE, as.is=TRUE, quote="\"", comment.char="")
 	
 	swims_clean = transmute(swims, site_id=paste0('WBIC_', WBIC), year=year(as.Date(START_DATETIME)),
-													date=START_DATETIME, secchi=secchi.m, source='swimms', type='secchi')
+													date=START_DATETIME, secchi=secchi.m, source='swimms', type='in-situ')
 	
 	## Personal communication from Max Wolter (WDNR), dug up from archives
 	sawyer = read.table('data/secchi_data_raw/historical_sawyer_secchi.tsv', sep='\t', header=TRUE)
 	
 	sawyer_clean = transmute(sawyer, site_id=lake_id, year=year(as.POSIXct(datetime)),
-													 date=datetime, secchi=secchi_meter, source='wdnr', type='secchi')
+													 date=datetime, secchi=secchi_meter, source='wdnr', type='in-situ')
 	
 	## satellite secchi data (from Steve Greb)
 	satellite = read.table('data/secchi_data_raw/annual_mean_secchi.txt', sep='\t', header=TRUE)
@@ -25,7 +25,7 @@ secchi_link_wilma = function(){
 	
 	## NTL LTER secchi data
 	lter = read.table('data/secchi_data_raw/lter_data.tsv', sep='\t', header=TRUE)
-	lter$type = 'secchi'
+	lter$type = 'in-situ'
 	lter$source = 'ntl-lter'
 	lter$secchi = lter$secchi_m
 	lter$secchi_m = NULL
