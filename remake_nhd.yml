@@ -14,11 +14,13 @@ sources:
   - scripts/write_nhd_shp.R
   - scripts/load_config.R
   - scripts/process_NHD.R
+  - scripts/nhd_create_buffered_shapes.R
 
 targets:
   all: 
     depends: 
       - data/NHD_shape_large/NHDWaterbody.shp
+      - data/NHD_shape_large/NHDWaterbody_100m_buffers.shp
   
   nhd_states:
     command: write_nhd_shp(nhd_config)
@@ -28,3 +30,6 @@ targets:
 
   data/NHD_shape_large/NHDWaterbody.shp:
     command: process_NHD(nhd_states)
+    
+  data/NHD_shape_large/NHDWaterbody_100m_buffers.shp:
+    command: nhd_create_buffered_shapes()
