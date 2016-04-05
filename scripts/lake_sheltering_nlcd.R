@@ -41,5 +41,7 @@ hc_from_NLCD <- function(mapping.file, nlcd.file, file.out){
   names(nlcd) <- c('id','nlcd.class')
   data.out <- left_join(nlcd, mapping) %>% 
     select(id, hc.value) %>% 
-    rename(hc.value=hc.meters)
+    rename(hc.meters=hc.value)
+  write.table(data.out, file=file.out, sep='\t', row.names=FALSE, quote=FALSE)
+  
 }
