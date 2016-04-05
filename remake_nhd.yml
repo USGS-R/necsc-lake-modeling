@@ -33,3 +33,5 @@ targets:
     
   data/NHD_shape_large/NHDWaterbody_100m_buffers.shp:
     command: nhd_create_buffered_shapes()
+    depends: 
+      - data/NHD_shape_large/NHDWaterbody.shp
