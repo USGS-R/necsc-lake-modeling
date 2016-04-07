@@ -1,142 +1,20 @@
-index of files contains 42455
- 37655  are new for  7  variables...
-1265 files are new for variable airtemp...
-begin job for  300  features, and variable: airtemp ...
+index of files contains 62321
+ 652  are new for  3  variables...
+210 files are new for variable precip...
+begin job for  210  features, and variable: precip ...
 ** job FAILED in processing **
  <no active job>
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  65  features, and variable: airtemp ...success! ...downloading... success!success! ...downloading... success!
-6065 files are new for variable dlwrfsfc...
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: airtemp ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  65  features, and variable: dlwrfsfc ...success! ...downloading... success!success! ...downloading... success!
-6065 files are new for variable dswrfsfc...
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dlwrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  65  features, and variable: dswrfsfc ...success! ...downloading... success!success! ...downloading... success!
-6065 files are new for variable precip...
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: dswrfsfc ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  65  features, and variable: precip ...success! ...downloading... success!success! ...downloading... success!
-6065 files are new for variable relhumperc...
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: precip ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  65  features, and variable: relhumperc ...success! ...downloading... success!success! ...downloading... success!
-6065 files are new for variable snow...
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: relhumperc ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  65  features, and variable: snow ...success! ...downloading... success!success! ...downloading... success!
-6065 files are new for variable windspeed...
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: snow ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  300  features, and variable: windspeed ...success! ...downloading... success!
-begin job for  65  features, and variable: windspeed ...success! ...downloading... success!success! ...downloading... success!
+** job FAILED in processing **
+ http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=df8a6bb2-0460-47e8-8bf7-9b7787c6a22f
+232 files are new for variable relhumperc...
+begin job for  232  features, and variable: relhumperc ...
+** job FAILED in processing **
+ http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=df8a6bb2-0460-47e8-8bf7-9b7787c6a22f
+** job FAILED in processing **
+ http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=8f753fcc-bc29-4a08-8230-13e5743d95f3
+210 files are new for variable snow...
+begin job for  210  features, and variable: snow ...
+** job FAILED in processing **
+ http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=8f753fcc-bc29-4a08-8230-13e5743d95f3
+** job FAILED in processing **
+ http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=08e5d9f8-4356-4ff2-a5d2-feb2c0c497df
