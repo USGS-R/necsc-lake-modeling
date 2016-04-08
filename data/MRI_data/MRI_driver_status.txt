@@ -3,36 +3,14 @@ index of files contains 62321
 210 files are new for variable airtemp...
 begin job for  210  features, and variable: airtemp ...
 ** job FAILED in processing **
- <no active job>
-** job FAILED in processing **
- http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=e5287623-6afd-432a-b979-2519809a791e
+ <no active job>success! ...downloading... success!
 210 files are new for variable dlwrfsfc...
-begin job for  210  features, and variable: dlwrfsfc ...
-** job FAILED in processing **
- http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=e5287623-6afd-432a-b979-2519809a791e
-** job FAILED in processing **
- http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=be0fe78d-41d6-4c5e-93b1-b5753bb0a2b8
+begin job for  210  features, and variable: dlwrfsfc ...success! ...downloading... success!success! ...downloading... success!
 210 files are new for variable dswrfsfc...
-begin job for  210  features, and variable: dswrfsfc ...
-** job FAILED in processing **
- http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=be0fe78d-41d6-4c5e-93b1-b5753bb0a2b8
-** job FAILED in processing **
- http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=09408a25-308d-476a-9934-ab650cbe81f3
+begin job for  210  features, and variable: dswrfsfc ...success! ...downloading... success!success! ...downloading... success!
 210 files are new for variable precip...
-begin job for  210  features, and variable: precip ...
-** job FAILED in processing **
- http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=09408a25-308d-476a-9934-ab650cbe81f3
-** job FAILED in processing **
- http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=294a4485-e759-4692-aa0f-b11523b1e748
+begin job for  210  features, and variable: precip ...success! ...downloading... success!success! ...downloading... success!
 211 files are new for variable relhumperc...
-begin job for  211  features, and variable: relhumperc ...
-** job FAILED in processing **
- http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=294a4485-e759-4692-aa0f-b11523b1e748
-** job FAILED in processing **
- http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=27a08443-6fd3-4eff-9fd9-c6537b6d39c0
+begin job for  211  features, and variable: relhumperc ...success! ...downloading... success!success! ...downloading... success!
 283 files are new for variable snow...
-begin job for  283  features, and variable: snow ...
-** job FAILED in processing **
- http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=27a08443-6fd3-4eff-9fd9-c6537b6d39c0
-** job FAILED in processing **
- http://cida-test.er.usgs.gov:80/gdp/process/RetrieveResultServlet?id=2a86cd78-b7db-4a8a-80f4-4952aea493c9
+begin job for  283  features, and variable: snow ...success! ...downloading... success!success! ...downloading... success!
