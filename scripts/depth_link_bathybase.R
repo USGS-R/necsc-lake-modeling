@@ -2,7 +2,7 @@ fname = "data/depth_data_raw/bathybase_summary.tsv"
 
 depth_link_bathybase = function(fname){
 	
-	bathybase = read.table(fname, header=TRUE, as.is=TRUE)
+	bathybase = read.table(fname, header=TRUE, as.is=TRUE, sep='\t')
 	
 	bathybase$id = link_to_nhd(bathybase$lat, bathybase$lon)
 	
