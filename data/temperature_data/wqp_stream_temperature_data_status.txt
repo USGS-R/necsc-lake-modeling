@@ -1,0 +1,20 @@
+getting data for  44  files, for variable:  stream.temperature 
+getting data for  wqp_stream.temperature_20050101.20061231_26.rds... wqp_stream.temperature_20050101.20061231_26.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_20070101.20081231_26.rds... wqp_stream.temperature_20070101.20081231_26.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_20090101.20101231_26.rds... wqp_stream.temperature_20090101.20101231_26.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_20110101.20121231_26.rds... wqp_stream.temperature_20110101.20121231_26.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_20130101.20141231_26.rds... wqp_stream.temperature_20130101.20141231_26.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_20150101.20151231_26.rds... wqp_stream.temperature_20150101.20151231_26.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_19790101.19801231_27.rds... wqp_stream.temperature_19790101.19801231_27.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_19810101.19821231_27.rds... wqp_stream.temperature_19810101.19821231_27.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_19830101.19841231_27.rds... wqp_stream.temperature_19830101.19841231_27.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_19850101.19861231_27.rds... wqp_stream.temperature_19850101.19861231_27.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_19870101.19881231_27.rds... wqp_stream.temperature_19870101.19881231_27.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_19890101.19901231_27.rds... wqp_stream.temperature_19890101.19901231_27.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_19910101.19921231_27.rds... wqp_stream.temperature_19910101.19921231_27.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_19930101.19941231_27.rds... wqp_stream.temperature_19930101.19941231_27.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_19950101.19961231_27.rds... wqp_stream.temperature_19950101.19961231_27.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_19970101.19981231_27.rds... wqp_stream.temperature_19970101.19981231_27.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_19990101.20001231_27.rds... wqp_stream.temperature_19990101.20001231_27.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_20010101.20021231_27.rds... wqp_stream.temperature_20010101.20021231_27.rds  posted to sciencebase
+getting data for  wqp_stream.temperature_20030101.20041231_27.rds
