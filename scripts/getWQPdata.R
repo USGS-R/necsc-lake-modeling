@@ -68,13 +68,13 @@ sb_id <- function(config, variable){
   config$sb_ids[[variable]]
 }
 
-wqp_server_files <- function(config, variable){
-  id <- sb_id(config, variable)
-  return(item_list_files(sb_id = id)$fname)
+wqp_scratch_files <- function(config, variable){
+  files <- Sys.glob(paste0('data/WQP_scratch_folder/', variable, '/*.rds'))
+  return(basename(files))
 }
 
 calc_post_files <- function(wqp_config, nhd_config, variable){
-  list(setdiff(calc_wqp_files(wqp_config, nhd_config, variable), wqp_server_files(wqp_config, variable))) %>% 
+  list(setdiff(calc_wqp_files(wqp_config, nhd_config, variable), wqp_scratch_files(wqp_config, variable))) %>% 
     setNames(sb_id(wqp_config, variable))
 }
 
@@ -88,7 +88,7 @@ getWQPdata <- function(fileList, var.map, mssg.file) {
   sb.destination <- names(fileList)
   fileList <- fileList[[1]]
   if (length(fileList) == 0){
-    cat(sprintf('%s\nCOMPLETE',sb.destination), file=mssg.file, append = FALSE)
+    cat(sprintf('%s\nCOMPLETE',sb.destination))
     return()
   }
    
@@ -98,8 +98,10 @@ getWQPdata <- function(fileList, var.map, mssg.file) {
     stop(paste(var, collapse=','), ' must be of length one')
   
   make_wqp_dirs(var)
+  scratch_dir = paste0('data/WQP_scratch_folder/', var)
+  dir.create(scratch_dir)
   
-  cat('getting data for ', length(fileList), ' files, for variable: ', var, '\n', file=mssg.file, append = FALSE)
+  cat('getting data for ', length(fileList), ' files, for variable: ', var, '\n')
   
   for (i in seq_along(fileList)) {
     
@@ -108,13 +110,13 @@ getWQPdata <- function(fileList, var.map, mssg.file) {
     args[['varName']] <- NULL
     wqp.args <- append(args, char.names)
     message('getting data for ', fileList[i])
-    cat('getting data for ', fileList[i], file=mssg.file, append = TRUE)
+    cat('getting data for ', fileList[i])
     wqp.data <- do.call(retryWQP, wqp.args)
-    local.file = file.path(tempdir(), fileList[i])
+    local.file = file.path(scratch_dir, fileList[i])
     saveRDS(wqp.data, file=local.file)
-    message('posting to sciencebase for ', fileList[i])
-    item = item_append_files(sb_id=sb.destination, files=local.file)
-    cat('...', fileList[i], ' posted to sciencebase\n', file=mssg.file, append = TRUE)
+    #message('posting to sciencebase for ', fileList[i])
+    #item = item_append_files(sb_id=sb.destination, files=local.file)
+    #cat('...', fileList[i], ' posted to sciencebase\n', file=mssg.file, append = TRUE)
     message('\n')
     
     # write to file, do something with the file
@@ -133,4 +135,11 @@ parseWQPfileName <- function(fileName) {
   
   return(list('startDateLo' = startDateLo, 'startDateHi' = startDateHi, 'statecode' = paste0("US:",fip), 'varName'= varName))
   
+}
+
+saveRawWqpFile <- function(in_file, out_file){
+  
+  dataset = readRDS(data.file)
+  
+  write.table(dataset, gzfile(out_file), sep='\t', row.names=FALSE)
 }

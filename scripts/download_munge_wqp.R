@@ -4,8 +4,9 @@ download_merge_wqp <- function(wqp_status){
   variable <- strsplit(wqp_status,'[/]')[[1]][2]
   sb_id <- id_from_status(wqp_status)
   #file.names <- 
+  scratch_dir = paste0('data/WQP_scratch_folder/', var)
   
-  files = item_file_download(sb_id, dest_dir=tempdir(), overwrite_file = TRUE)
+  files = Sys.glob(paste0(scratch_dir, '/*.rds')) #item_file_download(sb_id, dest_dir=tempdir(), overwrite_file = TRUE)
   message('downloaded ',length(files),' files')
 
   file.out <- file.path('data',variable,'local.rds')
