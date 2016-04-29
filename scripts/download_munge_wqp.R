@@ -1,25 +1,20 @@
 
-download_merge_wqp <- function(wqp_status){
-  
-  variable <- strsplit(wqp_status,'[/]')[[1]][2]
-  sb_id <- id_from_status(wqp_status)
-  #file.names <- 
-  scratch_dir = paste0('data/WQP_scratch_folder/', var)
+download_merge_wqp <- function(files){
   
   files = Sys.glob(paste0(scratch_dir, '/*.rds')) #item_file_download(sb_id, dest_dir=tempdir(), overwrite_file = TRUE)
-  message('downloaded ',length(files),' files')
+  message('merging ',length(files),' files')
 
-  file.out <- file.path('data',variable,'local.rds')
-  saveRDS(merge_files(files), file = file.out)
-  return(file.out)
+  return(merge_files(files))
 }
 
 merge_files <- function(files){
-  data.out <- data.frame()
-  for (file in files){
-    data.out <- rbind(data.out, readRDS(file))
+  data.out <- list()
+  for (i in 1:length(files)){
+    data.out[[i]] <- readRDS(files[i])
+    cat(i, ' loading file \n')
   }
-  return(data.out)
+  cat('merging all these files now....\n')
+  return(do.call(rbind, data.out))
 }
 
 id_from_status <- function(status.file){
@@ -73,9 +68,9 @@ munge_temperature <- function(data.in){
 }
 
 
-munge_wqp <- function(data.file){
-  variable <- strsplit(strsplit(data.file,'[/]')[[1]][2],'[_]')[[1]][1]
-  return(do.call(paste0('munge_',variable), list(data.in = readRDS(data.file))))
+munge_wqp <- function(data.table, variable){
+  variable <- strsplit(variable,'[.]')[[1]][1]
+  return(do.call(paste0('munge_',variable), list(data.in = data.table)))
 }
 
 

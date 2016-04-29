@@ -73,7 +73,8 @@ wqp_scratch_files <- function(config, variable){
   return(basename(files))
 }
 
-calc_post_files <- function(wqp_config, nhd_config, variable){
+calc_post_files <- function(wqp_config, nhd_config, target){
+  variable = strsplit(target,'[.]')[[1]][1]
   list(setdiff(calc_wqp_files(wqp_config, nhd_config, variable), wqp_scratch_files(wqp_config, variable))) %>% 
     setNames(sb_id(wqp_config, variable))
 }
@@ -84,43 +85,50 @@ make_wqp_dirs <- function(var){
     dir.create(var.dir)
 }
 
-getWQPdata <- function(fileList, var.map, mssg.file) {
+getWQPdata <- function(fileList, var.map, target) {
   sb.destination <- names(fileList)
   fileList <- fileList[[1]]
-  if (length(fileList) == 0){
-    cat(sprintf('%s\nCOMPLETE',sb.destination))
-    return()
-  }
-   
-  wqp_args <- lapply(fileList, parseWQPfileName)
-  var <- unique(sapply(wqp_args, function(x) x$varName))
-  if (length(var) != 1)
-    stop(paste(var, collapse=','), ' must be of length one')
+  var = strsplit(target,'[.]')[[1]][1]
   
-  make_wqp_dirs(var)
   scratch_dir = paste0('data/WQP_scratch_folder/', var)
-  dir.create(scratch_dir)
   
-  cat('getting data for ', length(fileList), ' files, for variable: ', var, '\n')
-  
-  for (i in seq_along(fileList)) {
+  if(length(fileList > 0)){
     
-    args <- append(wqp_args[[i]], var.map['siteType'])
-    char.names <- get_char_names(var, var.map)
-    args[['varName']] <- NULL
-    wqp.args <- append(args, char.names)
-    message('getting data for ', fileList[i])
-    cat('getting data for ', fileList[i])
-    wqp.data <- do.call(retryWQP, wqp.args)
-    local.file = file.path(scratch_dir, fileList[i])
-    saveRDS(wqp.data, file=local.file)
-    #message('posting to sciencebase for ', fileList[i])
-    #item = item_append_files(sb_id=sb.destination, files=local.file)
-    #cat('...', fileList[i], ' posted to sciencebase\n', file=mssg.file, append = TRUE)
-    message('\n')
+    wqp_args <- lapply(fileList, parseWQPfileName)
     
-    # write to file, do something with the file
+    if (length(var) != 1)
+      stop(paste(var, collapse=','), ' must be of length one')
+    
+    make_wqp_dirs(var)
+    
+    dir.create(scratch_dir)
+    
+    cat('getting data for ', length(fileList), ' files, for variable: ', var, '\n')
+    
+    for (i in seq_along(fileList)) {
+      
+      args <- append(wqp_args[[i]], var.map['siteType'])
+      char.names <- get_char_names(var, var.map)
+      args[['varName']] <- NULL
+      wqp.args <- append(args, char.names)
+      message('getting data for ', fileList[i])
+      cat('getting data for ', fileList[i])
+      wqp.data <- do.call(retryWQP, wqp.args)
+      local.file = file.path(scratch_dir, fileList[i])
+      saveRDS(wqp.data, file=local.file)
+      #message('posting to sciencebase for ', fileList[i])
+      #item = item_append_files(sb_id=sb.destination, files=local.file)
+      #cat('...', fileList[i], ' posted to sciencebase\n', file=mssg.file, append = TRUE)
+      message('\n')
+      
+      # write to file, do something with the file
+    }
   }
+  
+  files = Sys.glob(paste0(scratch_dir, '/*.rds'))
+  message('merging ',length(files),' files')
+  
+  return(merge_files(files))
   
 }
 
@@ -137,9 +145,7 @@ parseWQPfileName <- function(fileName) {
   
 }
 
-saveRawWqpFile <- function(in_file, out_file){
-  
-  dataset = readRDS(data.file)
+saveRawWqpFile <- function(dataset, out_file){
   
   write.table(dataset, gzfile(out_file), sep='\t', row.names=FALSE)
 }

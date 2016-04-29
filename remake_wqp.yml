@@ -32,33 +32,22 @@ targets:
   temperature:
     command: calc_post_files(wqp.config, nhd, target_name)
 
-  data/temperature_data/wqp_temperature_data_status.txt:
-    command: getWQPdata(temperature, var.map, target_name)
-
-  data/secchi_data/wqp_secchi_data_status.txt:
-    command: getWQPdata(secchi, var.map, target_name)
-  
-  temperature.merged:
-    command: download_merge_wqp('data/temperature_data/wqp_temperature_data_status.txt')
-    depends:
-      - scripts/getWQPdata.R
-      
-  secchi.merged:
-    command: download_merge_wqp('data/secchi_data/wqp_secchi_data_status.txt')
-    depends:
-      - scripts/getWQPdata.R
-    
   secchi.clean:
-    command: munge_wqp(secchi.merged)
+    command: munge_wqp(secchi.merged, target_name)
+    depends:
+      - scripts/download_munge_wqp.R      
+      
+  temperature.clean:
+    command: munge_wqp(temperature.merged, target_name)
     depends:
       - scripts/download_munge_wqp.R
     
-  temperature.clean:
-    command: munge_wqp(temperature.merged)
-    depends:
-      - scripts/download_munge_wqp.R
+  temperature.merged:
+    command: getWQPdata(temperature, var.map, target_name)
   
-      
+  secchi.merged:
+    command: getWQPdata(secchi, var.map, target_name)
+    
   data/secchi_data_linked/secchi_wqp.tsv.gz:
     command: map_wqp(secchi.clean, wqp.nhd.lookup, target_name)
   
@@ -73,15 +62,12 @@ targets:
   stream.temperature:
     command: calc_post_files(wqp.stream.config, nhd, target_name)
     
-  data/stream_temperature_data/wqp_stream_temperature_data_status.txt:
+  stream_temperature.merged:
     command: getWQPdata(stream.temperature, var.map, target_name)
-  
-  stream.temp.merged:
-    command: download_merge_wqp('data/stream_temperature_data/wqp_stream_temperature_data_status.txt')
     depends:
-      - scripts/getWQPdata.R    
+      - scripts/getWQPdata.R
   
   data/stream_temperature_data/stream_temperature_wqp.tsv.gz:
-    command: saveRawWqpFile(stream.temp.merged, target_name)
+    command: saveRawWqpFile(stream_temperature.merged, target_name)
 
 
