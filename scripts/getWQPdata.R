@@ -69,7 +69,7 @@ sb_id <- function(config, variable){
 }
 
 wqp_scratch_files <- function(config, variable){
-  files <- Sys.glob(paste0('data/WQP_scratch_folder/', variable, '/*.rds'))
+  files <- Sys.glob(paste0('data/wqp_scratch_folder/', variable, '/*.rds'))
   return(basename(files))
 }
 
@@ -90,7 +90,7 @@ getWQPdata <- function(fileList, var.map, target) {
   fileList <- fileList[[1]]
   var = strsplit(target,'[.]')[[1]][1]
   
-  scratch_dir = paste0('data/WQP_scratch_folder/', var)
+  scratch_dir = paste0('data/wqp_scratch_folder/', var)
   
   if(length(fileList > 0)){
     

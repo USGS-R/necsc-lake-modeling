@@ -9,6 +9,7 @@ sources:
   - scripts/load_config.R
   - scripts/getWQPdata.R
   - scripts/download_munge_wqp.R
+  - scripts/cleanup_stream_temp_data.R
   
 targets:
   all:
@@ -59,15 +60,18 @@ targets:
   wqp.stream.config:
     command: load_config("configs/wqp_stream_temp_config.yml")
 
-  stream.temperature:
+  stream_temperature.files:
     command: calc_post_files(wqp.stream.config, nhd, target_name)
     
   stream_temperature.merged:
-    command: getWQPdata(stream.temperature, var.map, target_name)
+    command: getWQPdata(stream_temperature.files, var.map, target_name)
     depends:
       - scripts/getWQPdata.R
+      
+  stream_temperature.cleaned:
+    command: cleanup_stream_temp_data(stream_temperature.merged)
   
-  data/stream_temperature_data/stream_temperature_wqp.tsv.gz:
-    command: saveRawWqpFile(stream_temperature.merged, target_name)
+  data/stream_temperature_data/stream_temperature_wqp.rds:
+    command: saveRDS(stream_temperature.cleaned, target_name)
 
 
