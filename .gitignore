@@ -15,3 +15,4 @@ mydata.RData
 *.Rproj
 data/NHD_shape_large
 data/WQP_scratch_folder
+data/stream_temperature_data
