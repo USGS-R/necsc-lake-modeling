@@ -41,7 +41,7 @@ nhd_create_buffered_shapes = function(){
 	
 	all_buffers = do.call(bind, grp_merged)
 
-  writeOGR(all_buffers, dsn='data/NHD_shape_large', layer='NHDWaterbody_100m_buffers', driver='ESRI Shapefile')
+  writeOGR(all_buffers, dsn='data/NHD_shape_large', layer='NHDWaterbody_100m_buffers', driver='ESRI Shapefile', overwrite_layer = TRUE)
 }
 
 # shp_files = Sys.glob('data/NHD_shape_large/NHDWaterbody_100m_buffers.*')
