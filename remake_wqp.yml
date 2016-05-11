@@ -9,6 +9,7 @@ sources:
   - scripts/load_config.R
   - scripts/getWQPdata.R
   - scripts/download_munge_wqp.R
+  - scripts/cleanup_stream_temp_data.R
   
 targets:
   all:
@@ -22,8 +23,6 @@ targets:
     command: load_config("configs/NHD_config.yml")
   wqp.config:
     command: load_config("configs/wqp_config.yml")
-  wqp.stream.config:
-    command: load_config("configs/wqp_stream_temp_config.yml")
     
   var.map:
     command: get_var_map(wqp.config)
@@ -34,54 +33,45 @@ targets:
   temperature:
     command: calc_post_files(wqp.config, nhd, target_name)
 
-  stream.temperature:
-    command: calc_post_files(wqp.stream.config, nhd, target_name)
-
-  data/temperature_data/wqp_temperature_data_status.txt:
-    command: getWQPdata(temperature, var.map, target_name)
-
-  data/secchi_data/wqp_secchi_data_status.txt:
-    command: getWQPdata(secchi, var.map, target_name)
-  
-  data/temperature_data/wqp_stream_temperature_data_status.txt:
-    command: getWQPdata(stream.temperature, var.map, target_name)
-
-  temperature.merged:
-    command: download_merge_wqp('data/temperature_data/wqp_temperature_data_status.txt')
-    depends:
-      - scripts/getWQPdata.R
-      
-  secchi.merged:
-    command: download_merge_wqp('data/secchi_data/wqp_secchi_data_status.txt')
-    depends:
-      - scripts/getWQPdata.R
-    
-  stream.temp.merged:
-    command: download_merge_wqp('data/temperature_data/wqp_stream_temperature_data_status.txt')
-    depends:
-      - scripts/getWQPdata.R
-    
   secchi.clean:
-    command: munge_wqp(secchi.merged)
+    command: munge_wqp(secchi.merged, target_name)
+    depends:
+      - scripts/download_munge_wqp.R      
+      
+  temperature.clean:
+    command: munge_wqp(temperature.merged, target_name)
     depends:
       - scripts/download_munge_wqp.R
     
-  temperature.clean:
-    command: munge_wqp(temperature.merged)
-    depends:
-      - scripts/download_munge_wqp.R
-      
-  stream.temp.clean:
-    command: munge_wqp(stream.temp.merged)
-    depends:
-      - scripts/download_munge_wqp.R
+  temperature.merged:
+    command: getWQPdata(temperature, var.map, target_name)
   
+  secchi.merged:
+    command: getWQPdata(secchi, var.map, target_name)
+    
   data/secchi_data_linked/secchi_wqp.tsv.gz:
     command: map_wqp(secchi.clean, wqp.nhd.lookup, target_name)
-    
+  
+  
   data/temperature_data_linked/temperature_wqp.tsv.gz:
     command: map_wqp(temperature.clean, wqp.nhd.lookup, target_name)
+  
+  ##stream data section
+  wqp.stream.config:
+    command: load_config("configs/wqp_stream_temp_config.yml")
+
+  stream_temperature.files:
+    command: calc_post_files(wqp.stream.config, nhd, target_name)
     
-  data/temperature_data_linked/stream_temperature_wqp.tsv.gz:
-    command: map_wqp(stream.temp.clean, wqp.nhd.lookup, target_name)
+  stream_temperature.merged:
+    command: getWQPdata(stream_temperature.files, var.map, target_name)
+    depends:
+      - scripts/getWQPdata.R
+      
+  stream_temperature.cleaned:
+    command: cleanup_stream_temp_data(stream_temperature.merged)
+  
+  data/stream_temperature_data/stream_temperature_wqp.rds:
+    command: saveRDS(stream_temperature.cleaned, target_name)
+
 
