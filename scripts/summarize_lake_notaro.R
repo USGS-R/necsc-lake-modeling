@@ -23,16 +23,15 @@ library(lubridate)
 id <- 'nhd_13344210'
 driver.path = get_driver_path(id, driver_name="NLDAS")
 nml = populate_base_lake_nml(id, kd=0.3, driver = driver.path)
-nml = set_nml(nml, arg_list=list('start'='1979-01-04 00:00:00', 'stop'='2015-12-31 00:00:00'))
+nml = set_nml(nml, arg_list=list('start'='1979-01-04 00:00:00', 'stop'='2015-12-31 00:00:00', nsave=1))
 write_nml(nml, file=file.path(tempdir(),'glm2.nml'))
 run_glm(tempdir())
 
-exclude.vars <- c("extc_coef", "salt")
+exclude.vars <- c("extc_coef", "salt", "precip", "wind")
 nc.file <- file.path(tempdir(), 'output.nc')
 var.names <- as.character(sim_vars(nc.file)$name)
 
 # for the 1D vars, get depths and summarize, for annual scale
-
 summarize_var_notaro <- function(nc.file, var.name){
   unit <- sim_var_units(nc.file, var.name)
   is.1D <- glmtools:::.is_heatmap(nc.file, var.name)
@@ -48,20 +47,24 @@ summarize_var_notaro <- function(nc.file, var.name){
       unname(unlist(sapply(names, function(x) strsplit(x,'[_]')[[1]][2])))
     }
     var <- get_var(nc.file, var.name, reference='surface') %>% 
-      mutate(year=lubridate::year(DateTime)) %>% group_by(year) %>% 
-      summarize_each_(c('mean','sd'), list(quote(-DateTime))) %>% 
-      setNames(c('year',rename_depths(names(.)[-1L]))) %>% gather(key = year) %>% 
-      setNames(c('year','depth_stat','value')) %>% 
+      mutate(base.date=as.POSIXct(paste0(lubridate::year(DateTime),'-01-01')), tz='UTC') %>% 
+      mutate(doy=as.numeric(DateTime-base.date)/86400+1) %>% 
+      select(-DateTime, -tz, -base.date) %>% select(doy, everything()) %>% group_by(doy) %>%  
+      summarize_each(c('mean','sd')) %>% 
+      setNames(c('doy',rename_depths(names(.)[-1L]))) %>% gather(key = doy) %>% 
+      setNames(c('doy','depth_stat','value')) %>% 
       mutate(depth=get_depth(depth_stat), statistic=get_stat(depth_stat), variable=value.name) %>% 
-      select(year, depth, statistic, value, variable)
-    #year depth statistic     value       variable
+      select(doy, depth, statistic, value, variable) %>% 
+      filter(doy < 366)
   } else {
     var <- get_var(nc.file, var.name)%>% 
-      mutate(year=lubridate::year(DateTime)) %>% group_by(year) %>% 
-      summarize_each_(c('mean','sd'), list(quote(-DateTime))) %>% gather(key = year) %>% 
-      setNames(c('year','statistic','value')) %>% 
+      mutate(base.date=as.POSIXct(paste0(lubridate::year(DateTime),'-01-01')), tz='UTC') %>% 
+      mutate(doy=as.numeric(DateTime-base.date)/86400+1) %>% select_('doy', var.name) %>% group_by(doy) %>% 
+      summarize_each(c('mean','sd')) %>% gather(key = doy) %>% 
+      setNames(c('doy','statistic','value')) %>% 
       mutate(depth=NA, variable=value.name) %>% 
-      select(year, depth, statistic, value, variable)
+      select(doy, depth, statistic, value, variable) %>% 
+      filter(doy < 366)
   }
   
   return(var)
