@@ -85,4 +85,7 @@ targets:
   data/do_data_linked/do_wqp.tsv.gz:
     command: map_wqp(do.clean, wqp.nhd.lookup, target_name)
     
+  data/Jacobson_linked/do_temp_wqp.tsv.gz:
+    command: map_join_wqp(do.clean, temperature.clean, wqp.nhd.lookup, target_name)
+    
 
