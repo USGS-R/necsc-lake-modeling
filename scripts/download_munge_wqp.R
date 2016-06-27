@@ -114,3 +114,17 @@ map_wqp <- function(munged.wqp, wqp.nhd.lookup, mapped.file){
   write.table(mapped.wqp, file=gzfile(mapped.file), quote = FALSE, row.names = FALSE, sep = '\t')
   
 }
+
+map_join_wqp <- function(munged.wqp.1, munged.wqp.2, wqp.nhd.lookup, mapped.file){
+  mapped.wqp.1 <- left_join(munged.wqp.1, rename(wqp.nhd.lookup, wqx.id=MonitoringLocationIdentifier), by = 'wqx.id') %>% 
+    select(-LatitudeMeasure,-LongitudeMeasure) %>% 
+    filter(!is.na(id))
+  
+  mapped.wqp.2 <- left_join(munged.wqp.2, rename(wqp.nhd.lookup, wqx.id=MonitoringLocationIdentifier), by = 'wqx.id') %>% 
+    select(-LatitudeMeasure,-LongitudeMeasure) %>% 
+    filter(!is.na(id))
+  
+  joined.wqp <- inner_join(mapped.doobs, mapped.temperature, by = c('wqx.id','Date', 'depth','id')) %>% 
+    select(Date, id, wqx.id, everything())
+  write.table(joined.wqp, file=gzfile(mapped.file), quote = FALSE, row.names = FALSE, sep = '\t')
+}
