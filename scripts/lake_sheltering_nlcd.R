@@ -1,4 +1,45 @@
 
+
+get_nlcd_classes <- function(lake.buffer, filename){
+  nlcd.file = 'data/NLCD_data/nlcd_2011_landcover_2011_edition_2014_10_10/nlcd_2011_landcover_2011_edition_2014_10_10.img'
+  NLCD = raster(nlcd.file)
+  
+  nlcd.classes <- data.frame(class = c(0, 11,12,21,22,23,24,31,41,42,43,51,52,71,72,73,74,81,82,90,95),
+                             type=c('No Data', 'Open Water','Perennial Ice/Snow','Developed, Open Space','Developed, Low Intensity',
+                                    'Developed, Medium Intensity','Developed, High Intensity','Barren Land (Rock/Sand/Clay)',
+                                    'Deciduous Forest','Evergreen Forest','Mixed Forest','Dwarf Scrub','Scrub/Shrub','Grassland/Herbaceous',
+                                    'Sedge/Herbaceuous','Lichens','Moss','Pasture/Hay','Cultivated Crops','Woody Wetlands','Emergent Herbaceous Wetlands'))
+  
+  lakes <- shapefile(lake.buffer)
+
+  shelter.lakes <- spTransform(lakes,CRSobj = CRS(proj4string(NLCD)))   
+  ids <- paste0('nhd_', shelter.lakes$Prmnn_I)
+  # loop through lakes, crop and mask, remove NAs (from mask), calc class percentages, bind:
+  
+  data.out <- matrix(data = NA, nrow = length(ids), ncol = nrow(nlcd.classes))
+  for (i in 1:length(ids)){
+    lake <- shelter.lakes[i, ]
+    
+    buffer.data <- crop(NLCD, lake) %>% 
+      mask(lake) %>% 
+      freq() %>% data.frame %>% filter(!is.na(value))
+    tot.px <- sum(buffer.data$count)
+    data.out[i, ] <- mutate(buffer.data, perc = count/tot.px*100) %>% 
+      rename(class=value) %>% 
+      right_join(nlcd.classes, by="class") %>% arrange(class) %>% mutate(perc=ifelse(is.na(perc), 0, perc)) %>% 
+      select(class, perc) %>% 
+      tidyr::spread(key='class','perc') %>% as.numeric
+    
+    if (i %% 100 == 0)
+      cat(i,' of ', length(ids))
+    cat('.')
+  }
+  shelter.out <- data.frame(data.out) %>% setNames(paste0('nlcd.class.',nlcd.classes$class)) %>% 
+    cbind(data.frame(id=ids))
+  write.table(shelter.out, file='land_cover_MGLP.tsv', sep='\t', row.names=FALSE, quote=FALSE)
+}
+
+
 get_dominant_nlcd <- function(lake.buffer, filename){
   nlcd.file = 'data/NLCD_data/nlcd_2011_landcover_2011_edition_2014_10_10/nlcd_2011_landcover_2011_edition_2014_10_10.img'
   NLCD = raster(nlcd.file)
