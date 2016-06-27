@@ -1,0 +1,24 @@
+target_default: data_release
+
+packages:
+  - yaml
+  - xml2
+  - whisker
+  
+sources:
+  - scripts/create_FGDC_template.R
+  - scripts/render_FGDC_metadata.R
+  
+targets:
+  data_release:
+    depends: 
+      - gh_release/ECHAM5_model.xml
+
+  gh_release/FGDC_template.mustache:
+    command: create_FGDC_template(target_name)
+    
+  timeseries.text:
+    command: yaml.load_file("gh_release/text_ECHAM5_model.yaml")
+
+  gh_release/ECHAM5_model.xml:
+    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", timeseries.text, target_name)

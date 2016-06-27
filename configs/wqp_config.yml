@@ -3,10 +3,12 @@ variables:
   temperature: ["Temperature, sample", "Temperature, water","Temperature"]
   turbidity: ["Turbidity, hellige", "Turbidity severity (choice list)", "Turbidity severity", "Turbidity"]
   chlorophyll: ["Chlorophyll", "Chlorophyll A", "Chlorophyll a","Chlorophyll a (probe relative fluorescence)","Chlorophyll a (probe)","Chlorophyll a - Periphyton (attached)", "Chlorophyll a - Phytoplankton (suspended)", "Chlorophyll a, corrected for pheophytin", "Chlorophyll a, free of pheophytin", "Chlorophyll a, uncorrected for pheophytin", "Chlorophyll b", "Chlorophyll c", "Chlorophyll/Pheophytin ratio"]
+  do: ["Oxygen","Dissolved oxygen", "Dissolved oxygen (DO)"]
 
 sb_ids:
   secchi: "56eaf1d8e4b0f59b85d91a11"
   temperature: "56eaefdae4b0f59b85d919dd"
+  do: "57332c5fe4b0dae0d5dd6071"
 
 columnsToKeep: ["ActivityStartDate","ActivityStartTime.Time","ActivityStartTime.TimeZoneCode","ActivityBottomDepthHeightMeasure.MeasureValue","ActivityBottomDepthHeightMeasure.MeasureUnitCode","MonitoringLocationIdentifier","ResultMeasureValue","ResultMeasure.MeasureUnitCode"]      
 

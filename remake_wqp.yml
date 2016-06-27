@@ -15,6 +15,7 @@ targets:
     depends:
       - data/secchi_data_linked/secchi_wqp.tsv.gz
       - data/temperature_data_linked/temperature_wqp.tsv.gz
+      - data/do_data_linked/do_wqp.tsv.gz
 
   wqp.nhd.lookup:
     command: readRDS('data/wqp_nhd/wqp_nhdLookup.rds')
@@ -30,12 +31,19 @@ targets:
   
   temperature:
     command: calc_post_files(wqp.config, nhd, target_name)
+  
+  do:
+    command: calc_post_files(wqp.config, nhd, target_name)
 
   data/temperature_data/wqp_temperature_data_status.txt:
     command: getWQPdata(temperature, var.map, target_name)
 
   data/secchi_data/wqp_secchi_data_status.txt:
     command: getWQPdata(secchi, var.map, target_name)
+    
+
+  data/do_data/wqp_do_data_status.txt:
+    command: getWQPdata(do, var.map, target_name)
 
 
   temperature.merged:
@@ -47,9 +55,19 @@ targets:
     command: download_merge_wqp('data/secchi_data/wqp_secchi_data_status.txt')
     depends:
       - scripts/getWQPdata.R
+      
+  do.merged:
+    command: download_merge_wqp('data/do_data/wqp_do_data_status.txt')
+    depends:
+      - scripts/getWQPdata.R
     
   secchi.clean:
     command: munge_wqp(secchi.merged)
+    depends:
+      - scripts/download_munge_wqp.R
+    
+  do.clean:
+    command: munge_wqp(do.merged)
     depends:
       - scripts/download_munge_wqp.R
     
@@ -63,5 +81,11 @@ targets:
     
   data/temperature_data_linked/temperature_wqp.tsv.gz:
     command: map_wqp(temperature.clean, wqp.nhd.lookup, target_name)
+    
+  data/do_data_linked/do_wqp.tsv.gz:
+    command: map_wqp(do.clean, wqp.nhd.lookup, target_name)
+    
+  data/Jacobson_linked/do_temp_wqp.tsv.gz:
+    command: map_join_wqp(do.clean, temperature.clean, wqp.nhd.lookup, target_name)
     
 
