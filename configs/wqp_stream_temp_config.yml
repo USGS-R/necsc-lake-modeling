@@ -1,0 +1,16 @@
+variables:
+  stream.temperature: ["Temperature, sample", "Temperature, water","Temperature"]
+
+sb_ids:
+  stream.temperature: "57041509e4b0328dcb828bf5"
+
+columnsToKeep: ["ActivityStartDate","ActivityStartTime.Time","ActivityStartTime.TimeZoneCode","ActivityBottomDepthHeightMeasure.MeasureValue","ActivityBottomDepthHeightMeasure.MeasureUnitCode","MonitoringLocationIdentifier","ResultMeasureValue","ResultMeasure.MeasureUnitCode"]
+
+# WQP startDateLo and startDateHi    
+startDate: "1979-01-01"
+endDate: "2015-12-31"
+
+
+siteType: "Stream"
+
+yearSplit: 2
