@@ -4,4 +4,4 @@ data_variables: ['RT', 'PSRF', 'VA', 'UA', 'LWD', 'SWI', 'RHA', 'TA']
 variable_names: ['precip','pressfc','vgrd10m','ugrd10m','dlwrfsfc','dswrfsfc','relhum','airtemp']
 wps_url: "http://cida.usgs.gov/gdp/process/WebProcessingService"
 data_url: "dods://regclim.coas.oregonstate.edu:8080/thredds/dodsC/regcmdata/GFDL/ena/Daily/RegCM3_Daily_ena_GFDL.ncml"
-driver_split: 4000
+driver_split: 4300

@@ -56,7 +56,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
   config <- load_config(sprintf("configs/%s_config.yml",data.source))
   
   mssg.file <- sprintf('data/%s_data/%s_driver_status.txt',data.source,data.source)
-  files <- strsplit(readLines(file, n = -1),'\t')[[1]]
+  files <- read.csv(file, header = TRUE, stringsAsFactors = F)[,1]
   server.files <- driver_server_files(mssg.file, write.file=FALSE)
   cat('index of files contains', length(files), file=mssg.file, append = FALSE)
   
@@ -215,5 +215,5 @@ calc_nldas_driver_files <- function(config, lake.locations){
   files <- as.vector(unlist(sapply(perm.files,paste0, vars,'.RData')))
   #"NLDAS_permID_19790101.20160116_apcpsfc.RData"
   
-  cat(files,'\n', file=sprintf('%s%s_driver_file_list.tsv', data.dir, data.name), sep = '\t', append = FALSE)
+  cat('files\n',files,'\n', file=sprintf('%s%s_driver_file_list.tsv', data.dir, data.name), sep = '\n', append = FALSE)
 }

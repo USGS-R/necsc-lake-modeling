@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<metadata>
+  <idinfo/>
+  <citation>
+    <citeinfo>
+      <origin>Gretchen J.A. Hansen</origin>
+      <origin>Jordan S. Read</origin>
+      <origin>Jonathan F. Hansen</origin>
+      <origin>Luke A. Winslow</origin>
+      <pubdate>2017</pubdate>
+      <title>Data release: Projected shifts in fish species dominance in Wisconsin lakes under climate change</title>
+      <geoform>text files</geoform>
+      <onlink>http://dx.doi.org/10.5066/THIS.IS.FAKE</onlink>
+    </citeinfo>
+  </citation>
+  <descript>
+    <abstract>Temperate lakes may contain both coolwater fish species such as walleye (Sander vitreus) and warmwater species such as largemouth bass (Micropterus salmoides). Recent declines in walleye and increases in largemouth bass populations have raised questions regarding the future trajectories and appropriate management actions for these important species. We developed a thermodynamic model of water temperatures driven by downscaled climate data and lake specific characteristics to estimate daily water temperature profiles for 2361 lakes in Wisconsin, USA under contemporary (1989-2014) and future (2040-2064 and 2065-2089) conditions. We correlated contemporary walleye recruitment success and largemouth bass relative abundance to modeled water temperature, lake morphometry, and lake productivity, and projected lake specific changes in each species under future climate conditions. Walleye recruitment success was negatively related and largemouth bass abundance was positively related to water temperature degree days. Both species exhibited a threshold response at the same degree day value, albeit in opposite directions. Degree days were predicted to increase in the future, although the magnitude of increase varied among lakes, time periods, and global circulation models (GCMs). Under future conditions, we predicted a loss of walleye recruitment in 30-70% of lakes, and an increase to high largemouth bass relative abundance in 17-55% of additional lakes. The percentage of lakes with abundant largemouth bass and failed walleye recruitment was predicted to increase from 59% in contemporary conditions to 86% of lakes by mid-century and to 91% of lakes by late century, based on median projections across GCMs. Conversely, the number of lakes with successful walleye recruitment and low largemouth bass abundance was predicted to decline from 8.5% of lakes in contemporary conditions to only 38 1% of lakes in both future periods. Importantly, we identify nearly 100 resilient lakes predicted to continue to support walleye recruitment. Management resources could target preserving these resilient walleye populations. This data set contains the following parameters: year, WBIC, durStrat, max_schmidt_stability, mean_schmidt_stability_JAS, mean_schmidt_stability_July, SthermoD_mean_JAS, SthermoD_mean, lake_average_temp, peak_lake_average_temp, lake_average_temp_JAS, mean_epi_temp, mean_hypo_temp, mean_surf_temp, mean_bottom_temp, peak_surf_temp, peak_bottom_temp, mean_surf_temp_JAS, mean_bottom_temp_JAS, mean_bottom_temp_365, mean_surf_temp_365, mean_1m_temp, mean_surf_JA, GDD_wtr_5c, GDD_wtr_10c, volume_mean_m_3, simulation_length_days, mean_volumetric_temp, kd, out_val calculated for 2210 lakes</abstract>
+    <purpose>To bring metabolism data to the world!</purpose>
+  </descript>
+  <timeperd>
+    <timeinfo>
+      <rngdates>
+        <begdate>SCRIPT 20070101</begdate>
+        <enddate>SCRIPT 2016XXXX</enddate>
+      </rngdates>
+    </timeinfo>
+  </timeperd>
+  <status>
+    <progress>Complete</progress>
+    <update>none planned</update>
+  </status>
+  <spdom>
+    <bounding>
+      <westbc>SCRIPT -109</westbc>
+      <eastbc>SCRIPT -68</eastbc>
+      <northbc>SCRIPT 52</northbc>
+      <southbc>SCRIPT 26.3</southbc>
+    </bounding>
+  </spdom>
+  <keywords>
+    <theme>
+      <themekt>none</themekt>
+      <themekey>water</themekey>
+      <themekey>temperate lakes</themekey>
+      <themekey>reservoirs</themekey>
+      <themekey>modeling</themekey>
+      <themekey>bass</themekey>
+      <themekey>walleye</themekey>
+      <themekey>climate change</themekey>
+      <themekey>largemouth bass</themekey>
+      <themekey>species distribution models</themekey>
+      <themekey>thermal profiles</themekey>
+    </theme>
+    <theme>
+      <themekt>ISO 19115 Topic Category</themekt>
+      <themekey>environment</themekey>
+      <themekey>inlandWaters</themekey>
+      <themekey>007</themekey>
+      <themekey>012</themekey>
+    </theme>
+    <place>
+      <placekt>Department of Commerce, 1995, Countries, Dependencies, Areas of Special Sovereignty, and 
+                  Their Principal Administrative Divisions,  Federal Information Processing Standard (FIPS) 10-4, 
+                  Washington, D.C., National Institute of Standards and Technology</placekt>
+      <placekey>United States</placekey>
+      <placekey>US</placekey>
+    </place>
+    <place>
+      <placekt>U.S. Department of Commerce, 1987, Codes for the identification of the States, the District of Columbia and the outlying areas of the United States, and associated areas (Federal Information Processing Standard 5-2): Washington, D. C., NIST</placekt>
+      <placekey>Wisconsin</placekey>
+      <placekey>WI</placekey>
+    </place>
+    <place>
+      <placekt>none</placekt>
+      <placekey>Wisconsin</placekey>
+    </place>
+  </keywords>
+  <accconst>none</accconst>
+  <useconst>These data are subject to change and are not citable until reviewed and approved for official publication by the USGS</useconst>
+  <ptcontac>
+    <cntinfo>
+      <cntperp>
+        <cntper>Jordan S Read</cntper>
+        <cntorg>U.S. Geological Survey</cntorg>
+      </cntperp>
+    </cntinfo>
+    <cntaddr>
+      <addrtype>Mailing and Physical</addrtype>
+      <address>8551 Research Way</address>
+      <city>Middleton</city>
+      <state>WI</state>
+      <postal>53562</postal>
+      <country>U.S.A.</country>
+    </cntaddr>
+    <cntvoice>608 821-3922</cntvoice>
+    <cntemail>jread@usgs.gov</cntemail>
+  </ptcontac>
+  <datacred>This work has been funded by NECSC and X and Y and Z...</datacred>
+  <native>stuff on mac things on pc, R versions etc</native>
+  <crossref>
+    <citeinfo>
+      <origin>Hansen, Grethen J.A., Read, Jordan S., Hansen, Jonathan F., Winslow, Luke A.</origin>
+      <pubdate>FAKE date of paper release</pubdate>
+      <title>FAKE paper title here</title>
+      <geoform>paper</geoform>
+      <pubinfo>
+        <pubplace>whoknows?</pubplace>
+        <publish>GCB?</publish>
+      </pubinfo>
+    </citeinfo>
+  </crossref>
+  <dataqual>
+    <attracc>
+      <attraccr>No formal attribute accuracy tests were conducted.</attraccr>
+    </attracc>
+    <logic>not applicable</logic>
+    <complete>not applicable</complete>
+  </dataqual>
+  <posacc>
+    <horizpa>
+      <horizpar>A formal accuracy assessment of the horizontal positional information in the data set has not been conducted.</horizpar>
+    </horizpa>
+    <vertacc>
+      <vertaccr>A formal accuracy assessment of the vertical positional information in the data set has either not been conducted, or is not applicable.</vertaccr>
+    </vertacc>
+  </posacc>
+  <lineage>
+    <procstep>
+      <procdesc>data were pulled or synthesized from existing etc...</procdesc>
+      <procdate>SCRIPT 20161104</procdate>
+    </procstep>
+  </lineage>
+  <spdoinfo>
+    <indspref>Wisconsin</indspref>
+    <direct>Point</direct>
+    <ptvctinf>
+      <sdtsterm>
+        <sdtstype>Point</sdtstype>
+        <ptvctcnt>SCRIPT 391</ptvctcnt>
+      </sdtsterm>
+    </ptvctinf>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <geograph>
+        <latres>0.1?</latres>
+        <longres>0.1?</longres>
+        <geogunit>Decimal degrees</geogunit>
+      </geograph>
+      <geodetic>
+        <horizdn>North American Datum of 1983</horizdn>
+        <ellips>Geodetic Reference System 80</ellips>
+        <semiaxis>6378137.0</semiaxis>
+        <denflat>298.257</denflat>
+      </geodetic>
+    </horizsys>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>River metabolism input data</enttypl>
+        <enttypd>Timeseries observations of environmental conditions made by sensors, subsetted gridded timeseries data, and derived data from both of these sources.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>DateTime</attrlabl>
+        <attrdef>The date and time of day</attrdef>
+        <attrdefs>Pope Gregory XIII</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>SCRIPT 2007-01-01 00:00:00</rdommin>
+            <rdommax>SCRIPT 2016-03-16 00:00:00</rdommax>
+            <attrunit>time</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_id</attrlabl>
+        <attrdef>the site location identifier</attrdef>
+        <attrdefs>NWIS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>not applicable</rdommin>
+            <rdommax>not applicable</rdommax>
+            <attrunit>not applicable</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>doobs</attrlabl>
+        <attrdef>dissolved oxygen observation</attrdef>
+        <attrdefs>NWIS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>SCRIPT 0</rdommin>
+            <rdommax>SCRIPT 40</rdommax>
+            <attrunit>mg L^1</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>Luke A. Winslow</cntper>
+          <cntorg>U.S. Geological Survey - ScienceBase</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>Mailing and Physical</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80255</postal>
+          <country>U.S.A.</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected.  Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS),  no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall  the act of distribution constitute any such warranty.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Tab-delimited text files</formname>
+          <formvern>none</formvern>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>http://dx.doi.org/10.5066/THIS.IS.FAKE</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>2016XXXX</metd>
+    <metc/>
+    <cntinfo>
+      <cntperp>
+        <cntper>Luke A. Winslow</cntper>
+        <cntorg>U.S. Geological Survey</cntorg>
+      </cntperp>
+      <cntpos>Data Chief</cntpos>
+      <cntaddr>
+        <addrtype>Mailing and Physical</addrtype>
+        <address>8551 Research Way #120</address>
+        <city>Middleton</city>
+        <state>WI</state>
+        <postal>53562</postal>
+        <country>U.S.A.</country>
+      </cntaddr>
+      <cntvoice>608 821-3914</cntvoice>
+      <cntfax>608 821-3817</cntfax>
+      <cntemail>lawinslow@usgs.gov</cntemail>
+    </cntinfo>
+    <metstdn>FGDC Biological Data Profile of the Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001.1-1999</metstdv>
+  </metainfo>
+</metadata>
