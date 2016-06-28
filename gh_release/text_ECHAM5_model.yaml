@@ -1,6 +1,7 @@
 authors: ["Gretchen J.A. Hansen", "Jordan S. Read", "Jonathan F. Hansen", "Luke A. Winslow"]
 pubdate: 2017
-title: Data release: Projected shifts in fish species dominance in Wisconsin lakes under climate change
+title: >-
+  Data release: Projected shifts in fish species dominance in Wisconsin lakes under climate change
 doi: http://dx.doi.org/10.5066/THIS.IS.FAKE
 abstract: >-
   Temperate lakes may contain both coolwater fish species such as walleye (Sander vitreus) and warmwater species such as largemouth bass (Micropterus salmoides). Recent declines in walleye and increases in largemouth bass populations have raised questions regarding the future trajectories and appropriate management actions for these important species. We developed a thermodynamic model of water temperatures driven by downscaled climate data and lake specific characteristics to estimate daily water temperature profiles for 2361 lakes in Wisconsin, USA under contemporary (1989-2014) and future (2040-2064 and 2065-2089) conditions. We correlated contemporary walleye recruitment success and largemouth bass relative abundance to modeled water temperature, lake morphometry, and lake productivity, and projected lake specific changes in each species under future climate conditions. Walleye recruitment success was negatively related and largemouth bass abundance was positively related to water temperature degree days. Both species exhibited a threshold response at the same degree day value, albeit in opposite directions. Degree days were predicted to increase in the future, although the magnitude of increase varied among lakes, time periods, and global circulation models (GCMs). Under future conditions, we predicted a loss of walleye recruitment in 30-70% of lakes, and an increase to high largemouth bass relative abundance in 17-55% of additional lakes. The percentage of lakes with abundant largemouth bass and failed walleye recruitment was predicted to increase from 59% in contemporary conditions to 86% of lakes by mid-century and to 91% of lakes by late century, based on median projections across GCMs. Conversely, the number of lakes with successful walleye recruitment and low largemouth bass abundance was predicted to decline from 8.5% of lakes in contemporary conditions to only 38 1% of lakes in both future periods. Importantly, we identify nearly 100 resilient lakes predicted to continue to support walleye recruitment. Management resources could target preserving these resilient walleye populations.
@@ -32,7 +33,7 @@ cite-authors: Hansen, Grethen J.A., Read, Jordan S., Hansen, Jonathan F., Winslo
 cite-date: FAKE date of paper release
 cite-title: FAKE paper title here
 paper: paper
-publisher: ?
+publisher: whoknows?
 journal: GCB?
 process-description: data were pulled or synthesized from existing etc...
 process-date: SCRIPT 20161104
