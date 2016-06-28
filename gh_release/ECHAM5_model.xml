@@ -239,7 +239,7 @@
       </attr>
       <attr>
         <attrlabl>lakeid</attrlabl>
-        <attrdef>Water Body Identification Code</attrdef>
+        <attrdef>Wisconsin Department of Natural Resources Water Body Identification Code (WBIC)</attrdef>
         <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
@@ -251,7 +251,7 @@
       </attr>
       <attr>
         <attrlabl>days_12_28</attrlabl>
-        <attrdef>Optimal age 0 thermal habitat days</attrdef>
+        <attrdef>days in which there is any part of water column between 12-28 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -263,7 +263,7 @@
       </attr>
       <attr>
         <attrlabl>height_12_28</attrlabl>
-        <attrdef>Optimal age 0 thermal habitat meters</attrdef>
+        <attrdef>meters of water between 12-28 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -275,7 +275,7 @@
       </attr>
       <attr>
         <attrlabl>vol_12_28</attrlabl>
-        <attrdef>Optimal age 0 thermal habitat volume</attrdef>
+        <attrdef>volume of water between 12-28 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -287,7 +287,7 @@
       </attr>
       <attr>
         <attrlabl>days_10.6_11.2</attrlabl>
-        <attrdef>Optimal larval thermal habitat days</attrdef>
+        <attrdef>days in which there is any part of water column between 10.6-11.2 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -299,7 +299,7 @@
       </attr>
       <attr>
         <attrlabl>height_10.6_11.2</attrlabl>
-        <attrdef>Optimal larval thermal habitat meters</attrdef>
+        <attrdef>meters of water between 10.6-11.2 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -311,7 +311,7 @@
       </attr>
       <attr>
         <attrlabl>vol_10.6_11.2</attrlabl>
-        <attrdef>Optimal larval thermal habitat volume</attrdef>
+        <attrdef>volume of water between 10.6-11.2 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -323,7 +323,7 @@
       </attr>
       <attr>
         <attrlabl>days_18.2_28.2</attrlabl>
-        <attrdef>Good growth habitat days</attrdef>
+        <attrdef>days in which there is any part of water column between 18.2-28.2 degrees C</attrdef>
         <attrdefs>Fang et al 2004</attrdefs>
         <attrdomv>
           <rdom>
@@ -335,7 +335,7 @@
       </attr>
       <attr>
         <attrlabl>height_18.2_28.2</attrlabl>
-        <attrdef>Good growth habitat meters</attrdef>
+        <attrdef>meters of water between 18.2-28.2 degrees C</attrdef>
         <attrdefs>Fang et al 2004</attrdefs>
         <attrdomv>
           <rdom>
@@ -347,7 +347,7 @@
       </attr>
       <attr>
         <attrlabl>vol_18.2_28.2</attrlabl>
-        <attrdef>Good growth habitat volume</attrdef>
+        <attrdef>volume of water between 18.2-28.2 degrees C</attrdef>
         <attrdefs>Fang et al 2004</attrdefs>
         <attrdomv>
           <rdom>
@@ -359,7 +359,7 @@
       </attr>
       <attr>
         <attrlabl>days_18_22</attrlabl>
-        <attrdef>Optimal age 0 thermal habitat days</attrdef>
+        <attrdef>days in which there is any part of water column between 18-22 degrees C</attrdef>
         <attrdefs>Christie and Regier 1988</attrdefs>
         <attrdomv>
           <rdom>
@@ -371,7 +371,7 @@
       </attr>
       <attr>
         <attrlabl>height_18_22</attrlabl>
-        <attrdef>Optimal age 0 thermal habitat meters</attrdef>
+        <attrdef>meters of water between 18-22 degrees C</attrdef>
         <attrdefs>Christie and Regier 1988</attrdefs>
         <attrdomv>
           <rdom>
@@ -383,7 +383,7 @@
       </attr>
       <attr>
         <attrlabl>vol_18_22</attrlabl>
-        <attrdef>Optimal age 0 thermal habitat volume</attrdef>
+        <attrdef>volumne of water between 18-22 degrees C</attrdef>
         <attrdefs>Christie and Regier 1988</attrdefs>
         <attrdomv>
           <rdom>
@@ -395,7 +395,7 @@
       </attr>
       <attr>
         <attrlabl>days_19.3_23.3</attrlabl>
-        <attrdef>YOY optimum days</attrdef>
+        <attrdef>days in which there is any part of water columnbetween 19.3-23.3 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -407,7 +407,7 @@
       </attr>
       <attr>
         <attrlabl>height_19.3_23.3</attrlabl>
-        <attrdef>YOY optimum meters</attrdef>
+        <attrdef>meters of water between 19.3-23.3 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -419,7 +419,7 @@
       </attr>
       <attr>
         <attrlabl>vol_19.3_23.3</attrlabl>
-        <attrdef>YOY optimum volume</attrdef>
+        <attrdef>volume of water between 19.3-23.3 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -431,7 +431,7 @@
       </attr>
       <attr>
         <attrlabl>days_19_23</attrlabl>
-        <attrdef>Optimal thermal habitat days</attrdef>
+        <attrdef>days in which there is any part of water column  between 19-23 degrees C</attrdef>
         <attrdefs>Cline et al. 2013</attrdefs>
         <attrdomv>
           <rdom>
@@ -443,7 +443,7 @@
       </attr>
       <attr>
         <attrlabl>height_19_23</attrlabl>
-        <attrdef>Optimal thermal habitat meters</attrdef>
+        <attrdef>meters of water between 19-23 degrees C</attrdef>
         <attrdefs>Cline et al. 2013</attrdefs>
         <attrdomv>
           <rdom>
@@ -455,7 +455,7 @@
       </attr>
       <attr>
         <attrlabl>vol_19_23</attrlabl>
-        <attrdef>Optimal thermal habitat volume</attrdef>
+        <attrdef>volume of water between 19-23 degrees C</attrdef>
         <attrdefs>Cline et al. 2013</attrdefs>
         <attrdomv>
           <rdom>
@@ -467,7 +467,7 @@
       </attr>
       <attr>
         <attrlabl>days_20.6_23.2</attrlabl>
-        <attrdef>Optimal thermal habitat days</attrdef>
+        <attrdef>days in which there is any part of water column between 20.6 and 23.2 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -479,7 +479,7 @@
       </attr>
       <attr>
         <attrlabl>height_20.6_23.2</attrlabl>
-        <attrdef>Optimal thermal habitat meters</attrdef>
+        <attrdef>meters of water between 20.6 and 23.2 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -491,7 +491,7 @@
       </attr>
       <attr>
         <attrlabl>vol_20.6_23.2</attrlabl>
-        <attrdef>Optimal thermal habitat volume</attrdef>
+        <attrdef>volume of water between 20.6 and 23.2 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -503,7 +503,7 @@
       </attr>
       <attr>
         <attrlabl>days_20_30</attrlabl>
-        <attrdef>larval optimum days</attrdef>
+        <attrdef>days in which there is any part of water column between 20-30 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -515,7 +515,7 @@
       </attr>
       <attr>
         <attrlabl>height_20_30</attrlabl>
-        <attrdef>larval optimum meters</attrdef>
+        <attrdef>meters of water between 20-30 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -527,7 +527,7 @@
       </attr>
       <attr>
         <attrlabl>vol_20_30</attrlabl>
-        <attrdef>larval optimum volume</attrdef>
+        <attrdef>volume of water column between 20-30 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -539,7 +539,7 @@
       </attr>
       <attr>
         <attrlabl>days_21_100</attrlabl>
-        <attrdef>length of growing season for YOY</attrdef>
+        <attrdef>duration of epilimnion temp &gt;21 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -551,7 +551,7 @@
       </attr>
       <attr>
         <attrlabl>days_22_23</attrlabl>
-        <attrdef>Optimal thermal habitat days</attrdef>
+        <attrdef>days in which there is any part of water column between 22 and 23 degrees C</attrdef>
         <attrdefs>Casselman 2002</attrdefs>
         <attrdomv>
           <rdom>
@@ -563,7 +563,7 @@
       </attr>
       <attr>
         <attrlabl>height_22_23</attrlabl>
-        <attrdef>Optimal thermal habitat meters</attrdef>
+        <attrdef>meters of water between 22 and 23 degrees C</attrdef>
         <attrdefs>Casselman 2002</attrdefs>
         <attrdomv>
           <rdom>
@@ -575,7 +575,7 @@
       </attr>
       <attr>
         <attrlabl>vol_22_23</attrlabl>
-        <attrdef>Optimal thermal habitat volume</attrdef>
+        <attrdef>volume of water between 22 and 23 degrees C</attrdef>
         <attrdefs>Casselman 2002</attrdefs>
         <attrdomv>
           <rdom>
@@ -587,7 +587,7 @@
       </attr>
       <attr>
         <attrlabl>days_23_31</attrlabl>
-        <attrdef>juvenile optimum days</attrdef>
+        <attrdef>days in which there is any part of water column between 23-31 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -599,7 +599,7 @@
       </attr>
       <attr>
         <attrlabl>height_23_31</attrlabl>
-        <attrdef>juvenile optimum meters</attrdef>
+        <attrdef>height of water column between 23-31 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -611,7 +611,7 @@
       </attr>
       <attr>
         <attrlabl>vol_23_31</attrlabl>
-        <attrdef>juvenile optimum volume</attrdef>
+        <attrdef>volume of water column between 23-31 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -623,7 +623,7 @@
       </attr>
       <attr>
         <attrlabl>days_25_29</attrlabl>
-        <attrdef>larval optimum days</attrdef>
+        <attrdef>days in which any part of water column is between 25-29 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -635,7 +635,7 @@
       </attr>
       <attr>
         <attrlabl>height_25_29</attrlabl>
-        <attrdef>larval optimum meters</attrdef>
+        <attrdef>meters of water between 25-29 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -647,7 +647,7 @@
       </attr>
       <attr>
         <attrlabl>vol_25_29</attrlabl>
-        <attrdef>larval optimum volume</attrdef>
+        <attrdef>volume of water between 25-29 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -659,7 +659,7 @@
       </attr>
       <attr>
         <attrlabl>days_26.2_32</attrlabl>
-        <attrdef>Good growth habitat days</attrdef>
+        <attrdef>days in which there is any part of water column between 26.6-32 degrees C</attrdef>
         <attrdefs>Countant 1977</attrdefs>
         <attrdomv>
           <rdom>
@@ -671,7 +671,7 @@
       </attr>
       <attr>
         <attrlabl>height_26.2_32</attrlabl>
-        <attrdef>Good growth habitat meters</attrdef>
+        <attrdef>meters of water between 26.6-32 degrees C</attrdef>
         <attrdefs>Countant 1977</attrdefs>
         <attrdomv>
           <rdom>
@@ -683,7 +683,7 @@
       </attr>
       <attr>
         <attrlabl>vol_26.2_32</attrlabl>
-        <attrdef>Good growth habitat volume</attrdef>
+        <attrdef>volume of water between 26.6-32 degrees C</attrdef>
         <attrdefs>Countant 1977</attrdefs>
         <attrdomv>
           <rdom>
@@ -695,7 +695,7 @@
       </attr>
       <attr>
         <attrlabl>days_26_28</attrlabl>
-        <attrdef>subadult optimum days</attrdef>
+        <attrdef>days in which there is any part of water column between 26-28 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -707,7 +707,7 @@
       </attr>
       <attr>
         <attrlabl>height_26_28</attrlabl>
-        <attrdef>subadult optimum meters</attrdef>
+        <attrdef>meters of water between 26-28 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -719,7 +719,7 @@
       </attr>
       <attr>
         <attrlabl>vol_26_28</attrlabl>
-        <attrdef>subadult optimum volume</attrdef>
+        <attrdef>volume of water between 26-28 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -731,7 +731,7 @@
       </attr>
       <attr>
         <attrlabl>days_26_30</attrlabl>
-        <attrdef>adult optimum days</attrdef>
+        <attrdef>days in which there is any part of water column  between 26-30</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -743,7 +743,7 @@
       </attr>
       <attr>
         <attrlabl>height_26_30</attrlabl>
-        <attrdef>adult optimum meters</attrdef>
+        <attrdef>meters of water between 26-30</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -755,7 +755,7 @@
       </attr>
       <attr>
         <attrlabl>vol_26_30</attrlabl>
-        <attrdef>adult optimum volume</attrdef>
+        <attrdef>volume of water between 26-30</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -767,7 +767,7 @@
       </attr>
       <attr>
         <attrlabl>days_28_29</attrlabl>
-        <attrdef>juvenile optimum days</attrdef>
+        <attrdef>days in which there is any part of water column between 28-29 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -779,7 +779,7 @@
       </attr>
       <attr>
         <attrlabl>height_28_29</attrlabl>
-        <attrdef>juvenile optimum meters</attrdef>
+        <attrdef>meters of  water between 28-29 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -791,7 +791,7 @@
       </attr>
       <attr>
         <attrlabl>vol_28_29</attrlabl>
-        <attrdef>juvenile optimum volume</attrdef>
+        <attrdef>volume of  water between 28-29 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -803,7 +803,7 @@
       </attr>
       <attr>
         <attrlabl>days_28_32</attrlabl>
-        <attrdef>juvenile optimum meters</attrdef>
+        <attrdef>days in which any part of water column is between 28-32 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -815,7 +815,7 @@
       </attr>
       <attr>
         <attrlabl>height_28_32</attrlabl>
-        <attrdef>juvenile optimum meters</attrdef>
+        <attrdef>meters of water between 28-32 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -827,7 +827,7 @@
       </attr>
       <attr>
         <attrlabl>vol_28_32</attrlabl>
-        <attrdef>juvenile optimum volume</attrdef>
+        <attrdef>volume of water between 28-32 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -839,7 +839,7 @@
       </attr>
       <attr>
         <attrlabl>days_29_100</attrlabl>
-        <attrdef>lethal habitat </attrdef>
+        <attrdef>days in which there is any part of water column between 29-100 degrees C</attrdef>
         <attrdefs>Fang et al 2004</attrdefs>
         <attrdomv>
           <rdom>
@@ -851,7 +851,7 @@
       </attr>
       <attr>
         <attrlabl>height_29_100</attrlabl>
-        <attrdef>lethal habitat </attrdef>
+        <attrdef>meters of water between 29-100 degrees C</attrdef>
         <attrdefs>Fang et al 2004</attrdefs>
         <attrdomv>
           <rdom>
@@ -863,7 +863,7 @@
       </attr>
       <attr>
         <attrlabl>vol_29_100</attrlabl>
-        <attrdef>lethal habitat </attrdef>
+        <attrdef>volume of water between 29 and 100 degrees C</attrdef>
         <attrdefs>Fang et al 2004</attrdefs>
         <attrdomv>
           <rdom>
@@ -875,7 +875,7 @@
       </attr>
       <attr>
         <attrlabl>days_30_31</attrlabl>
-        <attrdef>adult optimum days</attrdef>
+        <attrdef>days in which there is any part of water column between 30-31 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -887,7 +887,7 @@
       </attr>
       <attr>
         <attrlabl>height_30_31</attrlabl>
-        <attrdef>adult optimum meters</attrdef>
+        <attrdef>meters of water between 30-31 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -899,7 +899,7 @@
       </attr>
       <attr>
         <attrlabl>vol_30_31</attrlabl>
-        <attrdef>adult optimum volume</attrdef>
+        <attrdef>volume of water between 30-31 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -923,7 +923,7 @@
       </attr>
       <attr>
         <attrlabl>winter_dur_0-4</attrlabl>
-        <attrdef>winter duration</attrdef>
+        <attrdef># of days, beginning October 30 of the previous year and running through June of the given year, that surface water is &lt;4 degrees C</attrdef>
         <attrdefs>Jones et al 2006, Hokanson 1977</attrdefs>
         <attrdomv>
           <rdom>
@@ -935,7 +935,7 @@
       </attr>
       <attr>
         <attrlabl>spring_days_in_10.5_15.5</attrlabl>
-        <attrdef>Duration of optimal incubation period</attrdef>
+        <attrdef>duration of surface temperature between 10.5-15.5 degrees C (Spring only)</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -947,7 +947,7 @@
       </attr>
       <attr>
         <attrlabl>mean_surf_jul</attrlabl>
-        <attrdef>summer warmth index </attrdef>
+        <attrdef>mean july  surface temperature</attrdef>
         <attrdefs>Jones et al 2006</attrdefs>
         <attrdomv>
           <rdom>
@@ -959,7 +959,7 @@
       </attr>
       <attr>
         <attrlabl>mean_surf_JAS</attrlabl>
-        <attrdef>summer warmth index </attrdef>
+        <attrdef>mean of surface tempertaure from July, August, September</attrdef>
         <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
@@ -971,7 +971,7 @@
       </attr>
       <attr>
         <attrlabl>peak_temp</attrlabl>
-        <attrdef>peak summer surface temperature</attrdef>
+        <attrdef>Maximum observed surface temperature</attrdef>
         <attrdefs>Shuter et al 2002, Shuter and Ing 1997</attrdefs>
         <attrdomv>
           <rdom>
@@ -983,7 +983,7 @@
       </attr>
       <attr>
         <attrlabl>post_ice_warm_rate</attrlabl>
-        <attrdef>rate of warming post ice off</attrdef>
+        <attrdef>average change in surface temp (degrees C  per day) 30 days post ice off</attrdef>
         <attrdefs>Busch et al. 1975; Madenijan et al. 1996</attrdefs>
         <attrdomv>
           <rdom>
@@ -995,7 +995,7 @@
       </attr>
       <attr>
         <attrlabl>SthermoD_mean</attrlabl>
-        <attrdef>depth of thermocline</attrdef>
+        <attrdef>avg. thermocline depth in stratified period</attrdef>
         <attrdefs>Schindler et al. 1996</attrdefs>
         <attrdomv>
           <rdom>
@@ -1007,7 +1007,7 @@
       </attr>
       <attr>
         <attrlabl>dateOver21</attrlabl>
-        <attrdef>date of spawning temp (bass) </attrdef>
+        <attrdef>date where average surface temperature reaches 21 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -1019,7 +1019,7 @@
       </attr>
       <attr>
         <attrlabl>dateOver18</attrlabl>
-        <attrdef>date of spawning temp (bass) </attrdef>
+        <attrdef>date where average surface temperature reaches 18 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -1031,7 +1031,7 @@
       </attr>
       <attr>
         <attrlabl/>
-        <attrdef>hatch date</attrdef>
+        <attrdef>date at which avg surface temperature &gt; 16.7 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -1043,7 +1043,7 @@
       </attr>
       <attr>
         <attrlabl>dateOver8.9</attrlabl>
-        <attrdef>date of spawning temp </attrdef>
+        <attrdef>date where average surface temperature reaches 8.9 degrees C</attrdef>
         <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
@@ -1055,7 +1055,7 @@
       </attr>
       <attr>
         <attrlabl>SmetaTopD_mean</attrlabl>
-        <attrdef>epilimnion meters</attrdef>
+        <attrdef>mean epilmnion meters during stratified period</attrdef>
         <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
@@ -1067,7 +1067,7 @@
       </attr>
       <attr>
         <attrlabl>SmetaBotD_mean</attrlabl>
-        <attrdef>hypolimnion meters</attrdef>
+        <attrdef>mean hypolimnion meters during stratified period</attrdef>
         <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
@@ -1079,7 +1079,7 @@
       </attr>
       <attr>
         <attrlabl>coef_var_30_60</attrlabl>
-        <attrdef>variable temperatures post-ice-off</attrdef>
+        <attrdef>CV of surface temperature from 30-60 days post ice off.</attrdef>
         <attrdefs>Sterns 1982, Hansen et al. 1998</attrdefs>
         <attrdomv>
           <rdom>
@@ -1091,7 +1091,7 @@
       </attr>
       <attr>
         <attrlabl>coef_var_0_30</attrlabl>
-        <attrdef>variable temperatures post-ice-off</attrdef>
+        <attrdef>CV of surface temperature from 0-30 days post ice-off</attrdef>
         <attrdefs>Koonce et al. 1977</attrdefs>
         <attrdomv>
           <rdom>
@@ -1103,7 +1103,7 @@
       </attr>
       <attr>
         <attrlabl>mean_epi_hypo_ratio</attrlabl>
-        <attrdef>ratio of epilimnion to hypolimnion</attrdef>
+        <attrdef>mean epilmnion volume/mean hypolimnion volume</attrdef>
         <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
@@ -1115,7 +1115,7 @@
       </attr>
       <attr>
         <attrlabl>mean_epi_vol</attrlabl>
-        <attrdef>epilimnion volume</attrdef>
+        <attrdef>mean epilmnion volume during stratified period</attrdef>
         <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
@@ -1127,7 +1127,7 @@
       </attr>
       <attr>
         <attrlabl>mean_hyp_vol</attrlabl>
-        <attrdef>hypolimnion volume</attrdef>
+        <attrdef>mean hypolimnion volume during stratified period</attrdef>
         <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
@@ -1139,7 +1139,7 @@
       </attr>
       <attr>
         <attrlabl>simulation_length_days</attrlabl>
-        <attrdef>Numer of days simulated as open-water</attrdef>
+        <attrdef>Number of simulated days. Based on start/end being estimated ice on/off. </attrdef>
         <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
@@ -1163,7 +1163,7 @@
       </attr>
       <attr>
         <attrlabl>volume_sum_m_3_day</attrlabl>
-        <attrdef>Daily sum of lake volume</attrdef>
+        <attrdef>Daily sum of lake volume. Useful for standardizing Volume-based habitat metrics</attrdef>
         <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
@@ -1175,7 +1175,7 @@
       </attr>
       <attr>
         <attrlabl>GDD_wtr_10c</attrlabl>
-        <attrdef>Growing Degree Days</attrdef>
+        <attrdef>Surface water Growing Degree Days with a 10 deg C base</attrdef>
         <attrdefs>Venturelli et al 2010</attrdefs>
         <attrdomv>
           <rdom>
@@ -1187,7 +1187,7 @@
       </attr>
       <attr>
         <attrlabl>GDD_wtr_5c</attrlabl>
-        <attrdef>Growing Degree Days</attrdef>
+        <attrdef>Surface water Growing Degree Days with a 5 deg C base</attrdef>
         <attrdefs>Venturelli et al 2010</attrdefs>
         <attrdomv>
           <rdom>
@@ -1199,7 +1199,7 @@
       </attr>
       <attr>
         <attrlabl>optic_hab_8_64</attrlabl>
-        <attrdef>Optimal optical habitat area of benthos</attrdef>
+        <attrdef>Area of lake bottom where light falls between 8-64 lux </attrdef>
         <attrdefs>Lester et al 2004</attrdefs>
         <attrdomv>
           <rdom>
@@ -1211,7 +1211,7 @@
       </attr>
       <attr>
         <attrlabl>thermal_hab_11_25</attrlabl>
-        <attrdef>Optimal thermal habitat area of benthos</attrdef>
+        <attrdef>Area of lake bottom where temperature falls between 11-25 degrees C</attrdef>
         <attrdefs>Lester et al 2004</attrdefs>
         <attrdomv>
           <rdom>
@@ -1223,7 +1223,7 @@
       </attr>
       <attr>
         <attrlabl>optic_thermal_hab</attrlabl>
-        <attrdef>Combined optimal thermal and optical habitat area of benthos</attrdef>
+        <attrdef>Area of lake bottom where both light falls between 8-64 lux AND temperature falls between 11-25 degrees C</attrdef>
         <attrdefs>Lester et al 2004</attrdefs>
         <attrdomv>
           <rdom>
@@ -1235,7 +1235,7 @@
       </attr>
       <attr>
         <attrlabl>optic_hab_8_64_surf</attrlabl>
-        <attrdef>Optimal optical habitat area of lake</attrdef>
+        <attrdef>Relative surface area of lake where light falls between 8-64 lux </attrdef>
         <attrdefs>Lester et al 2004</attrdefs>
         <attrdomv>
           <rdom>
@@ -1247,7 +1247,7 @@
       </attr>
       <attr>
         <attrlabl>thermal_hab_11_25_surf</attrlabl>
-        <attrdef>Optimal thermal habitat area of lake</attrdef>
+        <attrdef>Relative surface area of lake where temperature falls between 11-25 degrees C</attrdef>
         <attrdefs>Lester et al 2004</attrdefs>
         <attrdomv>
           <rdom>
@@ -1259,7 +1259,7 @@
       </attr>
       <attr>
         <attrlabl>optic_thermal_hab_surf</attrlabl>
-        <attrdef>Combined optimal thermal and optical habitat area of lake</attrdef>
+        <attrdef>Relative surface area of lake where both light falls between 8-64 lux AND temperature falls between 11-25 degrees C</attrdef>
         <attrdefs>Lester et al 2004</attrdefs>
         <attrdomv>
           <rdom>
