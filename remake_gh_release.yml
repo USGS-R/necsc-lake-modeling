@@ -8,6 +8,7 @@ packages:
 sources:
   - scripts/create_FGDC_template.R
   - scripts/render_FGDC_metadata.R
+  - scripts/summarize_dataset_attributes.R
   
 targets:
   data_release:
@@ -16,9 +17,15 @@ targets:
 
   gh_release/FGDC_template.mustache:
     command: create_FGDC_template(target_name)
+  
+  habitat.table:
+    command: read_habitat_metrics('data/habitat_metrics_table_GH.csv')
     
   timeseries.text:
     command: yaml.load_file("gh_release/text_ECHAM5_model.yaml")
+    
+  echam.args:
+    command: summarize_dataset_attributes('data/ECHAM5_all_habitat.tsv')
 
   gh_release/ECHAM5_model.xml:
-    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", timeseries.text, target_name)
+    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", timeseries.text, target_name, habitat.table)
