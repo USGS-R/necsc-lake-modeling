@@ -10,6 +10,19 @@
       <title>{{title}}</title>
       <geoform>text files</geoform>
       <onlink>{{doi}}</onlink>
+      {{#larger-cites}}<lworkcit>
+          <citeinfo>
+  {{#authors}}
+      <origin>{{.}}</origin>
+  {{/authors}} 
+      <pubdate>{{pubdate}}</pubdate>
+      <title>{{title}}</title>
+  {{#ldoi}}
+      <onlink>{{.}}</onlink>
+  {{/ldoi}} 
+  </citeinfo>
+  </lworkcit>
+{{/larger-cites}}
     </citeinfo>
   </citation>
   <descript>

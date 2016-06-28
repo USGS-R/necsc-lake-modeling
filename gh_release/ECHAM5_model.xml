@@ -11,6 +11,37 @@
       <title>Data release: Projected shifts in fish species dominance in Wisconsin lakes under climate change</title>
       <geoform>text files</geoform>
       <onlink>http://dx.doi.org/10.5066/F7X0655K</onlink>
+      <lworkcit>
+        <citeinfo>
+          <origin>author1</origin>
+          <origin>auth2</origin>
+          <pubdate>2007</pubdate>
+          <title>paper about NLDAS</title>
+          <onlink>asdf</onlink>
+        </citeinfo>
+      </lworkcit>
+      <lworkcit>
+        <citeinfo>
+          <origin>new authos</origin>
+          <pubdate>2013</pubdate>
+          <title>paper about GLM</title>
+          <onlink>asdfasdfafwef</onlink>
+        </citeinfo>
+      </lworkcit>
+      <lworkcit>
+        <citeinfo>
+          <origin>new asdfasdf authos</origin>
+          <pubdate>2011</pubdate>
+          <title>Hostetler paper</title>
+        </citeinfo>
+      </lworkcit>
+      <lworkcit>
+        <citeinfo>
+          <origin>us</origin>
+          <pubdate>2014</pubdate>
+          <title>our modeling paper</title>
+        </citeinfo>
+      </lworkcit>
     </citeinfo>
   </citation>
   <descript>

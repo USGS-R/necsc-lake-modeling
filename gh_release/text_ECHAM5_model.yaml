@@ -15,6 +15,27 @@ abstract: >-
 purpose: Fisheries biology, limnological research, and climate science.
 start-date: 19890101
 end-date: 20891231
+
+larger-cites: 
+  - 
+    authors: ['author1','auth2']
+    title: paper about NLDAS
+    pubdate: 2007
+    ldoi: asdf
+  -
+    authors: ['new authos']
+    title: paper about GLM
+    pubdate: 2013
+    ldoi: asdfasdfafwef
+  -
+    authors: ['new asdfasdf authos']
+    title: Hostetler paper
+    pubdate: 2011
+  -
+    authors: ['us']
+    title: our modeling paper
+    pubdate: 2014
+    
 update: none planned
 wbbox: -92.91
 ebbox: -86.75

@@ -16,7 +16,8 @@ create_FGDC_template <- function(file.out){
     xml_add_sibling('pubdate', "{{pubdate}}") %>%
     xml_add_sibling('title', "{{title}}") %>%
     xml_add_sibling('geoform', "text files") %>%
-    xml_add_sibling('onlink', "{{doi}}")
+    xml_add_sibling('onlink', "{{doi}}") %>% 
+    xml_add_sibling('lworkcit-template')
   
   m %>%
     xml_add_child('descript') %>%
@@ -276,6 +277,19 @@ create_FGDC_template <- function(file.out){
           </attrdomv>
         </attr>\n{{/attributes}}"
   
+  lworkcit.template = "{{#larger-cites}}<lworkcit>
+          <citeinfo>
+  {{#authors}}
+      <origin>{{.}}</origin>
+  {{/authors}} 
+      <pubdate>{{pubdate}}</pubdate>
+      <title>{{title}}</title>
+  {{#ldoi}}
+      <onlink>{{.}}</onlink>
+  {{/ldoi}} 
+  </citeinfo>
+  </lworkcit>\n{{/larger-cites}}"
+  
   suppressWarnings(readLines(tempxml)) %>% 
     gsub(pattern = '&gt;',replacement = '>',.) %>% 
     gsub(pattern = '&lt;',replacement = '<',.) %>% 
@@ -283,6 +297,7 @@ create_FGDC_template <- function(file.out){
     gsub(pattern = '<state-template/>', replacement = state.template) %>% 
     sub(pattern = '<origin-template/>', replacement = origin.template) %>% 
     gsub(pattern = '<attr-template/>', replacement = attr.template) %>% 
+    gsub(pattern = '<lworkcit-template/>', replacement = lworkcit.template) %>% 
     cat(file = file.out, sep = '\n')
   return(file.out)
 }
