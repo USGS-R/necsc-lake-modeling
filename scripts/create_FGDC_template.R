@@ -284,9 +284,9 @@ create_FGDC_template <- function(file.out){
   {{/authors}} 
       <pubdate>{{pubdate}}</pubdate>
       <title>{{title}}</title>
-  {{#ldoi}}
+  {{#link}}
       <onlink>{{.}}</onlink>
-  {{/ldoi}} 
+  {{/link}} 
   </citeinfo>
   </lworkcit>\n{{/larger-cites}}"
   
