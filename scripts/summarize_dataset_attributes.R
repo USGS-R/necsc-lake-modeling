@@ -12,7 +12,7 @@ read_habitat_metrics <- function(filename){
   for (metric in metrics$attribute){
     i <- which(metric == metrics$attribute)[1]
     out[[i]] <- list('attr-label' = metric,
-                     'attr-def' = submissing(metrics$Specific.metric[i]),
+                     'attr-def' = submissing(metrics$Output.details[i]),
                      'attr-defs'=submissing(metrics$Reference[i]),
                      'data-min'='NA', # from data
                      'data-max'='NA', # from data
