@@ -44,28 +44,6 @@ longitude-res: 0.1?
 data-name: River metabolism input data
 data-description: Timeseries observations of environmental conditions made by sensors, subsetted gridded timeseries data, and derived data from both of these sources.
 
-attributes: 
-  - 
-    attr-label: DateTime
-    attr-def: The date and time of day
-    attr-defs: Pope Gregory XIII
-    data-min: SCRIPT 2007-01-01 00:00:00
-    data-max: SCRIPT 2016-03-16 00:00:00
-    data-units: time
-  -
-    attr-label: site_id
-    attr-def: the site location identifier
-    attr-defs: NWIS
-    data-min: not applicable
-    data-max: not applicable
-    data-units: not applicable
-  -
-    attr-label: doobs
-    attr-def: dissolved oxygen observation
-    attr-defs: NWIS
-    data-min: SCRIPT 0
-    data-max: SCRIPT 40
-    data-units: mg L^1
 
 distro-person: Luke A. Winslow
 liability-statement: >-

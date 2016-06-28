@@ -163,38 +163,1046 @@
         <enttypds>Producer Defined</enttypds>
       </enttyp>
       <attr>
-        <attrlabl>DateTime</attrlabl>
-        <attrdef>The date and time of day</attrdef>
-        <attrdefs>Pope Gregory XIII</attrdefs>
+        <attrlabl>year</attrlabl>
+        <attrdef>simulated year</attrdef>
+        <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin>SCRIPT 2007-01-01 00:00:00</rdommin>
-            <rdommax>SCRIPT 2016-03-16 00:00:00</rdommax>
-            <attrunit>time</attrunit>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>year</attrunit>
           </rdom>
         </attrdomv>
       </attr>
       <attr>
-        <attrlabl>site_id</attrlabl>
-        <attrdef>the site location identifier</attrdef>
-        <attrdefs>NWIS</attrdefs>
+        <attrlabl>lakeid</attrlabl>
+        <attrdef>Water Body Identification Code</attrdef>
+        <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin>not applicable</rdommin>
-            <rdommax>not applicable</rdommax>
-            <attrunit>not applicable</attrunit>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>nA</attrunit>
           </rdom>
         </attrdomv>
       </attr>
       <attr>
-        <attrlabl>doobs</attrlabl>
-        <attrdef>dissolved oxygen observation</attrdef>
-        <attrdefs>NWIS</attrdefs>
+        <attrlabl>days_12_28</attrlabl>
+        <attrdef>Optimal age 0 thermal habitat days</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin>SCRIPT 0</rdommin>
-            <rdommax>SCRIPT 40</rdommax>
-            <attrunit>mg L^1</attrunit>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_12_28</attrlabl>
+        <attrdef>Optimal age 0 thermal habitat meters</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_12_28</attrlabl>
+        <attrdef>Optimal age 0 thermal habitat volume</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_10.6_11.2</attrlabl>
+        <attrdef>Optimal larval thermal habitat days</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_10.6_11.2</attrlabl>
+        <attrdef>Optimal larval thermal habitat meters</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_10.6_11.2</attrlabl>
+        <attrdef>Optimal larval thermal habitat volume</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_18.2_28.2</attrlabl>
+        <attrdef>Good growth habitat days</attrdef>
+        <attrdefs>Fang et al 2004</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_18.2_28.2</attrlabl>
+        <attrdef>Good growth habitat meters</attrdef>
+        <attrdefs>Fang et al 2004</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_18.2_28.2</attrlabl>
+        <attrdef>Good growth habitat volume</attrdef>
+        <attrdefs>Fang et al 2004</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_18_22</attrlabl>
+        <attrdef>Optimal age 0 thermal habitat days</attrdef>
+        <attrdefs>Christie and Regier 1988</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_18_22</attrlabl>
+        <attrdef>Optimal age 0 thermal habitat meters</attrdef>
+        <attrdefs>Christie and Regier 1988</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_18_22</attrlabl>
+        <attrdef>Optimal age 0 thermal habitat volume</attrdef>
+        <attrdefs>Christie and Regier 1988</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_19.3_23.3</attrlabl>
+        <attrdef>YOY optimum days</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_19.3_23.3</attrlabl>
+        <attrdef>YOY optimum meters</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_19.3_23.3</attrlabl>
+        <attrdef>YOY optimum volume</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_19_23</attrlabl>
+        <attrdef>Optimal thermal habitat days</attrdef>
+        <attrdefs>Cline et al. 2013</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_19_23</attrlabl>
+        <attrdef>Optimal thermal habitat meters</attrdef>
+        <attrdefs>Cline et al. 2013</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_19_23</attrlabl>
+        <attrdef>Optimal thermal habitat volume</attrdef>
+        <attrdefs>Cline et al. 2013</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_20.6_23.2</attrlabl>
+        <attrdef>Optimal thermal habitat days</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_20.6_23.2</attrlabl>
+        <attrdef>Optimal thermal habitat meters</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_20.6_23.2</attrlabl>
+        <attrdef>Optimal thermal habitat volume</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_20_30</attrlabl>
+        <attrdef>larval optimum days</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_20_30</attrlabl>
+        <attrdef>larval optimum meters</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_20_30</attrlabl>
+        <attrdef>larval optimum volume</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_21_100</attrlabl>
+        <attrdef>length of growing season for YOY</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_22_23</attrlabl>
+        <attrdef>Optimal thermal habitat days</attrdef>
+        <attrdefs>Casselman 2002</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_22_23</attrlabl>
+        <attrdef>Optimal thermal habitat meters</attrdef>
+        <attrdefs>Casselman 2002</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_22_23</attrlabl>
+        <attrdef>Optimal thermal habitat volume</attrdef>
+        <attrdefs>Casselman 2002</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_23_31</attrlabl>
+        <attrdef>juvenile optimum days</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_23_31</attrlabl>
+        <attrdef>juvenile optimum meters</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_23_31</attrlabl>
+        <attrdef>juvenile optimum volume</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_25_29</attrlabl>
+        <attrdef>larval optimum days</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_25_29</attrlabl>
+        <attrdef>larval optimum meters</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_25_29</attrlabl>
+        <attrdef>larval optimum volume</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_26.2_32</attrlabl>
+        <attrdef>Good growth habitat days</attrdef>
+        <attrdefs>Countant 1977</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_26.2_32</attrlabl>
+        <attrdef>Good growth habitat meters</attrdef>
+        <attrdefs>Countant 1977</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_26.2_32</attrlabl>
+        <attrdef>Good growth habitat volume</attrdef>
+        <attrdefs>Countant 1977</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_26_28</attrlabl>
+        <attrdef>subadult optimum days</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_26_28</attrlabl>
+        <attrdef>subadult optimum meters</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_26_28</attrlabl>
+        <attrdef>subadult optimum volume</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_26_30</attrlabl>
+        <attrdef>adult optimum days</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_26_30</attrlabl>
+        <attrdef>adult optimum meters</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_26_30</attrlabl>
+        <attrdef>adult optimum volume</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_28_29</attrlabl>
+        <attrdef>juvenile optimum days</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_28_29</attrlabl>
+        <attrdef>juvenile optimum meters</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_28_29</attrlabl>
+        <attrdef>juvenile optimum volume</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_28_32</attrlabl>
+        <attrdef>juvenile optimum meters</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_28_32</attrlabl>
+        <attrdef>juvenile optimum meters</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_28_32</attrlabl>
+        <attrdef>juvenile optimum volume</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_29_100</attrlabl>
+        <attrdef>lethal habitat </attrdef>
+        <attrdefs>Fang et al 2004</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_29_100</attrlabl>
+        <attrdef>lethal habitat </attrdef>
+        <attrdefs>Fang et al 2004</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_29_100</attrlabl>
+        <attrdef>lethal habitat </attrdef>
+        <attrdefs>Fang et al 2004</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>days_30_31</attrlabl>
+        <attrdef>adult optimum days</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>height_30_31</attrlabl>
+        <attrdef>adult optimum meters</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vol_30_31</attrlabl>
+        <attrdef>adult optimum volume</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>durStrat</attrlabl>
+        <attrdef>Duration of stratified period</attrdef>
+        <attrdefs>de Stasio et al 1996</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>winter_dur_0-4</attrlabl>
+        <attrdef>winter duration</attrdef>
+        <attrdefs>Jones et al 2006, Hokanson 1977</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>spring_days_in_10.5_15.5</attrlabl>
+        <attrdef>Duration of optimal incubation period</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days before June 1 (in spring only)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>mean_surf_jul</attrlabl>
+        <attrdef>summer warmth index </attrdef>
+        <attrdefs>Jones et al 2006</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>degrees C</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>mean_surf_JAS</attrlabl>
+        <attrdef>summer warmth index </attrdef>
+        <attrdefs>NA</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>degrees C</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>peak_temp</attrlabl>
+        <attrdef>peak summer surface temperature</attrdef>
+        <attrdefs>Shuter et al 2002, Shuter and Ing 1997</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>degrees C</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>post_ice_warm_rate</attrlabl>
+        <attrdef>rate of warming post ice off</attrdef>
+        <attrdefs>Busch et al. 1975; Madenijan et al. 1996</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>degrees C per day</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>SthermoD_mean</attrlabl>
+        <attrdef>depth of thermocline</attrdef>
+        <attrdefs>Schindler et al. 1996</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>depth (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>dateOver21</attrlabl>
+        <attrdef>date of spawning temp (bass) </attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>Julian Day</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>dateOver18</attrlabl>
+        <attrdef>date of spawning temp (bass) </attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>Julian Day</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl/>
+        <attrdef>hatch date</attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>Julian Day</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>dateOver8.9</attrlabl>
+        <attrdef>date of spawning temp </attrdef>
+        <attrdefs>Wismer and Christie 1987</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>Julian Day</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>SmetaTopD_mean</attrlabl>
+        <attrdef>epilimnion meters</attrdef>
+        <attrdefs>NA</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>SmetaBotD_mean</attrlabl>
+        <attrdef>hypolimnion meters</attrdef>
+        <attrdefs>NA</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>linear distance (m)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>coef_var_30_60</attrlabl>
+        <attrdef>variable temperatures post-ice-off</attrdef>
+        <attrdefs>Sterns 1982, Hansen et al. 1998</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>unitless (CV)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>coef_var_0_30</attrlabl>
+        <attrdef>variable temperatures post-ice-off</attrdef>
+        <attrdefs>Koonce et al. 1977</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>unitless (CV)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>mean_epi_hypo_ratio</attrlabl>
+        <attrdef>ratio of epilimnion to hypolimnion</attrdef>
+        <attrdefs>NA</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>unitless (ratio)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>mean_epi_vol</attrlabl>
+        <attrdef>epilimnion volume</attrdef>
+        <attrdefs>NA</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>mean_hyp_vol</attrlabl>
+        <attrdef>hypolimnion volume</attrdef>
+        <attrdefs>NA</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>volume (m^3*1000)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>simulation_length_days</attrlabl>
+        <attrdef>Numer of days simulated as open-water</attrdef>
+        <attrdefs>NA</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>volume_mean_m_3</attrlabl>
+        <attrdef>Average volume of lake</attrdef>
+        <attrdefs>NA</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>m^3</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>volume_sum_m_3_day</attrlabl>
+        <attrdef>Daily sum of lake volume</attrdef>
+        <attrdefs>NA</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>day * volume (m^3)</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>GDD_wtr_10c</attrlabl>
+        <attrdef>Growing Degree Days</attrdef>
+        <attrdefs>Venturelli et al 2010</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>Day * degree (C )</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>GDD_wtr_5c</attrlabl>
+        <attrdef>Growing Degree Days</attrdef>
+        <attrdefs>Venturelli et al 2010</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>Day * degree (C )</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>optic_hab_8_64</attrlabl>
+        <attrdef>NA</attrdef>
+        <attrdefs>Lester et al 2004</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>thermal_hab_11_25</attrlabl>
+        <attrdef>NA</attrdef>
+        <attrdefs>NA</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>optic_thermal_hab</attrlabl>
+        <attrdef>NA</attrdef>
+        <attrdefs>NA</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>optic_hab_8_64_surf</attrlabl>
+        <attrdef>NA</attrdef>
+        <attrdefs>NA</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>thermal_hab_11_25_surf</attrlabl>
+        <attrdef>NA</attrdef>
+        <attrdefs>NA</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>optic_thermal_hab_surf</attrlabl>
+        <attrdef>NA</attrdef>
+        <attrdefs>NA</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
       </attr>

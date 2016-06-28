@@ -28,4 +28,4 @@ targets:
     command: summarize_dataset_attributes('data/ECHAM5_all_habitat.tsv')
 
   gh_release/ECHAM5_model.xml:
-    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", timeseries.text, target_name, echam.args)
+    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", timeseries.text, target_name, habitat.table)
