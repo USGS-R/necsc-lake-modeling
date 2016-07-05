@@ -13,22 +13,41 @@
       <onlink>http://dx.doi.org/10.5066/F7X0655K</onlink>
       <lworkcit>
         <citeinfo>
+          <origin>Kenneth E. Mitchell</origin>
+          <origin>Dag Lohmann</origin>
+          <origin>Paul R. Houser</origin>
+          <origin>Eric F. Wood</origin>
+          <origin>John C. Schaake</origin>
+          <origin>Alan Robock</origin>
+          <origin>Brian A. Cosgrove</origin>
+          <origin>Justin Sheffield</origin>
+          <origin>Qingyun Duan</origin>
+          <origin>Lifeng Luo</origin>
+          <origin>R. Wayne Higgins</origin>
+          <origin>Rachel T. Pinker</origin>
+          <origin>J. Dan Tarpley</origin>
+          <origin>Dennis P. Lettenmaier</origin>
+          <origin>Curtis H. Marshall</origin>
+          <origin>Jared K. Entin</origin>
+          <origin>Ming Pan</origin>
+          <origin>Wei Shi</origin>
+          <origin>Victor Koren</origin>
+          <origin>Jesse Meng</origin>
+          <origin>Bruce H. Ramsay</origin>
+          <origin>Andrew A. Bailey</origin>
+          <pubdate>2004</pubdate>
+          <title>The multi-institution North American Land Data Assimilation System (NLDAS): Utilizing multiple GCIP products and partners in a continental distributed hydrological modeling system</title>
+          <onlink>http://dx.doi.org/10.1029/2003JD003823</onlink>
+        </citeinfo>
+      </lworkcit>
+      <lworkcit>
+        <citeinfo>
           <origin>Matthey R. Hipsey</origin>
           <origin>Louise C. Bruce</origin>
           <origin>David P. Hamilton</origin>
           <pubdate>2013</pubdate>
           <title>GLM General Lake Model: Model Overview and User Information</title>
           <onlink>http://aed.see.uwa.edu.au/research/models/GLM/index.html</onlink>
-        </citeinfo>
-      </lworkcit>
-      <lworkcit>
-        <citeinfo>
-          <origin>Steven W. Hostetler</origin>
-          <origin>Jay R. Adler</origin>
-          <origin>Andrea M. Allan</origin>
-          <pubdate>2011</pubdate>
-          <title>Dynamically downscaled climate simulations over North America: Methods, evaluation and supporting documentation for users</title>
-          <onlink>http://pubs.usgs.gov/of/2011/1238/</onlink>
         </citeinfo>
       </lworkcit>
       <lworkcit>
@@ -160,7 +179,7 @@
   </posacc>
   <lineage>
     <procstep>
-      <procdesc>Water temperatures were modeled for 2361 lakes across Wisconsin using the General Lake Model (GLM) between 1989 and 2014 under the A2 emissions scenario for future (2040-2064 and 2065-2089) conditions.  The ECHAM5.0 GCM was used for this dataset.   From these depth-discrete water temperatures, a number of different common metrics of water temperature were calculated at the annual scale.</procdesc>
+      <procdesc>Water temperatures were modeled for 2361 lakes across Wisconsin using the General Lake Model (GLM) between 1989 and 2014 under the A2 emissions scenario for future (2040-2064 and 2065-2089) conditions.  The North American Land Data Assimilation System was used for meteorological conditions for this dataset.   From these depth-discrete water temperatures, a number of different common metrics of water temperature were calculated at the annual scale.</procdesc>
       <procdate>20160624</procdate>
     </procstep>
   </lineage>

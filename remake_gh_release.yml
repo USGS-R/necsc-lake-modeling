@@ -14,6 +14,10 @@ targets:
   data_release:
     depends: 
       - gh_release/ECHAM5_model.xml
+      - gh_release/CM2.0_model.xml
+      - gh_release/NLDAS_model.xml
+      - gh_release/GENMOM_model.xml
+      - gh_release/spatial.xml
 
   gh_release/FGDC_template.mustache:
     command: create_FGDC_template(target_name)
@@ -21,11 +25,36 @@ targets:
   habitat.table:
     command: read_habitat_metrics('data/habitat_metrics_table_GH.csv')
     
-  timeseries.text:
+  generic.text:
+    command: yaml.load_file("gh_release/text_generic_model.yaml")
+  
+  echam.text:
     command: yaml.load_file("gh_release/text_ECHAM5_model.yaml")
     
-  echam.args:
-    command: summarize_dataset_attributes('data/ECHAM5_all_habitat.tsv')
+  cm2.text:
+    command: yaml.load_file("gh_release/text_CM2.0_model.yaml")
+    
+  genmom.text:
+    command: yaml.load_file("gh_release/text_GENMOM_model.yaml")
+    
+  nldas.text:
+    command: yaml.load_file("gh_release/text_NLDAS_model.yaml")
+  
+  spatial.text:
+    command: yaml.load_file("gh_release/text_spatial.yaml")
 
   gh_release/ECHAM5_model.xml:
-    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", timeseries.text, target_name, habitat.table)
+    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", echam.text, target_name, habitat.table, generic.text)
+
+  gh_release/CM2.0_model.xml:
+    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", cm2.text, target_name, habitat.table, generic.text)
+
+  gh_release/GENMOM_model.xml:
+    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", genmom.text, target_name, habitat.table, generic.text)
+
+  gh_release/NLDAS_model.xml:
+    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", nldas.text, target_name, habitat.table, generic.text)
+
+  gh_release/spatial.xml:
+    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", spatial.text, target_name)
+
