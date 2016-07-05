@@ -237,7 +237,7 @@
       </attr>
       <attr>
         <attrlabl>SECCHI_AVG</attrlabl>
-        <attrdef>Average Secchi depth (water clarity measurement)</attrdef>
+        <attrdef>Average Secchi depth (water clarity measurement). All secchi measurements for a given lake were averaged to derive this value.</attrdef>
         <attrdefs>Angelo Secchi</attrdefs>
         <attrdomv>
           <rdom>

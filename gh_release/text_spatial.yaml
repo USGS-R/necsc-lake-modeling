@@ -47,7 +47,7 @@ attributes:
     data-units: NA
   -
     attr-label: SECCHI_AVG
-    attr-def: Average Secchi depth (water clarity measurement)
+    attr-def: Average Secchi depth (water clarity measurement). All secchi measurements for a given lake were averaged to derive this value. 
     attr-defs: Angelo Secchi
     data-min: 0
     data-max: 13.3541
