@@ -2,19 +2,6 @@ process-description: >-
   Water temperatures were modeled for 2361 lakes across Wisconsin using the General Lake Model (GLM) between 1989 and 2014 under the A2 emissions scenario for future (2040-2064 and 2065-2089) conditions. 
   The ECHAM5.0 GCM was used for this dataset.  
   From these depth-discrete water temperatures, a number of different common metrics of water temperature were calculated at the annual scale.
-  
-authors: ["Gretchen J.A. Hansen", "Jordan S. Read", "Jonathan F. Hansen", "Luke A. Winslow"]
-pubdate: 2016
-title: >-
-  Data release: Projected shifts in fish species dominance in Wisconsin lakes under climate change
-doi: http://dx.doi.org/10.5066/F7X0655K
-abstract: >-
-  Temperate lakes may contain both coolwater fish species such as walleye (Sander vitreus) and warmwater species such as largemouth bass (Micropterus salmoides). Recent declines in walleye and increases in largemouth bass populations have raised questions regarding the future trajectories and appropriate management actions for these important species. We developed a thermodynamic model of water temperatures driven by downscaled climate data and lake specific characteristics to estimate daily water temperature profiles for 2361 lakes in Wisconsin, USA under contemporary (1989-2014) and future (2040-2064 and 2065-2089) conditions. We correlated contemporary walleye recruitment success and largemouth bass relative abundance to modeled water temperature, lake morphometry, and lake productivity, and projected lake specific changes in each species under future climate conditions. Walleye recruitment success was negatively related and largemouth bass abundance was positively related to water temperature degree days. Both species exhibited a threshold response at the same degree day value, albeit in opposite directions. Degree days were predicted to increase in the future, although the magnitude of increase varied among lakes, time periods, and global circulation models (GCMs). Under future conditions, we predicted a loss of walleye recruitment in 30-70% of lakes, and an increase to high largemouth bass relative abundance in 17-55% of additional lakes. The percentage of lakes with abundant largemouth bass and failed walleye recruitment was predicted to increase from 59% in contemporary conditions to 86% of lakes by mid-century and to 91% of lakes by late century, based on median projections across GCMs. Conversely, the number of lakes with successful walleye recruitment and low largemouth bass abundance was predicted to decline from 8.5% of lakes in contemporary conditions to only 38 1% of lakes in both future periods. Importantly, we identify nearly 100 resilient lakes predicted to continue to support walleye recruitment. Management resources could target preserving these resilient walleye populations.
-  This data set contains the following parameters: year, lakeid, days_12_28, height_12_28, vol_12_28, days_10.6_11.2, height_10.6_11.2, vol_10.6_11.2, days_18.2_28.2, height_18.2_28.2, vol_18.2_28.2, days_18_22, height_18_22, vol_18_22, days_19.3_23.3, height_19.3_23.3, vol_19.3_23.3, days_19_23, height_19_23, vol_19_23, days_20.6_23.2, height_20.6_23.2, vol_20.6_23.2, days_20_30, height_20_30, vol_20_30, days_21_100, days_22_23, height_22_23, vol_22_23, days_23_31, height_23_31, vol_23_31, days_25_29, height_25_29, vol_25_29, days_26.2_32, height_26.2_32, vol_26.2_32, days_26_28, height_26_28, vol_26_28, days_26_30, height_26_30, vol_26_30, days_28_29, height_28_29, vol_28_29, days_28_32, height_28_32, vol_28_32, days_29_100, height_29_100, vol_29_100, days_30_31, height_30_31, vol_30_31, durStrat, winter_dur_0-4, spring_days_in_10.5_15.5, mean_surf_jul, mean_surf_JAS, peak_temp, post_ice_warm_rate, SthermoD_mean, dateOver21, dateOver18, , dateOver8.9, SmetaTopD_mean, SmetaBotD_mean, coef_var_30_60, coef_var_0_30, mean_epi_hypo_ratio, mean_epi_vol, mean_hyp_vol, simulation_length_days, volume_mean_m_3, volume_sum_m_3_day, GDD_wtr_10c, GDD_wtr_5c, optic_hab_8_64, thermal_hab_11_25, optic_thermal_hab, optic_hab_8_64_surf, thermal_hab_11_25_surf, optic_thermal_hab_surf
-  calculated for 2361 lakes
-purpose: Fisheries biology, limnological research, and climate science.
-start-date: 19890101
-end-date: 20891231
 
 larger-cites: 
   -
@@ -34,55 +21,3 @@ larger-cites:
     title: Simulating 2368 temperate lakes reveals weak coherence in stratification phenology
     pubdate: 2014
     link: http://dx.doi.org/10.1016/j.ecolmodel.2014.07.029
-    
-update: none planned
-wbbox: -92.814
-ebbox: -86.937
-nbbox: 46.853
-sbbox: 42.489
-themekeywords: ["water","temperate lakes","reservoirs","modeling","bass","walleye","climate change","largemouth bass","species distribution models","thermal profiles"]
-states: 
-  - 
-    state-name: Wisconsin
-    state-abbr: WI
-usage-rules: >- 
-  These data are subject to change and are not citable until reviewed and approved for official publication by the USGS
-
-contact-person: Jordan S. Read
-contact-phone: 608 821-3922
-contact-email: jread@usgs.gov
-funding-credits: >-
-  This study was funded by the Department of the Interior
-  Northeast Climate Science Center, the United States Geological Survey National Climate
-  Change and Wildlife Science Center grant 10909172 to the University of Wisconsin–Madison,
-  and the WDNR Federal Aid in Sport Fish Restoration (Project F-95-P, study SSBW).
-
-build-environment: stuff on mac things on pc, R versions etc
-cite-authors: Hansen, Grethen J.A., Read, Jordan S., Hansen, Jonathan F., Winslow, Luke A.
-cite-date: 2016
-cite-title: Projected shifts in fish species dominance in Wisconsin lakes under climate change
-paper: paper
-publisher: Wiley
-journal: Global Change Biology
-
-process-date: 20160624
-indirect-spatial: Wisconsin
-point-count: 2361
-latitude-res: 0.1
-longitude-res: 0.1
-data-name: Lake water temperature metrics
-data-description: Calculated lake water temperature metrics derived from a series of model scenarios.
-
-
-distro-person: Jordan S. Read
-liability-statement: >-
-  Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. 
-  Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), 
-  no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall 
-  the act of distribution constitute any such warranty.
-  
-file-format: Tab-delimited text files
-metadata-date: 20160624
-metadata-person: Jordan S. Read
-metadata-phone: 608 821-3922
-metadata-email: jread@usgs.gov

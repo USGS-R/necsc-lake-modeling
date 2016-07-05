@@ -24,6 +24,9 @@ targets:
   habitat.table:
     command: read_habitat_metrics('data/habitat_metrics_table_GH.csv')
     
+  generic.text:
+    command: yaml.load_file("gh_release/text_generic_model.yaml")
+  
   echam.text:
     command: yaml.load_file("gh_release/text_ECHAM5_model.yaml")
     
@@ -37,14 +40,14 @@ targets:
     command: yaml.load_file("gh_release/text_NLDAS_model.yaml")
 
   gh_release/ECHAM5_model.xml:
-    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", echam.text, target_name, habitat.table)
+    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", echam.text, target_name, habitat.table, generic.text)
 
   gh_release/CM2.0_model.xml:
-    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", cm2.text, target_name, habitat.table)
+    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", cm2.text, target_name, habitat.table, generic.text)
 
   gh_release/GENMOM_model.xml:
-    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", genmom.text, target_name, habitat.table)
+    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", genmom.text, target_name, habitat.table, generic.text)
 
   gh_release/NLDAS_model.xml:
-    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", nldas.text, target_name, habitat.table)
+    command: render_FGDC_metadata("gh_release/FGDC_template.mustache", nldas.text, target_name, habitat.table, generic.text)
 

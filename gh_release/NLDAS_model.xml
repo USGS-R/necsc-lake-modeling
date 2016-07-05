@@ -52,16 +52,6 @@
       </lworkcit>
       <lworkcit>
         <citeinfo>
-          <origin>Steven W. Hostetler</origin>
-          <origin>Jay R. Adler</origin>
-          <origin>Andrea M. Allan</origin>
-          <pubdate>2011</pubdate>
-          <title>Dynamically downscaled climate simulations over North America: Methods, evaluation and supporting documentation for users</title>
-          <onlink>http://pubs.usgs.gov/of/2011/1238/</onlink>
-        </citeinfo>
-      </lworkcit>
-      <lworkcit>
-        <citeinfo>
           <origin>Jordan S. Read</origin>
           <origin>Luke A. Winslow</origin>
           <origin>Gretchen J.A. Hansen</origin>
@@ -159,7 +149,7 @@
     <cntemail>jread@usgs.gov</cntemail>
   </ptcontac>
   <datacred>This study was funded by the Department of the Interior Northeast Climate Science Center, the United States Geological Survey National Climate Change and Wildlife Science Center grant 10909172 to the University of Wisconsin&#x2013;Madison, and the WDNR Federal Aid in Sport Fish Restoration (Project F-95-P, study SSBW).</datacred>
-  <native>stuff on mac things on pc, R versions etc</native>
+  <native>Multiple computer systems were used to generate these data, including linux, OSX. The open source language R was used on all systems, as well as the open-source model GLM.</native>
   <crossref>
     <citeinfo>
       <origin>Hansen, Grethen J.A., Read, Jordan S., Hansen, Jonathan F., Winslow, Luke A.</origin>
@@ -189,7 +179,7 @@
   </posacc>
   <lineage>
     <procstep>
-      <procdesc>Water temperatures were modeled for 2361 lakes across Wisconsin using the General Lake Model (GLM) between 1989 and 2014 under the A2 emissions scenario for future (2040-2064 and 2065-2089) conditions.  The ECHAM5.0 GCM was used for this dataset.   From these depth-discrete water temperatures, a number of different common metrics of water temperature were calculated at the annual scale.</procdesc>
+      <procdesc>Water temperatures were modeled for 2361 lakes across Wisconsin using the General Lake Model (GLM) between 1989 and 2014 under the A2 emissions scenario for future (2040-2064 and 2065-2089) conditions.  The North American Land Data Assimilation System was used for meteorological conditions for this dataset.   From these depth-discrete water temperatures, a number of different common metrics of water temperature were calculated at the annual scale.</procdesc>
       <procdate>20160624</procdate>
     </procstep>
   </lineage>

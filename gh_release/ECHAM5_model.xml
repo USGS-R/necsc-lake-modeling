@@ -130,7 +130,7 @@
     <cntemail>jread@usgs.gov</cntemail>
   </ptcontac>
   <datacred>This study was funded by the Department of the Interior Northeast Climate Science Center, the United States Geological Survey National Climate Change and Wildlife Science Center grant 10909172 to the University of Wisconsin&#x2013;Madison, and the WDNR Federal Aid in Sport Fish Restoration (Project F-95-P, study SSBW).</datacred>
-  <native>stuff on mac things on pc, R versions etc</native>
+  <native>Multiple computer systems were used to generate these data, including linux, OSX. The open source language R was used on all systems, as well as the open-source model GLM.</native>
   <crossref>
     <citeinfo>
       <origin>Hansen, Grethen J.A., Read, Jordan S., Hansen, Jonathan F., Winslow, Luke A.</origin>
