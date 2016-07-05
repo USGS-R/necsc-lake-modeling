@@ -25,12 +25,48 @@ attributes:
     data-max: 2607
     data-units: NA
   -
-    attr-label: SP_ID
-    attr-def: Spatial ID. Monotonically increasing polygon ID
-    attr-defs: numeric
+    attr-label: SHAID_NO
+    attr-def: unique hydrologic identifier
+    attr-defs: http://dnr.wi.gov/maps/gis/datahydro.html
     data-min: 0
-    data-max: 2607
+    data-max: 36004313
     data-units: NA
+  -
+    attr-label: WBDY_NAME
+    attr-def: lake common name
+    attr-defs: http://dnr.wi.gov/maps/gis/datahydro.html
+    data-min: NA
+    data-max: NA
+    data-units: NA
+  -
+    attr-label: WBDY_WBIC
+    attr-def: Wisconsin Water Body Identification Code
+    attr-defs: http://dnr.wi.gov/maps/gis/datahydro.html
+    data-min: 200
+    data-max: 3000627
+    data-units: NA
+  -
+    attr-label: SECCHI_AVG
+    attr-def: Average Secchi depth (water clarity measurement)
+    attr-defs: Angelo Secchi
+    data-min: 0
+    data-max: 13.3541
+    data-units: meters
+  -
+    attr-label: ZMAX
+    attr-def: The maximum known depth of the lake
+    attr-defs: http://dnr.wi.gov/maps/gis/datahydro.html
+    data-min: 0.6096
+    data-max: 106.68
+    data-units: meters
+  -
+    attr-label: CANOPY_HT
+    attr-def: The average canopy height surrounding the lake
+    attr-defs: Van den Hoek et al. 2015
+    data-min: 1
+    data-max: 25.4255
+    data-units: meters
+    
     
 pubdate: 2016
 title: >-
@@ -77,11 +113,11 @@ journal: Global Change Biology
 
 process-date: 20160624
 indirect-spatial: Wisconsin
-point-count: 2361
+point-count: 2608
 latitude-res: 0.1
 longitude-res: 0.1
-data-name: Lake water temperature metrics
-data-description: Calculated lake water temperature metrics derived from a series of model scenarios.
+data-name: Lake properties used for parameterizing models
+data-description: Calculated lake properties derived for running a series of model scenarios.
 
 
 distro-person: Jordan S. Read

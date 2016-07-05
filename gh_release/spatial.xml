@@ -161,7 +161,7 @@
     <ptvctinf>
       <sdtsterm>
         <sdtstype>Point</sdtstype>
-        <ptvctcnt>2361</ptvctcnt>
+        <ptvctcnt>2608</ptvctcnt>
       </sdtsterm>
     </ptvctinf>
   </spdoinfo>
@@ -183,8 +183,8 @@
   <eainfo>
     <detailed>
       <enttyp>
-        <enttypl>Lake water temperature metrics</enttypl>
-        <enttypd>Calculated lake water temperature metrics derived from a series of model scenarios.</enttypd>
+        <enttypl>Lake properties used for parameterizing models</enttypl>
+        <enttypd>Calculated lake properties derived for running a series of model scenarios.</enttypd>
         <enttypds>Producer Defined</enttypds>
       </enttyp>
       <attr>
@@ -200,14 +200,74 @@
         </attrdomv>
       </attr>
       <attr>
-        <attrlabl>SP_ID</attrlabl>
-        <attrdef>Spatial ID. Monotonically increasing polygon ID</attrdef>
-        <attrdefs>numeric</attrdefs>
+        <attrlabl>SHAID_NO</attrlabl>
+        <attrdef>unique hydrologic identifier</attrdef>
+        <attrdefs>http://dnr.wi.gov/maps/gis/datahydro.html</attrdefs>
         <attrdomv>
           <rdom>
             <rdommin>0</rdommin>
-            <rdommax>2607</rdommax>
+            <rdommax>36004313</rdommax>
             <attrunit>NA</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>WBDY_NAME</attrlabl>
+        <attrdef>lake common name</attrdef>
+        <attrdefs>http://dnr.wi.gov/maps/gis/datahydro.html</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>WBDY_WBIC</attrlabl>
+        <attrdef>Wisconsin Water Body Identification Code</attrdef>
+        <attrdefs>http://dnr.wi.gov/maps/gis/datahydro.html</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>200</rdommin>
+            <rdommax>3000627</rdommax>
+            <attrunit>NA</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>SECCHI_AVG</attrlabl>
+        <attrdef>Average Secchi depth (water clarity measurement)</attrdef>
+        <attrdefs>Angelo Secchi</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>13.3541</rdommax>
+            <attrunit>meters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>ZMAX</attrlabl>
+        <attrdef>The maximum known depth of the lake</attrdef>
+        <attrdefs>http://dnr.wi.gov/maps/gis/datahydro.html</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.6096</rdommin>
+            <rdommax>106.68</rdommax>
+            <attrunit>meters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>CANOPY_HT</attrlabl>
+        <attrdef>The average canopy height surrounding the lake</attrdef>
+        <attrdefs>Van den Hoek et al. 2015</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>25.4255</rdommax>
+            <attrunit>meters</attrunit>
           </rdom>
         </attrdomv>
       </attr>
