@@ -13,6 +13,35 @@
       <onlink>http://dx.doi.org/10.5066/F7X0655K</onlink>
       <lworkcit>
         <citeinfo>
+          <origin>Kenneth E. Mitchell</origin>
+          <origin>Dag Lohmann</origin>
+          <origin>Paul R. Houser</origin>
+          <origin>Eric F. Wood</origin>
+          <origin>John C. Schaake</origin>
+          <origin>Alan Robock</origin>
+          <origin>Brian A. Cosgrove</origin>
+          <origin>Justin Sheffield</origin>
+          <origin>Qingyun Duan</origin>
+          <origin>Lifeng Luo</origin>
+          <origin>R. Wayne Higgins</origin>
+          <origin>Rachel T. Pinker</origin>
+          <origin>J. Dan Tarpley</origin>
+          <origin>Dennis P. Lettenmaier</origin>
+          <origin>Curtis H. Marshall</origin>
+          <origin>Jared K. Entin</origin>
+          <origin>Ming Pan</origin>
+          <origin>Wei Shi</origin>
+          <origin>Victor Koren</origin>
+          <origin>Jesse Meng</origin>
+          <origin>Bruce H. Ramsay</origin>
+          <origin>Andrew A. Bailey</origin>
+          <pubdate>2004</pubdate>
+          <title>The multi-institution North American Land Data Assimilation System (NLDAS): Utilizing multiple GCIP products and partners in a continental distributed hydrological modeling system</title>
+          <onlink>http://dx.doi.org/10.1029/2003JD003823</onlink>
+        </citeinfo>
+      </lworkcit>
+      <lworkcit>
+        <citeinfo>
           <origin>Matthey R. Hipsey</origin>
           <origin>Louise C. Bruce</origin>
           <origin>David P. Hamilton</origin>
@@ -65,10 +94,10 @@
   </status>
   <spdom>
     <bounding>
-      <westbc>-92.814</westbc>
-      <eastbc>-86.937</eastbc>
-      <northbc>46.853</northbc>
-      <southbc>42.489</southbc>
+      <westbc>-92.91</westbc>
+      <eastbc>-86.75</eastbc>
+      <northbc>47.54</northbc>
+      <southbc>42.48</southbc>
     </bounding>
   </spdom>
   <keywords>

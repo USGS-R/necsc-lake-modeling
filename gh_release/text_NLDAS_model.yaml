@@ -17,6 +17,12 @@ start-date: 19890101
 end-date: 20891231
 
 larger-cites: 
+  - 
+    authors: ['Kenneth E. Mitchell','Dag Lohmann','Paul R. Houser','Eric F. Wood','John C. Schaake','Alan Robock','Brian A. Cosgrove','Justin Sheffield','Qingyun Duan','Lifeng Luo','R. Wayne Higgins','Rachel T. Pinker','J. Dan Tarpley','Dennis P. Lettenmaier','Curtis H. Marshall','Jared K. Entin','Ming Pan','Wei Shi','Victor Koren','Jesse Meng','Bruce H. Ramsay','Andrew A. Bailey']
+    title: >-
+      The multi-institution North American Land Data Assimilation System (NLDAS): Utilizing multiple GCIP products and partners in a continental distributed hydrological modeling system
+    pubdate: 2004
+    link: http://dx.doi.org/10.1029/2003JD003823
   -
     authors: ['Matthey R. Hipsey','Louise C. Bruce', 'David P. Hamilton']
     title: >-
