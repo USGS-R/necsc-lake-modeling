@@ -1,9 +1,15 @@
 authors: ["Gretchen J.A. Hansen", "Jordan S. Read", "Jonathan F. Hansen", "Luke A. Winslow"]
 
 process-description: >-
-  Properties for 2608 lakes across Wisconsin between 1979 and 2014. Lake properties from this dataset were used to parameterize models for lake temperatures. 
+  Properties for 2165 lakes across Wisconsin between 1979 and 2014 and results from fish models. Lake properties from this dataset were used to parameterize models for lake temperatures. 
+  Results of fish probabilities for two species (largemouth bass and walleye) are included for each lake for the periods 1989-2014, 2040-2064, and 2065-2089.
 
 larger-cites: 
+  -
+    authors: ["Gretchen J.A. Hansen", "Jordan S. Read", "Jonathan F. Hansen", "Luke A. Winslow"]
+    title: >-
+      Projected shifts in fish species dominance in Wisconsin lakes under climate change
+    pubdate: 2016
   -
     authors: ['Jamon Van Den Hoek','Jordan S. Read','Luke A. Winslow', 'Paul Montesano','Corey D. Markfort']
     title: >-
@@ -22,14 +28,7 @@ attributes:
     attr-def: Spatial ID. Monotonically increasing polygon ID
     attr-defs: numeric
     data-min: 0
-    data-max: 2607
-    data-units: NA
-  -
-    attr-label: SHAID_NO
-    attr-def: unique hydrologic identifier
-    attr-defs: http://dnr.wi.gov/maps/gis/datahydro.html
-    data-min: 0
-    data-max: 36004313
+    data-max: 2164
     data-units: NA
   -
     attr-label: WBDY_NAME
@@ -43,7 +42,7 @@ attributes:
     attr-def: Wisconsin Water Body Identification Code
     attr-defs: http://dnr.wi.gov/maps/gis/datahydro.html
     data-min: 200
-    data-max: 3000627
+    data-max: 2964400
     data-units: NA
   -
     attr-label: SECCHI_AVG
@@ -56,7 +55,7 @@ attributes:
     attr-label: ZMAX
     attr-def: The maximum known depth of the lake
     attr-defs: http://dnr.wi.gov/maps/gis/datahydro.html
-    data-min: 0.6096
+    data-min: 0.9144
     data-max: 106.68
     data-units: meters
   -
@@ -66,6 +65,55 @@ attributes:
     data-min: 1
     data-max: 25.4255
     data-units: meters
+  -
+    attr-label: AREA
+    attr-def: The lake surface area in square meters
+    attr-defs: http://dnr.wi.gov/maps/gis/datahydro.html
+    data-min: 10238.55
+    data-max: 533937177
+    data-units: square meters
+  -
+    attr-label: BASS_PRB1
+    attr-def: The probability of high largemouth bass abundance in the period 1989-2014. High largemouth bass abundance as defined by Hansen et al. 2016. 
+    attr-defs: Hansen et al. 2016
+    data-min: 0
+    data-max: 1
+    data-units: numeric probability
+  -
+    attr-label: BASS_PRB2
+    attr-def: The probability of high largemouth bass abundance in the period 2040-2064. High largemouth bass abundance as defined by Hansen et al. 2016. 
+    attr-defs: Hansen et al. 2016
+    data-min: 0
+    data-max: 1
+    data-units: numeric probability
+  -
+    attr-label: BASS_PRB3
+    attr-def: The probability of high largemouth bass abundance in the period 2065-2089. High largemouth bass abundance as defined by Hansen et al. 2016. 
+    attr-defs: Hansen et al. 2016
+    data-min: 0
+    data-max: 1
+    data-units: numeric probability
+  -
+    attr-label: WALL_PRB1
+    attr-def: The probability of good walleye recruitment in the period 1989-2014. Good walleye recruitment as defined by Hansen et al. 2016. 
+    attr-defs: Hansen et al. 2016
+    data-min: 0
+    data-max: 1
+    data-units: numeric probability
+  -
+    attr-label: WALL_PRB2
+    attr-def: The probability of good walleye recruitment in the period 2040-2064. Good walleye recruitment as defined by Hansen et al. 2016. 
+    attr-defs: Hansen et al. 2016
+    data-min: 0
+    data-max: 1
+    data-units: numeric probability
+  -
+    attr-label: WALL_PRB3
+    attr-def: The probability of good walleye recruitment in the period 2065-2089. Good walleye recruitment as defined by Hansen et al. 2016. 
+    attr-defs: Hansen et al. 2016
+    data-min: 0
+    data-max: 1
+    data-units: numeric probability
     
     
 pubdate: 2016
@@ -73,19 +121,31 @@ title: >-
   Data release: Projected shifts in fish species dominance in Wisconsin lakes under climate change
 doi: http://dx.doi.org/10.5066/F7X0655K
 abstract: >-
-  Temperate lakes may contain both coolwater fish species such as walleye (Sander vitreus) and warmwater species such as largemouth bass (Micropterus salmoides). Recent declines in walleye and increases in largemouth bass populations have raised questions regarding the future trajectories and appropriate management actions for these important species. We developed a thermodynamic model of water temperatures driven by downscaled climate data and lake specific characteristics to estimate daily water temperature profiles for 2361 lakes in Wisconsin, USA under contemporary (1989-2014) and future (2040-2064 and 2065-2089) conditions. We correlated contemporary walleye recruitment success and largemouth bass relative abundance to modeled water temperature, lake morphometry, and lake productivity, and projected lake specific changes in each species under future climate conditions. Walleye recruitment success was negatively related and largemouth bass abundance was positively related to water temperature degree days. Both species exhibited a threshold response at the same degree day value, albeit in opposite directions. Degree days were predicted to increase in the future, although the magnitude of increase varied among lakes, time periods, and global circulation models (GCMs). Under future conditions, we predicted a loss of walleye recruitment in 30-70% of lakes, and an increase to high largemouth bass relative abundance in 17-55% of additional lakes. The percentage of lakes with abundant largemouth bass and failed walleye recruitment was predicted to increase from 59% in contemporary conditions to 86% of lakes by mid-century and to 91% of lakes by late century, based on median projections across GCMs. Conversely, the number of lakes with successful walleye recruitment and low largemouth bass abundance was predicted to decline from 8.5% of lakes in contemporary conditions to only 38 1% of lakes in both future periods. Importantly, we identify nearly 100 resilient lakes predicted to continue to support walleye recruitment. Management resources could target preserving these resilient walleye populations.
-  This data set contains the following parameters: SP_ID, SHAID_NO, WBDY_NAME, WBDY_WBIC, SECCHI_AVG, ZMAX, CANOPY_HT
-  calculated for 2608 lakes
+  Temperate lakes may contain both coolwater fish species such as walleye (Sander vitreus) and warmwater species such as largemouth bass (Micropterus salmoides). 
+  Recent declines in walleye and increases in largemouth bass populations have raised questions regarding the future trajectories and appropriate management 
+  actions for these important species. We developed a thermodynamic model of water temperatures driven by downscaled climate data and lake specific 
+  characteristics to estimate daily water temperature profiles for 2165 lakes in Wisconsin, USA under contemporary (1989-2014) and future (2040-2064 and 2065-2089) conditions. 
+  We correlated contemporary walleye recruitment success and largemouth bass relative abundance to modeled water temperature, lake morphometry, and lake productivity, 
+  and projected lake specific changes in each species under future climate conditions. Walleye recruitment success was negatively related and largemouth bass abundance 
+  was positively related to water temperature degree days. Both species exhibited a threshold response at the same degree day value, albeit in opposite directions. 
+  Degree days were predicted to increase in the future, although the magnitude of increase varied among lakes, time periods, and global circulation models (GCMs). 
+  Under future conditions, we predicted a loss of walleye recruitment in 30-70% of lakes, and an increase to high largemouth bass relative abundance in 17-55% of additional lakes. 
+  The percentage of lakes with abundant largemouth bass and failed walleye recruitment was predicted to increase from 59% in contemporary conditions to 86% of 
+  lakes by mid-century and to 91% of lakes by late century, based on median projections across GCMs. Conversely, the number of lakes with successful walleye recruitment and low 
+  largemouth bass abundance was predicted to decline from 8.5% of lakes in contemporary conditions to only 38 1% of lakes in both future periods. 
+  Importantly, we identify nearly 100 resilient lakes predicted to continue to support walleye recruitment. Management resources could target preserving these resilient walleye populations.
+  This data set contains the following parameters: SP_ID, WBDY_NAME, WBDY_WBIC, SECCHI_AVG, ZMAX, CANOPY_HT, AREA, BASS_PRB1, BASS_PRB2, BASS_PRB3, WALL_PRB1, WALL_PRB2, WALL_PRB3.
+  calculated for 2165 lakes
 purpose: Fisheries biology, limnological research, and climate science.
 start-date: 19790101
-end-date: 20141231
+end-date: 20891231
     
 update: none planned
 wbbox: -92.814
 ebbox: -86.937
 nbbox: 46.853
 sbbox: 42.489
-themekeywords: ["water","temperate lakes","reservoirs","modeling","climate change","Secchi depth", "water clarity","wind sheltering","lake depth"]
+themekeywords: ["water","temperate lakes","reservoirs","modeling","climate change","Secchi depth", "water clarity","wind sheltering","lake depth","walleye","bass","largemouth bass"]
 states: 
   - 
     state-name: Wisconsin
@@ -113,7 +173,7 @@ journal: Global Change Biology
 
 process-date: 20160624
 indirect-spatial: Wisconsin
-point-count: 2608
+point-count: 2165
 latitude-res: 0.1
 longitude-res: 0.1
 data-name: Lake properties used for parameterizing models
