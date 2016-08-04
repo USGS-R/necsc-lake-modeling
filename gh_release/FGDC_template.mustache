@@ -90,17 +90,17 @@
           <cntper>{{contact-person}}</cntper>
           <cntorg>U.S. Geological Survey</cntorg>
         </cntperp>
+        <cntaddr>
+          <addrtype>Mailing and Physical</addrtype>
+          <address>8551 Research Way</address>
+          <city>Middleton</city>
+          <state>WI</state>
+          <postal>53562</postal>
+          <country>U.S.A.</country>
+        </cntaddr>
+        <cntvoice>{{contact-phone}}</cntvoice>
+        <cntemail>{{contact-email}}</cntemail>
       </cntinfo>
-      <cntaddr>
-        <addrtype>Mailing and Physical</addrtype>
-        <address>8551 Research Way</address>
-        <city>Middleton</city>
-        <state>WI</state>
-        <postal>53562</postal>
-        <country>U.S.A.</country>
-      </cntaddr>
-      <cntvoice>{{contact-phone}}</cntvoice>
-      <cntemail>{{contact-email}}</cntemail>
     </ptcontac>
     <datacred>{{funding-credits}}</datacred>
     <native>{{build-environment}}</native>
@@ -123,21 +123,21 @@
     </attracc>
     <logic>not applicable</logic>
     <complete>not applicable</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>A formal accuracy assessment of the horizontal positional information in the data set has not been conducted.</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>A formal accuracy assessment of the vertical positional information in the data set has either not been conducted, or is not applicable.</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>{{process-description}}</procdesc>
+        <procdate>{{process-date}}</procdate>
+      </procstep>
+    </lineage>
   </dataqual>
-  <posacc>
-    <horizpa>
-      <horizpar>A formal accuracy assessment of the horizontal positional information in the data set has not been conducted.</horizpar>
-    </horizpa>
-    <vertacc>
-      <vertaccr>A formal accuracy assessment of the vertical positional information in the data set has either not been conducted, or is not applicable.</vertaccr>
-    </vertacc>
-  </posacc>
-  <lineage>
-    <procstep>
-      <procdesc>{{process-description}}</procdesc>
-      <procdate>{{process-date}}</procdate>
-    </procstep>
-  </lineage>
   <spdoinfo>
     <indspref>{{indirect-spatial}}</indspref>
     <direct>Point</direct>
@@ -226,25 +226,26 @@
   </distinfo>
   <metainfo>
     <metd>{{metadata-date}}</metd>
-    <metc/>
-    <cntinfo>
-      <cntperp>
-        <cntper>{{metadata-person}}</cntper>
-        <cntorg>U.S. Geological Survey</cntorg>
-      </cntperp>
-      <cntpos>Data Chief</cntpos>
-      <cntaddr>
-        <addrtype>Mailing and Physical</addrtype>
-        <address>8551 Research Way #120</address>
-        <city>Middleton</city>
-        <state>WI</state>
-        <postal>53562</postal>
-        <country>U.S.A.</country>
-      </cntaddr>
-      <cntvoice>{{metadata-phone}}</cntvoice>
-      <cntfax>608 821-3817</cntfax>
-      <cntemail>{{metadata-email}}</cntemail>
-    </cntinfo>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>{{metadata-person}}</cntper>
+          <cntorg>U.S. Geological Survey</cntorg>
+        </cntperp>
+        <cntpos>Data Chief</cntpos>
+        <cntaddr>
+          <addrtype>Mailing and Physical</addrtype>
+          <address>8551 Research Way #120</address>
+          <city>Middleton</city>
+          <state>WI</state>
+          <postal>53562</postal>
+          <country>U.S.A.</country>
+        </cntaddr>
+        <cntvoice>{{metadata-phone}}</cntvoice>
+        <cntfax>608 821-3817</cntfax>
+        <cntemail>{{metadata-email}}</cntemail>
+      </cntinfo>
+    </metc>
     <metstdn>FGDC Biological Data Profile of the Content Standard for Digital Geospatial Metadata</metstdn>
     <metstdv>FGDC-STD-001.1-1999</metstdv>
   </metainfo>

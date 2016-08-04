@@ -83,16 +83,18 @@ create_FGDC_template <- function(file.out){
   
   pt <-  xml_add_child(m,'ptcontac') 
   
-  pt %>% 
+  ci <- pt %>% 
     xml_add_child('cntinfo') %>% 
-    xml_add_child('cntperp') %>% 
+    xml_add_child('cntperp') 
+  ci %>% 
     xml_add_child('cntper','{{contact-person}}') %>% 
     xml_add_sibling('cntorg','U.S. Geological Survey')
   
   p %>% 
     xml_add_sibling('useconst','{{usage-rules}}')
   
-  pt %>% xml_add_child('cntaddr') %>% 
+  adr <- ci %>% xml_add_sibling('cntaddr') 
+  adr %>%
     xml_add_child('addrtype','Mailing and Physical') %>% 
     xml_add_sibling('address', '8551 Research Way') %>% 
     xml_add_sibling('city','Middleton') %>% 
@@ -100,7 +102,7 @@ create_FGDC_template <- function(file.out){
     xml_add_sibling('postal','53562') %>% 
     xml_add_sibling('country','U.S.A.')
   
-  pt %>%  xml_add_child('cntvoice','{{contact-phone}}') %>% 
+  adr %>% xml_add_sibling('cntvoice','{{contact-phone}}') %>% 
     xml_add_sibling('cntemail','{{contact-email}}')
   # </---Contact people --->
   
@@ -128,7 +130,7 @@ create_FGDC_template <- function(file.out){
   q %>% xml_add_child('logic','not applicable') %>% 
     xml_add_sibling('complete','not applicable')
   
-  p <- xml_add_child(mt, 'posacc') 
+  p <- xml_add_child(q, 'posacc') 
   p %>% xml_add_child('horizpa') %>% 
     xml_add_child('horizpar','A formal accuracy assessment of the horizontal positional information in the data set has not been conducted.')
   
@@ -136,7 +138,7 @@ create_FGDC_template <- function(file.out){
     xml_add_child('vertacc') %>% 
     xml_add_child('vertaccr','A formal accuracy assessment of the vertical positional information in the data set has either not been conducted, or is not applicable.')
   
-  xml_add_sibling(p, 'spdoinfo') %>% 
+  xml_add_sibling(q, 'spdoinfo') %>% 
     xml_add_child('indspref','{{indirect-spatial}}') %>% 
     xml_add_sibling('direct','Point') %>% 
     xml_add_sibling('ptvctinf') %>% 
@@ -146,7 +148,7 @@ create_FGDC_template <- function(file.out){
   # </---Data quality--->
   
   # <---Processing steps--->
-  p %>% xml_add_sibling('lineage') %>% 
+  q %>% xml_add_child('lineage') %>% 
     xml_add_child('procstep') %>% 
     xml_add_child('procdesc','{{process-description}}') %>% 
     xml_add_sibling('procdate','{{process-date}}')
@@ -219,11 +221,10 @@ create_FGDC_template <- function(file.out){
   xml_add_child(so,'fees','None')
   
   # <---Metadata creator--->
-  mi <- xml_add_child(mt, 'metainfo')
-  mi %>% 
-    xml_add_child('metd','{{metadata-date}}') %>% 
-    xml_add_sibling('metc')
-  cni <- xml_add_child(mi,'cntinfo')
+  mi <- xml_add_child(mt, 'metainfo')%>% 
+    xml_add_child('metd','{{metadata-date}}')
+  mt <- mi %>% xml_add_sibling('metc')
+  cni <- xml_add_child(mt,'cntinfo')
   cni %>% 
     xml_add_child('cntperp') %>% 
     xml_add_child('cntper','{{metadata-person}}') %>% 
@@ -241,8 +242,8 @@ create_FGDC_template <- function(file.out){
     xml_add_child('cntvoice','{{metadata-phone}}') %>% 
     xml_add_sibling('cntfax','608 821-3817') %>% 
     xml_add_sibling('cntemail','{{metadata-email}}')
-  mi %>% 
-    xml_add_child('metstdn','FGDC Biological Data Profile of the Content Standard for Digital Geospatial Metadata') %>% 
+  mt %>% 
+    xml_add_sibling('metstdn','FGDC Biological Data Profile of the Content Standard for Digital Geospatial Metadata') %>% 
     xml_add_sibling('metstdv','FGDC-STD-001.1-1999')
   # </---Metadata creator--->
   
