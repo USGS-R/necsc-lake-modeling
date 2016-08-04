@@ -7,7 +7,7 @@ create_FGDC_template <- function(file.out){
   
   d <- xml_new_document()
   mt <-  xml_add_child(d, "metadata")
-  m <- xml_add_child(d, "idinfo")
+  m <- xml_add_child(mt, "idinfo")
   
   # <---Bibliodata--->
   m %>%  xml_add_child("citation") %>%

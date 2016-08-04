@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <metadata>
-  <idinfo/>
-  <citation>
-    <citeinfo>
-      {{#authors}}
+  <idinfo>
+    <citation>
+      <citeinfo>
+        {{#authors}}
       <origin>{{.}}</origin>
       {{/authors}}
-      <pubdate>{{pubdate}}</pubdate>
-      <title>{{title}}</title>
-      <geoform>text files</geoform>
-      <onlink>{{doi}}</onlink>
-      {{#larger-cites}}<lworkcit>
+        <pubdate>{{pubdate}}</pubdate>
+        <title>{{title}}</title>
+        <geoform>text files</geoform>
+        <onlink>{{doi}}</onlink>
+        {{#larger-cites}}<lworkcit>
           <citeinfo>
   {{#authors}}
       <origin>{{.}}</origin>
@@ -23,99 +23,100 @@
   </citeinfo>
   </lworkcit>
 {{/larger-cites}}
-    </citeinfo>
-  </citation>
-  <descript>
-    <abstract>{{abstract}}</abstract>
-    <purpose>{{purpose}}</purpose>
-  </descript>
-  <timeperd>
-    <timeinfo>
-      <rngdates>
-        <begdate>{{start-date}}</begdate>
-        <enddate>{{end-date}}</enddate>
-      </rngdates>
-    </timeinfo>
-  </timeperd>
-  <status>
-    <progress>Complete</progress>
-    <update>{{update}}</update>
-  </status>
-  <spdom>
-    <bounding>
-      <westbc>{{wbbox}}</westbc>
-      <eastbc>{{ebbox}}</eastbc>
-      <northbc>{{nbbox}}</northbc>
-      <southbc>{{sbbox}}</southbc>
-    </bounding>
-  </spdom>
-  <keywords>
-    <theme>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>{{abstract}}</abstract>
+      <purpose>{{purpose}}</purpose>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>{{start-date}}</begdate>
+          <enddate>{{end-date}}</enddate>
+        </rngdates>
+      </timeinfo>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>{{update}}</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>{{wbbox}}</westbc>
+        <eastbc>{{ebbox}}</eastbc>
+        <northbc>{{nbbox}}</northbc>
+        <southbc>{{sbbox}}</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
                   <themekt>none</themekt>
                   {{#themekeywords}}
                   <themekey>{{.}}</themekey>
                   {{/themekeywords}}</theme>
-    <theme>
-      <themekt>ISO 19115 Topic Category</themekt>
-      <themekey>environment</themekey>
-      <themekey>inlandWaters</themekey>
-      <themekey>007</themekey>
-      <themekey>012</themekey>
-    </theme>
-    <place>
-      <placekt>Department of Commerce, 1995, Countries, Dependencies, Areas of Special Sovereignty, and 
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>environment</themekey>
+        <themekey>inlandWaters</themekey>
+        <themekey>007</themekey>
+        <themekey>012</themekey>
+      </theme>
+      <place>
+        <placekt>Department of Commerce, 1995, Countries, Dependencies, Areas of Special Sovereignty, and 
                   Their Principal Administrative Divisions,  Federal Information Processing Standard (FIPS) 10-4, 
                   Washington, D.C., National Institute of Standards and Technology</placekt>
-      <placekey>United States</placekey>
-      <placekey>US</placekey>
-    </place>
-    {{#states}}
+        <placekey>United States</placekey>
+        <placekey>US</placekey>
+      </place>
+      {{#states}}
     <place>
 			<placekt>U.S. Department of Commerce, 1987, Codes for the identification of the States, the District of Columbia and the outlying areas of the United States, and associated areas (Federal Information Processing Standard 5-2): Washington, D. C., NIST</placekt>
       <placekey>{{state-name}}</placekey>
       <placekey>{{state-abbr}}</placekey>
     </place>
     {{/states}}
-    {{#states}}<place>
+      {{#states}}<place>
       <placekt>none</placekt>
       <placekey>{{state-name}}</placekey>
     </place>
     {{/states}}
-  </keywords>
-  <accconst>none</accconst>
-  <useconst>{{usage-rules}}</useconst>
-  <ptcontac>
-    <cntinfo>
-      <cntperp>
-        <cntper>{{contact-person}}</cntper>
-        <cntorg>U.S. Geological Survey</cntorg>
-      </cntperp>
-    </cntinfo>
-    <cntaddr>
-      <addrtype>Mailing and Physical</addrtype>
-      <address>8551 Research Way</address>
-      <city>Middleton</city>
-      <state>WI</state>
-      <postal>53562</postal>
-      <country>U.S.A.</country>
-    </cntaddr>
-    <cntvoice>{{contact-phone}}</cntvoice>
-    <cntemail>{{contact-email}}</cntemail>
-  </ptcontac>
-  <datacred>{{funding-credits}}</datacred>
-  <native>{{build-environment}}</native>
-  <crossref>
-    <citeinfo>
-      <origin>{{cite-authors}}</origin>
-      <pubdate>{{cite-date}}</pubdate>
-      <title>{{cite-title}}</title>
-      <geoform>{{paper}}</geoform>
-      <pubinfo>
-        <pubplace>{{publisher}}</pubplace>
-        <publish>{{journal}}</publish>
-      </pubinfo>
-    </citeinfo>
-  </crossref>
+    </keywords>
+    <accconst>none</accconst>
+    <useconst>{{usage-rules}}</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>{{contact-person}}</cntper>
+          <cntorg>U.S. Geological Survey</cntorg>
+        </cntperp>
+      </cntinfo>
+      <cntaddr>
+        <addrtype>Mailing and Physical</addrtype>
+        <address>8551 Research Way</address>
+        <city>Middleton</city>
+        <state>WI</state>
+        <postal>53562</postal>
+        <country>U.S.A.</country>
+      </cntaddr>
+      <cntvoice>{{contact-phone}}</cntvoice>
+      <cntemail>{{contact-email}}</cntemail>
+    </ptcontac>
+    <datacred>{{funding-credits}}</datacred>
+    <native>{{build-environment}}</native>
+    <crossref>
+      <citeinfo>
+        <origin>{{cite-authors}}</origin>
+        <pubdate>{{cite-date}}</pubdate>
+        <title>{{cite-title}}</title>
+        <geoform>{{paper}}</geoform>
+        <pubinfo>
+          <pubplace>{{publisher}}</pubplace>
+          <publish>{{journal}}</publish>
+        </pubinfo>
+      </citeinfo>
+    </crossref>
+  </idinfo>
   <dataqual>
     <attracc>
       <attraccr>No formal attribute accuracy tests were conducted.</attraccr>
