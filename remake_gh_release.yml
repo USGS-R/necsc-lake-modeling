@@ -17,7 +17,7 @@ targets:
       - gh_release/CM2.0_model.xml
       - gh_release/NLDAS_model.xml
       - gh_release/GENMOM_model.xml
-      - gh_release/spatial.xml
+      - gh_release/sptial/lake_metadata.xml
 
   gh_release/FGDC_template.mustache:
     command: create_FGDC_template(target_name)
@@ -55,6 +55,6 @@ targets:
   gh_release/NLDAS_model.xml:
     command: render_FGDC_metadata("gh_release/FGDC_template.mustache", nldas.text, target_name, habitat.table, generic.text)
 
-  gh_release/spatial.xml:
+  gh_release/sptial/lake_metadata.xml:
     command: render_FGDC_metadata("gh_release/FGDC_template.mustache", spatial.text, target_name)
 
