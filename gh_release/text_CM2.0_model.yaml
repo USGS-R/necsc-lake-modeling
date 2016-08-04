@@ -1,5 +1,5 @@
 process-description: >-
-  Water temperatures were modeled for 2361 lakes across Wisconsin using the General Lake Model (GLM) between 1989 and 2014 under the A2 emissions scenario for future (2040-2064 and 2065-2089) conditions. 
+  Water temperatures were modeled for 2151 lakes across Wisconsin using the General Lake Model (GLM) between 1989 and 2014 under the A2 emissions scenario for future (2040-2064 and 2065-2089) conditions. 
   The CM2.0 GCM was used for this dataset.  
   From these depth-discrete water temperatures, a number of different common metrics of water temperature were calculated at the annual scale.
 
