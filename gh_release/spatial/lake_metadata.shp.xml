@@ -50,7 +50,7 @@
     </citeinfo>
   </citation>
   <descript>
-    <abstract>Temperate lakes may contain both coolwater fish species such as walleye (Sander vitreus) and warmwater species such as largemouth bass (Micropterus salmoides).  Recent declines in walleye and increases in largemouth bass populations have raised questions regarding the future trajectories and appropriate management  actions for these important species. We developed a thermodynamic model of water temperatures driven by downscaled climate data and lake specific  characteristics to estimate daily water temperature profiles for 2165 lakes in Wisconsin, USA under contemporary (1989-2014) and future (2040-2064 and 2065-2089) conditions.  We correlated contemporary walleye recruitment success and largemouth bass relative abundance to modeled water temperature, lake morphometry, and lake productivity,  and projected lake specific changes in each species under future climate conditions. Walleye recruitment success was negatively related and largemouth bass abundance  was positively related to water temperature degree days. Both species exhibited a threshold response at the same degree day value, albeit in opposite directions.  Degree days were predicted to increase in the future, although the magnitude of increase varied among lakes, time periods, and global circulation models (GCMs).  Under future conditions, we predicted a loss of walleye recruitment in 30-70% of lakes, and an increase to high largemouth bass relative abundance in 17-55% of additional lakes.  The percentage of lakes with abundant largemouth bass and failed walleye recruitment was predicted to increase from 59% in contemporary conditions to 86% of  lakes by mid-century and to 91% of lakes by late century, based on median projections across GCMs. Conversely, the number of lakes with successful walleye recruitment and low  largemouth bass abundance was predicted to decline from 8.5% of lakes in contemporary conditions to only 38 1% of lakes in both future periods.  Importantly, we identify nearly 100 resilient lakes predicted to continue to support walleye recruitment. Management resources could target preserving these resilient walleye populations. This data set contains the following parameters: SP_ID, WBDY_NAME, WBDY_WBIC, SECCHI_AVG, ZMAX, CANOPY_HT, AREA, BASS_PRB1, BASS_PRB2, BASS_PRB3, WALL_PRB1, WALL_PRB2, WALL_PRB3. calculated for 2165 lakes</abstract>
+    <abstract>Temperate lakes may contain both coolwater fish species such as walleye (Sander vitreus) and warmwater species such as largemouth bass (Micropterus salmoides).  Recent declines in walleye and increases in largemouth bass populations have raised questions regarding the future trajectories and appropriate management  actions for these important species. We developed a thermodynamic model of water temperatures driven by downscaled climate data and lake specific  characteristics to estimate daily water temperature profiles for 2151 lakes in Wisconsin, USA under contemporary (1989-2014) and future (2040-2064 and 2065-2089) conditions.  We correlated contemporary walleye recruitment success and largemouth bass relative abundance to modeled water temperature, lake morphometry, and lake productivity,  and projected lake specific changes in each species under future climate conditions. Walleye recruitment success was negatively related and largemouth bass abundance  was positively related to water temperature degree days. Both species exhibited a threshold response at the same degree day value, albeit in opposite directions.  Degree days were predicted to increase in the future, although the magnitude of increase varied among lakes, time periods, and global circulation models (GCMs).  Under future conditions, we predicted a loss of walleye recruitment in 30-70% of lakes, and an increase to high largemouth bass relative abundance in 17-55% of additional lakes.  The percentage of lakes with abundant largemouth bass and failed walleye recruitment was predicted to increase from 59% in contemporary conditions to 86% of  lakes by mid-century and to 91% of lakes by late century, based on median projections across GCMs. Conversely, the number of lakes with successful walleye recruitment and low  largemouth bass abundance was predicted to decline from 8.5% of lakes in contemporary conditions to only 38 1% of lakes in both future periods.  Importantly, we identify nearly 100 resilient lakes predicted to continue to support walleye recruitment. Management resources could target preserving these resilient walleye populations. This data set contains the following parameters: SP_ID, WBDY_NAME, WBDY_WBIC, SECCHI_AVG, ZMAX, CANOPY_HT, AREA, BASS_PRB1, BASS_PRB2, BASS_PRB3, WALL_PRB1, WALL_PRB2, WALL_PRB3. calculated for 2151 lakes</abstract>
     <purpose>Fisheries biology, limnological research, and climate science.</purpose>
   </descript>
   <timeperd>
@@ -164,8 +164,8 @@
   </posacc>
   <lineage>
     <procstep>
-      <procdesc>Properties for 2165 lakes across Wisconsin between 1979 and 2014 and results from fish models. Lake properties from this dataset were used to parameterize models for lake temperatures.  Results of fish probabilities for two species (largemouth bass and walleye) are included for each lake for the periods 1989-2014, 2040-2064, and 2065-2089.</procdesc>
-      <procdate>20160624</procdate>
+      <procdesc>Properties for 2151 lakes across Wisconsin between 1979 and 2014 and results from fish models. Lake properties from this dataset were used to parameterize models for lake temperatures.  Results of fish probabilities for two species (largemouth bass and walleye) are included for each lake for the periods 1989-2014, 2040-2064, and 2065-2089.</procdesc>
+      <procdate>20160804</procdate>
     </procstep>
   </lineage>
   <spdoinfo>
@@ -174,7 +174,7 @@
     <ptvctinf>
       <sdtsterm>
         <sdtstype>Point</sdtstype>
-        <ptvctcnt>2165</ptvctcnt>
+        <ptvctcnt>2151</ptvctcnt>
       </sdtsterm>
     </ptvctinf>
   </spdoinfo>
@@ -207,7 +207,7 @@
         <attrdomv>
           <rdom>
             <rdommin>0</rdommin>
-            <rdommax>2164</rdommax>
+            <rdommax>2150</rdommax>
             <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
