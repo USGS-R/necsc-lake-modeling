@@ -24,12 +24,15 @@ create_FGDC_template <- function(file.out){
     xml_add_child("abstract",'{{abstract}}') %>%
     xml_add_sibling("purpose", '{{purpose}}')
   
-  m %>%
+  ti <- m %>%
     xml_add_child('timeperd') %>%
-    xml_add_child("timeinfo") %>%
+    xml_add_child("timeinfo") 
+  ti %>% 
     xml_add_child("rngdates") %>%
     xml_add_child('begdate','{{start-date}}') %>%
     xml_add_sibling('enddate','{{end-date}}')
+  ti %>% 
+    xml_add_sibling('current','model estimates')
   m %>%
     xml_add_child('status') %>%
     xml_add_child("progress", "Complete") %>% 
@@ -110,17 +113,8 @@ create_FGDC_template <- function(file.out){
   m %>% 
     xml_add_child('datacred','{{funding-credits}}') %>% 
     xml_add_sibling('native','{{build-environment}}') %>% 
-    xml_add_sibling('crossref') %>% 
-    xml_add_child('citeinfo') %>% 
-    xml_add_child('origin','{{cite-authors}}') %>% 
-    xml_add_sibling('pubdate','{{cite-date}}') %>% 
-    xml_add_sibling('title','{{cite-title}}') %>% 
-    xml_add_sibling('geoform','{{paper}}') %>% 
-    xml_add_sibling('pubinfo') %>% 
-    xml_add_child('pubplace',"{{publisher}}") %>% 
-    xml_add_sibling('publish','{{journal}}')
-  # </---Credit and external bibliodata--->
-  
+    xml_add_sibling('crossref-template')
+    
   # <---Data quality--->
   q <- xml_add_child(mt, 'dataqual')
   
@@ -291,6 +285,19 @@ create_FGDC_template <- function(file.out){
   </citeinfo>
   </lworkcit>\n{{/larger-cites}}"
   
+  crossref.template = "{{#cross-cites}}<crossref>
+          <citeinfo>
+  {{#authors}}
+  <origin>{{.}}</origin>
+  {{/authors}} 
+  <pubdate>{{pubdate}}</pubdate>
+  <title>{{title}}</title>
+  {{#link}}
+  <onlink>{{.}}</onlink>
+  {{/link}} 
+  </citeinfo>
+  </crossref>\n{{/cross-cites}}"
+  
   suppressWarnings(readLines(tempxml)) %>% 
     gsub(pattern = '&gt;',replacement = '>',.) %>% 
     gsub(pattern = '&lt;',replacement = '<',.) %>% 
@@ -299,6 +306,7 @@ create_FGDC_template <- function(file.out){
     sub(pattern = '<origin-template/>', replacement = origin.template) %>% 
     gsub(pattern = '<attr-template/>', replacement = attr.template) %>% 
     gsub(pattern = '<lworkcit-template/>', replacement = lworkcit.template) %>% 
+    gsub(pattern = '<crossref-template/>', replacement = crossref.template) %>% 
     cat(file = file.out, sep = '\n')
   return(file.out)
 }

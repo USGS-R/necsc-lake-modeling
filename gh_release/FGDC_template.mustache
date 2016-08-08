@@ -36,6 +36,7 @@
           <enddate>{{end-date}}</enddate>
         </rngdates>
       </timeinfo>
+      <current>model estimates</current>
     </timeperd>
     <status>
       <progress>Complete</progress>
@@ -104,18 +105,19 @@
     </ptcontac>
     <datacred>{{funding-credits}}</datacred>
     <native>{{build-environment}}</native>
-    <crossref>
-      <citeinfo>
-        <origin>{{cite-authors}}</origin>
-        <pubdate>{{cite-date}}</pubdate>
-        <title>{{cite-title}}</title>
-        <geoform>{{paper}}</geoform>
-        <pubinfo>
-          <pubplace>{{publisher}}</pubplace>
-          <publish>{{journal}}</publish>
-        </pubinfo>
-      </citeinfo>
-    </crossref>
+    {{#cross-cites}}<crossref>
+          <citeinfo>
+  {{#authors}}
+  <origin>{{.}}</origin>
+  {{/authors}} 
+  <pubdate>{{pubdate}}</pubdate>
+  <title>{{title}}</title>
+  {{#link}}
+  <onlink>{{.}}</onlink>
+  {{/link}} 
+  </citeinfo>
+  </crossref>
+{{/cross-cites}}
   </idinfo>
   <dataqual>
     <attracc>
