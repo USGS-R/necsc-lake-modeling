@@ -1,9 +1,11 @@
+title: >-
+  NLDAS model: Projected shifts in fish species dominance in Wisconsin lakes under climate change
 process-description: >-
-  Water temperatures were modeled for 2151 lakes across Wisconsin using the General Lake Model (GLM) between 1989 and 2014 under the A2 emissions scenario for future (2040-2064 and 2065-2089) conditions. 
+  Water temperatures were modeled for 2148 lakes across Wisconsin using the General Lake Model (GLM) between 1989 and 2014 under the A2 emissions scenario for future (2040-2064 and 2065-2089) conditions. 
   The North American Land Data Assimilation System was used for meteorological conditions for this dataset.  
   From these depth-discrete water temperatures, a number of different common metrics of water temperature were calculated at the annual scale.
 
-larger-cites: 
+cross-cites: 
   - 
     authors: ['Kenneth E. Mitchell','Dag Lohmann','Paul R. Houser','Eric F. Wood','John C. Schaake','Alan Robock','Brian A. Cosgrove','Justin Sheffield','Qingyun Duan','Lifeng Luo','R. Wayne Higgins','Rachel T. Pinker','J. Dan Tarpley','Dennis P. Lettenmaier','Curtis H. Marshall','Jared K. Entin','Ming Pan','Wei Shi','Victor Koren','Jesse Meng','Bruce H. Ramsay','Andrew A. Bailey']
     title: >-

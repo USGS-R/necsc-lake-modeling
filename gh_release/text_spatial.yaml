@@ -1,15 +1,11 @@
 authors: ["Gretchen J.A. Hansen", "Jordan S. Read", "Jonathan F. Hansen", "Luke A. Winslow"]
 
 process-description: >-
-  Properties for 2151 lakes across Wisconsin between 1979 and 2014 and results from fish models. Lake properties from this dataset were used to parameterize models for lake temperatures. 
+  Properties for 2148 lakes across Wisconsin between 1979 and 2014 and results from fish models. Lake properties from this dataset were used to parameterize models for lake temperatures. 
   Results of fish probabilities for two species (largemouth bass and walleye) are included for each lake for the periods 1989-2014, 2040-2064, and 2065-2089.
 
-larger-cites: 
-  -
-    authors: ["Gretchen J.A. Hansen", "Jordan S. Read", "Jonathan F. Hansen", "Luke A. Winslow"]
-    title: >-
-      Projected shifts in fish species dominance in Wisconsin lakes under climate change
-    pubdate: 2016
+
+cross-cites:
   -
     authors: ['Jamon Van Den Hoek','Jordan S. Read','Luke A. Winslow', 'Paul Montesano','Corey D. Markfort']
     title: >-
@@ -21,6 +17,14 @@ larger-cites:
     title: Simulating 2368 temperate lakes reveals weak coherence in stratification phenology
     pubdate: 2014
     link: http://dx.doi.org/10.1016/j.ecolmodel.2014.07.029
+
+larger-cites: 
+  -
+    authors: ["Gretchen J.A. Hansen", "Jordan S. Read", "Jonathan F. Hansen", "Luke A. Winslow"]
+    title: >-
+      Projected shifts in fish species dominance in Wisconsin lakes under climate change
+    pubdate: 2016
+  
 
 attributes:
   - 
@@ -118,13 +122,13 @@ attributes:
     
 pubdate: 2016
 title: >-
-  Data release: Projected shifts in fish species dominance in Wisconsin lakes under climate change
+  Spatial data: Projected shifts in fish species dominance in Wisconsin lakes under climate change
 doi: http://dx.doi.org/10.5066/F7X0655K
 abstract: >-
   Temperate lakes may contain both coolwater fish species such as walleye (Sander vitreus) and warmwater species such as largemouth bass (Micropterus salmoides). 
   Recent declines in walleye and increases in largemouth bass populations have raised questions regarding the future trajectories and appropriate management 
   actions for these important species. We developed a thermodynamic model of water temperatures driven by downscaled climate data and lake specific 
-  characteristics to estimate daily water temperature profiles for 2151 lakes in Wisconsin, USA under contemporary (1989-2014) and future (2040-2064 and 2065-2089) conditions. 
+  characteristics to estimate daily water temperature profiles for 2148 lakes in Wisconsin, USA under contemporary (1989-2014) and future (2040-2064 and 2065-2089) conditions. 
   We correlated contemporary walleye recruitment success and largemouth bass relative abundance to modeled water temperature, lake morphometry, and lake productivity, 
   and projected lake specific changes in each species under future climate conditions. Walleye recruitment success was negatively related and largemouth bass abundance 
   was positively related to water temperature degree days. Both species exhibited a threshold response at the same degree day value, albeit in opposite directions. 
@@ -135,7 +139,7 @@ abstract: >-
   largemouth bass abundance was predicted to decline from 8.5% of lakes in contemporary conditions to only 38 1% of lakes in both future periods. 
   Importantly, we identify nearly 100 resilient lakes predicted to continue to support walleye recruitment. Management resources could target preserving these resilient walleye populations.
   This data set contains the following parameters: SP_ID, WBDY_NAME, WBDY_WBIC, SECCHI_AVG, ZMAX, CANOPY_HT, AREA, BASS_PRB1, BASS_PRB2, BASS_PRB3, WALL_PRB1, WALL_PRB2, WALL_PRB3.
-  calculated for 2151 lakes
+  calculated for 2148 lakes
 purpose: Fisheries biology, limnological research, and climate science.
 start-date: 19790101
 end-date: 20891231
@@ -164,16 +168,10 @@ funding-credits: >-
 
 build-environment: >- 
   Environment as of Metadata Creation: Microsoft Windows 7 Version 6.1 (Build 7601) Service Pack 1; Esri ArcGIS 10.3.1 (Build 4959) Service Pack N/A (Build N/A).
-cite-authors: Hansen, Grethen J.A., Read, Jordan S., Hansen, Jonathan F., Winslow, Luke A.
-cite-date: 2016
-cite-title: Projected shifts in fish species dominance in Wisconsin lakes under climate change
-paper: paper
-publisher: Wiley
-journal: Global Change Biology
 
 process-date: 20160804
 indirect-spatial: Wisconsin
-point-count: 2151
+point-count: 2148
 latitude-res: 0.1
 longitude-res: 0.1
 data-name: Lake properties used for parameterizing models
