@@ -64,5 +64,5 @@ sync_notaro_ncml <- function(file){
   if (!output)
     invisible(output)
   else 
-    stop(output)
+    stop(file, output)
 }
