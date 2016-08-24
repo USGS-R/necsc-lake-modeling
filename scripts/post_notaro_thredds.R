@@ -24,8 +24,8 @@ create_notaro_ncml <- function(){
   }
   
   get_time_string <- function(time){
-    time.vals <- c('late20' = '1980-01-01 00:00:00Z',
-                   'mid21' = '2020-01-01 00:00:00Z',
+    time.vals <- c('late20' = '1981-01-01 00:00:00Z',
+                   'mid21' = '2040-01-01 00:00:00Z',
                    'late21' = '2080-01-01 00:00:00Z')
     return(paste0('years since ', time.vals[[time]]))
   }
@@ -64,5 +64,5 @@ sync_notaro_ncml <- function(file){
   if (!output)
     invisible(output)
   else 
-    stop(output)
+    stop(file, output)
 }

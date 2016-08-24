@@ -1,0 +1,25 @@
+title: >-
+  GENMOM model: Projected shifts in fish species dominance in Wisconsin lakes under climate change
+process-description: >-
+  Water temperatures were modeled for 2148 lakes across Wisconsin using the General Lake Model (GLM) between 1989 and 2014 under the A2 emissions scenario for future (2040-2064 and 2065-2089) conditions. 
+  The GENMOM GCM was used for this dataset.  
+  From these depth-discrete water temperatures, a number of different common metrics of water temperature were calculated at the annual scale.
+  
+cross-cites: 
+  -
+    authors: ['Matthey R. Hipsey','Louise C. Bruce', 'David P. Hamilton']
+    title: >-
+      GLM General Lake Model: Model Overview and User Information
+    pubdate: 2013
+    link: http://aed.see.uwa.edu.au/research/models/GLM/index.html
+  -
+    authors: ['Steven W. Hostetler', 'Jay R. Adler', 'Andrea M. Allan']
+    title: >-
+      Dynamically downscaled climate simulations over North America: Methods, evaluation and supporting documentation for users
+    pubdate: 2011
+    link: http://pubs.usgs.gov/of/2011/1238/
+  -
+    authors: ['Jordan S. Read', 'Luke A. Winslow', 'Gretchen J.A. Hansen','Jamon Van Den Hoek', 'Paul C. Hanson', 'Louise C. Bruce', 'Corey D. Markfort']
+    title: Simulating 2368 temperate lakes reveals weak coherence in stratification phenology
+    pubdate: 2014
+    link: http://dx.doi.org/10.1016/j.ecolmodel.2014.07.029

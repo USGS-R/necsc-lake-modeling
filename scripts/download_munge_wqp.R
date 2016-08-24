@@ -35,6 +35,35 @@ munge_secchi <- function(data.in){
     select(Date, wqx.id, secchi)
 }
 
+munge_do <- function(data.in){
+  
+  max.depth <- 260
+  
+  depth.unit.map <- data.frame(depth.units=c('meters','m','in','ft','feet','cm', 'mm', NA), 
+                               depth.convert = c(1,1,0.0254,0.3048,0.3048,0.01, 0.001, NA), 
+                               stringsAsFactors = FALSE)
+  
+  unit.map <- data.frame(units=c("mg/l","ug/l", NA), 
+                         convert = c(1, 1/1000,NA), 
+                         stringsAsFactors = FALSE)
+  
+  activity.sites <- group_by(data.in, OrganizationIdentifier) %>% 
+    summarize(act.n = sum(!is.na(ActivityDepthHeightMeasure.MeasureValue)), res.n=sum(!is.na((ResultDepthHeightMeasure.MeasureValue)))) %>% 
+    mutate(use.depth.code = ifelse(act.n>res.n, 'act','res')) %>% 
+    select(OrganizationIdentifier, use.depth.code)
+  
+  left_join(data.in, activity.sites, by='OrganizationIdentifier') %>% 
+    mutate(raw.depth = as.numeric(ifelse(use.depth.code == 'act', ActivityDepthHeightMeasure.MeasureValue, ResultDepthHeightMeasure.MeasureValue)),
+           depth.units = ifelse(use.depth.code == 'act', ActivityDepthHeightMeasure.MeasureUnitCode, ResultDepthHeightMeasure.MeasureUnitCode)) %>% 
+    rename(Date=ActivityStartDate, raw.value=ResultMeasureValue, units=ResultMeasure.MeasureUnitCode, wqx.id=MonitoringLocationIdentifier) %>% 
+    select(Date, raw.value, units, raw.depth, depth.units, wqx.id) %>% 
+    left_join(unit.map, by='units') %>% 
+    left_join(depth.unit.map, by='depth.units') %>% 
+    mutate(do=convert*raw.value, depth=raw.depth*depth.convert) %>% 
+    filter(!is.na(do), !is.na(depth), depth <= max.depth) %>% 
+    select(Date, wqx.id, depth, do)
+}
+
 munge_temperature <- function(data.in){
   
   max.temp <- 40 # threshold!
@@ -80,4 +109,18 @@ map_wqp <- function(munged.wqp, wqp.nhd.lookup, mapped.file){
     filter(!is.na(id))
   write.table(mapped.wqp, file=gzfile(mapped.file), quote = FALSE, row.names = FALSE, sep = '\t')
   
+}
+
+map_join_wqp <- function(munged.wqp.1, munged.wqp.2, wqp.nhd.lookup, mapped.file){
+  mapped.wqp.1 <- left_join(munged.wqp.1, rename(wqp.nhd.lookup, wqx.id=MonitoringLocationIdentifier), by = 'wqx.id') %>% 
+    select(-LatitudeMeasure,-LongitudeMeasure) %>% 
+    filter(!is.na(id))
+  
+  mapped.wqp.2 <- left_join(munged.wqp.2, rename(wqp.nhd.lookup, wqx.id=MonitoringLocationIdentifier), by = 'wqx.id') %>% 
+    select(-LatitudeMeasure,-LongitudeMeasure) %>% 
+    filter(!is.na(id))
+  
+  joined.wqp <- inner_join(mapped.doobs, mapped.temperature, by = c('wqx.id','Date', 'depth','id')) %>% 
+    select(Date, id, wqx.id, everything())
+  write.table(joined.wqp, file=gzfile(mapped.file), quote = FALSE, row.names = FALSE, sep = '\t')
 }
