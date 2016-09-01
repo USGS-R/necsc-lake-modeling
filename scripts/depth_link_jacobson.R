@@ -8,6 +8,8 @@ depth_link_jacobson = function(fname){
 	
 	herb_data$lat = NA
 	herb_data$lon = NA
+	#pad everything with zeros to be 8 digits
+	herb_data$DOW.Number = sprintf('%08i', as.numeric(herb_data$DOW.Number))
 	
 	for(i in 1:nrow(herb_data)){
 		lake_url = paste0(service, herb_data$DOW.Number[i])
