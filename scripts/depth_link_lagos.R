@@ -22,5 +22,5 @@ depth_link_lagos = function(config){
 	lagos_linked$zmax     = lagos_linked$maxdepth
 	
 	to_write              = lagos_linked[,c('id', 'source', 'type', 'zmax')]
-	write_aes(to_write, 'data/depth_data_linked/depth_lagos.edt', config$LAGOS_KEY)
+	write.table(to_write, 'data/depth_data_linked/depth_lagos.tsv', sep='\t', row.names=FALSE)
 }
