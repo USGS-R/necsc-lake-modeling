@@ -4,4 +4,4 @@ data_variables: ['prcp_debias', 'windspeed_debias', 'rh_debias', 'rsdl_debias', 
 variable_names: ['precip', 'windspeed', 'relhumperc', 'dlwrfsfc','dswrfsfc','snow','airtemp']
 wps_url: "http://cida-test.er.usgs.gov/gdp/process/WebProcessingService"
 data_url: "dods://cida-eros-netcdfdev.er.usgs.gov:8080/thredds/dodsC/thredds_workspace/dataSciData/notaro_miwimn/miroc5_miwimn.ncml"
-driver_split: 300
+driver_split: 1000
