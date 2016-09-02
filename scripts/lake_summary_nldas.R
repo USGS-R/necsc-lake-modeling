@@ -74,6 +74,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
   
   knife = webprocess(url=config$wps_url)
   temp.dir <- tempdir()
+  job.ids <- c()
   
   vars <- sort(parse_driver_file_name(new.files, 'vars'))
   
@@ -96,7 +97,6 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
     fabric = webdata(url=config$data_url, variables=data_variable, times=times)
     
     for (i in 1:(length(groups.s)+1)){
-      
       # start a new job, don't wait for it. 
       if (i != (length(groups.s)+1)){
         lake.ids <- ids[groups.s[i]:groups.e[i]]
@@ -108,82 +108,93 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
       # do all the clean up work while the other job runs
       if (successful(job)){
         message(job@id,' completed')
-        cat('success! ...downloading... ', file=mssg.file, append = TRUE)
-        data = tryCatch({
-          result(job, with.units=TRUE)
-        }, error = function(e) {
-          message(job@id,' failed to download')
-          cat('** job FAILED to download **\n',job@id, file=mssg.file, append = TRUE)
-          return(NULL)
-        })
         
-        if (!is.null(data)){
-          bad.file = FALSE
-          if ('time(day of year)' %in% names(data)){
-            data <- reform_notaro(data) #hack for non-CF data from Notaro
-          }
-          dr <- format(c(head(data$DateTime,1), tail(data$DateTime,1)), '%Y-%m-%d UTC', tz = 'UTC')
-          if (dr[1] != times[1] | dr[2] != times[2]){
-            message('file date range does not match! failure!', length(data$DateTime),'timesteps found')
-            cat(' is incomplete **', file=mssg.file, append = TRUE)
-            message('re-trying download')
-            bad.file = TRUE
-            data = tryCatch({
-              result(job, with.units=TRUE)
-            }, error = function(e) {
-              message(job@id,' failed to download')
-              cat('** job FAILED to download **\n',job@id, file=mssg.file, append = TRUE)
-              return(NULL)
-            })
-            if (!is.null(data)){
-              dr <- format(c(head(data$DateTime,1), tail(data$DateTime,1)), '%Y-%m-%d UTC', tz = 'UTC')
-              if (dr[1] != times[1] | dr[2] != times[2]){
-                message('file date range does not match! failure!', length(data$DateTime),'timesteps found')
-                cat(' is incomplete **', file=mssg.file, append = TRUE)
-              } else {
-                bad.file = FALSE
-              }
-              # else {is still a bad.file}
-            } 
-          } 
-          if (!bad.file){
-            cat('success!', file=mssg.file, append = TRUE)
-            for (file in parse.files){
-              
-              tryCatch({
-                chunks <- strsplit(file, '[_]')[[1]]
-                perm.id <- paste(chunks[2:3],collapse='_')
-                var <- strsplit(chunks[5],'[.]')[[1]][1]
-                data.site <- data[c('DateTime', perm.id,'variable')] %>% 
-                  filter(variable == data_variable) %>% 
-                  select_('DateTime',2)
-                # can end up with an empty file here...
-                names(data.site) <- c('DateTime', var)
-                local.file <- file.path(temp.dir, file)
-                
-                save(data.site, file=local.file, compress="xz")
-                output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, paste0(opt$driver_dir,sprintf('drivers_GLM_%s/', data.source)), file),
-                                 ignore.stdout = TRUE, ignore.stderr = TRUE)
-                unlink(local.file)
-                if (!output){
-                  message('rsync of ',file, ' complete! ', Sys.time())
-                } else {
-                  cat('rsync of ', file, ' FAILED **', file=mssg.file, append = TRUE)
-                }
-                
-              }, error = function(e){
-                cat('rsync of ', file, ' FAILED **', file=mssg.file, append = TRUE)
+        if (!job@id %in% job.ids){
+          
+          cat('success! ...downloading... ', file=mssg.file, append = TRUE)
+          data = tryCatch({
+            result(job, with.units=TRUE)
+          }, error = function(e) {
+            message(job@id,' failed to download')
+            cat('** job FAILED to download **\n',job@id, file=mssg.file, append = TRUE)
+            return(NULL)
+          })
+          
+          if (!is.null(data)){
+            bad.file = FALSE
+            if ('time(day of year)' %in% names(data)){
+              data <- reform_notaro(data) #hack for non-CF data from Notaro
+            }
+            dr <- format(c(head(data$DateTime,1), tail(data$DateTime,1)), '%Y-%m-%d UTC', tz = 'UTC')
+            if (dr[1] != times[1] | dr[2] != times[2]){
+              message('file date range does not match! failure!', length(data$DateTime),'timesteps found')
+              cat(' is incomplete **', file=mssg.file, append = TRUE)
+              message('re-trying download')
+              bad.file = TRUE
+              data = tryCatch({
+                result(job, with.units=TRUE)
+              }, error = function(e) {
+                message(job@id,' failed to download')
+                cat('** job FAILED to download **\n',job@id, file=mssg.file, append = TRUE)
+                return(NULL)
               })
+              if (!is.null(data)){
+                dr <- format(c(head(data$DateTime,1), tail(data$DateTime,1)), '%Y-%m-%d UTC', tz = 'UTC')
+                if (dr[1] != times[1] | dr[2] != times[2]){
+                  message('file date range does not match! failure!', length(data$DateTime),'timesteps found')
+                  cat(' is incomplete **', file=mssg.file, append = TRUE)
+                } else {
+                  bad.file = FALSE
+                }
+                # else {is still a bad.file}
+              } 
             } 
+            if (!bad.file){
+              cat('success!', file=mssg.file, append = TRUE)
+              for (file in parse.files){
+                
+                tryCatch({
+                  chunks <- strsplit(file, '[_]')[[1]]
+                  perm.id <- paste(chunks[2:3],collapse='_')
+                  var <- strsplit(chunks[5],'[.]')[[1]][1]
+                  data.site <- data[c('DateTime', perm.id,'variable')] %>% 
+                    filter(variable == data_variable) %>% 
+                    select_('DateTime',2)
+                  # can end up with an empty file here...
+                  names(data.site) <- c('DateTime', var)
+                  local.file <- file.path(temp.dir, file)
+                  
+                  save(data.site, file=local.file, compress="xz")
+                  output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, paste0(opt$driver_dir,sprintf('drivers_GLM_%s/', data.source)), file),
+                                   ignore.stdout = TRUE, ignore.stderr = TRUE)
+                  unlink(local.file)
+                  if (!output){
+                    message('rsync of ',file, ' complete! ', Sys.time())
+                  } else {
+                    cat('rsync of ', file, ' FAILED **', file=mssg.file, append = TRUE)
+                  }
+                  
+                }, error = function(e){
+                  cat('rsync of ', file, ' FAILED **', file=mssg.file, append = TRUE)
+                })
+              } 
+              job.ids <- c(job.ids, job@id)
+              message(paste(job.ids, sep = '\n'))
+            }
           }
+        } else {
+          # // do nothing, these files are already there. 
         }
+        
       } else {
         message(job@id,' failed ' )
         cat('\n** job FAILED in processing **\n', job@id, file=mssg.file, append = TRUE)
       }
       job <- wait(new.job) # now wait on the new job
-      if (i != (length(groups.s)+1))
+      if (i != (length(groups.s)+1)){
         parse.files <- post.files[groups.s[i]:groups.e[i]] #what about when i == length(groups.s)????
+      }
+        
     }
   }
 }
