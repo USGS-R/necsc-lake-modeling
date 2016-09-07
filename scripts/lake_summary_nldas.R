@@ -169,12 +169,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
               }
               tryCatch({
                 message('begining rsync ', Sys.time())
-<<<<<<< Updated upstream
                 output <- system(sprintf('rsync -r %s/ %s@cidasdpdfsuser.cr.usgs.gov:%s', sync.dir, opt$necsc_user, paste0(opt$driver_dir,sprintf('drivers_GLM_%s', data.source))),
-=======
-                browser()
-                output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s', sync.dir, opt$necsc_user, paste0(opt$driver_dir,sprintf('drivers_GLM_%s/', data.source))),
->>>>>>> Stashed changes
                                  ignore.stdout = TRUE, ignore.stderr = TRUE)
                 unlink(sync.dir, recursive = TRUE)
                 if (!output){
@@ -187,7 +182,7 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
                 cat('rsync of FAILED **', file=mssg.file, append = TRUE)
               })
               job.ids <- c(job.ids, job@id)
-              message(paste(job.ids, sep = '\n'))
+              message(paste(job.ids, collapse = '\n'))
             }
           }
         } else {
