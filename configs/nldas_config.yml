@@ -5,7 +5,7 @@ nldas_url: "dods://hydro1.sci.gsfc.nasa.gov/dods/NLDAS_FORA0125_H.002"
 data_times: ["1979-01-04","2016-01-01"]
 data_variables: ['spfh2m','tmp2m','pressfc','apcpsfc','dlwrfsfc','ugrd10m','vgrd10m','dswrfsfc']
 variable_names: ['spfh2m','tmp2m','pressfc','apcpsfc','dlwrfsfc','ugrd10m','vgrd10m','dswrfsfc']
-wps_url: "http://cida.usgs.gov/gdp/process/WebProcessingService"
+wps_url: "http://cida-test.er.usgs.gov/gdp/process/WebProcessingService"
 data_url: "dods://cida-eros-netcdfdev.er.usgs.gov:8080/thredds/dodsC/thredds_workspace/dataSciData/nldas_miwimn/nldas_miwimn.ncml"
 catalog_url: "http://cida-eros-netcdfdev.er.usgs.gov:8080/thredds/catalog/thredds/nldas_miwimn/catalog.xml"
 sub_split: 10000
