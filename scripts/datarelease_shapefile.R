@@ -1,7 +1,7 @@
 library(rgdal)
 library(dplyr)
 m2ft <- 3.28084
-gh_layer <- readOGR('/Users/jread/Downloads/hansen_et_al_lakes','hansen_et_al_lakes')
+gh_layer <- readOGR('hansen_et_al_lakes','hansen_et_al_lakes')
 categories <- read.csv('../climate-fish-habitat/cache/fetch/fish_dominance_categories_by_lake_medians.csv', stringsAsFactors = FALSE, header=TRUE) %>% 
   rename(WBDY_WBIC=WBIC, early=X1989.2014, mid=X2040.2064, late=X2065.2089)
 
