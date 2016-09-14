@@ -12,6 +12,7 @@ vignettes/*.pdf
 mydata.RData
 **.DS_Store
 *.remake/
+*gh_release/
 *.Rproj
 data/NHD_shape_large
 data/WQP_scratch_folder
