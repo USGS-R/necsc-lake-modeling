@@ -21,7 +21,7 @@ create_FGDC_template <- function(file.out){
   
   m %>%
     xml_add_child('descript') %>%
-    xml_add_child("abstract",'{{abstract}}') %>%
+    xml_add_child("abstract",'{{abstract}} This data set contains the following parameters: ABSCONTENT-TEMPLATEwhich are defined below.') %>%
     xml_add_sibling("purpose", '{{purpose}}')
   
   ti <- m %>%
@@ -114,7 +114,7 @@ create_FGDC_template <- function(file.out){
     xml_add_child('datacred','{{funding-credits}}') %>% 
     xml_add_sibling('native','{{build-environment}}') %>% 
     xml_add_sibling('crossref-template')
-    
+  
   # <---Data quality--->
   q <- xml_add_child(mt, 'dataqual')
   
@@ -137,8 +137,8 @@ create_FGDC_template <- function(file.out){
     xml_add_sibling('direct','Point') %>% 
     xml_add_sibling('ptvctinf') %>% 
     xml_add_child('sdtsterm') %>% 
-    xml_add_child('sdtstype','Point') %>% 
-    xml_add_sibling('ptvctcnt','{{point-count}}')
+    xml_add_child('sdtstype','{{feature-type}}') %>% 
+    xml_add_sibling('ptvctcnt','{{feature-count}}')
   # </---Data quality--->
   
   # <---Processing steps--->
@@ -244,49 +244,51 @@ create_FGDC_template <- function(file.out){
   write_xml(d, file = tempxml)
   
   place.template = "{{#states}}
-    <place>\n\t\t\t<placekt>U.S. Department of Commerce, 1987, Codes for the identification of the States, the District of Columbia and the outlying areas of the United States, and associated areas (Federal Information Processing Standard 5-2): Washington, D. C., NIST</placekt>
-      <placekey>{{state-name}}</placekey>
-      <placekey>{{state-abbr}}</placekey>
-    </place>
-    {{/states}}"
+  <place>\n\t\t\t<placekt>U.S. Department of Commerce, 1987, Codes for the identification of the States, the District of Columbia and the outlying areas of the United States, and associated areas (Federal Information Processing Standard 5-2): Washington, D. C., NIST</placekt>
+  <placekey>{{state-name}}</placekey>
+  <placekey>{{state-abbr}}</placekey>
+  </place>
+  {{/states}}"
   
   state.template = "{{#states}}<place>
-      <placekt>none</placekt>
-      <placekey>{{state-name}}</placekey>
-    </place>
-    {{/states}}"
+  <placekt>none</placekt>
+  <placekey>{{state-name}}</placekey>
+  </place>
+  {{/states}}"
+  
+  abscontent.template = "{{#attributes}}{{attr-label}}, {{/attributes}}"
   
   origin.template = "{{#authors}}
-      <origin>{{.}}</origin>
-      {{/authors}}"
+  <origin>{{.}}</origin>
+  {{/authors}}"
   attr.template = "{{#attributes}}<attr>
-          <attrlabl>{{attr-label}}</attrlabl>
-          <attrdef>{{attr-def}}</attrdef>
-          <attrdefs>{{attr-defs}}</attrdefs>
-          <attrdomv>
-            <rdom>
-              <rdommin>{{data-min}}</rdommin>
-              <rdommax>{{data-max}}</rdommax>
-              <attrunit>{{data-units}}</attrunit>
-            </rdom>
-          </attrdomv>
-        </attr>\n{{/attributes}}"
+  <attrlabl>{{attr-label}}</attrlabl>
+  <attrdef>{{attr-def}}</attrdef>
+  <attrdefs>{{attr-defs}}</attrdefs>
+  <attrdomv>
+  <rdom>
+  <rdommin>{{data-min}}</rdommin>
+  <rdommax>{{data-max}}</rdommax>
+  <attrunit>{{data-units}}</attrunit>
+  </rdom>
+  </attrdomv>
+  </attr>\n{{/attributes}}"
   
   lworkcit.template = "{{#larger-cites}}<lworkcit>
-          <citeinfo>
+  <citeinfo>
   {{#authors}}
-      <origin>{{.}}</origin>
+  <origin>{{.}}</origin>
   {{/authors}} 
-      <pubdate>{{pubdate}}</pubdate>
-      <title>{{title}}</title>
+  <pubdate>{{pubdate}}</pubdate>
+  <title>{{title}}</title>
   {{#link}}
-      <onlink>{{.}}</onlink>
+  <onlink>{{.}}</onlink>
   {{/link}} 
   </citeinfo>
   </lworkcit>\n{{/larger-cites}}"
   
   crossref.template = "{{#cross-cites}}<crossref>
-          <citeinfo>
+  <citeinfo>
   {{#authors}}
   <origin>{{.}}</origin>
   {{/authors}} 
@@ -307,7 +309,8 @@ create_FGDC_template <- function(file.out){
     gsub(pattern = '<attr-template/>', replacement = attr.template) %>% 
     gsub(pattern = '<lworkcit-template/>', replacement = lworkcit.template) %>% 
     gsub(pattern = '<crossref-template/>', replacement = crossref.template) %>% 
+    gsub(pattern = 'ABSCONTENT-TEMPLATE', replacement = abscontent.template) %>% 
     cat(file = file.out, sep = '\n')
   return(file.out)
-}
+  }
 
