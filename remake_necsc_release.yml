@@ -1,0 +1,57 @@
+target_default: necsc_release
+
+  
+packages:
+  - yaml
+  - xml2
+  - whisker
+  - rgdal
+  - httr
+  - sbtools
+  - rgeos
+  - dataRetrieval
+  
+sources:
+  - scripts/create_FGDC_template.R
+  - scripts/render_FGDC_metadata.R
+  - scripts/post_data_release.R
+  - scripts/extract_metadata.R
+  
+targets:
+  necsc_release:
+    depends: 
+      - necsc_release/release.xml
+      - necsc_release/thermal.xml
+      - necsc_release/config.xml
+      - necsc_release/raw.xml
+      - necsc_release/lakes.xml
+      
+    
+   
+  necsc_release/FGDC_template.mustache:
+    command: create_FGDC_template(target_name)
+  
+  attribute.table:
+    command: create_release_attributes()
+    
+  release.text:
+    command: yaml.load_file("necsc_release/text_release.yaml")
+    
+  thermal.text:
+    command: yaml.load_file("necsc_release/text_thermal.yaml")
+    
+  config.text:
+    command: yaml.load_file("necsc_release/text_config.yaml")
+    
+  raw.text:
+    command: yaml.load_file("necsc_release/raw_config.yaml")
+    
+  lakes.text:
+    command: yaml.load_file("necsc_release/lakes_config.yaml")
+    
+  lakes.metadata:
+    command: extract_spatial_metadata(lakes_shapefile)
+    
+    
+  necsc_release/release.xml:
+    command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, release.text, lakes.metadata) 
