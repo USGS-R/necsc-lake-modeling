@@ -151,35 +151,38 @@ lake_driver_nldas <- function(file='data/NLDAS_data/NLDAS_driver_file_list.tsv')
             } 
             if (!bad.file){
               cat('success!', file=mssg.file, append = TRUE)
+              sync.dir <- file.path(temp.dir, 'tempdrivers')
+              dir.create(sync.dir)
               for (file in parse.files){
+                chunks <- strsplit(file, '[_]')[[1]]
+                perm.id <- paste(chunks[2:3],collapse='_')
+                var <- strsplit(chunks[5],'[.]')[[1]][1]
+                data.site <- data[c('DateTime', perm.id,'variable')] %>% 
+                  filter(variable == data_variable) %>% 
+                  select_('DateTime',2)
+                # can end up with an empty file here...
+                names(data.site) <- c('DateTime', var)
+                local.file <- file.path(sync.dir, file)
                 
-                tryCatch({
-                  chunks <- strsplit(file, '[_]')[[1]]
-                  perm.id <- paste(chunks[2:3],collapse='_')
-                  var <- strsplit(chunks[5],'[.]')[[1]][1]
-                  data.site <- data[c('DateTime', perm.id,'variable')] %>% 
-                    filter(variable == data_variable) %>% 
-                    select_('DateTime',2)
-                  # can end up with an empty file here...
-                  names(data.site) <- c('DateTime', var)
-                  local.file <- file.path(temp.dir, file)
-                  
-                  save(data.site, file=local.file, compress="xz")
-                  output <- system(sprintf('rsync -rP %s %s@cidasdpdfsuser.cr.usgs.gov:%s%s', local.file, opt$necsc_user, paste0(opt$driver_dir,sprintf('drivers_GLM_%s/', data.source)), file),
-                                   ignore.stdout = TRUE, ignore.stderr = TRUE)
-                  unlink(local.file)
-                  if (!output){
-                    message('rsync of ',file, ' complete! ', Sys.time())
-                  } else {
-                    cat('rsync of ', file, ' FAILED **', file=mssg.file, append = TRUE)
-                  }
-                  
-                }, error = function(e){
-                  cat('rsync of ', file, ' FAILED **', file=mssg.file, append = TRUE)
-                })
-              } 
+                save(data.site, file=local.file, compress="xz")
+                
+              }
+              tryCatch({
+                message('begining rsync ', Sys.time())
+                output <- system(sprintf('rsync -r %s/ %s@cidasdpdfsuser.cr.usgs.gov:%s', sync.dir, opt$necsc_user, paste0(opt$driver_dir,sprintf('drivers_GLM_%s', data.source))),
+                                 ignore.stdout = TRUE, ignore.stderr = TRUE)
+                unlink(sync.dir, recursive = TRUE)
+                if (!output){
+                  message('rsync of files complete! ', Sys.time())
+                } else {
+                  cat('rsync of FAILED **', file=mssg.file, append = TRUE)
+                }
+                
+              }, error = function(e){
+                cat('rsync of FAILED **', file=mssg.file, append = TRUE)
+              })
               job.ids <- c(job.ids, job@id)
-              message(paste(job.ids, sep = '\n'))
+              message(paste(job.ids, collapse = '\n'))
             }
           }
         } else {

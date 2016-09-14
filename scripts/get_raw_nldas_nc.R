@@ -33,23 +33,23 @@ create_nldas_ncml <- function(file='data/NLDAS_sub/NLDAS_file_list.tsv'){
 
 calc_nldas_files <- function(nldas_config, nhd_config){
   # mock up huge request in order to get the nccopy response as an exception from GDP:
-  datasetURI <- nldas_config$nldas_url
+  # datasetURI <- nldas_config$nldas_url
   vars <- nldas_config$sub_variables
-  times <- nldas_config$sub_times
+  # times <- nldas_config$sub_times
+  # 
+  # states <- sapply(nhd_config$states, function(x) x$name)
+  # stencil <- webgeom(paste0('state::',paste(states,collapse=',')))
+  # fabric <- webdata(url=datasetURI, variables=vars, times=times)
+  # knife <- webprocess(url = nldas_config$wps_url, algorithm=list(`OPeNDAP Subset`="gov.usgs.cida.gdp.wps.algorithm.FeatureCoverageOPeNDAPIntersectionAlgorithm"), OUTPUT_TYPE="netcdf")
+  # job <- geoknife(stencil, fabric, knife = knife, wait=TRUE)
+  # grid.data <- strsplit(check(job)$status,'[,?]')[[1]][-1]
+  # get_grid <- function(data){
+  #   strsplit(strsplit(strsplit(data,'[[]')[[1]][2],'[]]')[[1]],'[:]')[[1]][-2]
+  # }
   
-  states <- sapply(nhd_config$states, function(x) x$name)
-  stencil <- webgeom(paste0('state::',paste(states,collapse=',')))
-  fabric <- webdata(url=datasetURI, variables=vars, times=times)
-  knife <- webprocess(url = nldas_config$wps_url, algorithm=list(`OPeNDAP Subset`="gov.usgs.cida.gdp.wps.algorithm.FeatureCoverageOPeNDAPIntersectionAlgorithm"), OUTPUT_TYPE="netcdf")
-  job <- geoknife(stencil, fabric, knife = knife, wait=TRUE)
-  grid.data <- strsplit(check(job)$status,'[,?]')[[1]][-1]
-  get_grid <- function(data){
-    strsplit(strsplit(strsplit(data,'[[]')[[1]][2],'[]]')[[1]],'[:]')[[1]][-2]
-  }
-  
-  lon <- get_grid(grid.data[1])
-  time <- get_grid(grid.data[2])
-  lat <- get_grid(grid.data[3])
+  lon <- c(221,344)#get_grid(grid.data[1]) #221.344
+  time <- c(0,324323)#get_grid(grid.data[2]) #0.324323
+  lat <- c(132,196)#get_grid(grid.data[3]) #132.196
   grids <- data.frame(lon=lon,lat=lat,time=time, stringsAsFactors = FALSE)
   start.i <- seq(as.numeric(grids$time[1]),to = as.numeric(grids$time[2]), by = nldas_config$sub_split)
   end.i <- c(tail(start.i-1,-1), as.numeric(grids$time[2]))

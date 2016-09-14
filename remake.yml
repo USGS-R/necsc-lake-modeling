@@ -27,18 +27,13 @@ targets:
   all:
     depends: 
       - nldas_index
-      - cm2.0_index
-      - genmom_index
-      - echam5_index
       - access_index
       - cnrm_index
       - gfdl_index
       - ipsl_index
       - miroc5_index
       - mri_index
-      ##- temperature.mapped
-      ##- secchi.mapped
-
+      
   data/NLDAS_sub/nldas_miwimn.ncml:
     command: create_nldas_ncml("data/NLDAS_sub/NLDAS_file_list.tsv")
 
@@ -61,14 +56,6 @@ targets:
   nhd_config:
     command: load_config("configs/NHD_config.yml")
 
-  echam5_config:
-    command: load_config("configs/ECHAM5_config.yml")
-
-  cm2.0_config:
-    command: load_config("configs/CM2.0_config.yml")
-
-  genmom_config:
-    command: load_config("configs/GENMOM_config.yml")
 
   access_config:
     command: load_config("configs/ACCESS_config.yml")
@@ -90,15 +77,6 @@ targets:
 
   data/NLDAS_summ/NLDAS_driver_index.tsv:
     command: driver_server_files('data/NLDAS_data/NLDAS_driver_status.txt')
-
-  data/GENMOM_summ/GENMOM_driver_index.tsv:
-    command: driver_server_files('data/GENMOM_data/GENMOM_driver_status.txt')
-
-  data/CM2.0_summ/CM2.0_driver_index.tsv:
-    command: driver_server_files('data/CM2.0_data/CM2.0_driver_status.txt')
-
-  data/ECHAM5_summ/ECHAM5_driver_index.tsv:
-    command: driver_server_files('data/ECHAM5_data/ECHAM5_driver_status.txt')
 
   data/ACCESS_summ/ACCESS_driver_index.tsv:
     command: driver_server_files('data/ACCESS_data/ACCESS_driver_status.txt')
@@ -163,28 +141,11 @@ targets:
   data/NLDAS_data/NLDAS_driver_file_list.tsv:
     command: calc_nldas_driver_files(nldas_config, project_lake_locations)
 
-  data/ECHAM5_data/ECHAM5_driver_file_list.tsv:
-    command: calc_nldas_driver_files(echam5_config, project_lake_locations)
-
-  data/GENMOM_data/GENMOM_driver_file_list.tsv:
-    command: calc_nldas_driver_files(genmom_config, project_lake_locations)
-
-  data/CM2.0_data/CM2.0_driver_file_list.tsv:
-    command: calc_nldas_driver_files(cm2.0_config, project_lake_locations)
-
   data/NLDAS_data/NLDAS_driver_status.txt:
     command: lake_driver_nldas("data/NLDAS_data/NLDAS_driver_file_list.tsv")
     depends:
       - ncml
 
-  data/GENMOM_data/GENMOM_driver_status.txt:
-    command: lake_driver_nldas("data/GENMOM_data/GENMOM_driver_file_list.tsv")
-
-  data/ECHAM5_data/ECHAM5_driver_status.txt:
-    command: lake_driver_nldas("data/ECHAM5_data/ECHAM5_driver_file_list.tsv")
-
-  data/CM2.0_data/CM2.0_driver_status.txt:
-    command: lake_driver_nldas("data/CM2.0_data/CM2.0_driver_file_list.tsv")
 
   data/ACCESS_data/ACCESS_driver_status.txt:
     command: lake_driver_nldas("data/ACCESS_data/ACCESS_driver_file_list.tsv")
@@ -218,15 +179,6 @@ targets:
     
   nldas_index:
     command: sync_driver_index("data/NLDAS_summ/NLDAS_driver_index.tsv")
-
-  echam5_index:
-    command: sync_driver_index("data/ECHAM5_summ/ECHAM5_driver_index.tsv")
-
-  genmom_index:
-    command: sync_driver_index("data/GENMOM_summ/GENMOM_driver_index.tsv")
-
-  cm2.0_index:
-    command: sync_driver_index("data/CM2.0_summ/CM2.0_driver_index.tsv")
 
   access_index:
     command: sync_driver_index("data/ACCESS_summ/ACCESS_driver_index.tsv")

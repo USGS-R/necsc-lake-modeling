@@ -1,7 +1,7 @@
 data_name: "IPSL"
 data_times: ["1981-01-01", "2099-12-31"]
-data_variables: ['prcp_debias', 'windspeed_debias', 'rh_debias', 'rsdl_debias', 'rsds_debias','snow_debias', 'tas_debias']
-variable_names: ['precip', 'windspeed', 'relhumperc', 'dlwrfsfc','dswrfsfc','snow','airtemp']
+data_variables: ['prcp_debias', 'windspeed_debias', 'rh_debias', 'rsdl_debias', 'rsds_debias','tas_debias']
+variable_names: ['precip', 'windspeed', 'relhumperc', 'dlwrfsfc','dswrfsfc','airtemp']
 wps_url: "http://cida-test.er.usgs.gov/gdp/process/WebProcessingService"
 data_url: "dods://cida-eros-netcdfdev.er.usgs.gov:8080/thredds/dodsC/thredds_workspace/dataSciData/notaro_miwimn/ipsl_miwimn.ncml"
-driver_split: 300
+driver_split: 1000
