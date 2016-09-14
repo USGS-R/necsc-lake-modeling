@@ -48,8 +48,7 @@ funding-credits: >-
 build-environment: Multiple computer systems were used to generate these data, including linux, OSX. The open source language R was used on all systems, as well as the open-source model GLM.
 
 process-date: 20160624
-indirect-spatial: Wisconsin
-point-count: 2148
+indirect-spatial: U.S.A.
 latitude-res: 0.1
 longitude-res: 0.1
 data-name: Lake water temperature metrics
