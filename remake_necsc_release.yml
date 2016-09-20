@@ -21,11 +21,7 @@ sources:
 targets:
   necsc_release:
     depends: 
-      - necsc_release/release.xml
-      - necsc_release/thermal.xml
-      - necsc_release/config.xml
-      - necsc_release/raw.xml
-      - necsc_release/lakes.xml
+      - lakes.posted
       
     
    
@@ -59,6 +55,8 @@ targets:
   lakes.metadata:
     command: extract_spatial_metadata(lakes)
     
+  necsc_release/lakes.xml:
+    command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, lakes.text, lakes.metadata) 
     
-  necsc_release/release.xml:
-    command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, release.text, lakes.metadata) 
+  lakes.posted:
+    command: append_release_files(sb.config, "necsc_release/lakes.xml", target_name)

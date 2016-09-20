@@ -1,0 +1,125 @@
+authors: ["Luke A. Winslow", "Gretchen J.A. Hansen", "Jordan S. Read"]
+pubdate: 2016
+title: >-
+  Spatial data: A large-scale database of modeled contemporary and future water temperature data for 10774 Michigan, Minnesota and Wisconsin Lakes
+doi: http://dx.doi.org/10.5066/THIS.IS.FAKE
+abstract: >-
+  Climate change has been shown to influence lake temperatures globally. To better understand the diversity of lake responses to climate change and give managers tools to manage individual lakes, 
+  we modelled daily water temperature profiles for 10,774 lakes in Michigan, Minnesota and Wisconsin for contemporary (1979-2015) and future (2020-2040 and 2080-2100) time 
+  periods with climate models based on the Representative Concentration Pathway 8.5, the worst-case emission scenario. From simulated temperatures, we derived commonly used, 
+  ecologically relevant annual metrics of thermal conditions for each lake. We included all available supporting metadata including satellite and in-situ observations of water clarity, 
+  maximum observed lake depth, land-cover based estimates of surrounding canopy height and observed water temperature profiles (used here for validation). 
+  This unique dataset offers landscape-level insight into the future impact of climate change on lakes.
+purpose: Fisheries biology, limnological research, and climate science.
+start-date: 19790101
+end-date: 20991231
+
+cross-cites:
+  -
+    authors: ["Gretchen J.A. Hansen", "Jordan S. Read", "Jonathan F. Hansen", "Luke A. Winslow"]
+    title: >-
+      Projected shifts in fish species dominance in Wisconsin lakes under climate change
+    pubdate: 2016
+    link: http://dx.doi.org/10.1111/gcb.13462
+  -
+    authors: ['Jordan S. Read', 'Luke A. Winslow', 'Gretchen J.A. Hansen','Jamon Van Den Hoek', 'Paul C. Hanson', 'Louise C. Bruce', 'Corey D. Markfort']
+    title: Simulating 2368 temperate lakes reveals weak coherence in stratification phenology
+    pubdate: 2014
+    link: http://dx.doi.org/10.1016/j.ecolmodel.2014.07.029
+
+larger-cites: 
+  -
+    authors: ["Luke A. Winslow", "Gretchen J.A. Hansen", "Jordan S. Read"]
+    title: >-
+      A large-scale database of modeled contemporary and future water temperature data for 10774 Michigan, Minnesota and Wisconsin Lakes
+    pubdate: 2016
+  
+attributes:
+  - 
+    attr-label: lakeid
+    attr-def: >-
+      Lake identification number for this dataset. Is the Prmnn_I prefixed with source, as "nhd_{Prmnn_I}"
+    attr-defs: This data release
+    data-min: NA
+    data-max: NA
+    data-units: NA
+  - 
+    attr-label: Prmnn_I
+    attr-def: Value that uniquely identifies the occurrence of each feature in The National Map
+    attr-defs: http://nhd.usgs.gov/
+    data-min: NA
+    data-max: NA
+    data-units: NA
+  - 
+    attr-label: GNIS_ID
+    attr-def: Unique identifier assigned by GNIS, 10-char value
+    attr-defs: numeric
+    data-min: NA
+    data-max: NA
+    data-units: NA
+  - 
+    attr-label: GNIS_Nm
+    attr-def: Proper name, specific term, or expression by which a particular geographic entity is known.
+    attr-defs: character
+    data-min: NA
+    data-max: NA
+    data-units: NA
+  - 
+    attr-label: ReachCd
+    attr-def: Unique identifier for a reach. The first eight numbers are the WBD_HUC8. The next six numbers are randomly assigned, sequential numbers that are unique within a HUC8, 14-char value.
+    attr-defs: numeric
+    data-min: NA
+    data-max: NA
+    data-units: NA
+  - 
+    attr-label: FType
+    attr-def: Three-digit integer value; unique identifier of a feature type.
+    attr-defs: http://nhd.usgs.gov/
+    data-min: NA
+    data-max: NA
+    data-units: NA
+  - 
+    attr-label: FCode
+    attr-def: Five-digit integer value; comprised of the feature type and combinations of characteristics and values.
+    attr-defs: http://nhd.usgs.gov/
+    data-min: NA
+    data-max: NA
+    data-units: NA
+
+update: none planned
+themekeywords: ["water","temperate lakes","reservoirs","modeling","climate change","thermal profiles"]
+
+usage-rules: >- 
+  These data are subject to change and are not citable until reviewed and approved for official publication by the USGS
+
+contact-person: Jordan S. Read
+contact-phone: 608 821-3922
+contact-email: jread@usgs.gov
+funding-credits: >-
+  This study was funded by the Department of the Interior
+  Northeast Climate Science Center, the United States Geological Survey National Climate
+  Change and Wildlife Science Center grant 10909172 to the University of Wisconsin–Madison,
+  and the WDNR Federal Aid in Sport Fish Restoration (Project F-95-P, study SSBW).
+
+build-environment: Multiple computer systems were used to generate these data, including linux, OSX. The open source language R was used on all systems, as well as the open-source model GLM.
+
+process-date: 20160624
+indirect-spatial: U.S.A.
+latitude-res: 0.1
+longitude-res: 0.1
+data-name: Polygons for study lakes
+data-description: Shapefile of study lakes included in this data release.
+
+
+distro-person: Jordan S. Read
+liability-statement: >-
+  Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. 
+  Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), 
+  no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall 
+  the act of distribution constitute any such warranty.
+  
+file-format: Shapefile Data Set
+metadata-date: 20160624
+metadata-person: Jordan S. Read
+metadata-phone: 608 821-3922
+metadata-email: jread@usgs.gov
