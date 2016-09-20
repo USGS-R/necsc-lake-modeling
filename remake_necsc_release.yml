@@ -8,6 +8,7 @@ packages:
   - rgdal
   - httr
   - sbtools
+  - sp
   - rgeos
   - dataRetrieval
   
@@ -34,6 +35,9 @@ targets:
   attribute.table:
     command: create_release_attributes()
     
+  sb.config:
+    command: yaml.load_file("necsc_release/sb_config.yaml")
+    
   release.text:
     command: yaml.load_file("necsc_release/text_release.yaml")
     
@@ -44,13 +48,16 @@ targets:
     command: yaml.load_file("necsc_release/text_config.yaml")
     
   raw.text:
-    command: yaml.load_file("necsc_release/raw_config.yaml")
+    command: yaml.load_file("necsc_release/text_raw.yaml")
     
   lakes.text:
-    command: yaml.load_file("necsc_release/lakes_config.yaml")
+    command: yaml.load_file("necsc_release/text_lakes.yaml")
+  
+  lakes:
+    command: read_sb_shape(sb.config, target_name)
     
   lakes.metadata:
-    command: extract_spatial_metadata(lakes_shapefile)
+    command: extract_spatial_metadata(lakes)
     
     
   necsc_release/release.xml:

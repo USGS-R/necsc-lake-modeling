@@ -1,0 +1,56 @@
+authors: ["Luke A Winslow","others..."]
+pubdate: 2016
+title: Metabolism data for awesome things!
+doi: http://dx.doi.org/10.5066/THIS.IS.FAKE
+abstract: >-
+  It is well recognized that the climate is warming in response to anthropogenic emission of greenhouse gases. Over the last decade, this has had a warming effect on lakes. Water clarity is also known to effect water temperature in lakes. What is unclear is how a warming climate might interact with changes in water clarity in lakes. As part of a project at the USGS Office of Water Information, several water clarity scenarios were simulated for lakes in Wisconsin to examine how changing water clarity interacts with climate change to affect lake temperatures at a broad scale.
+abstract-contents: >-  
+  This data set contains the following parameters: year, WBIC, durStrat, max_schmidt_stability, mean_schmidt_stability_JAS, mean_schmidt_stability_July, SthermoD_mean_JAS, SthermoD_mean, lake_average_temp, peak_lake_average_temp, lake_average_temp_JAS, mean_epi_temp, mean_hypo_temp, mean_surf_temp, mean_bottom_temp, peak_surf_temp, peak_bottom_temp, mean_surf_temp_JAS, mean_bottom_temp_JAS, mean_bottom_temp_365, mean_surf_temp_365, mean_1m_temp, mean_surf_JA, GDD_wtr_5c, GDD_wtr_10c, volume_mean_m_3, simulation_length_days, mean_volumetric_temp, kd, out_val calculated for 2210 lakes
+purpose: Fisheries biology, limnological research, and climate science.
+start-date: 19890101
+end-date: 20891231
+
+larger-cites: 
+  -
+    authors: ["Gretchen J.A. Hansen", "Jordan S. Read", "Jonathan F. Hansen", "Luke A. Winslow"]
+    title: >-
+      Projected shifts in fish species dominance in Wisconsin lakes under climate change
+    pubdate: 2016
+    
+update: none planned
+themekeywords: ["water","temperate lakes","reservoirs","modeling","bass","walleye","climate change","largemouth bass","species distribution models","thermal profiles"]
+
+usage-rules: >- 
+  These data are subject to change and are not citable until reviewed and approved for official publication by the USGS
+
+contact-person: Jordan S. Read
+contact-phone: 608 821-3922
+contact-email: jread@usgs.gov
+funding-credits: >-
+  This study was funded by the Department of the Interior
+  Northeast Climate Science Center, the United States Geological Survey National Climate
+  Change and Wildlife Science Center grant 10909172 to the University of Wisconsin–Madison,
+  and the WDNR Federal Aid in Sport Fish Restoration (Project F-95-P, study SSBW).
+
+build-environment: Multiple computer systems were used to generate these data, including linux, OSX. The open source language R was used on all systems, as well as the open-source model GLM.
+
+process-date: 20160624
+indirect-spatial: U.S.A.
+latitude-res: 0.1
+longitude-res: 0.1
+data-name: Lake water temperature metrics
+data-description: Calculated lake water temperature metrics derived from a series of model scenarios.
+
+
+distro-person: Jordan S. Read
+liability-statement: >-
+  Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. 
+  Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), 
+  no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall 
+  the act of distribution constitute any such warranty.
+  
+file-format: Tab-delimited text files
+metadata-date: 20160624
+metadata-person: Jordan S. Read
+metadata-phone: 608 821-3922
+metadata-email: jread@usgs.gov
