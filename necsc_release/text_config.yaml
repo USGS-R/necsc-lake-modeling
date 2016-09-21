@@ -1,0 +1,78 @@
+title: >-
+  Model configuration: A large-scale database of modeled contemporary and future water temperature data for 10774 Michigan, Minnesota and Wisconsin Lakes
+
+cross-cites:
+  -
+    authors: ['Matthey R. Hipsey','Louise C. Bruce', 'David P. Hamilton']
+    title: >-
+      GLM General Lake Model: Model Overview and User Information
+    pubdate: 2013
+    link: http://aed.see.uwa.edu.au/research/models/GLM/index.html
+  - 
+    authors: ["Michael Notaro", "Val Bennington", "Steve Vavrus"]
+    title: "Dynamically downscaled projections of lake-effect snow in the Great Lakes basin"
+    pubdate: 2015
+    link: http://dx.doi.org/10.1175/JCLI-D-14-00467.1
+  - 
+    authors: ['Kenneth E. Mitchell','Dag Lohmann','Paul R. Houser','Eric F. Wood','John C. Schaake','Alan Robock','Brian A. Cosgrove','Justin Sheffield','Qingyun Duan','Lifeng Luo','R. Wayne Higgins','Rachel T. Pinker','J. Dan Tarpley','Dennis P. Lettenmaier','Curtis H. Marshall','Jared K. Entin','Ming Pan','Wei Shi','Victor Koren','Jesse Meng','Bruce H. Ramsay','Andrew A. Bailey']
+    title: >-
+      The multi-institution North American Land Data Assimilation System (NLDAS): Utilizing multiple GCIP products and partners in a continental distributed hydrological modeling system
+    pubdate: 2004
+    link: http://dx.doi.org/10.1029/2003JD003823
+
+attributes:
+  - 
+    attr-label: glm_setup
+    attr-def: parameters for setting up the General Lake Model and defining constants
+    attr-defs: Hipsey et al. 2013
+  - 
+    attr-label: morphometry
+    attr-def: parameters describing the depth/area relationship of the lake for the General Lake Model
+    attr-defs: Hipsey et al. 2013
+  - 
+    attr-label: time
+    attr-def: parameters describing the time period and frequency of model runs for the General Lake Model
+    attr-defs: Hipsey et al. 2013
+  - 
+    attr-label: output
+    attr-def: parameters describing how the outputs of model runs from the General Lake Model are written
+    attr-defs: Hipsey et al. 2013
+  - 
+    attr-label: init_profiles
+    attr-def: parameters describing General Lake Model initial conditions
+    attr-defs: Hipsey et al. 2013
+  - 
+    attr-label: meteorology
+    attr-def: parameters describing time series drivers of General Lake Model runs
+    attr-defs: Hipsey et al. 2013
+  - 
+    attr-label: bird_model
+    attr-def: parameters describing the use (if applicable) of the Bird model for General Lake Model runs
+    attr-defs: Hipsey et al. 2013
+  - 
+    attr-label: inflow
+    attr-def: parameters describing inflows to the General Lake Model
+    attr-defs: Hipsey et al. 2013
+  - 
+    attr-label: outflow
+    attr-def: parameters describing outflows from the General Lake Model
+    attr-defs: Hipsey et al. 2013
+  - 
+    attr-label: snowice
+    attr-def: parameters describing how snow and ice dynamics are calculated by the General Lake Model
+    attr-defs: Hipsey et al. 2013
+
+build-environment: Multiple computer systems were used to generate these data, including linux, OSX. The open source language R was used on all systems, as well as the open-source model GLM.
+
+process-date: 20160624
+indirect-spatial: U.S.A.
+latitude-res: 0.1
+longitude-res: 0.1
+data-name: Model configuration details
+data-description: >-
+  Model configurations for running the General Lake Model (Hipsey et al. 2013) for each lake, for each driver type. There are seven files that share identical formatting. 
+  Six files correspond to downscaled Global Circulation Models (Notaro et al. 2016), and one (NLDAS) are results from contemporary (1979-2015) meterology. 
+  Each file contains the same attributes (described above). NLDAS drivers (NLDAS_model_config.json) are described in 
+  Mitchell et al. 2004. The remaining six files are driven with models described in Notaro et al. 2015. 
+
+file-format: JSON (JavaScript Object Notation) formatted text files
