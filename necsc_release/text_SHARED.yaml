@@ -8,6 +8,12 @@ abstract: >-
   ecologically relevant annual metrics of thermal conditions for each lake. We included all available supporting metadata including satellite and in-situ observations of water clarity, 
   maximum observed lake depth, land-cover based estimates of surrounding canopy height and observed water temperature profiles (used here for validation). 
   This unique dataset offers landscape-level insight into the future impact of climate change on lakes.
+larger-cites: 
+  -
+    authors: ["Luke A. Winslow", "Gretchen J.A. Hansen", "Jordan S. Read"]
+    title: >-
+      A large-scale database of modeled contemporary and future water temperature data for 10774 Michigan, Minnesota and Wisconsin Lakes
+    pubdate: 2016  
 purpose: Fisheries biology, limnological research, and climate science.
 start-date: 19790101
 end-date: 20991231

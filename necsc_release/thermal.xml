@@ -41,7 +41,7 @@
     <spdom>
       <bounding>
         <westbc>-96.8589114267623</westbc>
-        <eastbc>-83.0716233148296</eastbc>
+        <eastbc>-83.0573307815185</eastbc>
         <northbc>41.7553570685206</northbc>
         <southbc>48.7289513243629</southbc>
       </bounding>
@@ -220,6 +220,16 @@
         <onlink>http://dx.doi.org/10.1029/2003JD003823</onlink>
       </citeinfo>
     </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Matthey R. Hipsey</origin>
+        <origin>Louise C. Bruce</origin>
+        <origin>David P. Hamilton</origin>
+        <pubdate>2013</pubdate>
+        <title>GLM General Lake Model: Model Overview and User Information</title>
+        <onlink>http://aed.see.uwa.edu.au/research/models/GLM/index.html</onlink>
+      </citeinfo>
+    </crossref>
   </idinfo>
   <dataqual>
     <attracc>
@@ -248,7 +258,7 @@
     <ptvctinf>
       <sdtsterm>
         <sdtstype>G-polygon</sdtstype>
-        <ptvctcnt>8789</ptvctcnt>
+        <ptvctcnt>10774</ptvctcnt>
       </sdtsterm>
     </ptvctinf>
   </spdoinfo>
