@@ -35,6 +35,9 @@ targets:
   sb.config:
     command: yaml.load_file("necsc_release/sb_config.yaml")
     
+  generic.text:
+    command: yaml.load_file("necsc_release/text_SHARED.yaml")
+    
   release.text:
     command: yaml.load_file("necsc_release/text_release.yaml")
     
@@ -57,10 +60,10 @@ targets:
     command: extract_spatial_metadata(lakes)
     
   necsc_release/lakes.xml:
-    command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, lakes.text, lakes.metadata) 
+    command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, generic.text, lakes.text, lakes.metadata) 
   
   necsc_release/thermal.xml:
-    command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, thermal.text, lakes.metadata, thermal.metadata) 
+    command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, generic.text, thermal.text, lakes.metadata, thermal.metadata) 
     
   lakes.posted:
     command: append_release_files(sb.config, "necsc_release/lakes.xml", target_name)
