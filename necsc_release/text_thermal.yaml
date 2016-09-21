@@ -34,7 +34,8 @@ larger-cites:
     title: >-
       A large-scale database of modeled contemporary and future water temperature data for 10774 Michigan, Minnesota and Wisconsin Lakes
     pubdate: 2016
-  
+
+attrs: "year,site_id,peak_temp,coef_var_0.30,coef_var_30.60,stratification_duration,stratification_onset_yday,stratified_period_count,stratified_avg_length,bottom_temp_at_strat,sthermo_depth_mean,schmidt_daily_annual_sum,gdd_wtr_0c,gdd_wtr_5c,gdd_wtr_10c,mean_surf_jas,max_surf_jas,mean_bot_jas,max_bot_jas,mean_surf_jan,max_surf_jan,mean_bot_jan,max_bot_jan,mean_surf_feb,max_surf_feb,mean_bot_feb,max_bot_feb,mean_surf_mar,max_surf_mar,mean_bot_mar,max_bot_mar,mean_surf_apr,max_surf_apr,mean_bot_apr,max_bot_apr,mean_surf_may,max_surf_may,mean_bot_may,max_bot_may,mean_surf_jun,max_surf_jun,mean_bot_jun,max_bot_jun,mean_surf_jul,max_surf_jul,mean_bot_jul,max_bot_jul,mean_surf_aug,max_surf_aug,mean_bot_aug,max_bot_aug,mean_surf_sep,max_surf_sep,mean_bot_sep,max_bot_sep,mean_surf_oct,max_surf_oct,mean_bot_oct,max_bot_oct,mean_surf_nov,max_surf_nov,mean_bot_nov,max_bot_nov,mean_surf_dec,max_surf_dec,mean_bot_dec,max_bot_dec,ice_duration_days,ice_on_date,ice_off_date"  
 attributes:
   - 
     attr-label: year
