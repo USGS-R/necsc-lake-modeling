@@ -27,6 +27,17 @@ cross-cites:
     title: Simulating 2368 temperate lakes reveals weak coherence in stratification phenology
     pubdate: 2014
     link: http://dx.doi.org/10.1016/j.ecolmodel.2014.07.029
+  - 
+    authors: ["Michael Notaro", "Val Bennington", "Steve Vavrus"]
+    title: "Dynamically downscaled projections of lake-effect snow in the Great Lakes basin"
+    pubdate: 2015
+    link: http://dx.doi.org/10.1175/JCLI-D-14-00467.1
+  - 
+    authors: ['Kenneth E. Mitchell','Dag Lohmann','Paul R. Houser','Eric F. Wood','John C. Schaake','Alan Robock','Brian A. Cosgrove','Justin Sheffield','Qingyun Duan','Lifeng Luo','R. Wayne Higgins','Rachel T. Pinker','J. Dan Tarpley','Dennis P. Lettenmaier','Curtis H. Marshall','Jared K. Entin','Ming Pan','Wei Shi','Victor Koren','Jesse Meng','Bruce H. Ramsay','Andrew A. Bailey']
+    title: >-
+      The multi-institution North American Land Data Assimilation System (NLDAS): Utilizing multiple GCIP products and partners in a continental distributed hydrological modeling system
+    pubdate: 2004
+    link: http://dx.doi.org/10.1029/2003JD003823
 
 larger-cites: 
   -
@@ -35,31 +46,6 @@ larger-cites:
       A large-scale database of modeled contemporary and future water temperature data for 10774 Michigan, Minnesota and Wisconsin Lakes
     pubdate: 2016
 
-attributes:
-  - 
-    attr-label: year
-    attr-def: >-
-      Lake 
-    attr-defs: ??
-    data-min: NA
-    data-max: NA
-    data-units: NA
-  - 
-    attr-label: site_id
-    attr-def: >-
-      Lake 
-    attr-defs: ??
-    data-min: NA
-    data-max: NA
-    data-units: NA
-  - 
-    attr-label: peak_temp
-    attr-def: >-
-      Lake 
-    attr-defs: ??
-    data-min: NA
-    data-max: NA
-    data-units: NA
   
     
 
