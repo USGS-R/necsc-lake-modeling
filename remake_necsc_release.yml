@@ -75,6 +75,12 @@ targets:
   
   necsc_release/config.xml:
     command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, generic.text, config.text, lakes.metadata) 
+  
+  necsc_release/raw.xml:
+    command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, generic.text, raw.text, lakes.metadata) 
+  
+  necsc_release/release.xml:
+    command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, generic.text, release.text, lakes.metadata) 
     
   lakes.posted:
     command: append_release_files(sb.config, "necsc_release/lakes.xml", target_name)
@@ -87,3 +93,9 @@ targets:
   
   config.posted: 
     command: append_release_files(sb.config, "necsc_release/config.xml", target_name)
+  
+  raw.posted: 
+    command: append_release_files(sb.config, "necsc_release/raw.xml", target_name)
+  
+  release.posted: 
+    command: append_release_files(sb.config, "necsc_release/release.xml", target_name)
