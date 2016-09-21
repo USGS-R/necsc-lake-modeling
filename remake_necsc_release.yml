@@ -25,6 +25,9 @@ targets:
       - lakes.posted
       - thermal.posted
       - drivers.posted
+      - raw.posted
+      - release.posted
+      - config.posted
       
     
    
