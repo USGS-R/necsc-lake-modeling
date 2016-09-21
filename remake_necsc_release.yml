@@ -17,6 +17,7 @@ sources:
   - scripts/render_FGDC_metadata.R
   - scripts/post_data_release.R
   - scripts/extract_metadata.R
+  - scripts/summarize_dataset_attributes.R
   
 targets:
   necsc_release:
@@ -28,8 +29,8 @@ targets:
   necsc_release/FGDC_template.mustache:
     command: create_FGDC_template(target_name)
   
-  attribute.table:
-    command: create_release_attributes()
+  thermal.metadata:
+    command: thermal_attributes("necsc_release/thermal_table.csv")
     
   sb.config:
     command: yaml.load_file("necsc_release/sb_config.yaml")
@@ -57,6 +58,12 @@ targets:
     
   necsc_release/lakes.xml:
     command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, lakes.text, lakes.metadata) 
+  
+  necsc_release/thermal.xml:
+    command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, thermal.text, lakes.metadata, thermal.metadata) 
     
   lakes.posted:
     command: append_release_files(sb.config, "necsc_release/lakes.xml", target_name)
+  
+  thermal.posted: 
+    command: append_release_files(sb.config, "necsc_release/thermal.xml", target_name)

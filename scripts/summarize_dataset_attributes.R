@@ -20,3 +20,19 @@ read_habitat_metrics <- function(filename){
   }
   return(list(attributes=out))
 }
+
+thermal_attributes <- function(filename){
+ 
+  metrics <- read.table(filename, header = TRUE, sep = ',', stringsAsFactors = FALSE) 
+  out <- list()
+  for (metric in metrics$Name){
+    i <- which(metric == metrics$Name)[1]
+    out[[i]] <- list('attr-label' = metric,
+                     'attr-def' = submissing(metrics$Output.details[i]),
+                     'attr-defs'=submissing(metrics$Specific.metric[i]),
+                     'data-min'='NA', # from data
+                     'data-max'='NA', # from data
+                     'data-units'=submissing(metrics$units[i]))
+  }
+  return(list(attributes=out))
+}
