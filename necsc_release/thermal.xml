@@ -181,6 +181,45 @@
         <onlink>http://dx.doi.org/10.1016/j.ecolmodel.2014.07.029</onlink>
       </citeinfo>
     </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Michael Notaro</origin>
+        <origin>Val Bennington</origin>
+        <origin>Steve Vavrus</origin>
+        <pubdate>2015</pubdate>
+        <title>Dynamically downscaled projections of lake-effect snow in the Great Lakes basin</title>
+        <onlink>http://dx.doi.org/10.1175/JCLI-D-14-00467.1</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Kenneth E. Mitchell</origin>
+        <origin>Dag Lohmann</origin>
+        <origin>Paul R. Houser</origin>
+        <origin>Eric F. Wood</origin>
+        <origin>John C. Schaake</origin>
+        <origin>Alan Robock</origin>
+        <origin>Brian A. Cosgrove</origin>
+        <origin>Justin Sheffield</origin>
+        <origin>Qingyun Duan</origin>
+        <origin>Lifeng Luo</origin>
+        <origin>R. Wayne Higgins</origin>
+        <origin>Rachel T. Pinker</origin>
+        <origin>J. Dan Tarpley</origin>
+        <origin>Dennis P. Lettenmaier</origin>
+        <origin>Curtis H. Marshall</origin>
+        <origin>Jared K. Entin</origin>
+        <origin>Ming Pan</origin>
+        <origin>Wei Shi</origin>
+        <origin>Victor Koren</origin>
+        <origin>Jesse Meng</origin>
+        <origin>Bruce H. Ramsay</origin>
+        <origin>Andrew A. Bailey</origin>
+        <pubdate>2004</pubdate>
+        <title>The multi-institution North American Land Data Assimilation System (NLDAS): Utilizing multiple GCIP products and partners in a continental distributed hydrological modeling system</title>
+        <onlink>http://dx.doi.org/10.1029/2003JD003823</onlink>
+      </citeinfo>
+    </crossref>
   </idinfo>
   <dataqual>
     <attracc>
@@ -232,7 +271,7 @@
     <detailed>
       <enttyp>
         <enttypl>thermal metrics</enttypl>
-        <enttypd>Temperature metrics for study lakes grouped by year and lake. There are 7 files that share identical formatting. Six files correspond to downscaled GCMs (Notaro et al. 2016),  and one (NLDAS) are results from contemporary (1979-2015) meterology. Each file contains the same attributes (described above). </enttypd>
+        <enttypd>Temperature metrics for study lakes grouped by year and lake. There are seven files that share identical formatting. Six files correspond to downscaled Global Circulation Models (Notaro et al. 2016),  and one (NLDAS) are results from contemporary (1979-2015) meterology. Each file contains the same attributes (described above). NLDAS drivers (NLDAS_thermal_metrics.tsv) are described in  Mitchell et al. 2004. The remaining six files are driven with models described in Notaro et al. 2015. </enttypd>
         <enttypds>Producer Defined</enttypds>
       </enttyp>
       <attr>
