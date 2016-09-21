@@ -1,4 +1,4 @@
-serviceEndpoint: "ftp://rockyftp.cr.usgs.gov/vdelivery/Datasets/Staged/Hydro/State/MediumResolution/GDB/"
+serviceEndpoint: "ftp://rockyftp.cr.usgs.gov/vdelivery/Datasets/Staged/Hydrography/NHD/State/MediumResolution/GDB/"
 filename_prefix: "NHD"
 filename_resolution: "M"
 filename_suffix: "ST.zip"
