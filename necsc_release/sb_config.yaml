@@ -1,3 +1,7 @@
 lakes: 
   sb.id: "57d97341e4b090824ffb0e6f"
   feature.name: "model_lakes"
+
+thermal:
+  sb.id: "57d9e887e4b090824ffb1098"
+  

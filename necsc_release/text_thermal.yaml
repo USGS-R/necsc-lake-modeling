@@ -37,13 +37,30 @@ larger-cites:
   
 attributes:
   - 
-    attr-label: lakeidREPLACE!!
+    attr-label: year
     attr-def: >-
-      Lake identification number for this dataset. Is the Prmnn_I prefixed with source, as "nhd_{Prmnn_I}"
-    attr-defs: This data release
+      Lake 
+    attr-defs: ??
     data-min: NA
     data-max: NA
     data-units: NA
+  - 
+    attr-label: site_id
+    attr-def: >-
+      Lake 
+    attr-defs: ??
+    data-min: NA
+    data-max: NA
+    data-units: NA
+  - 
+    attr-label: peak_temp
+    attr-def: >-
+      Lake 
+    attr-defs: ??
+    data-min: NA
+    data-max: NA
+    data-units: NA
+  
     
 
 update: none planned
@@ -68,7 +85,9 @@ indirect-spatial: U.S.A.
 latitude-res: 0.1
 longitude-res: 0.1
 data-name: thermal metrics
-data-description: Temperature metrics for study lakes grouped by year and lake. 
+data-description: >-
+  Temperature metrics for study lakes grouped by year and lake. There are 7 files that share identical formatting. Six files correspond to downscaled GCMs (Notaro et al. 2016), 
+  and one (NLDAS) are results from contemporary (1979-2015) meterology. Each file contains the same attributes (described above). 
 
 
 distro-person: Jordan S. Read
