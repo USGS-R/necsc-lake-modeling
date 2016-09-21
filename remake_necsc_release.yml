@@ -23,6 +23,8 @@ targets:
   necsc_release:
     depends: 
       - lakes.posted
+      - thermal.posted
+      - drivers.posted
       
     
    
@@ -53,6 +55,9 @@ targets:
   lakes.text:
     command: yaml.load_file("necsc_release/text_lakes.yaml")
   
+  drivers.text:
+    command: yaml.load_file("necsc_release/text_drivers.yaml")
+  
   lakes:
     command: read_sb_shape(sb.config, target_name)
     
@@ -63,10 +68,22 @@ targets:
     command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, generic.text, lakes.text, lakes.metadata) 
   
   necsc_release/thermal.xml:
-    command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, generic.text, thermal.text, lakes.metadata, thermal.metadata) 
+    command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, generic.text, thermal.text, lakes.metadata, thermal.metadata)
+  
+  necsc_release/drivers.xml:
+    command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, generic.text, drivers.text, lakes.metadata) 
+  
+  necsc_release/config.xml:
+    command: render_FGDC_metadata("necsc_release/FGDC_template.mustache", target_name, generic.text, config.text, lakes.metadata) 
     
   lakes.posted:
     command: append_release_files(sb.config, "necsc_release/lakes.xml", target_name)
   
   thermal.posted: 
     command: append_release_files(sb.config, "necsc_release/thermal.xml", target_name)
+  
+  drivers.posted: 
+    command: append_release_files(sb.config, "necsc_release/drivers.xml", target_name)
+  
+  config.posted: 
+    command: append_release_files(sb.config, "necsc_release/config.xml", target_name)
