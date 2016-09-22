@@ -1,0 +1,52 @@
+
+title: >-
+  Thermal metrics: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes
+
+
+cross-cites:
+  -
+    authors: ["Gretchen J.A. Hansen", "Jordan S. Read", "Jonathan F. Hansen", "Luke A. Winslow"]
+    title: >-
+      Projected shifts in fish species dominance in Wisconsin lakes under climate change
+    pubdate: 2016
+    link: http://dx.doi.org/10.1111/gcb.13462
+  -
+    authors: ['Jordan S. Read', 'Luke A. Winslow', 'Gretchen J.A. Hansen','Jamon Van Den Hoek', 'Paul C. Hanson', 'Louise C. Bruce', 'Corey D. Markfort']
+    title: Simulating 2368 temperate lakes reveals weak coherence in stratification phenology
+    pubdate: 2014
+    link: http://dx.doi.org/10.1016/j.ecolmodel.2014.07.029
+  - 
+    authors: ["Michael Notaro", "Val Bennington", "Steve Vavrus"]
+    title: "Dynamically downscaled projections of lake-effect snow in the Great Lakes basin"
+    pubdate: 2015
+    link: http://dx.doi.org/10.1175/JCLI-D-14-00467.1
+  - 
+    authors: ['Kenneth E. Mitchell','Dag Lohmann','Paul R. Houser','Eric F. Wood','John C. Schaake','Alan Robock','Brian A. Cosgrove','Justin Sheffield','Qingyun Duan','Lifeng Luo','R. Wayne Higgins','Rachel T. Pinker','J. Dan Tarpley','Dennis P. Lettenmaier','Curtis H. Marshall','Jared K. Entin','Ming Pan','Wei Shi','Victor Koren','Jesse Meng','Bruce H. Ramsay','Andrew A. Bailey']
+    title: >-
+      The multi-institution North American Land Data Assimilation System (NLDAS): Utilizing multiple GCIP products and partners in a continental distributed hydrological modeling system
+    pubdate: 2004
+    link: http://dx.doi.org/10.1029/2003JD003823
+  -
+    authors: ['Matthey R. Hipsey','Louise C. Bruce', 'David P. Hamilton']
+    title: >-
+      GLM General Lake Model: Model Overview and User Information
+    pubdate: 2013
+    link: http://aed.see.uwa.edu.au/research/models/GLM/index.html
+
+
+
+  
+
+build-environment: Multiple computer systems were used to generate these data, including linux, OSX. The open source language R was used on all systems, as well as the open-source model GLM.
+
+process-date: 20160624
+indirect-spatial: U.S.A.
+latitude-res: 0.1
+longitude-res: 0.1
+data-name: thermal metrics
+data-description: >-
+  Temperature metrics for study lakes grouped by year and lake. There are seven files that share identical formatting. Six files correspond to downscaled Global Circulation Models (Notaro et al. 2016), 
+  and one (NLDAS) are results from contemporary (1979-2015) meterology. Each file contains the same attributes (described above). NLDAS drivers (NLDAS_thermal_metrics.tsv) are described in 
+  Mitchell et al. 2004. The remaining six files are driven with models described in Notaro et al. 2015. 
+
+file-format: Tab separated text files

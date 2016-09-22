@@ -1,0 +1,47 @@
+authors: ["Luke A. Winslow", "Gretchen J.A. Hansen", "Jordan S. Read"]
+pubdate: 2016
+doi: http://dx.doi.org/10.5066/THIS.IS.FAKE
+abstract: >-
+  Climate change has been shown to influence lake temperatures globally. To better understand the diversity of lake responses to climate change and give managers tools to manage individual lakes, 
+  we modelled daily water temperature profiles for 10,774 lakes in Michigan, Minnesota and Wisconsin for contemporary (1979-2015) and future (2020-2040 and 2080-2100) time 
+  periods with climate models based on the Representative Concentration Pathway 8.5, the worst-case emission scenario. From simulated temperatures, we derived commonly used, 
+  ecologically relevant annual metrics of thermal conditions for each lake. We included all available supporting metadata including satellite and in-situ observations of water clarity, 
+  maximum observed lake depth, land-cover based estimates of surrounding canopy height and observed water temperature profiles (used here for validation). 
+  This unique dataset offers landscape-level insight into the future impact of climate change on lakes.
+larger-cites: 
+  -
+    authors: ["Luke A. Winslow", "Gretchen J.A. Hansen", "Jordan S. Read"]
+    title: >-
+      A large-scale database of modeled contemporary and future water temperature data for 10774 Michigan, Minnesota and Wisconsin Lakes
+    pubdate: 2016  
+purpose: Fisheries biology, limnological research, and climate science.
+start-date: 19790101
+end-date: 20991231
+
+update: none planned
+themekeywords: ["water","temperate lakes","reservoirs","modeling","climate change","thermal profiles"]
+
+usage-rules: >- 
+  These data are subject to change and are not citable until reviewed and approved for official publication by the USGS
+
+contact-person: Jordan S. Read
+contact-phone: 608 821-3922
+contact-email: jread@usgs.gov
+funding-credits: >-
+  This study was funded by the Department of the Interior
+  Northeast Climate Science Center, the United States Geological Survey National Climate
+  Change and Wildlife Science Center grant 10909172 to the University of Wisconsin–Madison,
+  and the WDNR Federal Aid in Sport Fish Restoration (Project F-95-P, study SSBW).
+  
+
+distro-person: Jordan S. Read
+liability-statement: >-
+  Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. 
+  Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), 
+  no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall 
+  the act of distribution constitute any such warranty.
+  
+metadata-date: 20160624
+metadata-person: Jordan S. Read
+metadata-phone: 608 821-3922
+metadata-email: jread@usgs.gov

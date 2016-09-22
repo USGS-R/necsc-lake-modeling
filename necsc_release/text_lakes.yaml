@@ -1,0 +1,68 @@
+title: >-
+  Spatial data: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes
+
+attributes:
+  - 
+    attr-label: site_id
+    attr-def: >-
+      Lake identification number for this dataset. Is the Prmnn_I prefixed with source, as "nhd_{Prmnn_I}"
+    attr-defs: This data release
+    data-min: NA
+    data-max: NA
+    data-units: NA
+  - 
+    attr-label: Prmnn_I
+    attr-def: Value that uniquely identifies the occurrence of each feature in The National Map
+    attr-defs: http://nhd.usgs.gov/
+    data-min: NA
+    data-max: NA
+    data-units: NA
+  - 
+    attr-label: GNIS_ID
+    attr-def: Unique identifier assigned by GNIS, 10-char value
+    attr-defs: numeric
+    data-min: NA
+    data-max: NA
+    data-units: NA
+  - 
+    attr-label: GNIS_Nm
+    attr-def: Proper name, specific term, or expression by which a particular geographic entity is known.
+    attr-defs: character
+    data-min: NA
+    data-max: NA
+    data-units: NA
+  - 
+    attr-label: ReachCd
+    attr-def: Unique identifier for a reach. The first eight numbers are the WBD_HUC8. The next six numbers are randomly assigned, sequential numbers that are unique within a HUC8, 14-char value.
+    attr-defs: numeric
+    data-min: NA
+    data-max: NA
+    data-units: NA
+  - 
+    attr-label: FType
+    attr-def: Three-digit integer value; unique identifier of a feature type.
+    attr-defs: http://nhd.usgs.gov/
+    data-min: NA
+    data-max: NA
+    data-units: NA
+  - 
+    attr-label: FCode
+    attr-def: Five-digit integer value; comprised of the feature type and combinations of characteristics and values.
+    attr-defs: http://nhd.usgs.gov/
+    data-min: NA
+    data-max: NA
+    data-units: NA
+
+
+
+build-environment: Multiple computer systems were used to generate these data, including linux, OSX. The open source language R was used on all systems, as well as the open-source model GLM.
+
+process-date: 20160624
+indirect-spatial: U.S.A.
+latitude-res: 0.1
+longitude-res: 0.1
+data-name: Polygons for study lakes
+data-description: Shapefile of study lakes included in this data release.
+  
+file-format: Shapefile Data Set
+

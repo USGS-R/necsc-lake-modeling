@@ -1,0 +1,55 @@
+title: >-
+  Temperature data: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes
+
+cross-cites:
+  -
+    authors: ['Matthey R. Hipsey','Louise C. Bruce', 'David P. Hamilton']
+    title: >-
+      GLM General Lake Model: Model Overview and User Information
+    pubdate: 2013
+    link: http://aed.see.uwa.edu.au/research/models/GLM/index.html
+  - 
+    authors: ["Michael Notaro", "Val Bennington", "Steve Vavrus"]
+    title: "Dynamically downscaled projections of lake-effect snow in the Great Lakes basin"
+    pubdate: 2015
+    link: http://dx.doi.org/10.1175/JCLI-D-14-00467.1
+  - 
+    authors: ['Kenneth E. Mitchell','Dag Lohmann','Paul R. Houser','Eric F. Wood','John C. Schaake','Alan Robock','Brian A. Cosgrove','Justin Sheffield','Qingyun Duan','Lifeng Luo','R. Wayne Higgins','Rachel T. Pinker','J. Dan Tarpley','Dennis P. Lettenmaier','Curtis H. Marshall','Jared K. Entin','Ming Pan','Wei Shi','Victor Koren','Jesse Meng','Bruce H. Ramsay','Andrew A. Bailey']
+    title: >-
+      The multi-institution North American Land Data Assimilation System (NLDAS): Utilizing multiple GCIP products and partners in a continental distributed hydrological modeling system
+    pubdate: 2004
+    link: http://dx.doi.org/10.1029/2003JD003823
+
+attributes:
+  - 
+    attr-label: time
+    attr-def: Calendar date
+    data-min: NA
+    data-max: NA
+    data-units: NA  
+  - 
+    attr-label: wtr_{z}
+    attr-def: water temperature at depth z
+    data-min: NA
+    data-max: NA
+    data-units: degrees C  
+    
+
+build-environment: Multiple computer systems were used to generate these data, including linux, OSX. The open source language R was used on all systems, as well as the open-source model GLM.
+
+process-date: 20160624
+indirect-spatial: U.S.A.
+latitude-res: 0.1
+longitude-res: 0.1
+data-name: Raw model output
+data-description: >-
+  Model output from running the General Lake Model (Hipsey et al. 2013) for each lake, for each driver type, for each daily timestep. Because lakes vary in depth, some lake output files contain 
+  fewer columns than others. Files are split into multiple zipped folders to keep sizes close to 2GB. 
+  For each of seven drivers, there exists an index file for mapping file names to associated zip folder. 
+  The file names include the "site_id" that is used to describe unique lakes as a reference for this dataset. 
+  All files share identical formatting.   Six drivers correspond to downscaled Global Circulation Models (Notaro et al. 2016), 
+  and one (NLDAS) are results from contemporary (1979-2015) meterology. 
+  Each file contains the same attributes (described above). NLDAS drivers are described in 
+  Mitchell et al. 2004. The remaining six drivers are driven with models described in Notaro et al. 2015. 
+
+file-format: zipped folders of temperature output
