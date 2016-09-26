@@ -9,7 +9,7 @@
         <pubdate>2016</pubdate>
         <title>Spatial data: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes</title>
         <geoform>text files</geoform>
-        <onlink>http://dx.doi.org/10.5066/THIS.IS.FAKE</onlink>
+        <onlink>http://dx.doi.org/10.5066/F7DV1H10</onlink>
         <lworkcit>
           <citeinfo>
             <origin>Luke A. Winslow</origin>
@@ -22,7 +22,7 @@
       </citeinfo>
     </citation>
     <descript>
-      <abstract>Climate change has been shown to influence lake temperatures globally. To better understand the diversity of lake responses to climate change and give managers tools to manage individual lakes,  we modelled daily water temperature profiles for 10,774 lakes in Michigan, Minnesota and Wisconsin for contemporary (1979-2015) and future (2020-2040 and 2080-2100) time  periods with climate models based on the Representative Concentration Pathway 8.5, the worst-case emission scenario. From simulated temperatures, we derived commonly used,  ecologically relevant annual metrics of thermal conditions for each lake. We included all available supporting metadata including satellite and in-situ observations of water clarity,  maximum observed lake depth, land-cover based estimates of surrounding canopy height and observed water temperature profiles (used here for validation).  This unique dataset offers landscape-level insight into the future impact of climate change on lakes. This data set contains the following parameters: site_id, Prmnn_I, GNIS_ID, GNIS_Nm, ReachCd, FType, FCode, which are defined below.</abstract>
+      <abstract>Climate change has been shown to influence lake temperatures globally. To better understand the diversity of lake responses to climate change and give managers tools to manage individual lakes,  we modelled daily water temperature profiles for 10,774 lakes in Michigan, Minnesota and Wisconsin for contemporary (1979-2015) and future (2020-2040 and 2080-2100) time  periods with climate models based on the Representative Concentration Pathway 8.5, the worst-case emission scenario. From simulated temperatures, we derived commonly used,  ecologically relevant annual metrics of thermal conditions for each lake. We included all available supporting metadata including satellite and in-situ observations of water clarity,  maximum observed lake depth, land-cover based estimates of surrounding canopy height and observed water temperature profiles (used here for validation).  This unique dataset offers landscape-level insight into the future impact of climate change on lakes.  This data set contains the following parameters: site_id, Prmnn_I, GNIS_ID, GNIS_Nm, ReachCd, FType, FCode, which are defined below.</abstract>
       <purpose>Fisheries biology, limnological research, and climate science.</purpose>
     </descript>
     <timeperd>
@@ -154,7 +154,7 @@
         <cntemail>jread@usgs.gov</cntemail>
       </cntinfo>
     </ptcontac>
-    <datacred>This study was funded by the Department of the Interior Northeast Climate Science Center, the United States Geological Survey National Climate Change and Wildlife Science Center grant 10909172 to the University of Wisconsin&#x2013;Madison, and the WDNR Federal Aid in Sport Fish Restoration (Project F-95-P, study SSBW).</datacred>
+    <datacred>This study was funded by the Department of the Interior Northeast Climate Science Center, the United States Geological Survey National Climate Change and Wildlife Science Center grant 10909172 to the University of Wisconsin&#x2013;Madison, and the WDNR Federal Aid in Sport Fish Restoration (Project F-95-P, study SSBW).  This research used resources of the Core Science Analytics and Synthesis Advanced Research Computing program at the U.S. Geological Survey.</datacred>
     <native>Multiple computer systems were used to generate these data, including linux, OSX. The open source language R was used on all systems, as well as the open-source model GLM.</native>
   </idinfo>
   <dataqual>
@@ -326,7 +326,7 @@
           <onlinopt>
             <computer>
               <networka>
-                <networkr>http://dx.doi.org/10.5066/THIS.IS.FAKE</networkr>
+                <networkr>http://dx.doi.org/10.5066/F7DV1H10</networkr>
               </networka>
             </computer>
           </onlinopt>
