@@ -1,9 +1,13 @@
 #create rough WIBC and NHD crosswalk
 library(rgdal)
 library(sp)
-
-state = readOGR('data/NHD_state_crosswalk', 'managed_wiscoNoZ_wgs84')
 nhd   = readOGR('data/NHD_shape_large', 'NHDWaterbody')
+state = readOGR('/Users/jread/Google Drive/Stratification/WisconsinHydroLayer', 'wiscoNoZ_wgs84')
+# subset smaller lakes out
+min.lake <- 20000 # 2 hectares
+max.lake <- 543948812 # just larger than Winnebago
+state <- state[state@data$Shape_Area > min.lake & state@data$Shape_Area < max.lake, ]
+
 
 out = data.frame(WBIC=state$WBDY_WBIC, site_id=NA)
 
@@ -18,6 +22,9 @@ for(i in 1:nrow(out)){
 	setTxtProgressBar(pb, i)
 }
 
+library(dplyr)
+out <- out %>% 
+  filter(!is.na(site_id))
 write.csv(out, 'data/NHD_state_crosswalk/nhd2WBIC.csv', row.names=FALSE)
 nhd2wbic = out
 save(nhd2wbic, file='data/NHD_state_crosswalk/nhd2wbic.RData')
