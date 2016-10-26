@@ -1,6 +1,7 @@
 #create rough WIBC and NHD crosswalk
 library(rgdal)
 library(sp)
+library(dplyr)
 nhd   = readOGR('data/NHD_shape_large', 'NHDWaterbody')
 state = readOGR('/Users/jread/Google Drive/Stratification/WisconsinHydroLayer', 'wiscoNoZ_wgs84')
 # subset smaller lakes out
@@ -16,15 +17,18 @@ pb = txtProgressBar(min = 0, max = nrow(out), initial=0)
 for(i in 1:nrow(out)){
 	tmp = over(state[i,], nhd)
 	
-	if(!is.na(tmp$Prmnn_I)){
-		out$site_id[i] = paste0('nhd_', tmp$Prmnn_I[1])
+	if(!is.na(tmp$Prmnn_I[1])){
+	  if (length(tmp$Prmnn_I) > 1){
+	    id <- (arrange(tmp, desc(AreSqKm)) %>% .$Prmnn_I)[1]
+	  } else {
+	    id <- tmp$Prmnn_I[1]
+	  }
+		out$site_id[i] = paste0('nhd_', id)
 	}
 	setTxtProgressBar(pb, i)
 }
+nhd2wbic <- filter(out, !is.na(site_id))
 
-library(dplyr)
-out <- out %>% 
-  filter(!is.na(site_id))
-write.csv(out, 'data/NHD_state_crosswalk/nhd2WBIC.csv', row.names=FALSE)
-nhd2wbic = out
+write.csv(nhd2wbic, 'data/NHD_state_crosswalk/nhd2WBIC.csv', row.names=FALSE)
+
 save(nhd2wbic, file='data/NHD_state_crosswalk/nhd2wbic.RData')
