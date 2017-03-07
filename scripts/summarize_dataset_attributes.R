@@ -29,7 +29,7 @@ thermal_attributes <- function(filename){
     i <- which(metric == metrics$Name)[1]
     out[[i]] <- list('attr-label' = metric,
                      'attr-def' = submissing(metrics$Output.details[i]),
-                     'attr-defs'=submissing(metrics$Specific.metric[i]),
+                     'attr-defs'= submissing(metrics$Specific.metric[i]),
                      'data-min'='NA', # from data
                      'data-max'='NA', # from data
                      'data-units'=submissing(metrics$units[i]))

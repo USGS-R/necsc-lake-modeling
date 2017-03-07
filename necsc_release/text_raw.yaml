@@ -24,16 +24,18 @@ attributes:
   - 
     attr-label: time
     attr-def: Calendar date
+    attr-defs: NA
     data-min: NA
     data-max: NA
     data-units: NA  
   - 
     attr-label: wtr_{z}
     attr-def: water temperature at depth z
+    attr-defs: NA
     data-min: NA
     data-max: NA
     data-units: degrees C  
-    
+
 
 build-environment: Multiple computer systems were used to generate these data, including linux, OSX. The open source language R was used on all systems, as well as the open-source model GLM.
 

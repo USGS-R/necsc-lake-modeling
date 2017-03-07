@@ -44,7 +44,7 @@ funding-credits: >-
   Northeast Climate Science Center, the United States Geological Survey National Climate
   Change and Wildlife Science Center grant 10909172 to the University of Wisconsin–Madison,
   and the WDNR Federal Aid in Sport Fish Restoration (Project F-95-P, study SSBW).
-
+  
 build-environment: Multiple computer systems were used to generate these data, including linux, OSX. The open source language R was used on all systems, as well as the open-source model GLM.
 
 process-date: 20160624

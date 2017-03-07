@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <metadata>
   <idinfo>
     <citation>
@@ -15,7 +15,8 @@
             <origin>Luke A. Winslow</origin>
             <origin>Gretchen J.A. Hansen</origin>
             <origin>Jordan S. Read</origin>
-            <pubdate>2016</pubdate>
+            <origin>Michael Notaro</origin>
+            <pubdate>2017</pubdate>
             <title>A large-scale database of modeled contemporary and future water temperature data for 10774 Michigan, Minnesota and Wisconsin Lakes</title>
           </citeinfo>
         </lworkcit>
@@ -154,7 +155,7 @@
         <cntemail>jread@usgs.gov</cntemail>
       </cntinfo>
     </ptcontac>
-    <datacred>This study was funded by the Department of the Interior Northeast Climate Science Center, the United States Geological Survey National Climate Change and Wildlife Science Center grant 10909172 to the University of Wisconsin&#x2013;Madison, and the WDNR Federal Aid in Sport Fish Restoration (Project F-95-P, study SSBW).  This research used resources of the Core Science Analytics and Synthesis Advanced Research Computing program at the U.S. Geological Survey.</datacred>
+    <datacred>This study was funded by the Department of the Interior Northeast Climate Science Center, the United States Geological Survey National Climate Change and Wildlife Science Center grant 10909172 to the University of Wisconsin–Madison, and the WDNR Federal Aid in Sport Fish Restoration (Project F-95-P, study SSBW).  This research used resources of the Core Science Analytics and Synthesis Advanced Research Computing program at the U.S. Geological Survey.</datacred>
     <native>Multiple computer systems were used to generate these data, including linux, OSX. The open source language R was used on all systems, as well as the open-source model GLM.</native>
   </idinfo>
   <dataqual>
@@ -173,7 +174,7 @@
     </posacc>
     <lineage>
       <procstep>
-        <procdesc/>
+        <procdesc>At the core of the modeling framework is a lake hydrodynamic model that uses inputs of lake-specific properties and local meteorology to estimate water temperature.  Our chosen model is the open source, General Lake Model (GLM) version 2.2.0. GLM is a one-dimensional dynamical model which simplifies lakes using a vertical approximation,  where horizontal variability is ignored. GLM uses a Lagrangian approach to layer structure where layers can split and combine based on changing vertical gradients.  GLM is a modern, implementation of other one-dimensional models. We used GLM to run individual lake simulations according to the processes described in Winslow et al. 2017.  Outputs for water temperature were extracted at various depths and written or summarized to the files included in this set of data. The glmtools R package was used for this processing.  </procdesc>
         <procdate>20160624</procdate>
       </procstep>
     </lineage>
