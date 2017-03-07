@@ -266,9 +266,9 @@
         <attrdefs>Hipsey et al. 2013</attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin/>
-            <rdommax/>
-            <attrunit/>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
       </attr>
@@ -278,9 +278,9 @@
         <attrdefs>Hipsey et al. 2013</attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin/>
-            <rdommax/>
-            <attrunit/>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
       </attr>
@@ -290,9 +290,9 @@
         <attrdefs>Hipsey et al. 2013</attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin/>
-            <rdommax/>
-            <attrunit/>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
       </attr>
@@ -302,9 +302,9 @@
         <attrdefs>Hipsey et al. 2013</attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin/>
-            <rdommax/>
-            <attrunit/>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
       </attr>
@@ -314,9 +314,9 @@
         <attrdefs>Hipsey et al. 2013</attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin/>
-            <rdommax/>
-            <attrunit/>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
       </attr>
@@ -326,9 +326,9 @@
         <attrdefs>Hipsey et al. 2013</attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin/>
-            <rdommax/>
-            <attrunit/>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
       </attr>
@@ -338,9 +338,9 @@
         <attrdefs>Hipsey et al. 2013</attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin/>
-            <rdommax/>
-            <attrunit/>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
       </attr>
@@ -350,9 +350,9 @@
         <attrdefs>Hipsey et al. 2013</attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin/>
-            <rdommax/>
-            <attrunit/>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
       </attr>
@@ -362,9 +362,9 @@
         <attrdefs>Hipsey et al. 2013</attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin/>
-            <rdommax/>
-            <attrunit/>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
       </attr>
@@ -374,9 +374,9 @@
         <attrdefs>Hipsey et al. 2013</attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin/>
-            <rdommax/>
-            <attrunit/>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
       </attr>
@@ -432,7 +432,7 @@
         <cntpos>Data Chief</cntpos>
         <cntaddr>
           <addrtype>Mailing and Physical</addrtype>
-          <address>8551 Research Way #120</address>
+          <address>8505 Research Way</address>
           <city>Middleton</city>
           <state>WI</state>
           <postal>53562</postal>

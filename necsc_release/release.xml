@@ -214,60 +214,60 @@
       <attr>
         <attrlabl>Thermal metrics</attrlabl>
         <attrdef>Various temperature metrics for lakes summarized at the annual scale</attrdef>
-        <attrdefs>Thermal metrics: A large-scale database of modeled contemporary and future water temperature data for 10774 Michigan, Minnesota and Wisconsin Lakes</attrdefs>
+        <attrdefs>Thermal metrics: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes    </attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin/>
-            <rdommax/>
-            <attrunit/>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
       </attr>
       <attr>
         <attrlabl>Spatial data</attrlabl>
         <attrdef>Shapefile and attributes for the 10,774 lakes</attrdef>
-        <attrdefs>Spatial data: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes</attrdefs>
+        <attrdefs>Spatial data: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes    </attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin/>
-            <rdommax/>
-            <attrunit/>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
       </attr>
       <attr>
         <attrlabl>Temperature data</attrlabl>
         <attrdef>water temperatures at each daily timestep for each lake at various depths</attrdef>
-        <attrdefs>Temperature data: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes</attrdefs>
+        <attrdefs>Temperature data: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes    </attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin/>
-            <rdommax/>
-            <attrunit/>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
       </attr>
       <attr>
         <attrlabl>Model drivers</attrlabl>
         <attrdef>timeseries drivers for running the lake models in this data release</attrdef>
-        <attrdefs>Model drivers: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes</attrdefs>
+        <attrdefs>Model drivers: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes    </attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin/>
-            <rdommax/>
-            <attrunit/>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
       </attr>
       <attr>
         <attrlabl>Model configuration</attrlabl>
         <attrdef>configuration instructions for individual models</attrdef>
-        <attrdefs>Model configuration: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes</attrdefs>
+        <attrdefs>Model configuration: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes    </attrdefs>
         <attrdomv>
           <rdom>
-            <rdommin/>
-            <rdommax/>
-            <attrunit/>
+            <rdommin>NA</rdommin>
+            <rdommax>NA</rdommax>
+            <attrunit>NA</attrunit>
           </rdom>
         </attrdomv>
       </attr>
@@ -323,7 +323,7 @@
         <cntpos>Data Chief</cntpos>
         <cntaddr>
           <addrtype>Mailing and Physical</addrtype>
-          <address>8551 Research Way #120</address>
+          <address>8505 Research Way</address>
           <city>Middleton</city>
           <state>WI</state>
           <postal>53562</postal>

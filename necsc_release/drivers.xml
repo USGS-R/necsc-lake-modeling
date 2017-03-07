@@ -288,7 +288,7 @@
       <attr>
         <attrlabl>time</attrlabl>
         <attrdef>Calendar date</attrdef>
-        <attrdefs/>
+        <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
             <rdommin>NA</rdommin>
@@ -300,7 +300,7 @@
       <attr>
         <attrlabl>ShortWave</attrlabl>
         <attrdef>Daily average incoming shortwave radiation</attrdef>
-        <attrdefs/>
+        <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
             <rdommin>0</rdommin>
@@ -312,7 +312,7 @@
       <attr>
         <attrlabl>LongWave</attrlabl>
         <attrdef>Daily average incoming longwave radiation</attrdef>
-        <attrdefs/>
+        <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
             <rdommin>NA</rdommin>
@@ -324,7 +324,7 @@
       <attr>
         <attrlabl>AirTemp</attrlabl>
         <attrdef>Daily average air temperature</attrdef>
-        <attrdefs/>
+        <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
             <rdommin>NA</rdommin>
@@ -336,7 +336,7 @@
       <attr>
         <attrlabl>RelHum</attrlabl>
         <attrdef>Daily average relative humidity</attrdef>
-        <attrdefs/>
+        <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
             <rdommin>0</rdommin>
@@ -348,7 +348,7 @@
       <attr>
         <attrlabl>WindSpeed</attrlabl>
         <attrdef>Daily average windspeed</attrdef>
-        <attrdefs/>
+        <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
             <rdommin>0</rdommin>
@@ -360,7 +360,7 @@
       <attr>
         <attrlabl>Rain</attrlabl>
         <attrdef>Daily cumulative precipitation as rain</attrdef>
-        <attrdefs/>
+        <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
             <rdommin>0</rdommin>
@@ -371,8 +371,8 @@
       </attr>
       <attr>
         <attrlabl>Snow</attrlabl>
-        <attrdef>Daily cumulative precipitation as rain</attrdef>
-        <attrdefs/>
+        <attrdef>Daily cumulative precipitation as snow</attrdef>
+        <attrdefs>NA</attrdefs>
         <attrdomv>
           <rdom>
             <rdommin>0</rdommin>
@@ -433,7 +433,7 @@
         <cntpos>Data Chief</cntpos>
         <cntaddr>
           <addrtype>Mailing and Physical</addrtype>
-          <address>8551 Research Way #120</address>
+          <address>8505 Research Way</address>
           <city>Middleton</city>
           <state>WI</state>
           <postal>53562</postal>
