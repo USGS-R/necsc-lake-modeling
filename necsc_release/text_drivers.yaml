@@ -37,30 +37,35 @@ attributes:
   - 
     attr-label: time
     attr-def: Calendar date
+    attr-defs: NA
     data-min: NA
     data-max: NA
     data-units: NA  
   - 
     attr-label: ShortWave	
     attr-def: Daily average incoming shortwave radiation
+    attr-defs: NA
     data-min: 0
     data-max: NA
     data-units: W m^-2
   - 
     attr-label: LongWave	
     attr-def: Daily average incoming longwave radiation
+    attr-defs: NA
     data-min: NA
     data-max: NA
     data-units: W m^-2	
   - 
     attr-label: AirTemp	
     attr-def: Daily average air temperature
+    attr-defs: NA
     data-min: NA
     data-max: NA
     data-units: degrees C		
   - 
     attr-label: RelHum	
     attr-def: Daily average relative humidity
+    attr-defs: NA
     data-min: 0
     data-max: 100
     data-units: >-
@@ -68,18 +73,21 @@ attributes:
   - 
     attr-label: WindSpeed	
     attr-def: Daily average windspeed
+    attr-defs: NA
     data-min: 0
     data-max: NA
     data-units: m s^-1 	
   - 
     attr-label: Rain	
     attr-def: Daily cumulative precipitation as rain
+    attr-defs: NA
     data-min: 0
     data-max: NA
     data-units: m day^-1 	
   - 
     attr-label: Snow	
-    attr-def: Daily cumulative precipitation as rain
+    attr-def: Daily cumulative precipitation as snow
+    attr-defs: NA
     data-min: 0
     data-max: NA
     data-units: m day^-1

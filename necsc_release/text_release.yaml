@@ -8,27 +8,42 @@ attributes:
     attr-label: Thermal metrics
     attr-def: Various temperature metrics for lakes summarized at the annual scale
     attr-defs: >-
-      Thermal metrics: A large-scale database of modeled contemporary and future water temperature data for 10774 Michigan, Minnesota and Wisconsin Lakes
+      Thermal metrics: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes    
+    data-min: NA
+    data-max: NA
+    data-units: NA
   - 
     attr-label: Spatial data
     attr-def: Shapefile and attributes for the 10,774 lakes
     attr-defs: >-
-      Spatial data: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes
+      Spatial data: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes    
+    data-min: NA
+    data-max: NA
+    data-units: NA
   - 
     attr-label: Temperature data
     attr-def: water temperatures at each daily timestep for each lake at various depths
     attr-defs: >-
-      Temperature data: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes
+      Temperature data: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes    
+    data-min: NA
+    data-max: NA
+    data-units: NA
   - 
     attr-label: Model drivers
     attr-def: timeseries drivers for running the lake models in this data release
     attr-defs: >-
-      Model drivers: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes
+      Model drivers: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes    
+    data-min: NA
+    data-max: NA
+    data-units: NA
   - 
     attr-label: Model configuration
     attr-def: configuration instructions for individual models
     attr-defs: >-
-      Model configuration: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes
+      Model configuration: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes    
+    data-min: NA
+    data-max: NA
+    data-units: NA
     
     
 process-date: 20160624

@@ -26,42 +26,72 @@ attributes:
     attr-label: glm_setup
     attr-def: parameters for setting up the General Lake Model and defining constants
     attr-defs: Hipsey et al. 2013
+    data-min: NA
+    data-max: NA
+    data-units: NA
   - 
     attr-label: morphometry
     attr-def: parameters describing the depth/area relationship of the lake for the General Lake Model
     attr-defs: Hipsey et al. 2013
+    data-min: NA
+    data-max: NA
+    data-units: NA
   - 
     attr-label: time
     attr-def: parameters describing the time period and frequency of model runs for the General Lake Model
     attr-defs: Hipsey et al. 2013
+    data-min: NA
+    data-max: NA
+    data-units: NA
   - 
     attr-label: output
     attr-def: parameters describing how the outputs of model runs from the General Lake Model are written
     attr-defs: Hipsey et al. 2013
+    data-min: NA
+    data-max: NA
+    data-units: NA
   - 
     attr-label: init_profiles
     attr-def: parameters describing General Lake Model initial conditions
     attr-defs: Hipsey et al. 2013
+    data-min: NA
+    data-max: NA
+    data-units: NA
   - 
     attr-label: meteorology
     attr-def: parameters describing time series drivers of General Lake Model runs
     attr-defs: Hipsey et al. 2013
+    data-min: NA
+    data-max: NA
+    data-units: NA
   - 
     attr-label: bird_model
     attr-def: parameters describing the use (if applicable) of the Bird model for General Lake Model runs
     attr-defs: Hipsey et al. 2013
+    data-min: NA
+    data-max: NA
+    data-units: NA
   - 
     attr-label: inflow
     attr-def: parameters describing inflows to the General Lake Model
     attr-defs: Hipsey et al. 2013
+    data-min: NA
+    data-max: NA
+    data-units: NA
   - 
     attr-label: outflow
     attr-def: parameters describing outflows from the General Lake Model
     attr-defs: Hipsey et al. 2013
+    data-min: NA
+    data-max: NA
+    data-units: NA
   - 
     attr-label: snowice
     attr-def: parameters describing how snow and ice dynamics are calculated by the General Lake Model
     attr-defs: Hipsey et al. 2013
+    data-min: NA
+    data-max: NA
+    data-units: NA
 
 build-environment: Multiple computer systems were used to generate these data, including linux, OSX. The open source language R was used on all systems, as well as the open-source model GLM.
 
