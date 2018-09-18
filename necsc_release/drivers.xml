@@ -9,7 +9,7 @@
         <pubdate>2016</pubdate>
         <title>Model drivers: A large-scale database of modeled contemporary and future water temperature data for 10,774 Michigan, Minnesota and Wisconsin Lakes</title>
         <geoform>text files</geoform>
-        <onlink>http://dx.doi.org/10.5066/F7DV1H10</onlink>
+        <onlink>https://doi.org/10.5066/F7DV1H10</onlink>
         <lworkcit>
           <citeinfo>
             <origin>Luke A. Winslow</origin>
@@ -165,7 +165,7 @@
         <origin>Luke A. Winslow</origin>
         <pubdate>2016</pubdate>
         <title>Projected shifts in fish species dominance in Wisconsin lakes under climate change</title>
-        <onlink>http://dx.doi.org/10.1111/gcb.13462</onlink>
+        <onlink>https://doi.org/10.1111/gcb.13462</onlink>
       </citeinfo>
     </crossref>
     <crossref>
@@ -179,7 +179,7 @@
         <origin>Corey D. Markfort</origin>
         <pubdate>2014</pubdate>
         <title>Simulating 2368 temperate lakes reveals weak coherence in stratification phenology</title>
-        <onlink>http://dx.doi.org/10.1016/j.ecolmodel.2014.07.029</onlink>
+        <onlink>https://doi.org/10.1016/j.ecolmodel.2014.07.029</onlink>
       </citeinfo>
     </crossref>
     <crossref>
@@ -189,7 +189,7 @@
         <origin>Steve Vavrus</origin>
         <pubdate>2015</pubdate>
         <title>Dynamically downscaled projections of lake-effect snow in the Great Lakes basin</title>
-        <onlink>http://dx.doi.org/10.1175/JCLI-D-14-00467.1</onlink>
+        <onlink>https://doi.org/10.1175/JCLI-D-14-00467.1</onlink>
       </citeinfo>
     </crossref>
     <crossref>
@@ -218,7 +218,7 @@
         <origin>Andrew A. Bailey</origin>
         <pubdate>2004</pubdate>
         <title>The multi-institution North American Land Data Assimilation System (NLDAS): Utilizing multiple GCIP products and partners in a continental distributed hydrological modeling system</title>
-        <onlink>http://dx.doi.org/10.1029/2003JD003823</onlink>
+        <onlink>https://doi.org/10.1029/2003JD003823</onlink>
       </citeinfo>
     </crossref>
     <crossref>
@@ -413,7 +413,7 @@
           <onlinopt>
             <computer>
               <networka>
-                <networkr>http://dx.doi.org/10.5066/F7DV1H10</networkr>
+                <networkr>https://doi.org/10.5066/F7DV1H10</networkr>
               </networka>
             </computer>
           </onlinopt>
